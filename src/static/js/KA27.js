@@ -776,29 +776,7 @@ async function main() {
     }
 }
 
-// Export functions for module use
-module.exports = {
-    initializeOperationConfig,
-    addKa27Helicopter,
-    removeKa27Helicopter,
-    performAddOperation,
-    performRemoveOperation,
-    listAvailableDatabases,
-    verifyFileStructure,
-    DATABASE_CONFIGS,
-    OPERATION_CONFIG
-};
 
-// Run if called directly
-if (require.main === module) {
-    main().catch(error => {
-        console.error('❌ Fatal error:', error.message);
-        if (error.stack) {
-            console.error('Stack trace:', error.stack);
-        }
-        process.exit(1);
-    });
-}
 
 // Main remove operation
 async function performRemoveOperation() {
@@ -955,16 +933,15 @@ module.exports = {
     performAddOperation,
     performRemoveOperation,
     listAvailableDatabases,
-    verifyFileStructure
+    verifyFileStructure,
+    DATABASE_CONFIGS,
+    WEB_INTERFACE_CONFIG
 };
 
-// Run if called directly
+// Execute main function if called directly
 if (require.main === module) {
     main().catch(error => {
-        console.error('❌ Fatal error:', error.message);
-        if (error.stack) {
-            console.error('Stack trace:', error.stack);
-        }
+        console.error('❌ Fatal error:', error);
         process.exit(1);
     });
 }
