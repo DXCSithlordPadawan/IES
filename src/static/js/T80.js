@@ -783,3 +783,72 @@ async function listAvailableDatabases() {
             console.log('   Start web interface for live database status');
         }
     }
+}
+
+// Main execution logic
+async function main() {
+    const args = process.argv.slice(2);
+    
+    if (args.length === 0) {
+        console.log('🔰 T-80 Tank Database Manager');
+        console.log('==============================\n');
+        await listAvailableDatabases();
+        return;
+    }
+    
+    const operation = args[0].toLowerCase();
+    const database = args[1] ? args[1].toUpperCase() : null;
+    
+    switch (operation) {
+        case 'add':
+            if (!database) {
+                console.error('❌ Database parameter required for add operation');
+                console.log('Usage: node T80.js add <database>');
+                return;
+            }
+            initializeOperationConfig(database);
+            await performAddOperation();
+            break;
+            
+        case 'remove':
+            if (!database) {
+                console.error('❌ Database parameter required for remove operation');
+                console.log('Usage: node T80.js remove <database>');
+                return;
+            }
+            initializeOperationConfig(database);
+            await performRemoveOperation();
+            break;
+            
+        case 'list':
+            await listAvailableDatabases();
+            break;
+            
+        default:
+            console.error(`❌ Unknown operation: ${operation}`);
+            console.log('Available operations: add, remove, list');
+            await listAvailableDatabases();
+    }
+}
+
+// Export functions for potential module usage
+module.exports = {
+    initializeOperationConfig,
+    addT80Tank,
+    removeT80Tank,
+    performAddOperation,
+    performRemoveOperation,
+    listAvailableDatabases,
+    verifyFileStructure
+};
+
+// Run main function if called directly
+if (require.main === module) {
+    main().catch(error => {
+        console.error('❌ Fatal error:', error.message);
+        if (error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
+        process.exit(1);
+    });
+}
