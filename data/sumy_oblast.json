@@ -1,0 +1,65 @@
+{
+  "areas": [
+    {
+      "id": "area-sumy-oblast-001",
+      "uri": "https://ukraine.gov.ua/areas/sumy-oblast",
+      "type": "Area",
+      "names": [
+        {
+          "value": "Sumy Oblast",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Сумська область",
+          "language": "uk",
+          "nameType": "official"
+        },
+        {
+          "value": "Sumska oblast",
+          "language": "uk",
+          "nameType": "formal"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "UA59",
+          "identifierType": "ISO_3166-2",
+          "issuingAuthority": "ISO"
+        }
+      ],
+      "areaType": "administrative",
+      "administrativeLevel": 1,
+      "country": "Ukraine",
+      "coordinates": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [32.4, 52.0],
+            [35.2, 52.0],
+            [35.2, 50.2],
+            [32.4, 50.2],
+            [32.4, 52.0]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "representations": [
+        {
+          "id": "sumy-oblast-map",
+          "type": "document",
+          "title": "Administrative map of Sumy Oblast",
+          "description": "Official administrative boundaries of Sumy Oblast, administrative center: Sumy"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "sumy-establishment",
+          "stateType": "established",
+          "startTime": "1939-01-10T00:00:00Z",
+          "location": "Ukraine"
+        }
+      ]
+    }
+  ]
+}

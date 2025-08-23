@@ -1,0 +1,2268 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IES4-Based Russian Federation Military Comprehensive Database",
+  "description": "Comprehensive military database for the Russian Federation based on the UK Government's Information Exchange Standard (IES4), populated with open source military information",
+  "countries": [
+    {
+      "id": "country-russia-001",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/Russia",
+      "names": [
+        {
+          "value": "Russian Federation",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Российская Федерация",
+          "nameType": "official",
+          "language": "ru"
+        },
+        {
+          "value": "Russia",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "Россия",
+          "nameType": "common",
+          "language": "ru"
+        }
+      ],
+      "iso3166Alpha2": "RU",
+      "iso3166Alpha3": "RUS",
+      "telephoneCountryCode": "+7",
+      "currency": "RUB",
+      "languages": [
+        "Russian"
+      ],
+      "sovereignty": "Sovereign state",
+      "timestamp": "2025-08-22T07:34:20.059526Z",
+      "version": "1.0"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "vt-small-arms",
+      "name": "Small Arms Weapon",
+      "category": "other",
+      "subcategory": "infantry weapon",
+      "description": "Portable firearms designed for individual infantry use",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "individual carry",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_use",
+          "value": "infantry combat",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062195Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopters designed for engaging ground targets",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground attack",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles, guns, rockets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062214Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopters designed for troop and cargo transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "transport",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "personnel and cargo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062225Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-aircraft",
+      "name": "Attack Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Military aircraft designed for ground attack missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "close air support",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles, bombs, guns",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062236Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Military aircraft designed for strategic and tactical airlift",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "troops and cargo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062247Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-missile-system",
+      "name": "Missile System",
+      "category": "other",
+      "subcategory": "guided weapon",
+      "description": "Guided weapons systems for various targets",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "active/passive/semi-active",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "short/medium/long range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062257Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radar-system",
+      "name": "Radar System",
+      "category": "other",
+      "subcategory": "detection system",
+      "description": "Radio detection and ranging systems",
+      "characteristics": [
+        {
+          "name": "frequency_band",
+          "value": "various RF bands",
+          "dataType": "string"
+        },
+        {
+          "name": "detection_range",
+          "value": "variable range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062269Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-air-defense",
+      "name": "Air Defense System",
+      "category": "other",
+      "subcategory": "defensive system",
+      "description": "Systems designed to defend against aerial threats",
+      "characteristics": [
+        {
+          "name": "target_type",
+          "value": "aircraft and missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "engagement_range",
+          "value": "short/medium/long range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062279Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-artillery",
+      "name": "Artillery System",
+      "category": "other",
+      "subcategory": "field gun",
+      "description": "Towed or self-propelled artillery pieces",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "various calibers",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "towed or self-propelled",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062290Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-mlrs",
+      "name": "Multiple Launch Rocket System",
+      "category": "other",
+      "subcategory": "rocket artillery",
+      "description": "Systems capable of firing multiple rockets rapidly",
+      "characteristics": [
+        {
+          "name": "rocket_caliber",
+          "value": "various calibers",
+          "dataType": "string"
+        },
+        {
+          "name": "number_of_tubes",
+          "value": "multiple launch tubes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062300Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Primary combat tank designed for front-line operations",
+      "characteristics": [
+        {
+          "name": "armor_protection",
+          "value": "heavy armor",
+          "dataType": "string"
+        },
+        {
+          "name": "main_gun",
+          "value": "large caliber gun",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062311Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Vehicles designed for reconnaissance and surveillance",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "high mobility",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "observation equipment",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062321Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-wheeled-vehicle",
+      "name": "Wheeled Military Vehicle",
+      "category": "other",
+      "subcategory": "wheeled vehicle",
+      "description": "Military vehicles with wheeled propulsion",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "road and off-road",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "transport or combat",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062331Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-tracked-vehicle",
+      "name": "Tracked Military Vehicle",
+      "category": "other",
+      "subcategory": "tracked vehicle",
+      "description": "Military vehicles with tracked propulsion",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "all-terrain",
+          "dataType": "string"
+        },
+        {
+          "name": "ground_pressure",
+          "value": "low ground pressure",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062341Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-watercraft",
+      "name": "Military Watercraft",
+      "category": "boat",
+      "subcategory": "naval vessel",
+      "description": "Military vessels for naval operations",
+      "characteristics": [
+        {
+          "name": "displacement",
+          "value": "various tonnages",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "various propulsion systems",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062352Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-drone",
+      "name": "Unmanned Aerial Vehicle",
+      "category": "aircraft",
+      "subcategory": "unmanned",
+      "description": "Remotely piloted or autonomous aircraft",
+      "characteristics": [
+        {
+          "name": "control_method",
+          "value": "remote or autonomous",
+          "dataType": "string"
+        },
+        {
+          "name": "mission_type",
+          "value": "surveillance or attack",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062361Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-electronic-warfare",
+      "name": "Electronic Warfare System",
+      "category": "other",
+      "subcategory": "electronic system",
+      "description": "Systems for electronic attack, protection, and support",
+      "characteristics": [
+        {
+          "name": "ew_function",
+          "value": "jamming or detection",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_range",
+          "value": "various RF bands",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062370Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radio-system",
+      "name": "Military Radio System",
+      "category": "other",
+      "subcategory": "communication system",
+      "description": "Military communication radio equipment",
+      "characteristics": [
+        {
+          "name": "frequency_band",
+          "value": "VHF/UHF/HF",
+          "dataType": "string"
+        },
+        {
+          "name": "encryption",
+          "value": "secure communications",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062380Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-personal-equipment",
+      "name": "Personal Military Equipment",
+      "category": "other",
+      "subcategory": "individual equipment",
+      "description": "Individual soldier equipment and gear",
+      "characteristics": [
+        {
+          "name": "protection_level",
+          "value": "ballistic protection",
+          "dataType": "string"
+        },
+        {
+          "name": "portability",
+          "value": "individual carry",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062389Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-ammunition",
+      "name": "Military Ammunition",
+      "category": "other",
+      "subcategory": "ordnance",
+      "description": "Various types of military ammunition",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "various calibers",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead_type",
+          "value": "conventional or specialized",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062398Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "weapon-ak-74m",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AK-74",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "AK-74M",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Автомат Калашникова образца 1974 года модернизированный",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Kalashnikov Concern",
+      "model": "AK-74M",
+      "year": 1991,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.45×39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "500m",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "650 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.4 kg",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061797Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-ak-12",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AK-12",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "AK-12",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "АК-12",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Kalashnikov Concern",
+      "model": "AK-12",
+      "year": 2018,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.45×39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "500m",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "700 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Picatinny rails, folding stock",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061809Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-svd",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Dragunov_sniper_rifle",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "SVD Dragunov",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Снайперская винтовка Драгунова",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Kalashnikov Concern",
+      "model": "SVD",
+      "year": 1963,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×54mmR",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "800m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "10 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "4.3 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Designated marksman rifle",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061816Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-ka-52",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Kamov_Ka-52",
+      "vehicleType": "vt-attack-helicopter",
+      "names": [
+        {
+          "value": "Kamov Ka-52 Alligator",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ка-52 Аллигатор",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Kamov",
+      "model": "Ka-52",
+      "year": 2011,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "2",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "300 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "520 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm cannon, Vikhr missiles, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "rotor_configuration",
+          "value": "Coaxial",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061823Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-mi-28",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mil_Mi-28",
+      "vehicleType": "vt-attack-helicopter",
+      "names": [
+        {
+          "value": "Mil Mi-28 Havoc",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ми-28 Ночной охотник",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Mil",
+      "model": "Mi-28NM",
+      "year": 2016,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "2",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "324 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "435 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm cannon, Ataka missiles, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "special_features",
+          "value": "Night vision, heavy armor",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061830Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-mi-8",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mil_Mi-8",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "Mil Mi-8 Hip",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ми-8",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Mil",
+      "model": "Mi-8MTV-5",
+      "year": 1967,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "number"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "24 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "4000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "250 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "610 km",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061837Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-mi-26",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mil_Mi-26",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "Mil Mi-26 Halo",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ми-26",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Mil",
+      "model": "Mi-26T2",
+      "year": 1981,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "5",
+          "dataType": "number"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "82 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "20000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "295 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "World's largest helicopter",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061844Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-su-25",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sukhoi_Su-25",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "Sukhoi Su-25 Frogfoot",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Су-25 Грач",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Sukhoi",
+      "model": "Su-25SM3",
+      "year": 1981,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "1",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "975 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "375 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm GSh-30-2, missiles, bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Close air support",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061851Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-su-34",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sukhoi_Su-34",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "Sukhoi Su-34 Fullback",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Су-34",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Sukhoi",
+      "model": "Su-34",
+      "year": 2014,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "2",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "1900 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "1100 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm GSh-30-1, missiles, bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Fighter-bomber",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061857Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-il-76",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Ilyushin_Il-76",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "Ilyushin Il-76 Candid",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ил-76",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Ilyushin",
+      "model": "Il-76MD-90A",
+      "year": 2014,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "5",
+          "dataType": "number"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "60000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "225 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "850 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "4500 km",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061865Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-iskander",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/9K720_Iskander",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "9K720 Iskander",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "9К720 Искандер",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "KBM",
+      "model": "9K720 Iskander-M",
+      "year": 2006,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "missile_type",
+          "value": "Short-range ballistic missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "500 km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "480 kg conventional or nuclear",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial + terminal",
+          "dataType": "string"
+        },
+        {
+          "name": "launcher",
+          "value": "TEL vehicle",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061872Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-kalibr",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Kalibr_(missile_family)",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "3M-54 Kalibr",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "3М-54 Калибр",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Novator",
+      "model": "3M-54",
+      "year": 2012,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "missile_type",
+          "value": "Cruise missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "2500 km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "450 kg conventional",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "GLONASS/INS",
+          "dataType": "string"
+        },
+        {
+          "name": "platform",
+          "value": "Ship/submarine launched",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061878Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radar-voronezh",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Voronezh_radar",
+      "vehicleType": "vt-radar-system",
+      "names": [
+        {
+          "value": "Voronezh-DM",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Воронеж-ДМ",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "RTI Systems",
+      "model": "Voronezh-DM",
+      "year": 2009,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "radar_type",
+          "value": "Early warning radar",
+          "dataType": "string"
+        },
+        {
+          "name": "detection_range",
+          "value": "6000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_band",
+          "value": "VHF",
+          "dataType": "string"
+        },
+        {
+          "name": "targets",
+          "value": "Ballistic missiles, satellites",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Solid-state phased array",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061884Z",
+      "version": "1.0"
+    },
+    {
+      "id": "air-defense-s400",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/S-400_missile_system",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "S-400 Triumf",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "С-400 Триумф",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Almaz-Antey",
+      "model": "S-400",
+      "year": 2007,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "system_type",
+          "value": "Long-range SAM system",
+          "dataType": "string"
+        },
+        {
+          "name": "engagement_range",
+          "value": "400 km",
+          "dataType": "string"
+        },
+        {
+          "name": "altitude_ceiling",
+          "value": "30 km",
+          "dataType": "string"
+        },
+        {
+          "name": "targets",
+          "value": "Aircraft, missiles, drones",
+          "dataType": "string"
+        },
+        {
+          "name": "radar",
+          "value": "91N6E Big Bird",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061891Z",
+      "version": "1.0"
+    },
+    {
+      "id": "air-defense-pantsir",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Pantsir_missile_system",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "Pantsir-S1",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Панцирь-С1",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "KBP Instrument Design Bureau",
+      "model": "Pantsir-S1",
+      "year": 2012,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "system_type",
+          "value": "Short-range air defense",
+          "dataType": "string"
+        },
+        {
+          "name": "engagement_range",
+          "value": "20 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "12x missiles, 2x 30mm guns",
+          "dataType": "string"
+        },
+        {
+          "name": "targets",
+          "value": "Aircraft, helicopters, missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Wheeled TEL",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061898Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-2s19",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/2S19_Msta",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "2S19 Msta-S",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "2С19 Мста-С",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Uraltransmash",
+      "model": "2S19M2",
+      "year": 1989,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "152mm",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "29 km",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "7-8 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "ammunition_capacity",
+          "value": "50 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "5",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061905Z",
+      "version": "1.0"
+    },
+    {
+      "id": "mlrs-grad",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/BM-21_Grad",
+      "vehicleType": "vt-mlrs",
+      "names": [
+        {
+          "value": "BM-21 Grad",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "БМ-21 Град",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Splav State Research",
+      "model": "BM-21",
+      "year": 1963,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "122mm",
+          "dataType": "string"
+        },
+        {
+          "name": "number_of_tubes",
+          "value": "40",
+          "dataType": "number"
+        },
+        {
+          "name": "range",
+          "value": "45 km",
+          "dataType": "string"
+        },
+        {
+          "name": "salvo_time",
+          "value": "20 seconds",
+          "dataType": "string"
+        },
+        {
+          "name": "reload_time",
+          "value": "10 minutes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061911Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-t90m",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/T-90",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "T-90M Proryv",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Т-90М Прорыв",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Uralvagonzavod",
+      "model": "T-90M",
+      "year": 2017,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "main_gun",
+          "value": "125mm 2A46M-5",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "number"
+        },
+        {
+          "name": "weight",
+          "value": "48 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Kontakt-5 ERA",
+          "dataType": "string"
+        },
+        {
+          "name": "engine_power",
+          "value": "1000 hp",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "60 km/h",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061919Z",
+      "version": "1.0"
+    },
+    {
+      "id": "recon-brdm2",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/BRDM-2",
+      "vehicleType": "vt-reconnaissance-vehicle",
+      "names": [
+        {
+          "value": "BRDM-2",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "БРДМ-2",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Gorky Automobile Plant",
+      "model": "BRDM-2",
+      "year": 1962,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "number"
+        },
+        {
+          "name": "armament",
+          "value": "14.5mm KPVT machine gun",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "14mm steel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "100 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "amphibious",
+          "value": "Yes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061926Z",
+      "version": "1.0"
+    },
+    {
+      "id": "wheeled-typhoon-k",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Typhoon-K",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "Typhoon-K",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Тайфун-К",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "KamAZ",
+      "model": "Typhoon-K",
+      "year": 2014,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "2+16",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "24 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "STANAG Level 4",
+          "dataType": "string"
+        },
+        {
+          "name": "mine_protection",
+          "value": "V-hull design",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "105 km/h",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061932Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tracked-bmp3",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/BMP-3",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "BMP-3",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "БМП-3",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Kurganmashzavod",
+      "model": "BMP-3M",
+      "year": 1987,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "3+7",
+          "dataType": "string"
+        },
+        {
+          "name": "main_gun",
+          "value": "100mm 2A70",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "30mm 2A72, 7.62mm PKT",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "18.7 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "amphibious",
+          "value": "Yes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061939Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ship-kirov",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Kirov-class_battlecruiser",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Kirov-class battlecruiser",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Тяжёлый атомный ракетный крейсер проекта 1144",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Baltic Shipyard",
+      "model": "Project 1144 Orlan",
+      "year": 1980,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "displacement",
+          "value": "26396 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "252 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "727",
+          "dataType": "number"
+        },
+        {
+          "name": "propulsion",
+          "value": "Nuclear",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "P-700 Granit missiles, SA-N-6",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061946Z",
+      "version": "1.0"
+    },
+    {
+      "id": "drone-orion",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Kronshtadt_Orion",
+      "vehicleType": "vt-drone",
+      "names": [
+        {
+          "value": "Kronshtadt Orion",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Орион",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Kronshtadt Group",
+      "model": "Orion",
+      "year": 2019,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "wingspan",
+          "value": "16 m",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "24 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "7500 m",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "200 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Guided missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061952Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ew-krasukha",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Krasukha",
+      "vehicleType": "vt-electronic-warfare",
+      "names": [
+        {
+          "value": "Krasukha-4",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Красуха-4",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "KRET",
+      "model": "Krasukha-4",
+      "year": 2013,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "frequency_range",
+          "value": "S/C/X-band",
+          "dataType": "string"
+        },
+        {
+          "name": "jamming_range",
+          "value": "300 km",
+          "dataType": "string"
+        },
+        {
+          "name": "targets",
+          "value": "AWACS, reconnaissance aircraft",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Wheeled chassis",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061959Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radio-r168",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Russian_military_communications",
+      "vehicleType": "vt-radio-system",
+      "names": [
+        {
+          "value": "R-168-25U-2",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Р-168-25У-2",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Concern Sozvezdie",
+      "model": "R-168-25U-2",
+      "year": 2010,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "frequency_range",
+          "value": "30-512 MHz",
+          "dataType": "string"
+        },
+        {
+          "name": "power_output",
+          "value": "25 W",
+          "dataType": "string"
+        },
+        {
+          "name": "encryption",
+          "value": "256-bit AES",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "40 km",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.5 kg",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061967Z",
+      "version": "1.0"
+    },
+    {
+      "id": "equipment-6b45",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Russian_military_equipment",
+      "vehicleType": "vt-personal-equipment",
+      "names": [
+        {
+          "value": "6B45 Ratnik body armor",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "6Б45 Ратник",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "TsNIITochMash",
+      "model": "6B45",
+      "year": 2013,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "protection_level",
+          "value": "GOST R 50744-95 Class 6A",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "7.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "coverage_area",
+          "value": "0.4 m²",
+          "dataType": "string"
+        },
+        {
+          "name": "material",
+          "value": "Ceramic and aramid",
+          "dataType": "string"
+        },
+        {
+          "name": "modularity",
+          "value": "MOLLE compatible",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061974Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ammo-545x39",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/5.45×39mm",
+      "vehicleType": "vt-ammunition",
+      "names": [
+        {
+          "value": "5.45×39mm",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "5,45×39 мм",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "make": "Tula Cartridge Works",
+      "model": "7N6M",
+      "year": 1974,
+      "owner": "country-russia-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.45mm",
+          "dataType": "string"
+        },
+        {
+          "name": "case_length",
+          "value": "39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "bullet_weight",
+          "value": "3.43 g",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_velocity",
+          "value": "900 m/s",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "500 m",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.061981Z",
+      "version": "1.0"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "pt-special-forces",
+      "name": "Special Forces",
+      "category": "professional",
+      "subcategory": "elite military",
+      "description": "Elite military units trained for special operations",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "Advanced specialized training",
+          "dataType": "string"
+        },
+        {
+          "name": "selection_process",
+          "value": "Rigorous selection criteria",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Spetsnaz GRU",
+        "Alpha Group",
+        "Vympel Group",
+        "Naval Spetsnaz"
+      ],
+      "timestamp": "2025-08-22T07:34:20.062632Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-tank-crew",
+      "name": "Tank Crew",
+      "category": "professional",
+      "subcategory": "armored forces",
+      "description": "Personnel trained to operate main battle tanks",
+      "characteristics": [
+        {
+          "name": "specialization",
+          "value": "Armored vehicle operation",
+          "dataType": "string"
+        },
+        {
+          "name": "crew_roles",
+          "value": "Commander, gunner, driver",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Tank Commander",
+        "Tank Gunner",
+        "Tank Driver"
+      ],
+      "timestamp": "2025-08-22T07:34:20.062648Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-pilot",
+      "name": "Military Pilot",
+      "category": "professional",
+      "subcategory": "aviation",
+      "description": "Personnel trained to operate military aircraft",
+      "characteristics": [
+        {
+          "name": "license_type",
+          "value": "Military aviation license",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_specialization",
+          "value": "Fighter, transport, or helicopter",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Fighter Pilot",
+        "Transport Pilot",
+        "Helicopter Pilot"
+      ],
+      "timestamp": "2025-08-22T07:34:20.062657Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-engineer",
+      "name": "Military Engineer",
+      "category": "professional",
+      "subcategory": "technical specialist",
+      "description": "Personnel responsible for engineering and technical support",
+      "characteristics": [
+        {
+          "name": "specialization",
+          "value": "Combat engineering",
+          "dataType": "string"
+        },
+        {
+          "name": "responsibilities",
+          "value": "Construction, demolition, repair",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Combat Engineer",
+        "Sapper",
+        "Bridge Engineer"
+      ],
+      "timestamp": "2025-08-22T07:34:20.062667Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-gerasimov",
+      "type": "Person",
+      "uri": "https://en.wikipedia.org/wiki/Valery_Gerasimov",
+      "names": [
+        {
+          "value": "Valery Vasilyevich Gerasimov",
+          "nameType": "formal",
+          "language": "en"
+        },
+        {
+          "value": "Валерий Васильевич Герасимов",
+          "nameType": "formal",
+          "language": "ru"
+        }
+      ],
+      "birthDate": "1955-09-08",
+      "gender": "Male",
+      "nationality": "country-russia-001",
+      "personTypes": [
+        "pt-special-forces"
+      ],
+      "states": [
+        {
+          "id": "state-gerasimov-cgs",
+          "stateType": "employed",
+          "startTime": "2012-11-09T00:00:00Z",
+          "organisation": "Russian General Staff",
+          "role": "Chief of the General Staff"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.062899Z",
+      "version": "1.0"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-moscow-kremlin",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Moscow Kremlin",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Московский Кремль",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "country": "country-russia-001",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          37.6176,
+          55.752
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.061495Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-kubinka-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Kubinka Air Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Авиабаза Кубинка",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "country": "country-russia-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          36.65,
+          55.5833
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.061512Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-severodvinsk",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Severodvinsk Shipyard",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Севмаш",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "country": "country-russia-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          39.8333,
+          64.5833
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.061519Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-kaliningrad",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Kaliningrad Military District",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Калининградский военный округ",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "country": "country-russia-001",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          20.5,
+          54.7
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.061526Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-kamchatka",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Kamchatka Peninsula Military Facilities",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Военные объекты полуострова Камчатка",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "country": "country-russia-001",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          159.0,
+          56.0
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.061533Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-nizhny-tagil",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Uralvagonzavod",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Уралвагонзавод",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "country": "country-russia-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          59.97,
+          57.9189
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.061539Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-tula",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Tula Arms Plant",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Тульский оружейный завод",
+          "nameType": "official",
+          "language": "ru"
+        }
+      ],
+      "country": "country-russia-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          37.6156,
+          54.1961
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.061546Z",
+      "version": "1.0"
+    }
+  ],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:20.065499Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 60,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  },
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:20.063446",
+    "consolidatedFiles": [
+      {
+        "path": "russia\\ies4_russian_federation_military_comprehensive_Version2.json",
+        "size": 51003,
+        "processedAt": "2025-08-22T07:34:20.063446"
+      }
+    ],
+    "sourceFileCount": 1,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 7,
+      "vehicles": 27,
+      "vehicleTypes": 20,
+      "peopleTypes": 4,
+      "people": 1
+    }
+  }
+}

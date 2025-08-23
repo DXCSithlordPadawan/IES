@@ -1,0 +1,3456 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consolidated IES4-Based Iranian Military Aircraft Database",
+  "description": "Comprehensive database of Iranian military aircraft including attack and transport aircraft",
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:19.902857",
+    "consolidatedFiles": [
+      {
+        "path": "iran\\ies4_iran_aircraft_Version2.json",
+        "size": 12351,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      },
+      {
+        "path": "iran\\ies4_iran_drones_Version2.json",
+        "size": 10558,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      },
+      {
+        "path": "iran\\ies4_iran_ground_vehicles_Version2.json",
+        "size": 8145,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      },
+      {
+        "path": "iran\\ies4_iran_helicopters_Version2.json",
+        "size": 9668,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      },
+      {
+        "path": "iran\\ies4_iran_missiles_Version2.json",
+        "size": 11199,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      },
+      {
+        "path": "iran\\ies4_iran_naval_vessels_Version2.json",
+        "size": 8926,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      },
+      {
+        "path": "iran\\ies4_iran_small_arms_Version2.json",
+        "size": 12929,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      },
+      {
+        "path": "iran\\ies4_iran_special_forces_Version2.json",
+        "size": 3540,
+        "processedAt": "2025-08-22T07:34:19.902857"
+      }
+    ],
+    "sourceFileCount": 8,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 9,
+      "vehicles": 36,
+      "vehicleTypes": 22,
+      "peopleTypes": 5,
+      "representations": 2
+    }
+  },
+  "countries": [
+    {
+      "id": "country-iran",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/Iran",
+      "names": [
+        {
+          "value": "Islamic Republic of Iran",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "جمهوری اسلامی ایران",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "iso3166Alpha2": "IR",
+      "iso3166Alpha3": "IRN",
+      "telephoneCountryCode": "+98",
+      "currency": "IRR",
+      "languages": [
+        "Persian (Farsi)"
+      ],
+      "sovereignty": "Sovereign state",
+      "timestamp": "2025-08-22T07:34:19.904006Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-mehrabad-air-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Mehrabad Air Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "پایگاه هوایی مهرآباد",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          51.313333,
+          35.689167
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Primary IRIAF base",
+          "dataType": "string"
+        },
+        {
+          "name": "location",
+          "value": "Tehran, Iran",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "F-14, F-4, transport aircraft",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904331Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-shiraz-air-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Shiraz Air Base",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          52.589722,
+          29.539167
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Fighter aircraft operations",
+          "dataType": "string"
+        },
+        {
+          "name": "location",
+          "value": "Shiraz, Fars Province, Iran",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904343Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-shahed-aviation",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Shahed Aviation Industries",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 3,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "UAV research and production",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.907097Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-dorud-factory",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Dorud Vehicle Manufacturing",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 3,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Armored vehicle production",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.909315Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-army-aviation-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Iranian Army Aviation Base",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 2,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Helicopter operations and maintenance",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "Attack and transport helicopters",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.911484Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-semnan-space-center",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Semnan Space Center",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          53.920833,
+          35.234722
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Missile and space launch facility",
+          "dataType": "string"
+        },
+        {
+          "name": "location",
+          "value": "Semnan Province, Iran",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.914356Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-bandar-abbas-naval-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Bandar Abbas Naval Base",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          56.2808,
+          27.1865
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Primary Iranian Navy base",
+          "dataType": "string"
+        },
+        {
+          "name": "location",
+          "value": "Bandar Abbas, Hormozgan Province",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.923290Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-dio-tehran",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Defense Industries Organization Headquarters",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "سازمان صنایع دفاع",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          51.42191,
+          35.729054
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Small arms research and production",
+          "dataType": "string"
+        },
+        {
+          "name": "location",
+          "value": "Tehran, Iran",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926382Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "area-imam-ali-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Imam Ali Base",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-iran",
+      "administrativeLevel": 2,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Special forces training center",
+          "dataType": "string"
+        },
+        {
+          "name": "units_based",
+          "value": "Saberin Special Forces",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.929598Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_special_forces_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "aircraft-f-14-tomcat",
+      "type": "Vehicle",
+      "vehicleType": "fighter-aircraft",
+      "names": [
+        {
+          "value": "F-14A Tomcat (IRIAF)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Grumman (USA)",
+      "model": "F-14A Tomcat",
+      "year": 1974,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "40-50 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 2.34",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "725 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "AIM-54 Phoenix, AIM-7 Sparrow, AIM-9 Sidewinder",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 (pilot, radar intercept officer)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1976",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Air Force",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Locally upgraded and maintained",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904530Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "aircraft-f-4e-phantom",
+      "type": "Vehicle",
+      "vehicleType": "fighter-aircraft",
+      "names": [
+        {
+          "value": "F-4E Phantom II (IRIAF)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "McDonnell Douglas (USA)",
+      "model": "F-4E Phantom II",
+      "year": 1967,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "60-70 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 2.23",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "680 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "AIM-7 Sparrow, AIM-9 Sidewinder, bombs, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 (pilot, weapon systems officer)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1968",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Air Force",
+          "dataType": "string"
+        },
+        {
+          "name": "modifications",
+          "value": "Locally upgraded avionics and weapons systems",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904539Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "aircraft-kowsar",
+      "type": "Vehicle",
+      "vehicleType": "fighter-aircraft",
+      "names": [
+        {
+          "value": "Kowsar Fighter Jet",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "کوثر",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iran Aircraft Manufacturing Industrial Company",
+      "model": "Kowsar",
+      "year": 2018,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "Limited production",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 1.1",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Cannon, air-to-air missiles, bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "1 or 2 (single/dual seat variants)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2018",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Air Force",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "F-5 Tiger II design",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Digital avionics, modern cockpit displays",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904544Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "aircraft-su-24-fencer",
+      "type": "Vehicle",
+      "vehicleType": "attack-aircraft",
+      "names": [
+        {
+          "value": "Su-24 Fencer (IRIAF)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Sukhoi (Russia)",
+      "model": "Su-24MK Fencer",
+      "year": 1974,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "30-40 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 2.18",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "560 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "GSh-6-23M cannon, bombs, missiles, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 (pilot, weapon systems officer)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1991",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Air Force",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "All-weather attack aircraft",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904549Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "aircraft-c-130-hercules",
+      "type": "Vehicle",
+      "vehicleType": "transport-aircraft",
+      "names": [
+        {
+          "value": "C-130H Hercules (IRIAF)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Lockheed (USA)",
+      "model": "C-130H Hercules",
+      "year": 1965,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "20-25 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "592 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "3,800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "19,050 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "5 (2 pilots, navigator, flight engineer, loadmaster)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Air Force",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Military transport, cargo, personnel",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904554Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "aircraft-il-76-candid",
+      "type": "Vehicle",
+      "vehicleType": "transport-aircraft",
+      "names": [
+        {
+          "value": "Il-76MD Candid (IRIAF)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Ilyushin (Russia)",
+      "model": "Il-76MD",
+      "year": 1971,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "10-15 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "850 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "4,000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "47,000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "7",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1990s",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Air Force",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Strategic transport, heavy cargo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.904559Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "drone-shahed-129",
+      "type": "Vehicle",
+      "vehicleType": "attack-drone",
+      "names": [
+        {
+          "value": "Shahed-129 Combat Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "شاهد-۱۲۹",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Shahed Aviation Industries",
+      "model": "Shahed-129",
+      "year": 2012,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "wingspan",
+          "value": "16 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "8 m",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "200 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "24 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "1,700 km",
+          "dataType": "string"
+        },
+        {
+          "name": "ceiling",
+          "value": "7,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "400 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "4x Sadid missiles or bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2012",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Aerospace Force",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.907287Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "drone-shahed-136",
+      "type": "Vehicle",
+      "vehicleType": "kamikaze-drone",
+      "names": [
+        {
+          "value": "Shahed-136 Loitering Munition",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "شاهد-۱۳۶",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Shahed Aviation Industries",
+      "model": "Shahed-136",
+      "year": 2021,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "wingspan",
+          "value": "2.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "3.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "200 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "40 kg explosive",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "2,500 km",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "185 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "GPS/INS navigation",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2021",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Aerospace Force",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "One-way attack missions",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.907297Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "drone-fotros",
+      "type": "Vehicle",
+      "vehicleType": "surveillance-drone",
+      "names": [
+        {
+          "value": "Fotros Surveillance Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "فطرس",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iran Aircraft Manufacturing Industrial Company",
+      "model": "Fotros",
+      "year": 2013,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "wingspan",
+          "value": "26 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "14 m",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "200 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "30 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "2,000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "ceiling",
+          "value": "8,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "700 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "EO/IR cameras, SAR radar",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2013",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC, Iranian Army",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.907302Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "drone-mohajer-6",
+      "type": "Vehicle",
+      "vehicleType": "attack-drone",
+      "names": [
+        {
+          "value": "Mohajer-6 Combat Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "مهاجر-۶",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Qods Aviation Industries",
+      "model": "Mohajer-6",
+      "year": 2017,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "wingspan",
+          "value": "12 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "6 m",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "200 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "12 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "600 km",
+          "dataType": "string"
+        },
+        {
+          "name": "ceiling",
+          "value": "5,500 m",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "40 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "2x Almas missiles or bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2017",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC, Iranian Army",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.907307Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "drone-ababil-3",
+      "type": "Vehicle",
+      "vehicleType": "surveillance-drone",
+      "names": [
+        {
+          "value": "Ababil-3 Surveillance Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "ابابیل-۳",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iran Aircraft Manufacturing Industrial Company",
+      "model": "Ababil-3",
+      "year": 2006,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "wingspan",
+          "value": "3.25 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "2.9 m",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "290 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "4.5 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "150 km",
+          "dataType": "string"
+        },
+        {
+          "name": "ceiling",
+          "value": "4,500 m",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "40 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "Day/night cameras",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2006",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC, Iranian Army",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.907311Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "tank-zulfiqar-3",
+      "type": "Vehicle",
+      "vehicleType": "main-battle-tank",
+      "names": [
+        {
+          "value": "Zulfiqar-3 Main Battle Tank",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "ذوالفقار-۳",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Defense Industries Organization",
+      "model": "Zulfiqar-3",
+      "year": 2016,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "36 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "main_gun",
+          "value": "125mm smoothbore",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "12.7mm machine gun, 7.62mm coaxial",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Composite with ERA",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "780 hp diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "65 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "400 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2016",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army, IRGC Ground Forces",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.909490Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "tank-karrar",
+      "type": "Vehicle",
+      "vehicleType": "main-battle-tank",
+      "names": [
+        {
+          "value": "Karrar Main Battle Tank",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "کرار",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Defense Industries Organization",
+      "model": "Karrar",
+      "year": 2017,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "48 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "main_gun",
+          "value": "125mm smoothbore",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Composite with ERA and active protection",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "1000 hp diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "65 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2017",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.909499Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "apc-boragh",
+      "type": "Vehicle",
+      "vehicleType": "armored-personnel-carrier",
+      "names": [
+        {
+          "value": "Boragh Armored Personnel Carrier",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "براق",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Defense Industries Organization",
+      "model": "Boragh",
+      "year": 1997,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "3 + 8 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "13 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "12.7mm machine gun",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "285 hp diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "65 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1997",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army, IRGC",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.909504Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "vehicle-safir-jeep",
+      "type": "Vehicle",
+      "vehicleType": "wheeled-vehicle",
+      "names": [
+        {
+          "value": "Safir 4x4 Vehicle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "سفیر",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iran Khodro",
+      "model": "Safir",
+      "year": 2000,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "4-6",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "2.5 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Various (machine gun, TOW missile)",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "120 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2000",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army, IRGC, Police",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.909509Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "helicopter-ah-1j-cobra",
+      "type": "Vehicle",
+      "vehicleType": "attack-helicopter",
+      "names": [
+        {
+          "value": "AH-1J SeaCobra (IRIAA)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Bell Helicopter (USA)",
+      "model": "AH-1J SeaCobra",
+      "year": 1969,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "50-60 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "315 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "507 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "M197 20mm cannon, TOW missiles, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 (pilot, gunner)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army Aviation",
+          "dataType": "string"
+        },
+        {
+          "name": "modifications",
+          "value": "Locally upgraded avionics and weapons",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.911662Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "helicopter-toufan",
+      "type": "Vehicle",
+      "vehicleType": "attack-helicopter",
+      "names": [
+        {
+          "value": "Toufan Attack Helicopter",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "طوفان",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iran Aircraft Manufacturing Industrial Company",
+      "model": "Toufan",
+      "year": 2010,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "Limited production",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "320 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "20mm cannon, anti-tank missiles, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 (pilot, gunner)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army Aviation, IRGC",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "AH-1 Cobra upgrade",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Night vision, upgraded avionics",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.911671Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "helicopter-ch-47c-chinook",
+      "type": "Vehicle",
+      "vehicleType": "transport-helicopter",
+      "names": [
+        {
+          "value": "CH-47C Chinook (IRIAA)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Boeing (USA)",
+      "model": "CH-47C Chinook",
+      "year": 1962,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "20-30 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "315 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "741 km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "12,700 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3-4",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "33-55 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army Aviation",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Heavy lift transport",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.911676Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "helicopter-uh-1h-huey",
+      "type": "Vehicle",
+      "vehicleType": "transport-helicopter",
+      "names": [
+        {
+          "value": "UH-1H Huey (IRIAA)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Bell Helicopter (USA)",
+      "model": "UH-1H Iroquois",
+      "year": 1956,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "40-50 operational",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "204 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "511 km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "1,760 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "1-4",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "11-14 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1970s",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army Aviation, IRGC",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Utility transport, medical evacuation",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.911681Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "helicopter-shahed-285",
+      "type": "Vehicle",
+      "vehicleType": "transport-helicopter",
+      "names": [
+        {
+          "value": "Shahed-285 Helicopter",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "شاهد-۲۸۵",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iran Aircraft Manufacturing Industrial Company",
+      "model": "Shahed-285",
+      "year": 2009,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "Limited production",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "200 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "400 km",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "8 passengers",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2009",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian forces",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "Bell 206 design",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Light utility transport",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.911686Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "missile-shahab-3",
+      "type": "Vehicle",
+      "vehicleType": "ballistic-missile",
+      "names": [
+        {
+          "value": "Shahab-3 Ballistic Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "شهاب-۳",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Aerospace Industries Organization",
+      "model": "Shahab-3",
+      "year": 1998,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "range",
+          "value": "1,300-2,000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "760-1,000 kg conventional",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial with terminal guidance",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_platform",
+          "value": "Mobile launcher",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2003",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Aerospace Force",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "North Korean Nodong missile",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.914540Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "missile-sejjil",
+      "type": "Vehicle",
+      "vehicleType": "ballistic-missile",
+      "names": [
+        {
+          "value": "Sejjil Medium-Range Ballistic Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "سجیل",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Aerospace Industries Organization",
+      "model": "Sejjil-2",
+      "year": 2009,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "range",
+          "value": "2,000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "650 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Solid fuel",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial navigation",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_platform",
+          "value": "Mobile launcher",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2009",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Aerospace Force",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Solid fuel for rapid deployment",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.914549Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "missile-fateh-110",
+      "type": "Vehicle",
+      "vehicleType": "ballistic-missile",
+      "names": [
+        {
+          "value": "Fateh-110 Short-Range Ballistic Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "فاتح-۱۱۰",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Aerospace Industries Organization",
+      "model": "Fateh-110",
+      "year": 2002,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "range",
+          "value": "200-300 km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "500 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Solid fuel",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial with GPS",
+          "dataType": "string"
+        },
+        {
+          "name": "accuracy",
+          "value": "CEP 10m",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_platform",
+          "value": "Mobile launcher",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2002",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC, Iranian Army",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.914554Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "missile-soumar",
+      "type": "Vehicle",
+      "vehicleType": "cruise-missile",
+      "names": [
+        {
+          "value": "Soumar Cruise Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "سومار",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Aerospace Industries Organization",
+      "model": "Soumar",
+      "year": 2015,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "range",
+          "value": "2,000+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "200 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Terrain-following radar, GPS/INS",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_platform",
+          "value": "Air, ground, naval",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2015",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Aerospace Force",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "Kh-55 cruise missile design",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.914559Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "missile-qader",
+      "type": "Vehicle",
+      "vehicleType": "anti-ship-missile",
+      "names": [
+        {
+          "value": "Qader Anti-Ship Cruise Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "قادر",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Aerospace Industries Organization",
+      "model": "Qader",
+      "year": 2011,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "range",
+          "value": "300 km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "165 kg semi-armor piercing",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Active radar homing",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_platform",
+          "value": "Coastal battery, naval vessels",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2011",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Navy, Iranian Navy",
+          "dataType": "string"
+        },
+        {
+          "name": "target",
+          "value": "Naval vessels up to destroyer size",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.914564Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "missile-zolfaghar",
+      "type": "Vehicle",
+      "vehicleType": "ballistic-missile",
+      "names": [
+        {
+          "value": "Zolfaghar Short-Range Ballistic Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "ذوالفقار",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Aerospace Industries Organization",
+      "model": "Zolfaghar",
+      "year": 2016,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "range",
+          "value": "700 km",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "500 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Solid fuel",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial with terminal guidance",
+          "dataType": "string"
+        },
+        {
+          "name": "accuracy",
+          "value": "High precision",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_platform",
+          "value": "Mobile launcher",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2016",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Aerospace Force",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "Fateh-110 family",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.914569Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "frigate-jamaran",
+      "type": "Vehicle",
+      "vehicleType": "frigate",
+      "names": [
+        {
+          "value": "IRIS Jamaran (F-76)",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "جماران",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iranian Navy",
+      "model": "Moudge-class",
+      "year": 2010,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "displacement",
+          "value": "1,420 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "94.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "11 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "120-140",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "30 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "76mm gun, Fajr-27 missiles, torpedoes",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "Asr radar, sonar systems",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Navy",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Multi-purpose frigate",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.923502Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "submarine-fateh",
+      "type": "Vehicle",
+      "vehicleType": "submarine",
+      "names": [
+        {
+          "value": "IRIS Fateh (S-121)",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "فاتح",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iranian Navy",
+      "model": "Fateh-class",
+      "year": 2019,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "displacement",
+          "value": "600 tonnes (submerged)",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "48 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "6 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "19",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_surface",
+          "value": "11 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_submerged",
+          "value": "23 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "diving_depth",
+          "value": "200 m",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "4x 533mm torpedo tubes",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2019",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Navy",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Coastal defense submarine",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.923512Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "fac-peykaap-ii",
+      "type": "Vehicle",
+      "vehicleType": "fast-attack-craft",
+      "names": [
+        {
+          "value": "Peykaap II Fast Attack Craft",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "پیکاپ",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Iranian Navy",
+      "model": "Peykaap II-class",
+      "year": 1995,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "displacement",
+          "value": "275 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "47 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "7.4 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "30",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "32 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "76mm gun, C-802 anti-ship missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1995",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Republic of Iran Navy",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Fast attack and patrol",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.923517Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "speedboat-seraj-1",
+      "type": "Vehicle",
+      "vehicleType": "fast-attack-craft",
+      "names": [
+        {
+          "value": "Seraj-1 Fast Attack Speedboat",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "سراج-۱",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "IRGC Navy",
+      "model": "Seraj-1",
+      "year": 2010,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "15 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "4-6",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "80+ knots",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Machine guns, rockets, mines",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Navy",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Swarm attack tactics",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.923522Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "weapon-khaybar-kh2002",
+      "type": "Vehicle",
+      "vehicleType": "assault-rifle",
+      "names": [
+        {
+          "value": "Khaybar KH-2002",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "خیبر",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Defense Industries Organization",
+      "model": "KH-2002",
+      "year": 2003,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated, rotating bolt",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "850 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "400m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.9 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Bullpup",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2003",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Islamic Revolutionary Guard Corps, Iranian Army",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "FAMAS design influence",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926599Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "weapon-fateh",
+      "type": "Vehicle",
+      "vehicleType": "assault-rifle",
+      "names": [
+        {
+          "value": "Fateh Assault Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "فاتح",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Defense Industries Organization",
+      "model": "Fateh",
+      "year": 2005,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Conventional",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2005",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Armed Forces",
+          "dataType": "string"
+        },
+        {
+          "name": "based_on",
+          "value": "AK-74 mechanism with M16 aesthetics",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926611Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "weapon-masaf",
+      "type": "Vehicle",
+      "vehicleType": "assault-rifle",
+      "names": [
+        {
+          "value": "Masaf Assault Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "مصاف",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Defense Industries Organization",
+      "model": "Masaf",
+      "year": 2010,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Modular design",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Special Forces",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Picatinny rails, adjustable stock",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926618Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "weapon-steyr-hs50",
+      "type": "Vehicle",
+      "vehicleType": "sniper-rifle",
+      "names": [
+        {
+          "value": "Steyr HS .50 (Iranian Service)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Steyr Mannlicher (Austria)",
+      "model": "HS .50",
+      "year": 2000,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": ".50 BMG (12.7×99mm)",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Bolt-action",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "1,500m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "10 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "12.4 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Anti-materiel rifle",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2000",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army Snipers",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926625Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "weapon-nakhjir",
+      "type": "Vehicle",
+      "vehicleType": "sniper-rifle",
+      "names": [
+        {
+          "value": "Nakhjir Anti-Material Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "نخجیر",
+          "nameType": "official",
+          "language": "fa"
+        }
+      ],
+      "make": "Defense Industries Organization",
+      "model": "Nakhjir",
+      "year": 2006,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": ".50 BMG (12.7×99mm)",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Semi-automatic",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "1,800m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "5 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "18 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Anti-materiel/anti-personnel",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2006",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "IRGC Special Forces",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926632Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "weapon-pkm-iran",
+      "type": "Vehicle",
+      "vehicleType": "machine-gun",
+      "names": [
+        {
+          "value": "PKM Machine Gun (Iranian Service)",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Kalashnikov Concern (Russia)",
+      "model": "PKM",
+      "year": 1969,
+      "owner": "country-iran",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×54mmR",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "650-750 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "1,000m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "7.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "General purpose machine gun",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1980",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Iranian Army, IRGC",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926639Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "fighter-aircraft",
+      "name": "Fighter Aircraft",
+      "category": "aircraft",
+      "subcategory": "combat aircraft",
+      "description": "Military aircraft designed for air-to-air combat",
+      "timestamp": "2025-08-22T07:34:19.904769Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "attack-aircraft",
+      "name": "Attack Aircraft",
+      "category": "aircraft",
+      "subcategory": "ground attack",
+      "description": "Military aircraft designed for ground attack missions",
+      "timestamp": "2025-08-22T07:34:19.904782Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "cargo transport",
+      "description": "Aircraft designed for cargo and personnel transport",
+      "timestamp": "2025-08-22T07:34:19.904788Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "attack-drone",
+      "name": "Attack Drone",
+      "category": "aircraft",
+      "subcategory": "unmanned aerial vehicle",
+      "description": "Armed unmanned aerial vehicles for combat missions",
+      "timestamp": "2025-08-22T07:34:19.907480Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "surveillance-drone",
+      "name": "Surveillance Drone",
+      "category": "aircraft",
+      "subcategory": "unmanned aerial vehicle",
+      "description": "Unmanned aerial vehicles for reconnaissance and surveillance",
+      "timestamp": "2025-08-22T07:34:19.907491Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "kamikaze-drone",
+      "name": "Kamikaze Drone",
+      "category": "aircraft",
+      "subcategory": "loitering munition",
+      "description": "Single-use attack drones designed to destroy targets",
+      "timestamp": "2025-08-22T07:34:19.907497Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "armored vehicle",
+      "subcategory": "tank",
+      "description": "Heavily armored fighting vehicle with main gun",
+      "timestamp": "2025-08-22T07:34:19.909674Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "armored-personnel-carrier",
+      "name": "Armored Personnel Carrier",
+      "category": "armored vehicle",
+      "subcategory": "APC",
+      "description": "Armored vehicle for transporting infantry",
+      "timestamp": "2025-08-22T07:34:19.909684Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "armored vehicle",
+      "subcategory": "scout",
+      "description": "Lightly armored vehicle for reconnaissance missions",
+      "timestamp": "2025-08-22T07:34:19.909690Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "wheeled-vehicle",
+      "name": "Wheeled Armored Vehicle",
+      "category": "armored vehicle",
+      "subcategory": "wheeled",
+      "description": "Wheeled military vehicles for various missions",
+      "timestamp": "2025-08-22T07:34:19.909695Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_ground_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopters designed for close air support and anti-tank missions",
+      "timestamp": "2025-08-22T07:34:19.911857Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Helicopters designed for troop transport and cargo operations",
+      "timestamp": "2025-08-22T07:34:19.911869Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_helicopters_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "ballistic-missile",
+      "name": "Ballistic Missile",
+      "category": "weapon",
+      "subcategory": "missile",
+      "description": "Missiles that follow a ballistic trajectory",
+      "timestamp": "2025-08-22T07:34:19.914754Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "cruise-missile",
+      "name": "Cruise Missile",
+      "category": "weapon",
+      "subcategory": "missile",
+      "description": "Guided missiles that use aerodynamic lift",
+      "timestamp": "2025-08-22T07:34:19.914766Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "anti-ship-missile",
+      "name": "Anti-Ship Missile",
+      "category": "weapon",
+      "subcategory": "missile",
+      "description": "Missiles designed to attack naval vessels",
+      "timestamp": "2025-08-22T07:34:19.914772Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "frigate",
+      "name": "Frigate",
+      "category": "naval vessel",
+      "subcategory": "warship",
+      "description": "Medium-sized warship for escort and patrol duties",
+      "timestamp": "2025-08-22T07:34:19.923732Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "corvette",
+      "name": "Corvette",
+      "category": "naval vessel",
+      "subcategory": "warship",
+      "description": "Small warship for coastal defense",
+      "timestamp": "2025-08-22T07:34:19.923762Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "submarine",
+      "name": "Submarine",
+      "category": "naval vessel",
+      "subcategory": "underwater",
+      "description": "Underwater naval vessel",
+      "timestamp": "2025-08-22T07:34:19.923771Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "fast-attack-craft",
+      "name": "Fast Attack Craft",
+      "category": "naval vessel",
+      "subcategory": "patrol boat",
+      "description": "Small, fast naval vessels armed with missiles or guns",
+      "timestamp": "2025-08-22T07:34:19.923785Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_naval_vessels_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "assault-rifle",
+      "name": "Assault Rifle",
+      "category": "weapon",
+      "subcategory": "automatic rifle",
+      "description": "Selective-fire rifles using intermediate cartridges",
+      "characteristics": [
+        {
+          "name": "fire_modes",
+          "value": "selective fire",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926911Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "sniper-rifle",
+      "name": "Sniper Rifle",
+      "category": "weapon",
+      "subcategory": "precision rifle",
+      "description": "High-precision long-range rifles",
+      "characteristics": [
+        {
+          "name": "accuracy",
+          "value": "high precision",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926926Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "machine-gun",
+      "name": "Machine Gun",
+      "category": "weapon",
+      "subcategory": "automatic weapon",
+      "description": "Fully automatic weapons for sustained fire",
+      "characteristics": [
+        {
+          "name": "fire_rate",
+          "value": "high sustained fire",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.926934Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "infantry-soldier",
+      "name": "Infantry Soldier",
+      "category": "professional",
+      "subcategory": "military personnel",
+      "description": "Front-line combat troops equipped with small arms",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground combat operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.927145Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "special-forces",
+      "name": "Special Forces Operator",
+      "category": "professional",
+      "subcategory": "elite military personnel",
+      "description": "Highly trained military personnel for specialized operations",
+      "timestamp": "2025-08-22T07:34:19.927158Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "quds-force-operative",
+      "name": "Quds Force Operative",
+      "category": "professional",
+      "subcategory": "special forces",
+      "description": "Elite special operations forces of the IRGC",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "Advanced special operations",
+          "dataType": "string"
+        },
+        {
+          "name": "specialization",
+          "value": "Unconventional warfare, foreign operations",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Special Operations Officer",
+        "Intelligence Operative",
+        "Unconventional Warfare Specialist"
+      ],
+      "timestamp": "2025-08-22T07:34:19.929806Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_special_forces_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "saberin-commando",
+      "name": "Saberin Special Forces",
+      "category": "professional",
+      "subcategory": "special forces",
+      "description": "Elite special forces unit of the Iranian Army",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "Advanced combat training",
+          "dataType": "string"
+        },
+        {
+          "name": "specialization",
+          "value": "Direct action, counter-terrorism",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Commando Officer",
+        "Sniper",
+        "Demolitions Specialist"
+      ],
+      "timestamp": "2025-08-22T07:34:19.929820Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_special_forces_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "takavar-naval-special-forces",
+      "name": "Takavar Naval Special Forces",
+      "category": "professional",
+      "subcategory": "naval special forces",
+      "description": "Elite naval special operations forces",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "Advanced naval combat",
+          "dataType": "string"
+        },
+        {
+          "name": "specialization",
+          "value": "Maritime operations, underwater warfare",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Combat Diver",
+        "Maritime Assault Specialist",
+        "Naval Intelligence Operative"
+      ],
+      "timestamp": "2025-08-22T07:34:19.929828Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "iran\\ies4_iran_special_forces_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    }
+  ],
+  "people": [],
+  "representations": [
+    {
+      "id": "rep-iriaf-website",
+      "type": "webpage",
+      "title": "Islamic Republic of Iran Air Force",
+      "description": "Official information about Iranian Air Force",
+      "createdDate": "2020-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:19.904980Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    },
+    {
+      "id": "rep-dio-website",
+      "type": "webpage",
+      "url": "http://www.dio.ir",
+      "title": "Defense Industries Organization Official Website",
+      "description": "Official website of Iran's Defense Industries Organization",
+      "createdDate": "2020-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:19.927365Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "iran\\ies4_iran_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.902857"
+    }
+  ],
+  "organizations": [],
+  "events": [],
+  "activities": [],
+  "facilities": [],
+  "items": [],
+  "locations": [],
+  "relationships": [],
+  "ammunition": [],
+  "electronicSystems": [],
+  "weapons": [],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:19.944525Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 75,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,2018 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IES4-Based Finland Military Comprehensive Database",
+  "description": "Complete military capabilities database for Finland based on the UK Government's Information Exchange Standard (IES4)",
+  "countries": [
+    {
+      "id": "country-finland",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/Finland",
+      "names": [
+        {
+          "value": "Republic of Finland",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Finland",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "Suomen tasavalta",
+          "nameType": "official",
+          "language": "fi"
+        },
+        {
+          "value": "Suomi",
+          "nameType": "common",
+          "language": "fi"
+        },
+        {
+          "value": "Republiken Finland",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "iso3166Alpha2": "FI",
+      "iso3166Alpha3": "FIN",
+      "telephoneCountryCode": "+358",
+      "currency": "EUR",
+      "languages": [
+        "Finnish",
+        "Swedish"
+      ],
+      "sovereignty": "Sovereign state",
+      "geographicBounds": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              19.07,
+              59.8
+            ],
+            [
+              31.59,
+              59.8
+            ],
+            [
+              31.59,
+              70.09
+            ],
+            [
+              19.07,
+              70.09
+            ],
+            [
+              19.07,
+              59.8
+            ]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776385Z",
+      "version": "1.0"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "vt-small-arms",
+      "name": "Small Arms Weapon",
+      "category": "weapon",
+      "subcategory": "infantry weapon",
+      "description": "Personal weapons carried by individual soldiers",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "man-portable",
+          "dataType": "string"
+        },
+        {
+          "name": "crew_size",
+          "value": "1-2 personnel",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777644Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopters designed for attacking ground targets",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "close air support",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles, rockets, cannons",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777658Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Helicopters designed for troop and cargo transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "tactical airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "personnel and cargo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777666Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-fighter-aircraft",
+      "name": "Fighter Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Military aircraft designed for air-to-air and air-to-ground combat",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "air superiority",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "supersonic",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777673Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Aircraft designed for military airlift operations",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "strategic airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "large payload",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777680Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-missile-system",
+      "name": "Missile System",
+      "category": "weapon",
+      "subcategory": "guided munition",
+      "description": "Self-propelled guided weapons",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "guided targeting",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "variable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777687Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radar-system",
+      "name": "Radar System",
+      "category": "sensor",
+      "subcategory": "electronic warfare",
+      "description": "Radio detection and ranging systems",
+      "characteristics": [
+        {
+          "name": "detection_method",
+          "value": "radio waves",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "surveillance and tracking",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777695Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-air-defense",
+      "name": "Air Defense System",
+      "category": "weapon",
+      "subcategory": "anti-aircraft",
+      "description": "Systems designed to counter aerial threats",
+      "characteristics": [
+        {
+          "name": "target_type",
+          "value": "aircraft and missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "engagement_range",
+          "value": "variable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777702Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-artillery",
+      "name": "Artillery System",
+      "category": "weapon",
+      "subcategory": "indirect fire",
+      "description": "Large-caliber crew-served weapons for indirect fire",
+      "characteristics": [
+        {
+          "name": "fire_type",
+          "value": "indirect fire support",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "towed or self-propelled",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777709Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-mlrs",
+      "name": "Multiple Launch Rocket System",
+      "category": "weapon",
+      "subcategory": "rocket artillery",
+      "description": "Systems that fire multiple rockets in rapid succession",
+      "characteristics": [
+        {
+          "name": "fire_pattern",
+          "value": "area saturation",
+          "dataType": "string"
+        },
+        {
+          "name": "reload_method",
+          "value": "pod replacement",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777722Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "vehicle",
+      "subcategory": "armored fighting vehicle",
+      "description": "Heavily armored combat vehicles with main guns",
+      "characteristics": [
+        {
+          "name": "armor_type",
+          "value": "composite armor",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "tank gun",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777729Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "vehicle",
+      "subcategory": "armored fighting vehicle",
+      "description": "Vehicles designed for reconnaissance and surveillance",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "reconnaissance",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "high speed",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777736Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-wheeled-vehicle",
+      "name": "Wheeled Military Vehicle",
+      "category": "vehicle",
+      "subcategory": "tactical vehicle",
+      "description": "Military vehicles with wheeled mobility",
+      "characteristics": [
+        {
+          "name": "mobility_type",
+          "value": "wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "terrain_capability",
+          "value": "road and off-road",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777743Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-tracked-vehicle",
+      "name": "Tracked Military Vehicle",
+      "category": "vehicle",
+      "subcategory": "tactical vehicle",
+      "description": "Military vehicles with tracked mobility",
+      "characteristics": [
+        {
+          "name": "mobility_type",
+          "value": "tracked",
+          "dataType": "string"
+        },
+        {
+          "name": "terrain_capability",
+          "value": "all-terrain",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777749Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-watercraft",
+      "name": "Military Watercraft",
+      "category": "boat",
+      "subcategory": "naval vessel",
+      "description": "Military vessels for naval operations",
+      "characteristics": [
+        {
+          "name": "operating_environment",
+          "value": "maritime",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "marine engines",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777756Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-drone",
+      "name": "Unmanned Aerial Vehicle",
+      "category": "aircraft",
+      "subcategory": "unmanned system",
+      "description": "Remotely piloted or autonomous aircraft",
+      "characteristics": [
+        {
+          "name": "crew_requirement",
+          "value": "unmanned",
+          "dataType": "string"
+        },
+        {
+          "name": "control_method",
+          "value": "remote or autonomous",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777763Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-electronic-warfare",
+      "name": "Electronic Warfare System",
+      "category": "sensor",
+      "subcategory": "electronic warfare",
+      "description": "Systems for electronic attack, protection, and support",
+      "characteristics": [
+        {
+          "name": "warfare_type",
+          "value": "electronic spectrum",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "jamming, interception, analysis",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777770Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radio-system",
+      "name": "Military Radio System",
+      "category": "sensor",
+      "subcategory": "communications",
+      "description": "Military communications equipment",
+      "characteristics": [
+        {
+          "name": "communication_type",
+          "value": "radio frequency",
+          "dataType": "string"
+        },
+        {
+          "name": "security_level",
+          "value": "encrypted",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777777Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-personal-equipment",
+      "name": "Personal Military Equipment",
+      "category": "other",
+      "subcategory": "individual equipment",
+      "description": "Personal equipment issued to military personnel",
+      "characteristics": [
+        {
+          "name": "user_level",
+          "value": "individual soldier",
+          "dataType": "string"
+        },
+        {
+          "name": "portability",
+          "value": "man-portable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777784Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-ammunition",
+      "name": "Military Ammunition",
+      "category": "weapon",
+      "subcategory": "munition",
+      "description": "Projectiles and explosives for military weapons",
+      "characteristics": [
+        {
+          "name": "function",
+          "value": "projectile or explosive",
+          "dataType": "string"
+        },
+        {
+          "name": "storage_requirement",
+          "value": "controlled environment",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777793Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "weapon-rk-62",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/RK_62",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "RK 62 Assault Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Rynnäkkökivääri 62",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "make": "Valmet",
+      "model": "RK 62",
+      "year": 1962,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated, rotating bolt",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "300-400m",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "650 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Primary service rifle",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777239Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-rk-95",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/RK_95",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "RK 95 TP Assault Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Rynnäkkökivääri 95 TP",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "make": "Sako",
+      "model": "RK 95 TP",
+      "year": 1995,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated, rotating bolt",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "400m",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "700 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Conventional",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777255Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-tkiv-85",
+      "type": "Vehicle",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "TKIV 85 Sniper Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Tarkkuuskivääri 85",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "make": "Sako",
+      "model": "TRG-42",
+      "year": 1985,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": ".338 Lapua Magnum",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Bolt-action",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "1500m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "5 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Long-range precision",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777262Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-nh90",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/NHIndustries_NH90",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "NH90 TTH",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Tactical Transport Helicopter",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "NHIndustries",
+      "model": "NH90 TTH",
+      "year": 2008,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "2-3",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "20 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "2500 kg internal",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "300 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "20",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777269Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-md500",
+      "type": "Vehicle",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "MD 500 Training Helicopter",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "McDonnell Douglas",
+      "model": "MD 500",
+      "year": 1980,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "1-2",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "4",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Training and liaison",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "7",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777275Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-f18-hornet",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/McDonnell_Douglas_F/A-18_Hornet",
+      "vehicleType": "vt-fighter-aircraft",
+      "names": [
+        {
+          "value": "F/A-18C/D Hornet",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Hornet",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "McDonnell Douglas",
+      "model": "F/A-18C/D",
+      "year": 1995,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "1 (C) or 2 (D)",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 1.8",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "740 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "M61 Vulcan cannon, missiles, bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "55",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Multi-role fighter",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777282Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-f35a",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II",
+      "vehicleType": "vt-fighter-aircraft",
+      "names": [
+        {
+          "value": "F-35A Lightning II",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Lightning II",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "F-35A",
+      "year": 2025,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "1",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 1.6",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "1239 km",
+          "dataType": "string"
+        },
+        {
+          "name": "stealth_capability",
+          "value": "Low observable",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "64 (ordered)",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Replacing F/A-18 Hornet",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777289Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-casa-295",
+      "type": "Vehicle",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "CASA C-295M",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Airbus Defence",
+      "model": "C-295M",
+      "year": 2008,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "9250 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "71 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "5630 km",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "3",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777295Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-nasams",
+      "type": "Vehicle",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "NASAMS II",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Norwegian Advanced Surface-to-Air Missile System",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Kongsberg/Raytheon",
+      "model": "NASAMS II",
+      "year": 2012,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "missile_type",
+          "value": "AIM-120 AMRAAM",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "25+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "target_type",
+          "value": "Aircraft and cruise missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Active radar homing",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777301Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-spike",
+      "type": "Vehicle",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "Spike LR Anti-Tank Missile",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Rafael Advanced Defense Systems",
+      "model": "Spike LR",
+      "year": 2006,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "missile_type",
+          "value": "Anti-tank guided missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "4 km",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Electro-optical/IIR",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "HEAT",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777307Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radar-giraffe-amb",
+      "type": "Vehicle",
+      "vehicleType": "vt-radar-system",
+      "names": [
+        {
+          "value": "Giraffe AMB Radar",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Saab",
+      "model": "Giraffe AMB",
+      "year": 2010,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "frequency_band",
+          "value": "C-band",
+          "dataType": "string"
+        },
+        {
+          "name": "detection_range",
+          "value": "120 km",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Mobile",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Air surveillance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777314Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-k9-thunder",
+      "type": "Vehicle",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "K9 Thunder Self-Propelled Howitzer",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "K9 Moukari",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "make": "Hanwha Systems",
+      "model": "K9 Thunder",
+      "year": 2017,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "155mm",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "40+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "6-8 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "5",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "48",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777320Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-130-k-54",
+      "type": "Vehicle",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "130 K 54 Field Gun",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Tampella",
+      "model": "130 K 54",
+      "year": 1954,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "130mm",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "27 km",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "7700 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "type",
+          "value": "Towed artillery",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777326Z",
+      "version": "1.0"
+    },
+    {
+      "id": "mlrs-m270",
+      "type": "Vehicle",
+      "vehicleType": "vt-mlrs",
+      "names": [
+        {
+          "value": "M270 MLRS",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Multiple Launch Rocket System",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "M270A1",
+      "year": 2021,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "rocket_type",
+          "value": "M31 GMLRS",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "70+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "launcher_pods",
+          "value": "2 pods, 6 rockets each",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "GPS/INS",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "22",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777332Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-leopard-2a6",
+      "type": "Vehicle",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "Leopard 2A6",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "Leopard 2A6",
+      "year": 2003,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "main_gun",
+          "value": "120mm L/55 smoothbore",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "62.5 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Composite",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "200",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777338Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-cv9030",
+      "type": "Vehicle",
+      "vehicleType": "vt-reconnaissance-vehicle",
+      "names": [
+        {
+          "value": "CV9030 Infantry Fighting Vehicle",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "BAE Systems Hägglunds",
+      "model": "CV9030FIN",
+      "year": 2004,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "main_gun",
+          "value": "30mm Bushmaster II",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3+7 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "35 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Modular armor",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "102",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777344Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-sisu-xa-180",
+      "type": "Vehicle",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "Sisu XA-180",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Armored Personnel Carrier",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Sisu Auto",
+      "model": "XA-180",
+      "year": 1983,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "configuration",
+          "value": "6x6 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "crew_capacity",
+          "value": "2+10",
+          "dataType": "string"
+        },
+        {
+          "name": "armor_protection",
+          "value": "Small arms and fragments",
+          "dataType": "string"
+        },
+        {
+          "name": "amphibious",
+          "value": "Yes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777350Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-bv206",
+      "type": "Vehicle",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "BV206 All-Terrain Vehicle",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "BAE Systems Hägglunds",
+      "model": "BV206",
+      "year": 1981,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "configuration",
+          "value": "Articulated tracked",
+          "dataType": "string"
+        },
+        {
+          "name": "crew_capacity",
+          "value": "17",
+          "dataType": "string"
+        },
+        {
+          "name": "terrain_capability",
+          "value": "Snow, swamp, water",
+          "dataType": "string"
+        },
+        {
+          "name": "amphibious",
+          "value": "Yes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777356Z",
+      "version": "1.0"
+    },
+    {
+      "id": "watercraft-hamina-class",
+      "type": "Vehicle",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Hamina-class Missile Boat",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Aker Finnyards",
+      "model": "Hamina-class",
+      "year": 1998,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "displacement",
+          "value": "250 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "51.2 m",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "RBS-15 missiles, 57mm gun",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "26",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "4",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777362Z",
+      "version": "1.0"
+    },
+    {
+      "id": "drone-mini-uav",
+      "type": "Vehicle",
+      "vehicleType": "vt-drone",
+      "names": [
+        {
+          "value": "Tactical UAV System",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Various",
+      "model": "Multiple Types",
+      "year": 2020,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "endurance",
+          "value": "2-6 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "10-50 km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "EO/IR sensors",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Surveillance and reconnaissance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777368Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ew-system-ew-suite",
+      "type": "Vehicle",
+      "vehicleType": "vt-electronic-warfare",
+      "names": [
+        {
+          "value": "Electronic Warfare Suite",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Various",
+      "model": "Integrated EW",
+      "year": 2015,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "capabilities",
+          "value": "SIGINT, COMINT, jamming",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_range",
+          "value": "HF to SHF",
+          "dataType": "string"
+        },
+        {
+          "name": "platform",
+          "value": "Fixed and mobile",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777374Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radio-vrc-series",
+      "type": "Vehicle",
+      "vehicleType": "vt-radio-system",
+      "names": [
+        {
+          "value": "VRC Radio Family",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Bittium",
+      "model": "TAC-4G Family",
+      "year": 2018,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "frequency_bands",
+          "value": "VHF/UHF",
+          "dataType": "string"
+        },
+        {
+          "name": "encryption",
+          "value": "AES-256",
+          "dataType": "string"
+        },
+        {
+          "name": "network_capability",
+          "value": "Tactical IP mesh",
+          "dataType": "string"
+        },
+        {
+          "name": "form_factor",
+          "value": "Handheld and vehicle",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777380Z",
+      "version": "1.0"
+    },
+    {
+      "id": "equipment-m05-uniform",
+      "type": "Vehicle",
+      "vehicleType": "vt-personal-equipment",
+      "names": [
+        {
+          "value": "M05 Combat Uniform",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Finnish Defence Forces",
+      "model": "M05",
+      "year": 2005,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "camouflage_pattern",
+          "value": "M05 woodland",
+          "dataType": "string"
+        },
+        {
+          "name": "climate_rating",
+          "value": "Nordic conditions",
+          "dataType": "string"
+        },
+        {
+          "name": "materials",
+          "value": "Ripstop fabric",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777386Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ammo-762x39",
+      "type": "Vehicle",
+      "vehicleType": "vt-ammunition",
+      "names": [
+        {
+          "value": "7.62×39mm Ammunition",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Lapua",
+      "model": "7.62×39mm",
+      "year": 1962,
+      "owner": "country-finland",
+      "characteristics": [
+        {
+          "name": "cartridge_type",
+          "value": "Intermediate rifle",
+          "dataType": "string"
+        },
+        {
+          "name": "bullet_weight",
+          "value": "8.0g (123 gr)",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_velocity",
+          "value": "735 m/s",
+          "dataType": "string"
+        },
+        {
+          "name": "production_status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.777392Z",
+      "version": "1.0"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "pt-special-forces",
+      "name": "Special Forces Personnel",
+      "category": "professional",
+      "subcategory": "elite military",
+      "description": "Highly trained special operations forces",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "Advanced specialized",
+          "dataType": "string"
+        },
+        {
+          "name": "selection_process",
+          "value": "Rigorous screening",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Utti Jaeger Regiment Operator",
+        "Special Border Guard Unit",
+        "Naval Special Operations"
+      ],
+      "timestamp": "2025-08-22T07:34:19.778046Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-conscript",
+      "name": "Military Conscript",
+      "category": "professional",
+      "subcategory": "military service",
+      "description": "Personnel serving mandatory military service",
+      "characteristics": [
+        {
+          "name": "service_duration",
+          "value": "6-12 months",
+          "dataType": "string"
+        },
+        {
+          "name": "age_range",
+          "value": "18-30 years",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Infantry Soldier",
+        "Artillery Operator",
+        "Communications Specialist"
+      ],
+      "timestamp": "2025-08-22T07:34:19.778060Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-career-officer",
+      "name": "Career Officer",
+      "category": "professional",
+      "subcategory": "military leadership",
+      "description": "Professional military officers",
+      "characteristics": [
+        {
+          "name": "education_requirement",
+          "value": "Military academy or university",
+          "dataType": "string"
+        },
+        {
+          "name": "career_length",
+          "value": "Long-term service",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Company Commander",
+        "Staff Officer",
+        "General Officer"
+      ],
+      "timestamp": "2025-08-22T07:34:19.778067Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-timo-kivinen",
+      "type": "Person",
+      "names": [
+        {
+          "value": "Timo Kivinen",
+          "nameType": "formal",
+          "language": "en"
+        }
+      ],
+      "gender": "Male",
+      "nationality": "country-finland",
+      "personTypes": [
+        "pt-career-officer"
+      ],
+      "states": [
+        {
+          "id": "state-kivinen-cdf",
+          "stateType": "employed",
+          "startTime": "2019-08-01T00:00:00Z",
+          "organisation": "org-finnish-defence-forces",
+          "role": "Chief of Defence"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.778504Z",
+      "version": "1.0"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-helsinki-hq",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Finnish Defence Forces Headquarters",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Puolustusvoimien pääesikunta",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          24.9384,
+          60.1699
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776791Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-karelia-air-command",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Karelia Air Command",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Karjalan lennosto",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          29.7443,
+          62.6
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776813Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-satakunta-air-command",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Satakunta Air Command",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Satakunnan lennosto",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          22.9167,
+          61.4833
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776823Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-lapland-air-command",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Lapland Air Command",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Lapin lennosto",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          25.8333,
+          66.5
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776831Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-utti-jaeger-regiment",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Utti Jaeger Regiment",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Utin jääkärirykmentti",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          26.9333,
+          60.9
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776841Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-armoured-brigade",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Armoured Brigade",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Panssariprikaati",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          23.7333,
+          61.5
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776850Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-guard-jaeger-regiment",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Guard Jaeger Regiment",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Kaarti jääkärirykmentti",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          24.9384,
+          60.2055
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776858Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-coastal-fleet",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Coastal Fleet",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Rannikkolaivasto",
+          "nameType": "official",
+          "language": "fi"
+        }
+      ],
+      "country": "country-finland",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          22.2833,
+          60.45
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.776866Z",
+      "version": "1.0"
+    }
+  ],
+  "representations": [
+    {
+      "id": "rep-finnish-defence-forces",
+      "type": "webpage",
+      "format": "text/html",
+      "url": "https://puolustusvoimat.fi/en",
+      "title": "Finnish Defence Forces Official Website",
+      "description": "Official website of the Finnish Defence Forces",
+      "createdDate": "2025-08-21T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:19.778286Z",
+      "version": "1.0"
+    },
+    {
+      "id": "rep-equipment-catalog",
+      "type": "document",
+      "format": "application/pdf",
+      "title": "Finnish Military Equipment Catalog 2025",
+      "description": "Comprehensive catalog of Finnish military equipment and capabilities",
+      "createdDate": "2025-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:19.778296Z",
+      "version": "1.0"
+    }
+  ],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:19.781386Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 59,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  },
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:19.779036",
+    "consolidatedFiles": [
+      {
+        "path": "finland\\ies4_finland_comprehensive_military_database_Version3.json",
+        "size": 43755,
+        "processedAt": "2025-08-22T07:34:19.779036"
+      }
+    ],
+    "sourceFileCount": 1,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 8,
+      "vehicles": 24,
+      "vehicleTypes": 20,
+      "peopleTypes": 3,
+      "people": 1,
+      "representations": 2
+    }
+  }
+}

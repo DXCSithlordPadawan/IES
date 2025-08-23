@@ -1,0 +1,82 @@
+{
+  "areas": [
+    {
+      "id": "area-odesa-oblast-001",
+      "uri": "https://ukraine.gov.ua/areas/odesa-oblast",
+      "type": "Area",
+      "names": [
+        {
+          "value": "Odesa Oblast",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Одеська область",
+          "language": "uk",
+          "nameType": "official"
+        },
+        {
+          "value": "Odeska oblast",
+          "language": "uk",
+          "nameType": "formal"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "UA51",
+          "identifierType": "ISO_3166-2",
+          "issuingAuthority": "ISO"
+        }
+      ],
+      "areaType": "administrative",
+      "administrativeLevel": 1,
+      "country": "Ukraine",
+      "coordinates": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.8,
+              47.8
+            ],
+            [
+              31.2,
+              47.8
+            ],
+            [
+              31.2,
+              45.1
+            ],
+            [
+              27.8,
+              45.1
+            ],
+            [
+              27.8,
+              47.8
+            ]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "representations": [
+        {
+          "id": "odesa-oblast-map",
+          "type": "document",
+          "title": "Administrative map of Odesa Oblast",
+          "description": "Official administrative boundaries of Odesa Oblast, administrative center: Odesa"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "odesa-establishment",
+          "stateType": "established",
+          "startTime": "1932-02-27T00:00:00Z",
+          "location": "Ukraine"
+        }
+      ]
+    }
+  ],
+  "vehicles": [],
+  "vehicleTypes": []
+}

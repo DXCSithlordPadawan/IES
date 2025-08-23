@@ -1,0 +1,65 @@
+{
+  "areas": [
+    {
+      "id": "area-zaporizhzhia-oblast-001",
+      "uri": "https://ukraine.gov.ua/areas/zaporizhzhia-oblast",
+      "type": "Area",
+      "names": [
+        {
+          "value": "Zaporizhzhia Oblast",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Запорізька область",
+          "language": "uk",
+          "nameType": "official"
+        },
+        {
+          "value": "Zaporizka oblast",
+          "language": "uk",
+          "nameType": "formal"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "UA23",
+          "identifierType": "ISO_3166-2",
+          "issuingAuthority": "ISO"
+        }
+      ],
+      "areaType": "administrative",
+      "administrativeLevel": 1,
+      "country": "Ukraine",
+      "coordinates": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [34.0, 48.2],
+            [36.6, 48.2],
+            [36.6, 45.8],
+            [34.0, 45.8],
+            [34.0, 48.2]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "representations": [
+        {
+          "id": "zaporizhzhia-oblast-map",
+          "type": "document",
+          "title": "Administrative map of Zaporizhzhia Oblast",
+          "description": "Official administrative boundaries of Zaporizhzhia Oblast, administrative center: Zaporizhzhia"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "zaporizhzhia-establishment",
+          "stateType": "established",
+          "startTime": "1939-01-10T00:00:00Z",
+          "location": "Ukraine"
+        }
+      ]
+    }
+  ]
+}

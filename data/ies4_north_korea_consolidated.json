@@ -1,0 +1,5617 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consolidated IES4-Based North Korean Military Aircraft Database",
+  "description": "Comprehensive database of North Korean military aircraft capabilities",
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:19.963687",
+    "consolidatedFiles": [
+      {
+        "path": "north_korea\\ies4_north_korea_aircraft_Version3.json",
+        "size": 15479,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_drones_Version2.json",
+        "size": 14511,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json",
+        "size": 9757,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_ground_vehicles_Version3.json",
+        "size": 15647,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json",
+        "size": 17342,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_naval_Version2.json",
+        "size": 11601,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json",
+        "size": 16755,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_small_arms_Version3.json",
+        "size": 16036,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      },
+      {
+        "path": "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json",
+        "size": 14088,
+        "processedAt": "2025-08-22T07:34:19.963687"
+      }
+    ],
+    "sourceFileCount": 9,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 14,
+      "vehicles": 42,
+      "vehicleTypes": 35,
+      "peopleTypes": 4
+    }
+  },
+  "countries": [
+    {
+      "id": "country-north-korea",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/North_Korea",
+      "names": [
+        {
+          "value": "Democratic People's Republic of Korea",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "North Korea",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "조선민주주의인민공화국",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "iso3166Alpha2": "KP",
+      "iso3166Alpha3": "PRK",
+      "telephoneCountryCode": "+850",
+      "currency": "KPW",
+      "languages": [
+        "Korean"
+      ],
+      "sovereignty": "Sovereign state",
+      "timestamp": "2025-08-22T07:34:19.965894Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-sunan-airport",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Sunan International Airport",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "순안국제공항",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.67,
+          39.224
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Primary military and civilian airport",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "MiG-29, MiG-21, transport aircraft",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966450Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-wonsan-airbase",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Wonsan Airbase",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "원산공군기지",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          127.486,
+          39.167
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Major air force base",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "Fighter and attack aircraft",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966475Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-drone-test-facility",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Unmanned Aircraft Test Facility",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "무인항공기 시험장",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          126.5,
+          38.8
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Drone development and testing facility",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "UAV flight testing, weapons integration",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972418Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-bureau-121-facility",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Bureau 121 Cyber Operations Center",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "121국 사이버작전센터",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.75,
+          39.04
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Cyber warfare operations center",
+          "dataType": "string"
+        },
+        {
+          "name": "security_level",
+          "value": "Top secret facility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980101Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-state-factory-323",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "State Factory 323",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "국가공장 323호",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.2,
+          39.5
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Main battle tank production facility",
+          "dataType": "string"
+        },
+        {
+          "name": "production",
+          "value": "Ch'ŏnma-ho, Pokpung-ho tanks",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983347Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-sohae-launch-site",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Sohae Satellite Launching Station",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "서해위성발사장",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          124.705,
+          39.66
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Satellite and missile launch facility",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_capability",
+          "value": "ICBM and satellite launch",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986405Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-punggye-ri-test-site",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Punggye-ri Nuclear Test Site",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "풍계리 핵실험장",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          129.084,
+          41.279
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Nuclear weapons test facility",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Officially closed 2018",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986424Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-nampo-naval-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Nampo Naval Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "남포해군기지",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.407,
+          38.738
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.990077Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-wonsan-naval-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Wonsan Naval Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "원산해군기지",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          127.443,
+          39.165
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.990098Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-munitions-factory-complex",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "State Munitions Factory Complex",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "국가탄약공장단지",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          126.2,
+          39.1
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Ammunition and explosives production",
+          "dataType": "string"
+        },
+        {
+          "name": "production_capacity",
+          "value": "Large-scale ammunition manufacturing",
+          "dataType": "string"
+        },
+        {
+          "name": "security_level",
+          "value": "High security industrial facility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.993908Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-pyongyang-arms-factory",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Pyongyang Arms Factory",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "평양 무기공장",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.7543,
+          39.0392
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Small arms production facility",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "Estimated 50,000+ rifles annually",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.000587Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-tokchon-xi-corps-hq",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "XI Corps Headquarters",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "제11군단 사령부",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.45,
+          39.75
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Special Forces Command Headquarters",
+          "dataType": "string"
+        },
+        {
+          "name": "security_level",
+          "value": "Highly classified facility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005268Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-mirim-air-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Mirim Air Base (Special Operations)",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "미림공군기지",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.82,
+          39.07
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Special operations training facility",
+          "dataType": "string"
+        },
+        {
+          "name": "training_focus",
+          "value": "Aviation special operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005283Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "area-pyongyang-ministry-hq",
+      "type": "Area",
+      "areaType": "administrative",
+      "names": [
+        {
+          "value": "Ministry of State Security Headquarters",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "국가보위성 본부",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "country": "country-north-korea",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          125.75,
+          39.04
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "National security headquarters",
+          "dataType": "string"
+        },
+        {
+          "name": "security_classification",
+          "value": "Top secret facility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005290Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "aircraft-mig-29",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mikoyan_MiG-29",
+      "vehicleType": "fighter-aircraft",
+      "names": [
+        {
+          "value": "MiG-29 Fulcrum",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "미그-29",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MiG-29",
+          "identifierType": "aircraft_designation",
+          "issuingAuthority": "Korean People's Army Air Force"
+        }
+      ],
+      "make": "Mikoyan",
+      "model": "MiG-29",
+      "year": 1988,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "35-40",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "2,445 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "17,500 m",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "1,430 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2x Klimov RD-33",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm cannon, R-60, R-27 missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1988",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Most advanced fighter in KPAF inventory",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966859Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "aircraft-mig-23",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mikoyan-Gurevich_MiG-23",
+      "vehicleType": "fighter-aircraft",
+      "names": [
+        {
+          "value": "MiG-23 Flogger",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "미그-23",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Mikoyan-Gurevich",
+      "model": "MiG-23",
+      "year": 1985,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "50+",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "2,500 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "18,500 m",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "1,150 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "1x Tumansky R-35-300",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "23mm cannon, R-23, R-24 missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1985",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966881Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "aircraft-su-25",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sukhoi_Su-25",
+      "vehicleType": "attack-aircraft",
+      "names": [
+        {
+          "value": "Su-25 Frogfoot",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "수-25",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Sukhoi",
+      "model": "Su-25",
+      "year": 1988,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "34+",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "975 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "7,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "750 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2x Tumansky R-195",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm cannon, rockets, bombs, missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1988",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Close air support, ground attack",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966896Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "aircraft-an-2",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Antonov_An-2",
+      "vehicleType": "transport-aircraft",
+      "names": [
+        {
+          "value": "Antonov An-2 Colt",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "안-2",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Antonov",
+      "model": "An-2",
+      "year": 1960,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "300+",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "258 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "4,400 m",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "845 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "1x Shvetsov ASh-62IR",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "12 passengers or 10 paratroopers",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1960",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Transport, special operations infiltration",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Large fleet used for infiltration missions",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966909Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "helicopter-md-500",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/MD_Helicopters_MD_500",
+      "vehicleType": "attack-helicopter",
+      "names": [
+        {
+          "value": "MD 500 Defender",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "MD-500",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "MD Helicopters",
+      "model": "MD 500",
+      "year": 1985,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "87+",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "282 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "5,790 m",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "611 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "1x Allison 250-C30",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "ATGMs, machine guns, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1985",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Attack helicopter, anti-tank",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Acquired through civilian channels, militarized",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966921Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "helicopter-mi-2",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mil_Mi-2",
+      "vehicleType": "transport-helicopter",
+      "names": [
+        {
+          "value": "Mil Mi-2 Hoplite",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "미-2",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Mil",
+      "model": "Mi-2",
+      "year": 1975,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "20+",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "210 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "4,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "580 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2x Isotov GTD-350",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "8 passengers",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Transport, utility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.966933Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "drone-pchela-1t",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Pchela-1T",
+      "vehicleType": "reconnaissance-drone",
+      "names": [
+        {
+          "value": "Pchela-1T Reconnaissance Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "꿀벌-1T 정찰기",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Pchela-1T",
+          "identifierType": "model_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "Soviet/Local production",
+      "model": "Pchela-1T",
+      "year": 1990,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "drone_type",
+          "value": "Tactical reconnaissance UAV",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "3.2 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "2.0 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "138 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "15 kg (cameras, sensors)",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "MD 550 piston engine",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "180 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "cruise_speed",
+          "value": "120 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "60 km",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "2 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "4,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_method",
+          "value": "Catapult or rocket-assisted",
+          "dataType": "string"
+        },
+        {
+          "name": "recovery_method",
+          "value": "Parachute",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Pre-programmed autopilot",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "TV camera, infrared camera",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1990",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_inventory",
+          "value": "20-30",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972748Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "drone-banshee-target",
+      "type": "Vehicle",
+      "vehicleType": "target-drone",
+      "names": [
+        {
+          "value": "Banshee Target Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "밴시 표적기",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Local production (US design)",
+      "model": "Banshee",
+      "year": 1995,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "drone_type",
+          "value": "Aerial target drone",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "3.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "2.8 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "95 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Pulse jet engine",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "650 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "100 km",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "1 hour",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "6,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_method",
+          "value": "Rocket-assisted takeoff",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Radio control",
+          "dataType": "string"
+        },
+        {
+          "name": "purpose",
+          "value": "Air defense training target",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1995",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_inventory",
+          "value": "50+",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972758Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "drone-small-reconnaissance",
+      "type": "Vehicle",
+      "vehicleType": "reconnaissance-drone",
+      "names": [
+        {
+          "value": "Small Reconnaissance Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "소형정찰무인기",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "Domestic production",
+      "model": "SRD-1",
+      "year": 2014,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "drone_type",
+          "value": "Tactical reconnaissance UAV",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "1.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1.2 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "1 kg (camera)",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Electric motor",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "100 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "cruise_speed",
+          "value": "60 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "20 km",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "2 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "2,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_method",
+          "value": "Hand-launched",
+          "dataType": "string"
+        },
+        {
+          "name": "recovery_method",
+          "value": "Conventional landing",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "GPS waypoint navigation",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "HD camera, real-time video link",
+          "dataType": "string"
+        },
+        {
+          "name": "notable_incidents",
+          "value": "Multiple infiltrations into South Korea 2014-2017",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2014",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_inventory",
+          "value": "100+",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972764Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "drone-suicide-attack",
+      "type": "Vehicle",
+      "vehicleType": "attack-drone",
+      "names": [
+        {
+          "value": "Suicide Attack Drone",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "자살공격무인기",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "Domestic production",
+      "model": "SAD-1",
+      "year": 2020,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "drone_type",
+          "value": "Loitering munition/kamikaze drone",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "2.0 m",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "15 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "5 kg explosive",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Electric motor",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "150 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "cruise_speed",
+          "value": "80 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "40 km",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "3 hours (loitering)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "3,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_method",
+          "value": "Catapult or vehicle-launched",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "GPS/INS with terminal guidance",
+          "dataType": "string"
+        },
+        {
+          "name": "target_acquisition",
+          "value": "Electro-optical seeker",
+          "dataType": "string"
+        },
+        {
+          "name": "mission_profile",
+          "value": "Loiter and attack high-value targets",
+          "dataType": "string"
+        },
+        {
+          "name": "countermeasures",
+          "value": "Difficult to detect on radar",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2020",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Operational",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_inventory",
+          "value": "200+",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972770Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "system-gps-jamming-vehicle",
+      "type": "Vehicle",
+      "vehicleType": "jamming-system",
+      "names": [
+        {
+          "value": "GPS Jamming Vehicle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "GPS 방해차량",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "Domestic production",
+      "model": "GPS Jammer",
+      "year": 2010,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "system_type",
+          "value": "GPS/GNSS jamming system",
+          "dataType": "string"
+        },
+        {
+          "name": "target_frequencies",
+          "value": "L1, L2 GPS frequencies (1.2-1.6 GHz)",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "100-200 km",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Vehicle-mounted, mobile",
+          "dataType": "string"
+        },
+        {
+          "name": "power_output",
+          "value": "High power transmitter",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment",
+          "value": "Border areas, strategic locations",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_use",
+          "value": "Disrupting South Korean and US GPS",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_units",
+          "value": "20-30",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980585Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "radio-hf-communication-system",
+      "type": "Vehicle",
+      "vehicleType": "radio-system",
+      "names": [
+        {
+          "value": "HF Military Communication System",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "단파 군용통신체계",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "Domestic/Chinese components",
+      "model": "HF-MILCOM",
+      "year": 2005,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "system_type",
+          "value": "High Frequency radio communication",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_range",
+          "value": "3-30 MHz",
+          "dataType": "string"
+        },
+        {
+          "name": "transmission_range",
+          "value": "Worldwide (via skywave propagation)",
+          "dataType": "string"
+        },
+        {
+          "name": "power_output",
+          "value": "1-10 kW",
+          "dataType": "string"
+        },
+        {
+          "name": "modulation",
+          "value": "SSB, CW, digital modes",
+          "dataType": "string"
+        },
+        {
+          "name": "encryption",
+          "value": "Military-grade encryption",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment",
+          "value": "Command posts, naval vessels, remote stations",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Korean People's Army, intelligence services",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2005",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980601Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "system-tactical-radio-secure",
+      "type": "Vehicle",
+      "vehicleType": "radio-system",
+      "names": [
+        {
+          "value": "Secure Tactical Radio System",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "보안전술무전기",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "Domestic production",
+      "model": "STRS-1",
+      "year": 2015,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "system_type",
+          "value": "VHF/UHF tactical radio",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_range",
+          "value": "30-512 MHz",
+          "dataType": "string"
+        },
+        {
+          "name": "transmission_range",
+          "value": "5-25 km",
+          "dataType": "string"
+        },
+        {
+          "name": "power_output",
+          "value": "1-50 watts",
+          "dataType": "string"
+        },
+        {
+          "name": "encryption",
+          "value": "Digital encryption",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Frequency hopping, anti-jamming",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment",
+          "value": "Infantry units, special forces",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_units",
+          "value": "10,000+",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2015",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980608Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "tank-chonma-ho",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Chonma-ho",
+      "vehicleType": "main-battle-tank",
+      "names": [
+        {
+          "value": "Ch'ŏnma-ho Main Battle Tank",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "천마호",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Ch'ŏnma-ho",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory 323",
+      "model": "Ch'ŏnma-ho",
+      "year": 1985,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "1,200+",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "40 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "9.53 m",
+          "dataType": "string"
+        },
+        {
+          "name": "width",
+          "value": "3.27 m",
+          "dataType": "string"
+        },
+        {
+          "name": "height",
+          "value": "2.4 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "115mm 2A20 smoothbore gun",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "7.62mm PKT, 12.7mm DShK",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Steel armor up to 200mm",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "V-54K 520 hp diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "60 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "500 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1985",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Heavily modified T-62 with indigenous upgrades",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983590Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "tank-pokpung-ho",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Pokpung-ho",
+      "vehicleType": "main-battle-tank",
+      "names": [
+        {
+          "value": "Pokpung-ho Main Battle Tank",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "폭풍호",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Pokpung-ho",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory 323",
+      "model": "Pokpung-ho",
+      "year": 2002,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "300+",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "45 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "9.7 m",
+          "dataType": "string"
+        },
+        {
+          "name": "width",
+          "value": "3.6 m",
+          "dataType": "string"
+        },
+        {
+          "name": "height",
+          "value": "2.4 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "125mm 2A46 smoothbore gun",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "7.62mm PKT, 12.7mm DShK",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Composite armor with ERA",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "V-12 1000 hp diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "65 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "600 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2002",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Most advanced North Korean MBT, T-80/T-72 hybrid",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983607Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "vehicle-bmp-1",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/BMP-1",
+      "vehicleType": "armored-personnel-carrier",
+      "names": [
+        {
+          "value": "BMP-1 Infantry Fighting Vehicle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "BMP-1",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Soviet/Local production",
+      "model": "BMP-1",
+      "year": 1973,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "400+",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "13.5 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3 + 8 infantry",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "73mm 2A28 Grom gun",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "9M14 Malyutka ATGM, 7.62mm PKT",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Steel armor 6-33mm",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "UTD-20 300 hp diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "65 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "500 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1973",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "amphibious",
+          "value": "Yes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983617Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "artillery-koksan",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Koksan_(artillery)",
+      "vehicleType": "self-propelled-artillery",
+      "names": [
+        {
+          "value": "M1978 Koksan Self-Propelled Gun",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "곡산포",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M1978",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory",
+      "model": "M1978 Koksan",
+      "year": 1978,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "200+",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "40 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "6-8",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "170mm M1978 gun",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "12.7mm DShK",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Light steel armor",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Diesel engine",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "60 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "60 km (firing)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1978",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "One of the world's largest artillery pieces",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983627Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "mlrs-bm-11",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/BM-11",
+      "vehicleType": "mlrs",
+      "names": [
+        {
+          "value": "BM-11 Multiple Launch Rocket System",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "BM-11",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Soviet/Local production",
+      "model": "BM-11",
+      "year": 1975,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "100+",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "13.7 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "string"
+        },
+        {
+          "name": "rocket_caliber",
+          "value": "122mm",
+          "dataType": "string"
+        },
+        {
+          "name": "number_of_tubes",
+          "value": "40",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "20.4 km",
+          "dataType": "string"
+        },
+        {
+          "name": "reload_time",
+          "value": "10 minutes",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "ZiL-131 gasoline",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "80 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983635Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "missile-hwasong-15",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Hwasong-15",
+      "vehicleType": "ballistic-missile",
+      "names": [
+        {
+          "value": "Hwasong-15 ICBM",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "화성-15",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "KN-22",
+          "identifierType": "western_designation",
+          "issuingAuthority": "US Intelligence"
+        },
+        {
+          "value": "Hwasong-15",
+          "identifierType": "official_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "Academy of Defense Science",
+      "model": "Hwasong-15",
+      "year": 2017,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "missile_type",
+          "value": "Intercontinental Ballistic Missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "13,000+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "1,000-1,500 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "22 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "2.4 m",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_weight",
+          "value": "80,000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "propellant",
+          "value": "Liquid fuel",
+          "dataType": "string"
+        },
+        {
+          "name": "stages",
+          "value": "2",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial navigation",
+          "dataType": "string"
+        },
+        {
+          "name": "launcher",
+          "value": "9-axle TEL",
+          "dataType": "string"
+        },
+        {
+          "name": "first_test",
+          "value": "2017-11-29",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Operational",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_inventory",
+          "value": "10-20",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986938Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "missile-hwasong-14",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Hwasong-14",
+      "vehicleType": "ballistic-missile",
+      "names": [
+        {
+          "value": "Hwasong-14 ICBM",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "화성-14",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "KN-20",
+          "identifierType": "western_designation",
+          "issuingAuthority": "US Intelligence"
+        }
+      ],
+      "make": "Academy of Defense Science",
+      "model": "Hwasong-14",
+      "year": 2017,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "missile_type",
+          "value": "Intercontinental Ballistic Missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "10,000+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "500-1,000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "20 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "1.8 m",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_weight",
+          "value": "40,000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "propellant",
+          "value": "Liquid fuel",
+          "dataType": "string"
+        },
+        {
+          "name": "stages",
+          "value": "2",
+          "dataType": "string"
+        },
+        {
+          "name": "launcher",
+          "value": "8-axle TEL",
+          "dataType": "string"
+        },
+        {
+          "name": "first_test",
+          "value": "2017-07-04",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Operational",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986954Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "missile-kn-23",
+      "type": "Vehicle",
+      "vehicleType": "ballistic-missile",
+      "names": [
+        {
+          "value": "KN-23 Short-Range Ballistic Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "KN-23",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "KN-23",
+          "identifierType": "western_designation",
+          "issuingAuthority": "US Intelligence"
+        }
+      ],
+      "make": "Academy of Defense Science",
+      "model": "KN-23",
+      "year": 2019,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "missile_type",
+          "value": "Short-Range Ballistic Missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "450-690 km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "500 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "8.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "0.95 m",
+          "dataType": "string"
+        },
+        {
+          "name": "propellant",
+          "value": "Solid fuel",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial + terminal guidance",
+          "dataType": "string"
+        },
+        {
+          "name": "launcher",
+          "value": "6x6 TEL",
+          "dataType": "string"
+        },
+        {
+          "name": "first_test",
+          "value": "2019-05-04",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Operational",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Low altitude, maneuverable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986962Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "system-s-200-sam",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/S-200_(missile)",
+      "vehicleType": "air-defense-system",
+      "names": [
+        {
+          "value": "S-200 Angara/Vega Surface-to-Air Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "S-200",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Soviet/Local maintenance",
+      "model": "S-200",
+      "year": 1980,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "system_type",
+          "value": "Long-range surface-to-air missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "300 km",
+          "dataType": "string"
+        },
+        {
+          "name": "altitude",
+          "value": "40,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "radar",
+          "value": "Square Pair acquisition, Fan Song guidance",
+          "dataType": "string"
+        },
+        {
+          "name": "missile_weight",
+          "value": "7,108 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "217 kg HE-fragmentation",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Command guidance with semi-active radar homing",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment",
+          "value": "Fixed sites",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1980",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_batteries",
+          "value": "2-4",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986971Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "system-sa-3-sam",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/S-125_Neva/Pechora",
+      "vehicleType": "air-defense-system",
+      "names": [
+        {
+          "value": "SA-3 Goa Surface-to-Air Missile",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "SA-3",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Soviet/Local maintenance",
+      "model": "SA-3 Goa",
+      "year": 1973,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "system_type",
+          "value": "Medium-range surface-to-air missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "35 km",
+          "dataType": "string"
+        },
+        {
+          "name": "altitude",
+          "value": "18,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "radar",
+          "value": "Low Blow guidance radar",
+          "dataType": "string"
+        },
+        {
+          "name": "missile_weight",
+          "value": "953 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "60 kg HE-fragmentation",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Command guidance",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment",
+          "value": "Fixed and semi-mobile",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1973",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_batteries",
+          "value": "15-20",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986980Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "radar-p-15-flat-face",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/P-15_radar",
+      "vehicleType": "radar-system",
+      "names": [
+        {
+          "value": "P-15 Flat Face Early Warning Radar",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "P-15",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Soviet/Local maintenance",
+      "model": "P-15 Flat Face",
+      "year": 1975,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "radar_type",
+          "value": "2D early warning radar",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_band",
+          "value": "VHF (P-band)",
+          "dataType": "string"
+        },
+        {
+          "name": "detection_range",
+          "value": "380 km",
+          "dataType": "string"
+        },
+        {
+          "name": "altitude_coverage",
+          "value": "30,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "antenna_type",
+          "value": "Planar array",
+          "dataType": "string"
+        },
+        {
+          "name": "rotation_rate",
+          "value": "6 rpm",
+          "dataType": "string"
+        },
+        {
+          "name": "power",
+          "value": "1.2 MW peak",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment",
+          "value": "Fixed installations",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "estimated_sites",
+          "value": "10-15",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Long-range surveillance and early warning",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.986988Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "submarine-romeo-class",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Romeo-class_submarine",
+      "vehicleType": "submarine",
+      "names": [
+        {
+          "value": "Romeo-class Submarine",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "로미오급 잠수함",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Chinese/Local production",
+      "model": "Romeo-class",
+      "year": 1973,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "20+",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement",
+          "value": "1,830 tonnes (submerged)",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "77 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "6.7 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "54",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "8x 533mm torpedo tubes",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Diesel-electric",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_surface",
+          "value": "15.2 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_submerged",
+          "value": "13 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "16,000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1973",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.990385Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "submarine-sang-o-class",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sang-O-class_submarine",
+      "vehicleType": "submarine",
+      "names": [
+        {
+          "value": "Sang-O class Submarine",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "상어급 잠수함",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "North Korean shipyard",
+      "model": "Sang-O class",
+      "year": 1991,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "40+",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement",
+          "value": "330 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "34 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "3.8 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "15-19",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "2x 533mm torpedo tubes",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Diesel-electric",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_surface",
+          "value": "9 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_submerged",
+          "value": "7 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "1,500 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1991",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Coastal defense, special operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.990400Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "vessel-osa-class-missile-boat",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Osa-class_missile_boat",
+      "vehicleType": "fast-attack-craft",
+      "names": [
+        {
+          "value": "Osa-class Missile Boat",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "오사급 미사일정",
+          "nameType": "common",
+          "language": "ko"
+        }
+      ],
+      "make": "Soviet/Local production",
+      "model": "Osa-class",
+      "year": 1968,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "8+",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement",
+          "value": "245 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "38.6 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "7.6 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "30",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "4x P-15 Termit anti-ship missiles, 2x 30mm AK-230",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "3x M503A diesel engines",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "36 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1968",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.990407Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "vessel-soho-class-patrol-boat",
+      "type": "Vehicle",
+      "vehicleType": "patrol-boat",
+      "names": [
+        {
+          "value": "Soho-class Patrol Boat",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "소호급 경비정",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "North Korean shipyard",
+      "model": "Soho-class",
+      "year": 1982,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "6+",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement",
+          "value": "1,845 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "103 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "10 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "180",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "4x 100mm guns, 4x 37mm AA guns, depth charges",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Diesel engines",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "21 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "4,000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1982",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Patrol frigate, coastal defense",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.990413Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "equipment-type-63-helmet",
+      "type": "Vehicle",
+      "vehicleType": "protective-equipment",
+      "names": [
+        {
+          "value": "Type 63 Steel Helmet",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "63식 철모",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Type 63",
+          "identifierType": "equipment_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory",
+      "model": "Type 63",
+      "year": 1963,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "equipment_type",
+          "value": "Steel combat helmet",
+          "dataType": "string"
+        },
+        {
+          "name": "material",
+          "value": "Manganese steel",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "1.2 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "protection_level",
+          "value": "Fragmentation and small arms",
+          "dataType": "string"
+        },
+        {
+          "name": "design_basis",
+          "value": "Soviet SSh-60 helmet",
+          "dataType": "string"
+        },
+        {
+          "name": "liner_system",
+          "value": "Web suspension system",
+          "dataType": "string"
+        },
+        {
+          "name": "chin_strap",
+          "value": "Leather chin strap",
+          "dataType": "string"
+        },
+        {
+          "name": "camouflage",
+          "value": "Olive drab with optional cover",
+          "dataType": "string"
+        },
+        {
+          "name": "users",
+          "value": "Korean People's Army infantry",
+          "dataType": "string"
+        },
+        {
+          "name": "production_quantity",
+          "value": "2+ million",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1963",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Standard issue",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994118Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "equipment-type-73-body-armor",
+      "type": "Vehicle",
+      "vehicleType": "protective-equipment",
+      "names": [
+        {
+          "value": "Type 73 Body Armor",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "73식 방탄복",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "State Factory",
+      "model": "Type 73",
+      "year": 1973,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "equipment_type",
+          "value": "Ballistic vest",
+          "dataType": "string"
+        },
+        {
+          "name": "material",
+          "value": "Steel plates with textile backing",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "protection_level",
+          "value": "NIJ Level II equivalent",
+          "dataType": "string"
+        },
+        {
+          "name": "coverage_area",
+          "value": "Chest and back protection",
+          "dataType": "string"
+        },
+        {
+          "name": "fastening_system",
+          "value": "Web straps and buckles",
+          "dataType": "string"
+        },
+        {
+          "name": "color",
+          "value": "Olive drab",
+          "dataType": "string"
+        },
+        {
+          "name": "users",
+          "value": "Special forces, vehicle crews",
+          "dataType": "string"
+        },
+        {
+          "name": "availability",
+          "value": "Limited issue",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1973",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Limited use",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994131Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "ammunition-762x39-ball",
+      "type": "Vehicle",
+      "vehicleType": "ammunition",
+      "names": [
+        {
+          "value": "7.62×39mm Ball Ammunition",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "7.62×39mm 보통탄",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "State Munitions Factory",
+      "model": "Type 58 Ball",
+      "year": 1958,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "ammunition_type",
+          "value": "Rifle cartridge",
+          "dataType": "string"
+        },
+        {
+          "name": "caliber",
+          "value": "7.62×39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "bullet_weight",
+          "value": "8.0 grams",
+          "dataType": "string"
+        },
+        {
+          "name": "bullet_type",
+          "value": "Full metal jacket",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_velocity",
+          "value": "735 m/s",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_energy",
+          "value": "2,160 J",
+          "dataType": "string"
+        },
+        {
+          "name": "case_material",
+          "value": "Steel with lacquer coating",
+          "dataType": "string"
+        },
+        {
+          "name": "primer_type",
+          "value": "Berdan primer",
+          "dataType": "string"
+        },
+        {
+          "name": "propellant",
+          "value": "Single-base smokeless powder",
+          "dataType": "string"
+        },
+        {
+          "name": "weapon_compatibility",
+          "value": "Type 58, Type 68 rifles",
+          "dataType": "string"
+        },
+        {
+          "name": "packaging",
+          "value": "20-round boxes, 1,000-round crates",
+          "dataType": "string"
+        },
+        {
+          "name": "production_capacity",
+          "value": "10+ million rounds annually",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1958",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Standard issue",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994138Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "ammunition-762x25-pistol",
+      "type": "Vehicle",
+      "vehicleType": "ammunition",
+      "names": [
+        {
+          "value": "7.62×25mm Tokarev Pistol Ammunition",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "7.62×25mm 권총탄",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "State Munitions Factory",
+      "model": "Type 64 Pistol",
+      "year": 1964,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "ammunition_type",
+          "value": "Pistol cartridge",
+          "dataType": "string"
+        },
+        {
+          "name": "caliber",
+          "value": "7.62×25mm",
+          "dataType": "string"
+        },
+        {
+          "name": "bullet_weight",
+          "value": "5.5 grams",
+          "dataType": "string"
+        },
+        {
+          "name": "bullet_type",
+          "value": "Full metal jacket",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_velocity",
+          "value": "420 m/s",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_energy",
+          "value": "485 J",
+          "dataType": "string"
+        },
+        {
+          "name": "case_material",
+          "value": "Steel",
+          "dataType": "string"
+        },
+        {
+          "name": "weapon_compatibility",
+          "value": "Type 64 pistol, submachine guns",
+          "dataType": "string"
+        },
+        {
+          "name": "packaging",
+          "value": "50-round boxes",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1964",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Standard issue",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994144Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "equipment-field-pack",
+      "type": "Vehicle",
+      "vehicleType": "field-equipment",
+      "names": [
+        {
+          "value": "KPA Field Pack",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "인민군 야전배낭",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "State Textile Factory",
+      "model": "Standard Field Pack",
+      "year": 1970,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "equipment_type",
+          "value": "Military backpack",
+          "dataType": "string"
+        },
+        {
+          "name": "material",
+          "value": "Canvas with leather reinforcement",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "35 liters",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "1.8 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "color",
+          "value": "Olive drab",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "External pockets, bedroll attachment",
+          "dataType": "string"
+        },
+        {
+          "name": "strap_system",
+          "value": "Padded shoulder straps",
+          "dataType": "string"
+        },
+        {
+          "name": "closure",
+          "value": "Drawstring with flap cover",
+          "dataType": "string"
+        },
+        {
+          "name": "intended_load",
+          "value": "Personal equipment and supplies",
+          "dataType": "string"
+        },
+        {
+          "name": "users",
+          "value": "All KPA personnel",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1970",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Standard issue",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994151Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "equipment-gas-mask",
+      "type": "Vehicle",
+      "vehicleType": "protective-equipment",
+      "names": [
+        {
+          "value": "Type 77 Gas Mask",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "77식 방독면",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "make": "Chemical Defense Factory",
+      "model": "Type 77",
+      "year": 1977,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "equipment_type",
+          "value": "Chemical protective mask",
+          "dataType": "string"
+        },
+        {
+          "name": "material",
+          "value": "Rubber facepiece with glass eyepieces",
+          "dataType": "string"
+        },
+        {
+          "name": "filter_type",
+          "value": "40mm NATO thread filter",
+          "dataType": "string"
+        },
+        {
+          "name": "protection_against",
+          "value": "Chemical agents, biological agents, radioactive particles",
+          "dataType": "string"
+        },
+        {
+          "name": "field_of_view",
+          "value": "Wide-angle eyepieces",
+          "dataType": "string"
+        },
+        {
+          "name": "drinking_system",
+          "value": "Canteen adapter",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "0.8 kg (with filter)",
+          "dataType": "string"
+        },
+        {
+          "name": "storage",
+          "value": "Canvas carrying bag",
+          "dataType": "string"
+        },
+        {
+          "name": "maintenance",
+          "value": "Field replaceable parts",
+          "dataType": "string"
+        },
+        {
+          "name": "users",
+          "value": "All KPA personnel",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1977",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Standard issue",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994158Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "weapon-type-58-ak",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Type_58_assault_rifle",
+      "vehicleType": "assault-rifle",
+      "names": [
+        {
+          "value": "Type 58 Assault Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "자동소총 58식",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Type 58",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory",
+      "model": "Type 58",
+      "year": 1958,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated, rotating bolt",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "600 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "400m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "4.3 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "870 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Conventional",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1958",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Korean People's Army",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "In service",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Licensed copy of AK-47",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001000Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "weapon-type-68-ak",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Type_68_assault_rifle",
+      "vehicleType": "assault-rifle",
+      "names": [
+        {
+          "value": "Type 68 Assault Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "자동소총 68식",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Type 68",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory",
+      "model": "Type 68",
+      "year": 1968,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated, rotating bolt",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "650 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "400m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "4.2 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "930 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Conventional",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1968",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Korean People's Army, Special Forces",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "In service",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Based on AKM design with local modifications",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001020Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "weapon-type-73-mg",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Type_73_machine_gun",
+      "vehicleType": "machine-gun",
+      "names": [
+        {
+          "value": "Type 73 Light Machine Gun",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "경기관총 73식",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Type 73",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory",
+      "model": "Type 73",
+      "year": 1973,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×39mm",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "650-750 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "800m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "75-round drum or 30-round magazine",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "5.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1040 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1973",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Korean People's Army",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "In service",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Based on RPK design",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001031Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "weapon-type-64-pistol",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Type_64_(pistol)",
+      "vehicleType": "submachine-gun",
+      "names": [
+        {
+          "value": "Type 64 Pistol",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "권총 64식",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Type 64",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory",
+      "model": "Type 64",
+      "year": 1964,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×25mm Tokarev",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Blowback operated",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "900 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "150m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "15 or 30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "1.9 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "540 mm (stock extended)",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1964",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Korean People's Army, Special Forces, Security Forces",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "In service",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Machine pistol with folding stock",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001042Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "weapon-type-70-sniper",
+      "type": "Vehicle",
+      "vehicleType": "sniper-rifle",
+      "names": [
+        {
+          "value": "Type 70 Sniper Rifle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "저격총 70식",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Type 70",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "make": "State Factory",
+      "model": "Type 70",
+      "year": 1970,
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×54mmR",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Bolt-action",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "800m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "10 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "4.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1220 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1970",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "Korean People's Army snipers",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "In service",
+          "dataType": "string"
+        },
+        {
+          "name": "notes",
+          "value": "Based on Mosin-Nagant design with scope",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001053Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "organization-xi-corps",
+      "type": "Vehicle",
+      "vehicleType": "military-organization",
+      "names": [
+        {
+          "value": "XI Corps (Special Forces)",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "제11군단",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "XI Corps",
+          "identifierType": "unit_designation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "organization_type",
+          "value": "Special Forces Corps",
+          "dataType": "string"
+        },
+        {
+          "name": "personnel_strength",
+          "value": "25,000-30,000",
+          "dataType": "string"
+        },
+        {
+          "name": "headquarters_location",
+          "value": "Tokchon, South Pyongan Province",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_missions",
+          "value": "Special operations, infiltration, sabotage",
+          "dataType": "string"
+        },
+        {
+          "name": "subordinate_units",
+          "value": "8 special forces brigades",
+          "dataType": "string"
+        },
+        {
+          "name": "training_specialties",
+          "value": "Maritime infiltration, mountain warfare, urban combat",
+          "dataType": "string"
+        },
+        {
+          "name": "equipment",
+          "value": "Specialized weapons, night vision, communications",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1969",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005523Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "organization-reconnaissance-bureau",
+      "type": "Vehicle",
+      "vehicleType": "intelligence-organization",
+      "names": [
+        {
+          "value": "Reconnaissance General Bureau",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "정찰총국",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "RGB",
+          "identifierType": "organization_abbreviation",
+          "issuingAuthority": "Korean People's Army"
+        }
+      ],
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "organization_type",
+          "value": "Military Intelligence Organization",
+          "dataType": "string"
+        },
+        {
+          "name": "personnel_strength",
+          "value": "6,000-7,000",
+          "dataType": "string"
+        },
+        {
+          "name": "headquarters_location",
+          "value": "Pyongyang",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_missions",
+          "value": "Foreign intelligence, cyber operations, special operations",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_scope",
+          "value": "Worldwide intelligence operations",
+          "dataType": "string"
+        },
+        {
+          "name": "subordinate_bureaus",
+          "value": "Operations Bureau, Cyber Bureau, Technical Bureau",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "Cyber warfare, assassination, kidnapping, infiltration",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "2009 (reorganized)",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005536Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "organization-ministry-state-security",
+      "type": "Vehicle",
+      "vehicleType": "security-organization",
+      "names": [
+        {
+          "value": "Ministry of State Security",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "국가보위성",
+          "nameType": "official",
+          "language": "ko"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MSS",
+          "identifierType": "organization_abbreviation",
+          "issuingAuthority": "DPRK Government"
+        }
+      ],
+      "owner": "country-north-korea",
+      "characteristics": [
+        {
+          "name": "organization_type",
+          "value": "Internal Security Agency",
+          "dataType": "string"
+        },
+        {
+          "name": "personnel_strength",
+          "value": "50,000+",
+          "dataType": "string"
+        },
+        {
+          "name": "headquarters_location",
+          "value": "Pyongyang",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_missions",
+          "value": "Counterintelligence, internal security, political surveillance",
+          "dataType": "string"
+        },
+        {
+          "name": "authority",
+          "value": "Arrest, detention, investigation powers",
+          "dataType": "string"
+        },
+        {
+          "name": "facilities",
+          "value": "Detention centers, prison camps, interrogation facilities",
+          "dataType": "string"
+        },
+        {
+          "name": "coverage",
+          "value": "Nationwide surveillance network",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1973",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Active",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005544Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "fighter-aircraft",
+      "name": "Fighter Aircraft",
+      "category": "aircraft",
+      "subcategory": "combat aircraft",
+      "description": "Military aircraft designed for air-to-air combat",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "air superiority",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles and guns",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.967294Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "attack-aircraft",
+      "name": "Attack Aircraft",
+      "category": "aircraft",
+      "subcategory": "combat aircraft",
+      "description": "Aircraft designed for ground attack missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground attack",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "bombs, rockets, missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.967320Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "utility aircraft",
+      "description": "Aircraft designed for cargo and personnel transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "transport",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "variable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.967334Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Helicopter designed for ground attack missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "close air support",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles, guns, rockets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.967349Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Helicopter designed for transport missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "transport",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "variable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.967362Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_aircraft_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "reconnaissance-drone",
+      "name": "Reconnaissance Drone",
+      "category": "unmanned aircraft",
+      "subcategory": "surveillance UAV",
+      "description": "Unmanned aircraft designed for reconnaissance and surveillance missions",
+      "characteristics": [
+        {
+          "name": "primary_mission",
+          "value": "intelligence gathering",
+          "dataType": "string"
+        },
+        {
+          "name": "payload_type",
+          "value": "cameras and sensors",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972954Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "attack-drone",
+      "name": "Attack Drone",
+      "category": "unmanned aircraft",
+      "subcategory": "combat UAV",
+      "description": "Unmanned aircraft designed for combat missions",
+      "characteristics": [
+        {
+          "name": "primary_mission",
+          "value": "combat operations",
+          "dataType": "string"
+        },
+        {
+          "name": "payload_type",
+          "value": "weapons and explosives",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972966Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "target-drone",
+      "name": "Target Drone",
+      "category": "unmanned aircraft",
+      "subcategory": "training UAV",
+      "description": "Unmanned aircraft used as targets for training and testing",
+      "characteristics": [
+        {
+          "name": "primary_mission",
+          "value": "target practice",
+          "dataType": "string"
+        },
+        {
+          "name": "design_purpose",
+          "value": "expendable target",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.972972Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "electronic-warfare-system",
+      "name": "Electronic Warfare System",
+      "category": "electronic system",
+      "subcategory": "warfare equipment",
+      "description": "Systems designed for electronic attack, protection and support",
+      "characteristics": [
+        {
+          "name": "primary_function",
+          "value": "electronic warfare operations",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_domains",
+          "value": "electromagnetic spectrum",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980825Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "radio-system",
+      "name": "Radio Communication System",
+      "category": "communication equipment",
+      "subcategory": "radio frequency",
+      "description": "Radio frequency communication systems",
+      "characteristics": [
+        {
+          "name": "primary_function",
+          "value": "voice and data communication",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_range",
+          "value": "various radio frequencies",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980839Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "jamming-system",
+      "name": "Signal Jamming System",
+      "category": "electronic system",
+      "subcategory": "jamming equipment",
+      "description": "Systems designed to disrupt enemy communications and electronics",
+      "characteristics": [
+        {
+          "name": "primary_function",
+          "value": "signal disruption and jamming",
+          "dataType": "string"
+        },
+        {
+          "name": "target_systems",
+          "value": "enemy communications and sensors",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980846Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "cyber-warfare-system",
+      "name": "Cyber Warfare System",
+      "category": "computer system",
+      "subcategory": "cyber operations",
+      "description": "Computer systems and software for cyber warfare operations",
+      "characteristics": [
+        {
+          "name": "primary_function",
+          "value": "cyber attacks and defense",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_domain",
+          "value": "cyberspace",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.980854Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_electronic_warfare_comms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "armored vehicle",
+      "subcategory": "tank",
+      "description": "Heavily armored and armed tracked combat vehicles",
+      "characteristics": [
+        {
+          "name": "armor_protection",
+          "value": "heavy armor",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_armament",
+          "value": "large caliber gun",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983907Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "armored-personnel-carrier",
+      "name": "Armored Personnel Carrier",
+      "category": "armored vehicle",
+      "subcategory": "transport",
+      "description": "Armored vehicles for transporting infantry",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "infantry transport",
+          "dataType": "string"
+        },
+        {
+          "name": "armor_protection",
+          "value": "light to medium armor",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983923Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "armored vehicle",
+      "subcategory": "reconnaissance",
+      "description": "Light armored vehicles for scouting and reconnaissance",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "reconnaissance",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "high mobility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983931Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "self-propelled-artillery",
+      "name": "Self-Propelled Artillery",
+      "category": "artillery",
+      "subcategory": "mobile artillery",
+      "description": "Mobile artillery systems with integrated propulsion",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "indirect fire support",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "self-propelled",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983938Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "mlrs",
+      "name": "Multiple Launch Rocket System",
+      "category": "artillery",
+      "subcategory": "rocket artillery",
+      "description": "Systems capable of firing multiple rockets in rapid succession",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "area saturation",
+          "dataType": "string"
+        },
+        {
+          "name": "ammunition_type",
+          "value": "rockets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.983945Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_ground_vehicles_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "ballistic-missile",
+      "name": "Ballistic Missile",
+      "category": "missile",
+      "subcategory": "strategic weapon",
+      "description": "Long-range missiles following ballistic trajectories",
+      "characteristics": [
+        {
+          "name": "trajectory_type",
+          "value": "ballistic",
+          "dataType": "string"
+        },
+        {
+          "name": "range_category",
+          "value": "long range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.987252Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "cruise-missile",
+      "name": "Cruise Missile",
+      "category": "missile",
+      "subcategory": "tactical weapon",
+      "description": "Low-flying missiles with aerodynamic flight",
+      "characteristics": [
+        {
+          "name": "trajectory_type",
+          "value": "cruise",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "precision guided",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.987270Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "air-defense-system",
+      "name": "Air Defense System",
+      "category": "defense system",
+      "subcategory": "surface-to-air",
+      "description": "Systems designed to counter aerial threats",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "air defense",
+          "dataType": "string"
+        },
+        {
+          "name": "target_type",
+          "value": "aircraft and missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.987282Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "radar-system",
+      "name": "Radar System",
+      "category": "sensor system",
+      "subcategory": "detection",
+      "description": "Electronic systems for detection and tracking",
+      "characteristics": [
+        {
+          "name": "primary_function",
+          "value": "detection and tracking",
+          "dataType": "string"
+        },
+        {
+          "name": "operating_principle",
+          "value": "radio waves",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.987294Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_missiles_air_defense_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "submarine",
+      "name": "Submarine",
+      "category": "watercraft",
+      "subcategory": "submarine",
+      "description": "Underwater naval vessels",
+      "characteristics": [
+        {
+          "name": "operational_environment",
+          "value": "underwater",
+          "dataType": "string"
+        },
+        {
+          "name": "stealth_capability",
+          "value": "high",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.990633Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "patrol-boat",
+      "name": "Patrol Boat",
+      "category": "watercraft",
+      "subcategory": "surface vessel",
+      "description": "Small naval vessels for coastal patrol",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "coastal patrol",
+          "dataType": "string"
+        },
+        {
+          "name": "size",
+          "value": "small to medium",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.990647Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "fast-attack-craft",
+      "name": "Fast Attack Craft",
+      "category": "watercraft",
+      "subcategory": "surface vessel",
+      "description": "Small, fast naval vessels armed with missiles or torpedoes",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "fast attack",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "high speed",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.990654Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "personal-equipment",
+      "name": "Personal Military Equipment",
+      "category": "equipment",
+      "subcategory": "individual gear",
+      "description": "Personal equipment and gear used by individual soldiers",
+      "characteristics": [
+        {
+          "name": "user_type",
+          "value": "individual soldier",
+          "dataType": "string"
+        },
+        {
+          "name": "portability",
+          "value": "man-portable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994356Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "ammunition",
+      "name": "Military Ammunition",
+      "category": "ammunition",
+      "subcategory": "projectiles and cartridges",
+      "description": "Ammunition for various military weapons systems",
+      "characteristics": [
+        {
+          "name": "function",
+          "value": "projectile and propellant",
+          "dataType": "string"
+        },
+        {
+          "name": "storage_requirements",
+          "value": "controlled environment",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994370Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "protective-equipment",
+      "name": "Protective Equipment",
+      "category": "equipment",
+      "subcategory": "protection",
+      "description": "Equipment designed to protect soldiers from threats",
+      "characteristics": [
+        {
+          "name": "primary_function",
+          "value": "protection",
+          "dataType": "string"
+        },
+        {
+          "name": "threat_protection",
+          "value": "ballistic, chemical, environmental",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994378Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "field-equipment",
+      "name": "Field Equipment",
+      "category": "equipment",
+      "subcategory": "field gear",
+      "description": "Equipment for field operations and survival",
+      "characteristics": [
+        {
+          "name": "operational_environment",
+          "value": "field operations",
+          "dataType": "string"
+        },
+        {
+          "name": "durability",
+          "value": "ruggedized",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.994385Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_personal_equipment_ammunition_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "assault-rifle",
+      "name": "Assault Rifle",
+      "category": "weapon",
+      "subcategory": "automatic rifle",
+      "description": "Selective-fire rifles using intermediate cartridges",
+      "characteristics": [
+        {
+          "name": "fire_modes",
+          "value": "selective fire",
+          "dataType": "string"
+        },
+        {
+          "name": "cartridge_type",
+          "value": "intermediate",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001339Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "machine-gun",
+      "name": "Machine Gun",
+      "category": "weapon",
+      "subcategory": "automatic weapon",
+      "description": "Fully automatic firearms designed for sustained fire",
+      "characteristics": [
+        {
+          "name": "fire_rate",
+          "value": "high sustained fire",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "suppressive fire",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001359Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "sniper-rifle",
+      "name": "Sniper Rifle",
+      "category": "weapon",
+      "subcategory": "precision rifle",
+      "description": "High-precision long-range rifles",
+      "characteristics": [
+        {
+          "name": "accuracy",
+          "value": "high precision",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "long range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001371Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "submachine-gun",
+      "name": "Submachine Gun",
+      "category": "weapon",
+      "subcategory": "automatic weapon",
+      "description": "Compact automatic weapons firing pistol cartridges",
+      "characteristics": [
+        {
+          "name": "cartridge_type",
+          "value": "pistol cartridge",
+          "dataType": "string"
+        },
+        {
+          "name": "size",
+          "value": "compact",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001382Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "military-organization",
+      "name": "Military Organization",
+      "category": "organization",
+      "subcategory": "armed forces unit",
+      "description": "Organized military units and formations",
+      "characteristics": [
+        {
+          "name": "command_structure",
+          "value": "hierarchical military command",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_role",
+          "value": "military operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005763Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "intelligence-organization",
+      "name": "Intelligence Organization",
+      "category": "organization",
+      "subcategory": "intelligence agency",
+      "description": "Organizations focused on intelligence gathering and operations",
+      "characteristics": [
+        {
+          "name": "operational_scope",
+          "value": "intelligence and reconnaissance",
+          "dataType": "string"
+        },
+        {
+          "name": "security_level",
+          "value": "classified operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005779Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "security-organization",
+      "name": "Security Organization",
+      "category": "organization",
+      "subcategory": "internal security",
+      "description": "Organizations responsible for state and internal security",
+      "characteristics": [
+        {
+          "name": "authority_level",
+          "value": "law enforcement powers",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_focus",
+          "value": "internal security and counterintelligence",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.005787Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "kpa-infantry",
+      "name": "Korean People's Army Infantry",
+      "category": "professional",
+      "subcategory": "military personnel",
+      "description": "Regular infantry soldiers of the Korean People's Army",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground combat operations",
+          "dataType": "string"
+        },
+        {
+          "name": "equipment_type",
+          "value": "small arms and infantry weapons",
+          "dataType": "string"
+        },
+        {
+          "name": "training_duration",
+          "value": "6-10 years conscription",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001659Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "kpa-special-forces",
+      "name": "Korean People's Army Special Forces",
+      "category": "professional",
+      "subcategory": "elite military personnel",
+      "description": "Elite special operations forces",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "advanced specialized training",
+          "dataType": "string"
+        },
+        {
+          "name": "equipment_access",
+          "value": "specialized weapons and equipment",
+          "dataType": "string"
+        },
+        {
+          "name": "roles",
+          "value": "infiltration, reconnaissance, sabotage",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.001678Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_small_arms_Version3.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "kpa-officer",
+      "name": "Korean People's Army Officer",
+      "category": "professional",
+      "subcategory": "military leadership",
+      "description": "Commissioned officers in the Korean People's Army",
+      "characteristics": [
+        {
+          "name": "education_requirement",
+          "value": "Military academy or university education",
+          "dataType": "string"
+        },
+        {
+          "name": "political_reliability",
+          "value": "High party loyalty required",
+          "dataType": "string"
+        },
+        {
+          "name": "command_authority",
+          "value": "Unit command and staff positions",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "General Officer",
+        "Colonel",
+        "Major",
+        "Captain",
+        "Lieutenant"
+      ],
+      "timestamp": "2025-08-22T07:34:20.006250Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    },
+    {
+      "id": "state-security-personnel",
+      "name": "State Security Personnel",
+      "category": "professional",
+      "subcategory": "intelligence and security",
+      "description": "Personnel involved in state security and intelligence operations",
+      "characteristics": [
+        {
+          "name": "security_clearance",
+          "value": "Top secret clearance",
+          "dataType": "string"
+        },
+        {
+          "name": "loyalty_screening",
+          "value": "Extensive background checks",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_scope",
+          "value": "Domestic and foreign intelligence",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Ministry of State Security Agent",
+        "Foreign Intelligence Operative",
+        "Counterintelligence Officer"
+      ],
+      "timestamp": "2025-08-22T07:34:20.006265Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "north_korea\\ies4_north_korea_special_forces_organizations_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.963687"
+    }
+  ],
+  "people": [],
+  "representations": [],
+  "organizations": [],
+  "events": [],
+  "activities": [],
+  "facilities": [],
+  "items": [],
+  "locations": [],
+  "relationships": [],
+  "ammunition": [],
+  "electronicSystems": [],
+  "weapons": [],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:20.012675Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 96,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  }
+}

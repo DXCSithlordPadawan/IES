@@ -1,0 +1,65 @@
+{
+  "areas": [
+    {
+      "id": "area-kirovohrad-oblast-001",
+      "uri": "https://ukraine.gov.ua/areas/kirovohrad-oblast",
+      "type": "Area",
+      "names": [
+        {
+          "value": "Kirovohrad Oblast",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Кіровоградська область",
+          "language": "uk",
+          "nameType": "official"
+        },
+        {
+          "value": "Kirovohradska oblast",
+          "language": "uk",
+          "nameType": "formal"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "UA35",
+          "identifierType": "ISO_3166-2",
+          "issuingAuthority": "ISO"
+        }
+      ],
+      "areaType": "administrative",
+      "administrativeLevel": 1,
+      "country": "Ukraine",
+      "coordinates": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [31.0, 49.5],
+            [34.0, 49.5],
+            [34.0, 47.5],
+            [31.0, 47.5],
+            [31.0, 49.5]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "representations": [
+        {
+          "id": "kirovohrad-oblast-map",
+          "type": "document",
+          "title": "Administrative map of Kirovohrad Oblast",
+          "description": "Official administrative boundaries of Kirovohrad Oblast, administrative center: Kropyvnytskyi (formerly Kirovohrad)"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "kirovohrad-establishment",
+          "stateType": "established",
+          "startTime": "1939-01-10T00:00:00Z",
+          "location": "Ukraine"
+        }
+      ]
+    }
+  ]
+}

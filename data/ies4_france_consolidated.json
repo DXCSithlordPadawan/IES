@@ -1,0 +1,6819 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consolidated IES4-Based French Military Aircraft Database",
+  "description": "Comprehensive database of French military aircraft based on IES4 standard",
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:19.798741",
+    "consolidatedFiles": [
+      {
+        "path": "france\\ies4_french_military_aircraft_Version2.json",
+        "size": 20793,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_artillery_Version2.json",
+        "size": 17145,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_bases_Version2.json",
+        "size": 5683,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_drones_Version2.json",
+        "size": 18044,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_missiles_Version2.json",
+        "size": 20242,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_naval_Version2.json",
+        "size": 14900,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_small_arms_Version2.json",
+        "size": 19544,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_units_Version2.json",
+        "size": 8627,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_military_vehicles_Version2.json",
+        "size": 17037,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_personal_equipment_Version2.json",
+        "size": 10805,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      },
+      {
+        "path": "france\\ies4_french_special_forces_ew_Version2.json",
+        "size": 5890,
+        "processedAt": "2025-08-22T07:34:19.798741"
+      }
+    ],
+    "sourceFileCount": 11,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 15,
+      "vehicles": 58,
+      "vehicleTypes": 31,
+      "peopleTypes": 2,
+      "representations": 2
+    }
+  },
+  "countries": [
+    {
+      "id": "france-001",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/France",
+      "names": [
+        {
+          "value": "République française",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "France",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "iso3166Alpha2": "FR",
+      "iso3166Alpha3": "FRA",
+      "telephoneCountryCode": "+33",
+      "currency": "EUR",
+      "languages": [
+        "French"
+      ],
+      "sovereignty": "Sovereign state",
+      "timestamp": "2025-08-22T07:34:19.800669Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-ba-118-mont-de-marsan",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Base aérienne 118 Mont-de-Marsan",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -0.501944,
+          43.910833
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Fighter aircraft base",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "Rafale C, Mirage 2000",
+          "dataType": "string"
+        },
+        {
+          "name": "units",
+          "value": "Escadron de Chasse 1/5 Vendée",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801151Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-ba-105-evreux",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Base aérienne 105 Évreux-Fauville",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          1.215833,
+          49.028611
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Transport aircraft base",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "A400M Atlas, C-130J",
+          "dataType": "string"
+        },
+        {
+          "name": "units",
+          "value": "ET 2/61 Franche-Comté",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801180Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-ca-mourmelon",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Camp de Mourmelon-le-Grand",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          4.368,
+          49.133
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Artillery training center",
+          "dataType": "string"
+        },
+        {
+          "name": "units",
+          "value": "1er RA, 40e RA",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806634Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-naval-base-toulon",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Base Navale de Toulon",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          5.93,
+          43.124
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "service_branch",
+          "value": "French Navy",
+          "dataType": "string"
+        },
+        {
+          "name": "homeport_for",
+          "value": "Charles de Gaulle, FREMM frigates",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Mediterranean fleet headquarters",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1680",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.809492Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_bases_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-camp-mourmelon",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Camp de Mourmelon-le-Grand",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          4.368,
+          49.133
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "service_branch",
+          "value": "French Army",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Artillery training, tank gunnery",
+          "dataType": "string"
+        },
+        {
+          "name": "size",
+          "value": "10,000 hectares",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1906",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.809499Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_bases_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-quartier-laperrine",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Quartier Laperrine",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          7.1,
+          43.58
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "service_branch",
+          "value": "French Army",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Special forces base",
+          "dataType": "string"
+        },
+        {
+          "name": "units_based",
+          "value": "1er RPIMa",
+          "dataType": "string"
+        },
+        {
+          "name": "location_detail",
+          "value": "Bayonne, Pyrénées-Atlantiques",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.809506Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_bases_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-camp-satory",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Camp de Satory",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          2.1,
+          48.78
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "service_branch",
+          "value": "French Army/Gendarmerie",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Armored vehicle testing, GIGN headquarters",
+          "dataType": "string"
+        },
+        {
+          "name": "units_based",
+          "value": "GIGN, 501e RCC",
+          "dataType": "string"
+        },
+        {
+          "name": "location_detail",
+          "value": "Versailles, Yvelines",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.809512Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_bases_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-cazaux-drone-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Base aérienne 120 Cazaux",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -1.125,
+          44.533
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Drone operations and training center",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "MQ-9 Reaper drones",
+          "dataType": "string"
+        },
+        {
+          "name": "units",
+          "value": "ET 1/33 Belfort",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.811845Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-dga-essais-de-missiles",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "DGA Essais de missiles",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Centre d'Essais des Landes",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -1.25,
+          44.3
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Missile testing facility",
+          "dataType": "string"
+        },
+        {
+          "name": "test_types",
+          "value": "Air-to-air, air-to-ground missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.817898Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-naval-base-brest",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Base Navale de Brest",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -4.486,
+          48.383
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Atlantic fleet base, submarine base",
+          "dataType": "string"
+        },
+        {
+          "name": "homeport_for",
+          "value": "Nuclear submarines, Atlantic fleet",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.821585Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-nexter-saint-etienne",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Nexter Munitions Saint-Étienne",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          4.387,
+          45.434
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Small arms manufacturing",
+          "dataType": "string"
+        },
+        {
+          "name": "products",
+          "value": "FAMAS, PAMAS, ammunition",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824612Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-ema-headquarters",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "État-Major des Armées",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "EMA",
+          "nameType": "acronym",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          2.312,
+          48.857
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Joint Chiefs of Staff Headquarters",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1962",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.827624Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_units_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-satory",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Camp de Satory",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          2.1,
+          48.78
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Armored vehicle testing and training",
+          "dataType": "string"
+        },
+        {
+          "name": "units",
+          "value": "501e RCC, STAT",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.832433Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-nexter-munitions",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Nexter Munitions",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          6.8,
+          48.7
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Ammunition manufacturing",
+          "dataType": "string"
+        },
+        {
+          "name": "products",
+          "value": "Small arms and artillery ammunition",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.842635Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "area-cos-headquarters",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Commandement des Opérations Spéciales",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "country": "france-001",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          2.35,
+          48.85
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Special Operations Command Headquarters",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1992",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.847576Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_special_forces_ew_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "aircraft-rafale-c",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Dassault_Rafale",
+      "vehicleType": "fighter-aircraft-fr",
+      "names": [
+        {
+          "value": "Dassault Rafale C",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Rafale",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Rafale C",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Air and Space Force"
+        }
+      ],
+      "make": "Dassault Aviation",
+      "model": "Rafale C",
+      "year": 2006,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "102",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "1",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 1.8",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "3,700 km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "15,240 m",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2× Safran M88-2 afterburning turbofan",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "MICA, Meteor, SCALP, AASM",
+          "dataType": "string"
+        },
+        {
+          "name": "avionics",
+          "value": "RBE2 AESA radar, OSF optronics",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Multi-role fighter",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2006",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "French Air and Space Force",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801737Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "aircraft-rafale-m",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Dassault_Rafale",
+      "vehicleType": "fighter-aircraft-fr",
+      "names": [
+        {
+          "value": "Dassault Rafale M",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Rafale Marine",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Rafale M",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "Dassault Aviation",
+      "model": "Rafale M",
+      "year": 2004,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "42",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "1",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 1.8",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "3,300 km",
+          "dataType": "string"
+        },
+        {
+          "name": "carrier_capable",
+          "value": "Yes - CATOBAR",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2× Safran M88-2 afterburning turbofan",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "MICA, Exocet AM39, AASM",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Carrier-based multi-role fighter",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2004",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "French Navy",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Reinforced landing gear, arrestor hook",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801764Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "aircraft-a400m-atlas",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Airbus_A400M_Atlas",
+      "vehicleType": "transport-aircraft-fr",
+      "names": [
+        {
+          "value": "Airbus A400M Atlas",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "A400M",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "A400M",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Air and Space Force"
+        }
+      ],
+      "make": "Airbus Defence and Space",
+      "model": "A400M Atlas",
+      "year": 2013,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "18",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "3-4",
+          "dataType": "string"
+        },
+        {
+          "name": "max_payload",
+          "value": "37 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "8,700 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "4× Europrop TP400-D6 turboprop",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_hold",
+          "value": "17.71m × 4m × 3.85m",
+          "dataType": "string"
+        },
+        {
+          "name": "troop_capacity",
+          "value": "116 paratroopers",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Tactical airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2013",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "Air-to-air refueling, unprepared strips",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801778Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "aircraft-c130j-hercules",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Lockheed_Martin_C-130J_Super_Hercules",
+      "vehicleType": "transport-aircraft-fr",
+      "names": [
+        {
+          "value": "Lockheed C-130J Super Hercules",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "C-130J",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "C-130J",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Air and Space Force"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "C-130J-30",
+      "year": 2017,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "4",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "number"
+        },
+        {
+          "name": "max_payload",
+          "value": "19.1 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "5,200 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "4× Rolls-Royce AE 2100D3 turboprop",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Tactical airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2017",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "Special operations support",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801792Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "helicopter-tiger-hap",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Eurocopter_Tiger",
+      "vehicleType": "attack-helicopter-fr",
+      "names": [
+        {
+          "value": "Eurocopter Tiger HAP",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Tiger",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "Tigre",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Tiger HAP",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Airbus Helicopters",
+      "model": "Tiger HAP",
+      "year": 2005,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "40",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "2",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "315 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2× MTR390 turboshaft",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm cannon, Mistral missiles, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "avionics",
+          "value": "STRIX sight, helmet-mounted display",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Attack helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2005",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Digital cockpit, composite armor",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801805Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "helicopter-tiger-had",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Eurocopter_Tiger",
+      "vehicleType": "attack-helicopter-fr",
+      "names": [
+        {
+          "value": "Eurocopter Tiger HAD",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Tiger HAD",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Tiger HAD",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Airbus Helicopters",
+      "model": "Tiger HAD",
+      "year": 2014,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "27",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "2",
+          "dataType": "number"
+        },
+        {
+          "name": "max_speed",
+          "value": "315 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2× MTR390 Enhanced turboshaft",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm cannon, Hellfire missiles, rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Multi-role attack helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2014",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Enhanced engines, improved armor",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801819Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "helicopter-puma",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Aérospatiale_Puma",
+      "vehicleType": "transport-helicopter-fr",
+      "names": [
+        {
+          "value": "Aérospatiale SA 330 Puma",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Puma",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SA 330",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Airbus Helicopters",
+      "model": "SA 330 Puma",
+      "year": 1975,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "27",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "2-3",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "16-20",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "271 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "550 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2× Turbomeca Turmo IVC turboshaft",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Medium transport helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "Troop transport, medical evacuation",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801833Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "helicopter-caracal",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Eurocopter_EC725_Caracal",
+      "vehicleType": "transport-helicopter-fr",
+      "names": [
+        {
+          "value": "Eurocopter EC725 Caracal",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Caracal",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "EC725",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Airbus Helicopters",
+      "model": "EC725 Caracal",
+      "year": 2006,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "20",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "2-4",
+          "dataType": "string"
+        },
+        {
+          "name": "passenger_capacity",
+          "value": "25-29",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "324 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "1,315 km",
+          "dataType": "string"
+        },
+        {
+          "name": "engines",
+          "value": "2× Safran Makila 1A4 turboshaft",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Multi-role helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2006",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "CSAR, special operations, transport",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "All-weather capability, air-to-air refueling",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.801847Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "artillery-caesar",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/CAESAR_self-propelled_howitzer",
+      "vehicleType": "self-propelled-artillery-fr",
+      "names": [
+        {
+          "value": "CAESAR",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "CAmion Équipé d'un Système d'ARtillerie",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "CAESAR",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "CAESAR 155mm",
+      "year": 2008,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "77",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "6",
+          "dataType": "number"
+        },
+        {
+          "name": "caliber",
+          "value": "155mm/52",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "42 km (standard), 55 km (rocket-assisted)",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "6 rounds/min burst, 2 rounds/min sustained",
+          "dataType": "string"
+        },
+        {
+          "name": "ammunition_capacity",
+          "value": "18 rounds ready",
+          "dataType": "string"
+        },
+        {
+          "name": "chassis",
+          "value": "Renault Sherpa 5 (6x6)",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "18 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "100 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2008",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Automated fire control, GPS navigation",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806912Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "artillery-auf1",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AUF1",
+      "vehicleType": "self-propelled-artillery-fr",
+      "names": [
+        {
+          "value": "AUF1",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Automoteur Unité de Feu de 155mm",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "GCT",
+          "nameType": "alias",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AUF1",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "AUF1 155mm",
+      "year": 1977,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "105",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "number"
+        },
+        {
+          "name": "caliber",
+          "value": "155mm/39",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "23.5 km",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "8 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "ammunition_capacity",
+          "value": "42 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "chassis",
+          "value": "AMX-30 tracked",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "42 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "60 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1977",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Autoloader, NBC protection",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806924Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "mlrs-lru",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/LRU_(MLRS)",
+      "vehicleType": "mlrs-fr",
+      "names": [
+        {
+          "value": "LRU",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Lance-Roquettes Unitaire",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "LRU",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "LRU MLRS",
+      "year": 1993,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "57",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "number"
+        },
+        {
+          "name": "rocket_caliber",
+          "value": "227mm",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "32-70 km",
+          "dataType": "string"
+        },
+        {
+          "name": "salvo_size",
+          "value": "12 rockets",
+          "dataType": "string"
+        },
+        {
+          "name": "reload_time",
+          "value": "10 minutes",
+          "dataType": "string"
+        },
+        {
+          "name": "chassis",
+          "value": "AMX-30 tracked",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "25 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1993",
+          "dataType": "string"
+        },
+        {
+          "name": "ammunition_types",
+          "value": "M26 submunition, M31 unitary",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806930Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "air-defense-samp-t",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/SAMP/T",
+      "vehicleType": "air-defense-fr",
+      "names": [
+        {
+          "value": "SAMP/T",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Sol-Air Moyenne Portée/Terrestre",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SAMP/T",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Air and Space Force"
+        }
+      ],
+      "make": "MBDA",
+      "model": "SAMP/T Aster 30",
+      "year": 2010,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "12 systems",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2-3 per vehicle",
+          "dataType": "string"
+        },
+        {
+          "name": "missile_type",
+          "value": "Aster 30",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "100+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "altitude_capability",
+          "value": "25 km",
+          "dataType": "string"
+        },
+        {
+          "name": "missiles_per_launcher",
+          "value": "8",
+          "dataType": "number"
+        },
+        {
+          "name": "radar",
+          "value": "ARABEL S-band multifunction radar",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "Anti-aircraft, anti-ballistic missile",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806936Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "air-defense-mistral",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mistral_(missile)",
+      "vehicleType": "air-defense-fr",
+      "names": [
+        {
+          "value": "Mistral MANPADS",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Missile d'Infanterie Sol-Air Très Rapide, d'Auto-guidage et Léger",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Mistral",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "MBDA",
+      "model": "Mistral",
+      "year": 1988,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "1000+",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "1 operator",
+          "dataType": "string"
+        },
+        {
+          "name": "missile_type",
+          "value": "Infrared homing",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "6 km",
+          "dataType": "string"
+        },
+        {
+          "name": "altitude_capability",
+          "value": "3 km",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "18.4 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Fire-and-forget IR seeker",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1988",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "Portable, vehicle-mounted, naval",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806942Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "radar-gm400",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Thales_GM400",
+      "vehicleType": "radar-system-fr",
+      "names": [
+        {
+          "value": "Thales GM400",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Ground Master 400",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "GM400",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Air and Space Force"
+        }
+      ],
+      "make": "Thales Group",
+      "model": "Ground Master 400",
+      "year": 2004,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "12",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "2-4 operators",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_band",
+          "value": "S-band",
+          "dataType": "string"
+        },
+        {
+          "name": "detection_range",
+          "value": "500 km",
+          "dataType": "string"
+        },
+        {
+          "name": "target_capacity",
+          "value": "500+ simultaneous tracks",
+          "dataType": "string"
+        },
+        {
+          "name": "coverage",
+          "value": "360° azimuth, 45° elevation",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Transportable",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2004",
+          "dataType": "string"
+        },
+        {
+          "name": "capabilities",
+          "value": "Air surveillance, missile detection",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806948Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "radar-gm200",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Thales_Ground_Master",
+      "vehicleType": "radar-system-fr",
+      "names": [
+        {
+          "value": "Thales GM200",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Ground Master 200",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "GM200",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Thales Group",
+      "model": "Ground Master 200",
+      "year": 2001,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "25+",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 operators",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_band",
+          "value": "X-band",
+          "dataType": "string"
+        },
+        {
+          "name": "detection_range",
+          "value": "250 km",
+          "dataType": "string"
+        },
+        {
+          "name": "target_capacity",
+          "value": "200 simultaneous tracks",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Vehicle-mounted",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment_time",
+          "value": "15 minutes",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2001",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Tactical air surveillance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.806954Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "drone-reaper",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/General_Atomics_MQ-9_Reaper",
+      "vehicleType": "male-rpas-fr",
+      "names": [
+        {
+          "value": "MQ-9 Reaper",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Predator B",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MQ-9",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Air and Space Force"
+        }
+      ],
+      "make": "General Atomics",
+      "model": "MQ-9 Reaper",
+      "year": 2013,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "26",
+          "dataType": "number"
+        },
+        {
+          "name": "length",
+          "value": "11 m",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "20 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight_empty",
+          "value": "2,223 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "max_takeoff_weight",
+          "value": "4,760 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "15,240 m",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "14 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "482 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Honeywell TPE331-10GD turboprop",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "MTS-B Multi-Spectral Targeting System",
+          "dataType": "string"
+        },
+        {
+          "name": "armament_capability",
+          "value": "Hellfire missiles, GBU-12 bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2013",
+          "dataType": "string"
+        },
+        {
+          "name": "base_location",
+          "value": "Niger (Niamey), Middle East operations",
+          "dataType": "string"
+        },
+        {
+          "name": "missions",
+          "value": "ISR, counter-terrorism, armed reconnaissance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812052Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "drone-harfang",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/IAI_Heron",
+      "vehicleType": "male-rpas-fr",
+      "names": [
+        {
+          "value": "Harfang",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "IAI Heron",
+          "nameType": "manufacturer_designation",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Harfang",
+          "identifierType": "french_designation",
+          "issuingAuthority": "French Air and Space Force"
+        }
+      ],
+      "make": "Israel Aerospace Industries",
+      "model": "Heron",
+      "year": 2008,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "4 (retired)",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "8.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "16.6 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight_empty",
+          "value": "1,100 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "max_takeoff_weight",
+          "value": "1,200 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "10,500 m",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "20+ hours",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "207 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Rotax 914 piston engine",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "EO/IR cameras, SAR radar",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2008",
+          "dataType": "string"
+        },
+        {
+          "name": "service_end",
+          "value": "2017",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment_history",
+          "value": "Afghanistan, Mali, Libya",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Retired, replaced by Reaper",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812064Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "drone-sdti",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sagem_Sperwer",
+      "vehicleType": "tactical-drone-fr",
+      "names": [
+        {
+          "value": "SDTI",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Système de Drone Tactique Intérimaire",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "Sperwer",
+          "nameType": "manufacturer_designation",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SDTI",
+          "identifierType": "french_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Safran Electronics & Defense",
+      "model": "Sperwer",
+      "year": 2003,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "6 systems (retired)",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "7.6 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "350 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "5,000 m",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "5 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "220 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "AR 741 piston engine",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "EO/IR stabilized camera",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_method",
+          "value": "Pneumatic catapult",
+          "dataType": "string"
+        },
+        {
+          "name": "recovery",
+          "value": "Parachute landing",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2003",
+          "dataType": "string"
+        },
+        {
+          "name": "service_end",
+          "value": "2017",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment_history",
+          "value": "Afghanistan, Chad, Mali",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812071Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "drone-patroller",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sagem_Patroller",
+      "vehicleType": "male-rpas-fr",
+      "names": [
+        {
+          "value": "Patroller",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Patroller",
+          "identifierType": "drone_designation",
+          "issuingAuthority": "Safran"
+        }
+      ],
+      "make": "Safran Electronics & Defense",
+      "model": "Patroller",
+      "year": 2014,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "In development/testing",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "7.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "16 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "700 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "max_takeoff_weight",
+          "value": "1,500 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "7,600 m",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "20+ hours",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "250 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Rotax 914 turbo piston engine",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "Multi-sensor EO/IR/radar package",
+          "dataType": "string"
+        },
+        {
+          "name": "armament_capability",
+          "value": "Up to 250 kg external stores",
+          "dataType": "string"
+        },
+        {
+          "name": "first_flight",
+          "value": "2014",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Development/evaluation phase",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Automatic takeoff/landing, satellite control",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812079Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "drone-aliaca",
+      "type": "Vehicle",
+      "uri": "https://www.safran-group.com/products-services/aliaca-drone",
+      "vehicleType": "tactical-drone-fr",
+      "names": [
+        {
+          "value": "ALIACA",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "ALIACA",
+          "identifierType": "drone_designation",
+          "issuingAuthority": "Safran"
+        }
+      ],
+      "make": "Safran Electronics & Defense",
+      "model": "ALIACA",
+      "year": 2020,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "In service",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "wingspan",
+          "value": "3.3 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "15 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "8 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "130 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "100 km",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Electric pusher propeller",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "EO/IR stabilized turret",
+          "dataType": "string"
+        },
+        {
+          "name": "launch_method",
+          "value": "Hand-launched or catapult",
+          "dataType": "string"
+        },
+        {
+          "name": "recovery",
+          "value": "Net capture or parachute",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2020",
+          "dataType": "string"
+        },
+        {
+          "name": "users",
+          "value": "French Special Forces, Foreign Legion",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Silent operation, AI-assisted target recognition",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812086Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "drone-vsruas",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Airbus_Helicopters_VSR700",
+      "vehicleType": "naval-drone-fr",
+      "names": [
+        {
+          "value": "VSR700",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "SDAM",
+          "nameType": "french_program_name",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "VSR700",
+          "identifierType": "drone_designation",
+          "issuingAuthority": "Airbus Helicopters"
+        }
+      ],
+      "make": "Airbus Helicopters",
+      "model": "VSR700",
+      "year": 2024,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "In development",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "6.2 m",
+          "dataType": "string"
+        },
+        {
+          "name": "rotor_diameter",
+          "value": "6.1 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "700 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "max_takeoff_weight",
+          "value": "950 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "8+ hours",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "185 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "service_ceiling",
+          "value": "6,100 m",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Safran Ariel 1D1 turboshaft",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "EO/IR, radar, ESM",
+          "dataType": "string"
+        },
+        {
+          "name": "payload_capacity",
+          "value": "250 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "first_flight",
+          "value": "2021",
+          "dataType": "string"
+        },
+        {
+          "name": "intended_platforms",
+          "value": "FDI frigates, future naval vessels",
+          "dataType": "string"
+        },
+        {
+          "name": "missions",
+          "value": "ISR, surface surveillance, ASW",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Ship deck landing, autonomous operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812093Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-mica",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/MICA_(missile)",
+      "vehicleType": "air-to-air-missile-fr",
+      "names": [
+        {
+          "value": "MICA",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Missile d'Interception, de Combat et d'Autodéfense",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MICA",
+          "identifierType": "missile_designation",
+          "issuingAuthority": "MBDA"
+        }
+      ],
+      "make": "MBDA",
+      "model": "MICA EM/IR",
+      "year": 1996,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "variants",
+          "value": "MICA EM (radar), MICA IR (infrared)",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "3.1 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "160 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "112 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "80 km",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "Mach 4",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance_em",
+          "value": "Active radar homing",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance_ir",
+          "value": "Imaging infrared seeker",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "12 kg blast fragmentation",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1996",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Rafale, Mirage 2000, ground launchers",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Lock-on after launch, high maneuverability",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818286Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-meteor",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Meteor_(missile)",
+      "vehicleType": "air-to-air-missile-fr",
+      "names": [
+        {
+          "value": "Meteor",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "BVRAAM",
+          "nameType": "acronym",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Meteor",
+          "identifierType": "missile_designation",
+          "issuingAuthority": "MBDA"
+        }
+      ],
+      "make": "MBDA",
+      "model": "Meteor",
+      "year": 2016,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "3.65 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "178 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "185 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "100+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "Mach 4+",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Ramjet engine",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Active radar homing",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "Blast fragmentation",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2016",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Rafale",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "No-escape zone, ramjet propulsion",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818302Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-scalp",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/SCALP_(missile)",
+      "vehicleType": "air-to-ground-missile-fr",
+      "names": [
+        {
+          "value": "SCALP",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Système de Croisière Autonome à Longue Portée",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "Storm Shadow",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SCALP",
+          "identifierType": "missile_designation",
+          "issuingAuthority": "MBDA"
+        }
+      ],
+      "make": "MBDA",
+      "model": "SCALP",
+      "year": 2003,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "5.1 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "630 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "1,300 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "550+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "Mach 0.8",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Turbomeca Microturbo TRI 60-30 turbojet",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "GPS/INS + terminal imaging IR",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "450 kg BROACH penetrator",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2003",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Rafale, Mirage 2000",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Low-level flight, bunker-buster capability",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818312Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-aasm",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AASM_Hammer",
+      "vehicleType": "air-to-ground-missile-fr",
+      "names": [
+        {
+          "value": "AASM",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Armement Air-Sol Modulaire",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "HAMMER",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AASM",
+          "identifierType": "missile_designation",
+          "issuingAuthority": "Safran"
+        }
+      ],
+      "make": "Safran Electronics & Defense",
+      "model": "AASM",
+      "year": 2007,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "3.0 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "250 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "230 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "60+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance_options",
+          "value": "GPS/INS, Imaging IR, Semi-active laser",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead_options",
+          "value": "125 kg general purpose, penetrator, anti-runway",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Rocket motor with wings",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2007",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Rafale, Mirage 2000",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Modular design, precision strike",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818321Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-milan",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/MILAN",
+      "vehicleType": "anti-tank-missile-fr",
+      "names": [
+        {
+          "value": "MILAN",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Missile d'Infanterie Léger ANtichar",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MILAN",
+          "identifierType": "missile_designation",
+          "issuingAuthority": "MBDA"
+        }
+      ],
+      "make": "MBDA",
+      "model": "MILAN",
+      "year": 1972,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "0.769 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "103 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "6.73 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "2 km",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "SACLOS wire-guided",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "2.5 kg HEAT",
+          "dataType": "string"
+        },
+        {
+          "name": "penetration",
+          "value": "1000 mm RHA",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1972",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Infantry portable, vehicle-mounted",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "MILAN 2, MILAN 3, MILAN ER",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818330Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-mmp",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/MMP_(missile)",
+      "vehicleType": "anti-tank-missile-fr",
+      "names": [
+        {
+          "value": "MMP",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Missile Moyenne Portée",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MMP",
+          "identifierType": "missile_designation",
+          "issuingAuthority": "MBDA"
+        }
+      ],
+      "make": "MBDA",
+      "model": "MMP",
+      "year": 2017,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "1.3 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "140 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "15 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "4+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Fiber-optic link with imaging IR seeker",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "Tandem HEAT",
+          "dataType": "string"
+        },
+        {
+          "name": "modes",
+          "value": "Fire-and-forget, man-in-the-loop",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2017",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Infantry, EBRC Jaguar, VBCI",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Lock-on after launch, multi-target engagement",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818339Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-m51",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M51_(missile)",
+      "vehicleType": "strategic-missile-fr",
+      "names": [
+        {
+          "value": "M51",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Mer-Sol Balistique Stratégique",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M51",
+          "identifierType": "missile_designation",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "ArianeGroup",
+      "model": "M51",
+      "year": 2010,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "12 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "2.3 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "52,000 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "8,000+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "3-stage solid fuel",
+          "dataType": "string"
+        },
+        {
+          "name": "warheads",
+          "value": "6-10 TN 75 nuclear warheads",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial with stellar correction",
+          "dataType": "string"
+        },
+        {
+          "name": "accuracy",
+          "value": "CEP < 350 m",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Le Triomphant-class submarines",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "M51.1, M51.2, M51.3 (planned)",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818347Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "missile-exocet",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Exocet",
+      "vehicleType": "anti-ship-missile-fr",
+      "names": [
+        {
+          "value": "Exocet",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Flying Fish",
+          "nameType": "translation",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MM40",
+          "identifierType": "variant_designation",
+          "issuingAuthority": "MBDA"
+        }
+      ],
+      "make": "MBDA",
+      "model": "Exocet MM40 Block 3",
+      "year": 1975,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "length",
+          "value": "5.8 m",
+          "dataType": "string"
+        },
+        {
+          "name": "diameter",
+          "value": "350 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "870 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "200+ km (Block 3)",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "Mach 0.93",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Solid fuel rocket motor",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial + active radar terminal",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "165 kg blast fragmentation",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1975",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Ships, submarines, aircraft, coastal",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "MM38, MM40, AM39, SM39",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818359Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "carrier-charles-de-gaulle",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/French_aircraft_carrier_Charles_de_Gaulle",
+      "vehicleType": "aircraft-carrier-fr",
+      "names": [
+        {
+          "value": "Charles de Gaulle",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "R 91",
+          "nameType": "hull_number",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "R 91",
+          "identifierType": "hull_number",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "Naval Group",
+      "model": "Charles de Gaulle-class",
+      "year": 2001,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "1",
+          "dataType": "number"
+        },
+        {
+          "name": "displacement",
+          "value": "42,500 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "261.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "64.36 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "1,950 (including air wing)",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "2× K15 nuclear reactors",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "27 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_capacity",
+          "value": "40 aircraft",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "4× Sylver VLS, 2× Phalanx CIWS",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_complement",
+          "value": "Rafale M, E-2C Hawkeye, NH90",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2001",
+          "dataType": "string"
+        },
+        {
+          "name": "homeport",
+          "value": "Toulon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.821796Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "frigate-fremm-aquitaine",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Aquitaine-class_frigate",
+      "vehicleType": "frigate-fr",
+      "names": [
+        {
+          "value": "FREMM Aquitaine-class",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Frégate Européenne Multi-Mission",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "FREMM",
+          "identifierType": "class_designation",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "Naval Group",
+      "model": "FREMM",
+      "year": 2012,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "8",
+          "dataType": "number"
+        },
+        {
+          "name": "displacement",
+          "value": "6,000 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "142 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "20 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "145",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "CODLOG (diesel-electric/gas turbine)",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "27 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "6,000 nm at 15 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Sylver A50 VLS, Exocet MM40, 76mm gun",
+          "dataType": "string"
+        },
+        {
+          "name": "sensors",
+          "value": "HERAKLES radar, sonar suite",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2012",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft",
+          "value": "NH90 helicopter",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.821807Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "frigate-la-fayette",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/La_Fayette-class_frigate",
+      "vehicleType": "frigate-fr",
+      "names": [
+        {
+          "value": "La Fayette-class",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Frégate de surveillance",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "FLF",
+          "identifierType": "class_designation",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "Naval Group",
+      "model": "La Fayette",
+      "year": 1996,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "5",
+          "dataType": "number"
+        },
+        {
+          "name": "displacement",
+          "value": "3,600 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "125 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "15.4 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "139",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "4× SEMT Pielstick diesels",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "25 knots",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Exocet MM40, Crotale missiles, 100mm gun",
+          "dataType": "string"
+        },
+        {
+          "name": "stealth_features",
+          "value": "Reduced radar cross-section",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1996",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft",
+          "value": "AS565 Panther helicopter",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.821813Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "submarine-barracuda-suffren",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Barracuda-class_submarine_(France)",
+      "vehicleType": "submarine-fr",
+      "names": [
+        {
+          "value": "Suffren-class",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Sous-marin Nucléaire d'Attaque Barracuda",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SNA",
+          "identifierType": "class_designation",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "Naval Group",
+      "model": "Suffren (Barracuda)",
+      "year": 2020,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "6 (planned)",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement_surfaced",
+          "value": "4,650 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement_submerged",
+          "value": "5,300 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "99.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "8.8 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "65",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "K22 nuclear reactor, pump-jet",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_submerged",
+          "value": "25+ knots",
+          "dataType": "string"
+        },
+        {
+          "name": "diving_depth",
+          "value": "350+ m",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "4× 533mm torpedo tubes, SCALP Naval",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2020",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Pump-jet propulsion, advanced sonar",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.821819Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "submarine-le-triomphant",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Triomphant-class_submarine",
+      "vehicleType": "submarine-fr",
+      "names": [
+        {
+          "value": "Le Triomphant-class",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Sous-marin Nucléaire Lanceur d'Engins",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "SNLE-NG",
+          "nameType": "acronym",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SNLE-NG",
+          "identifierType": "class_designation",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "Naval Group",
+      "model": "Le Triomphant",
+      "year": 1997,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "4",
+          "dataType": "number"
+        },
+        {
+          "name": "displacement_surfaced",
+          "value": "12,640 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement_submerged",
+          "value": "14,335 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "138 m",
+          "dataType": "string"
+        },
+        {
+          "name": "beam",
+          "value": "12.5 m",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "111",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "K15 nuclear reactor, pump-jet",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed_submerged",
+          "value": "25+ knots",
+          "dataType": "string"
+        },
+        {
+          "name": "diving_depth",
+          "value": "500+ m",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "16× M51 SLBM, 4× 533mm torpedo tubes",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1997",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Strategic nuclear deterrence",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.821825Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "weapon-famas-f1",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FAMAS",
+      "vehicleType": "assault-rifle-fr",
+      "names": [
+        {
+          "value": "FAMAS F1",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Fusil d'Assaut de la Manufacture d'Armes de Saint-Étienne",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "Le Clairon",
+          "nameType": "nickname",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "FAMAS F1",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "FAMAS F1",
+      "year": 1978,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Delayed blowback",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "900-1100 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "400m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "25/30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.61 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "757 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "barrel_length",
+          "value": "488 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Bullpup",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1978",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "French Armed Forces, Foreign Legion",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Being replaced by HK416F",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824835Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "weapon-hk416f",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/HK416",
+      "vehicleType": "assault-rifle-fr",
+      "names": [
+        {
+          "value": "HK416F",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Heckler & Koch 416 French",
+          "nameType": "formal",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "HK416F",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Heckler & Koch",
+      "model": "416F",
+      "year": 2017,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated, rotating bolt",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "700-900 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "500m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.6 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "838 mm (stock extended)",
+          "dataType": "string"
+        },
+        {
+          "name": "barrel_length",
+          "value": "368 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Conventional",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2017",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_users",
+          "value": "French Armed Forces",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Picatinny rails, adjustable stock, suppressor ready",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824848Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "weapon-fr-f2",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FR_F2_sniper_rifle",
+      "vehicleType": "sniper-rifle-fr",
+      "names": [
+        {
+          "value": "FR F2",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Fusil à Répétition F2",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "FR F2",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "FR F2",
+      "year": 1984,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×51mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Bolt-action",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "800m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "10 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "5.2 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1138 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "barrel_length",
+          "value": "650 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Designated marksman rifle",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1984",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Bipod, thermal sleeve, APX scope mount",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824855Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "weapon-pgm-hecate-ii",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/PGM_Hécate_II",
+      "vehicleType": "sniper-rifle-fr",
+      "names": [
+        {
+          "value": "PGM Hécate II",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Hécate II",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Hécate II",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "PGM Précision",
+      "model": "Hécate II",
+      "year": 1993,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": ".50 BMG (12.7×99mm)",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Bolt-action",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "1500m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "7 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "13.8 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1380 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "barrel_length",
+          "value": "700 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Anti-materiel rifle",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1993",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Muzzle brake, bipod, anti-materiel capability",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824862Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "weapon-minimi",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FN_Minimi",
+      "vehicleType": "machine-gun-fr",
+      "names": [
+        {
+          "value": "FN Minimi",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "M249 Para",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Minimi",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "FN Herstal",
+      "model": "Minimi",
+      "year": 1982,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "700-1000 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "800m",
+          "dataType": "string"
+        },
+        {
+          "name": "feed_system",
+          "value": "Belt-fed or 30-round magazine",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "6.85 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "1040 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "barrel_length",
+          "value": "465 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Squad automatic weapon",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1982",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824869Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "weapon-aanf1",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AAT-F1",
+      "vehicleType": "machine-gun-fr",
+      "names": [
+        {
+          "value": "AAT-F1",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Arme Automatique Transformée F1",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AAT-F1",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "AAT-F1",
+      "year": 1952,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.5×54mm French",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "700 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "1200m",
+          "dataType": "string"
+        },
+        {
+          "name": "feed_system",
+          "value": "Belt-fed",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "9.75 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "General purpose machine gun",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1952",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Limited service",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824876Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "weapon-pamas-g1",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/PAMAS_G1",
+      "vehicleType": "pistol-fr",
+      "names": [
+        {
+          "value": "PAMAS G1",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Pistolet Automatique Manufacture d'Armes de Saint-Étienne",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "PAMAS G1",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Armed Forces"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "PAMAS G1",
+      "year": 1987,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "9×19mm Parabellum",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Short recoil, locked breech",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "15 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "1.1 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "216 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "barrel_length",
+          "value": "112 mm",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "50m",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Service pistol",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1987",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Double-action trigger, manual safety",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.824883Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "unit-1er-rpima",
+      "type": "Vehicle",
+      "uri": "https://fr.wikipedia.org/wiki/1er_régiment_de_parachutistes_d'infanterie_de_marine",
+      "vehicleType": "military-organization-fr",
+      "names": [
+        {
+          "value": "1er Régiment de Parachutistes d'Infanterie de Marine",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "1er RPIMa",
+          "nameType": "acronym",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "1er RPIMa",
+          "identifierType": "unit_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "French Armed Forces",
+      "model": "Special Forces Regiment",
+      "year": 1960,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "personnel_strength",
+          "value": "1200",
+          "dataType": "number"
+        },
+        {
+          "name": "unit_type",
+          "value": "Special Forces Regiment",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Special operations, counter-terrorism",
+          "dataType": "string"
+        },
+        {
+          "name": "base_location",
+          "value": "Bayonne, France",
+          "dataType": "string"
+        },
+        {
+          "name": "parent_command",
+          "value": "Commandement des Opérations Spéciales",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1960",
+          "dataType": "string"
+        },
+        {
+          "name": "motto",
+          "value": "Qui ose gagne",
+          "dataType": "string"
+        },
+        {
+          "name": "operations",
+          "value": "Mali, Afghanistan, Sahel operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.827851Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_units_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "unit-commandos-marine",
+      "type": "Vehicle",
+      "uri": "https://fr.wikipedia.org/wiki/Commandos_marine",
+      "vehicleType": "military-organization-fr",
+      "names": [
+        {
+          "value": "Commandos Marine",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "COFUSCO",
+          "identifierType": "command_designation",
+          "issuingAuthority": "French Navy"
+        }
+      ],
+      "make": "French Navy",
+      "model": "Naval Special Forces",
+      "year": 1947,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "personnel_strength",
+          "value": "500",
+          "dataType": "number"
+        },
+        {
+          "name": "unit_type",
+          "value": "Naval Special Forces",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Maritime special operations",
+          "dataType": "string"
+        },
+        {
+          "name": "base_location",
+          "value": "Lorient, France",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1947",
+          "dataType": "string"
+        },
+        {
+          "name": "units",
+          "value": "Commando Hubert, Commando Jaubert, Commando de Penfentenyo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.827867Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_units_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "unit-gign",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/GIGN",
+      "vehicleType": "military-organization-fr",
+      "names": [
+        {
+          "value": "Groupe d'Intervention de la Gendarmerie Nationale",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "GIGN",
+          "nameType": "acronym",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "GIGN",
+          "identifierType": "unit_designation",
+          "issuingAuthority": "French Gendarmerie"
+        }
+      ],
+      "make": "French Gendarmerie",
+      "model": "Counter-Terrorism Unit",
+      "year": 1973,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "personnel_strength",
+          "value": "400",
+          "dataType": "number"
+        },
+        {
+          "name": "unit_type",
+          "value": "Elite Counter-Terrorism Unit",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Counter-terrorism, hostage rescue",
+          "dataType": "string"
+        },
+        {
+          "name": "base_location",
+          "value": "Satory, Versailles",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1973",
+          "dataType": "string"
+        },
+        {
+          "name": "notable_operations",
+          "value": "Air France Flight 8969, Bataclan rescue",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.827874Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_units_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "unit-2e-rep",
+      "type": "Vehicle",
+      "uri": "https://fr.wikipedia.org/wiki/2e_régiment_étranger_de_parachutistes",
+      "vehicleType": "military-organization-fr",
+      "names": [
+        {
+          "value": "2e Régiment Étranger de Parachutistes",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "2e REP",
+          "nameType": "acronym",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "2e REP",
+          "identifierType": "unit_designation",
+          "issuingAuthority": "French Foreign Legion"
+        }
+      ],
+      "make": "French Foreign Legion",
+      "model": "Airborne Regiment",
+      "year": 1955,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "personnel_strength",
+          "value": "1300",
+          "dataType": "number"
+        },
+        {
+          "name": "unit_type",
+          "value": "Airborne Infantry Regiment",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_role",
+          "value": "Rapid deployment, airborne operations",
+          "dataType": "string"
+        },
+        {
+          "name": "base_location",
+          "value": "Calvi, Corsica",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1955",
+          "dataType": "string"
+        },
+        {
+          "name": "motto",
+          "value": "Plus vite que l'éclair",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.827881Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_units_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "tank-leclerc",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Leclerc_tank",
+      "vehicleType": "main-battle-tank-fr",
+      "names": [
+        {
+          "value": "AMX-56 Leclerc",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Leclerc",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AMX-56",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "Leclerc",
+      "year": 1992,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "222",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "number"
+        },
+        {
+          "name": "weight",
+          "value": "56.5 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "120mm CN120-26 smoothbore gun",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "12.7mm M2HB, 7.62mm coaxial",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Composite armor with ERA capability",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "SACM V8X-1500 hyperbar diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "71 km/h road, 55 km/h cross-country",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "550 km",
+          "dataType": "string"
+        },
+        {
+          "name": "fire_control",
+          "value": "FINDERS thermal sight, ballistic computer",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1992",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Autoloader, hunter-killer capability",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.832909Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "ifv-vbci",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/VBCI",
+      "vehicleType": "infantry-fighting-vehicle-fr",
+      "names": [
+        {
+          "value": "VBCI",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Véhicule Blindé de Combat d'Infanterie",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "VBCI",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "VBCI",
+      "year": 2008,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "630",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "3 + 8 infantry",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "32 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "25mm M811 autocannon",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "7.62mm coaxial MG, MILAN missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Steel armor with add-on protection",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Renault DXi 7 diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "100 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "750 km",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "8x8 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2008",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Mine protection, NBC system",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.832927Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "recon-amx-10-rc",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AMX-10_RC",
+      "vehicleType": "reconnaissance-vehicle-fr",
+      "names": [
+        {
+          "value": "AMX-10 RC",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Roues-Canon",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AMX-10 RC",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "AMX-10 RC",
+      "year": 1981,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "245",
+          "dataType": "number"
+        },
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "number"
+        },
+        {
+          "name": "weight",
+          "value": "15.8 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "105mm F2 BK MECA gun",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "7.62mm coaxial MG",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Aluminum armor",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Hispano-Suiza HS 115 diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "85 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "6x6 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1981",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Amphibious capability, NBC protection",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.832942Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "recon-ebrc-jaguar",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/EBRC_Jaguar",
+      "vehicleType": "reconnaissance-vehicle-fr",
+      "names": [
+        {
+          "value": "EBRC Jaguar",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Engin Blindé de Reconnaissance et de Combat",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "Jaguar",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "EBRC",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems / Arquus",
+      "model": "EBRC Jaguar",
+      "year": 2020,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "300 (planned)",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3",
+          "dataType": "number"
+        },
+        {
+          "name": "weight",
+          "value": "25 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "40mm CTA cannon",
+          "dataType": "string"
+        },
+        {
+          "name": "secondary_armament",
+          "value": "7.62mm coaxial, MMP missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Modular armor system",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Volvo D13 diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "90 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "6x6 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2020",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "Digital fire control, vetronics system",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.832950Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "vehicle-vab",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Véhicule_de_l'Avant_Blindé",
+      "vehicleType": "wheeled-vehicle-fr",
+      "names": [
+        {
+          "value": "VAB",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Véhicule de l'Avant Blindé",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "VAB",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems",
+      "model": "VAB",
+      "year": 1976,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "3900+",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 + 10 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "13 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Various (12.7mm, 20mm, MILAN)",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Steel armor",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Renault MIDR 06.20.45 diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "92 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "1000 km",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "4x4 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "1976",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "APC, command, ambulance, ATGM",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.832957Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "vehicle-vbmr-griffon",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/VBMR_Griffon",
+      "vehicleType": "wheeled-vehicle-fr",
+      "names": [
+        {
+          "value": "VBMR Griffon",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Véhicule Blindé Multi-Rôles",
+          "nameType": "formal",
+          "language": "fr"
+        },
+        {
+          "value": "Griffon",
+          "nameType": "common",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "VBMR",
+          "identifierType": "military_designation",
+          "issuingAuthority": "French Army"
+        }
+      ],
+      "make": "Nexter Systems / Arquus",
+      "model": "VBMR Griffon",
+      "year": 2019,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "fleet_size",
+          "value": "1872 (planned)",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2 + 8 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "24.5 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Remote weapon station (12.7mm/40mm)",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Steel armor with add-on protection",
+          "dataType": "string"
+        },
+        {
+          "name": "engine",
+          "value": "Volvo D13K diesel",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "90 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "6x6 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2019",
+          "dataType": "string"
+        },
+        {
+          "name": "features",
+          "value": "IED protection, modular design",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.832964Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "equipment-felin",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FÉLIN",
+      "vehicleType": "personal-equipment-fr",
+      "names": [
+        {
+          "value": "FÉLIN",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Fantassin à Équipements et Liaisons Intégrés",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "FÉLIN",
+          "identifierType": "system_designation",
+          "issuingAuthority": "Safran Electronics"
+        }
+      ],
+      "make": "Safran Electronics & Defense",
+      "model": "FÉLIN",
+      "year": 2010,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "system_components",
+          "value": "Combat uniform, body armor, helmet, electronics",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "25 kg complete system",
+          "dataType": "string"
+        },
+        {
+          "name": "protection_level",
+          "value": "NIJ Level IIIA ballistic protection",
+          "dataType": "string"
+        },
+        {
+          "name": "electronics",
+          "value": "Radio, GPS, thermal sight, helmet display",
+          "dataType": "string"
+        },
+        {
+          "name": "battery_life",
+          "value": "24 hours operation",
+          "dataType": "string"
+        },
+        {
+          "name": "modular_design",
+          "value": "Adaptable to mission requirements",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2010",
+          "dataType": "string"
+        },
+        {
+          "name": "users",
+          "value": "French infantry units",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.843156Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "equipment-spectra-helmet",
+      "type": "Vehicle",
+      "uri": "https://www.safran-group.com/products-services/spectra-helmet",
+      "vehicleType": "personal-equipment-fr",
+      "names": [
+        {
+          "value": "Casque SPECTRA",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "SPECTRA Helmet",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SPECTRA",
+          "identifierType": "material_designation",
+          "issuingAuthority": "Honeywell"
+        }
+      ],
+      "make": "Various manufacturers",
+      "model": "SPECTRA fiber helmet",
+      "year": 2005,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "material",
+          "value": "SPECTRA ultra-high molecular weight polyethylene",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "1.4 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "protection_level",
+          "value": "NIJ Level IIIA",
+          "dataType": "string"
+        },
+        {
+          "name": "coverage",
+          "value": "360° ballistic protection",
+          "dataType": "string"
+        },
+        {
+          "name": "accessories",
+          "value": "NVG mount, communication system integration",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2005",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.843180Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "ammo-556-nato",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/5.56×45mm_NATO",
+      "vehicleType": "ammunition-fr",
+      "names": [
+        {
+          "value": "5.56×45mm NATO",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "5,56 × 45 mm OTAN",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "5.56×45mm",
+          "identifierType": "caliber_designation",
+          "issuingAuthority": "NATO"
+        }
+      ],
+      "make": "Nexter Munitions",
+      "model": "5.56×45mm",
+      "year": 1980,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "bullet_weight",
+          "value": "4.0 g (62 grain)",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_velocity",
+          "value": "990 m/s",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_energy",
+          "value": "1,950 J",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "500 m",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "Ball, tracer, armor-piercing",
+          "dataType": "string"
+        },
+        {
+          "name": "weapons_used",
+          "value": "FAMAS, HK416F, Minimi",
+          "dataType": "string"
+        },
+        {
+          "name": "case_material",
+          "value": "Brass",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.843193Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "ammo-762-nato",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/7.62×51mm_NATO",
+      "vehicleType": "ammunition-fr",
+      "names": [
+        {
+          "value": "7.62×51mm NATO",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "7,62 × 51 mm OTAN",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "7.62×51mm",
+          "identifierType": "caliber_designation",
+          "issuingAuthority": "NATO"
+        }
+      ],
+      "make": "Nexter Munitions",
+      "model": "7.62×51mm",
+      "year": 1954,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "bullet_weight",
+          "value": "9.5 g (147 grain)",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_velocity",
+          "value": "838 m/s",
+          "dataType": "string"
+        },
+        {
+          "name": "muzzle_energy",
+          "value": "3,304 J",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "800 m",
+          "dataType": "string"
+        },
+        {
+          "name": "weapons_used",
+          "value": "FR F2 sniper rifle, machine guns",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "Ball, match grade, armor-piercing",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.843205Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "ammo-155mm-artillery",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/155_mm_howitzer",
+      "vehicleType": "ammunition-fr",
+      "names": [
+        {
+          "value": "155mm Artillery Shell",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Obus d'artillerie 155mm",
+          "nameType": "official",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "155mm",
+          "identifierType": "caliber_designation",
+          "issuingAuthority": "NATO"
+        }
+      ],
+      "make": "Nexter Munitions",
+      "model": "155mm HE",
+      "year": 1970,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "projectile_weight",
+          "value": "43.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "explosive_fill",
+          "value": "TNT/Composition B",
+          "dataType": "string"
+        },
+        {
+          "name": "maximum_range",
+          "value": "42 km (standard), 55 km (rocket-assisted)",
+          "dataType": "string"
+        },
+        {
+          "name": "variants",
+          "value": "HE, smoke, illumination, precision-guided",
+          "dataType": "string"
+        },
+        {
+          "name": "weapons_used",
+          "value": "CAESAR, AUF1 howitzers",
+          "dataType": "string"
+        },
+        {
+          "name": "fragmentation_radius",
+          "value": "50 m lethal, 150 m casualty",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.843216Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "ew-spectra",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/SPECTRA",
+      "vehicleType": "electronic-warfare-system-fr",
+      "names": [
+        {
+          "value": "SPECTRA",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Système de Protection et d'Évitement des Conduites de Tir du Rafale",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SPECTRA",
+          "identifierType": "system_designation",
+          "issuingAuthority": "Thales/MBDA"
+        }
+      ],
+      "make": "Thales/MBDA",
+      "model": "SPECTRA",
+      "year": 2001,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "platforms",
+          "value": "Rafale fighter aircraft",
+          "dataType": "string"
+        },
+        {
+          "name": "ew_capabilities",
+          "value": "RWR, jamming, chaff/flare dispensing",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_coverage",
+          "value": "2-18 GHz",
+          "dataType": "string"
+        },
+        {
+          "name": "detection_range",
+          "value": "200+ km",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2001",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.848018Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_special_forces_ew_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "radio-pr4g",
+      "type": "Vehicle",
+      "uri": "https://www.thalesgroup.com/en/pr4g-radio",
+      "vehicleType": "communications-system-fr",
+      "names": [
+        {
+          "value": "PR4G",
+          "nameType": "official",
+          "language": "fr"
+        },
+        {
+          "value": "Poste Radio 4e Génération",
+          "nameType": "formal",
+          "language": "fr"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "PR4G",
+          "identifierType": "radio_designation",
+          "issuingAuthority": "Thales"
+        }
+      ],
+      "make": "Thales Group",
+      "model": "PR4G",
+      "year": 2011,
+      "owner": "france-001",
+      "characteristics": [
+        {
+          "name": "frequency_range",
+          "value": "30-512 MHz",
+          "dataType": "string"
+        },
+        {
+          "name": "output_power",
+          "value": "5W, 20W, 50W variants",
+          "dataType": "string"
+        },
+        {
+          "name": "encryption",
+          "value": "ANDVT encryption",
+          "dataType": "string"
+        },
+        {
+          "name": "service_entry",
+          "value": "2011",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.848042Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_special_forces_ew_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "fighter-aircraft-fr",
+      "name": "French Fighter Aircraft",
+      "category": "aircraft",
+      "subcategory": "fighter",
+      "description": "Multi-role fighter aircraft for air superiority and ground attack",
+      "characteristics": [
+        {
+          "name": "mission_type",
+          "value": "air superiority, ground attack",
+          "dataType": "string"
+        },
+        {
+          "name": "speed_category",
+          "value": "supersonic",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.802333Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "transport-aircraft-fr",
+      "name": "French Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "transport",
+      "description": "Military transport aircraft for personnel and cargo",
+      "characteristics": [
+        {
+          "name": "mission_type",
+          "value": "strategic airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capability",
+          "value": "heavy lift",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.802362Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "attack-helicopter-fr",
+      "name": "French Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Combat helicopters for close air support",
+      "characteristics": [
+        {
+          "name": "mission_type",
+          "value": "close air support, anti-tank",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles, cannon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.802379Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "transport-helicopter-fr",
+      "name": "French Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Helicopters for troop transport and logistics",
+      "characteristics": [
+        {
+          "name": "mission_type",
+          "value": "troop transport, logistics",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "medium to heavy lift",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.802395Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "self-propelled-artillery-fr",
+      "name": "French Self-Propelled Artillery",
+      "category": "artillery",
+      "subcategory": "self-propelled howitzer",
+      "description": "Mobile artillery systems for fire support",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "155mm",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "wheeled/tracked",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.807193Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "mlrs-fr",
+      "name": "French Multiple Launch Rocket System",
+      "category": "artillery",
+      "subcategory": "MLRS",
+      "description": "Multiple rocket launcher systems",
+      "characteristics": [
+        {
+          "name": "rocket_caliber",
+          "value": "227mm",
+          "dataType": "string"
+        },
+        {
+          "name": "salvo_capability",
+          "value": "multiple rockets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.807206Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "air-defense-fr",
+      "name": "French Air Defense System",
+      "category": "air_defense",
+      "subcategory": "SAM system",
+      "description": "Surface-to-air missile systems",
+      "characteristics": [
+        {
+          "name": "engagement_range",
+          "value": "short to long range",
+          "dataType": "string"
+        },
+        {
+          "name": "target_type",
+          "value": "aircraft, missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.807213Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "radar-system-fr",
+      "name": "French Military Radar",
+      "category": "electronic_system",
+      "subcategory": "radar",
+      "description": "Military radar systems for detection and tracking",
+      "characteristics": [
+        {
+          "name": "detection_capability",
+          "value": "air/ground targets",
+          "dataType": "string"
+        },
+        {
+          "name": "range_category",
+          "value": "tactical/strategic",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.807219Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_artillery_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "male-rpas-fr",
+      "name": "French MALE RPAS",
+      "category": "unmanned_aircraft",
+      "subcategory": "MALE",
+      "description": "Medium Altitude Long Endurance Remotely Piloted Aircraft Systems",
+      "characteristics": [
+        {
+          "name": "altitude_capability",
+          "value": "medium altitude (20,000+ ft)",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "long endurance (12+ hours)",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812289Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "tactical-drone-fr",
+      "name": "French Tactical Drone",
+      "category": "unmanned_aircraft",
+      "subcategory": "tactical UAV",
+      "description": "Small tactical drones for reconnaissance and surveillance",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "man-portable",
+          "dataType": "string"
+        },
+        {
+          "name": "mission_type",
+          "value": "ISR, target acquisition",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812304Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "naval-drone-fr",
+      "name": "French Naval Drone",
+      "category": "unmanned_aircraft",
+      "subcategory": "naval UAV",
+      "description": "Ship-based unmanned aircraft for naval operations",
+      "characteristics": [
+        {
+          "name": "launch_method",
+          "value": "ship-based",
+          "dataType": "string"
+        },
+        {
+          "name": "salt_water_resistance",
+          "value": "maritime environment capable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.812312Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_drones_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "air-to-air-missile-fr",
+      "name": "French Air-to-Air Missile",
+      "category": "missile",
+      "subcategory": "air-to-air",
+      "description": "Missiles for air-to-air combat",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "active/passive radar homing",
+          "dataType": "string"
+        },
+        {
+          "name": "range_category",
+          "value": "short/medium/long range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818608Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "air-to-ground-missile-fr",
+      "name": "French Air-to-Ground Missile",
+      "category": "missile",
+      "subcategory": "air-to-ground",
+      "description": "Precision strike missiles",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "GPS/INS/imaging IR",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead_type",
+          "value": "conventional/penetrator",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818627Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "anti-tank-missile-fr",
+      "name": "French Anti-Tank Missile",
+      "category": "missile",
+      "subcategory": "anti-tank",
+      "description": "Tank and armored vehicle destruction",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "wire/fiber-optic/fire-and-forget",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "shaped charge/tandem HEAT",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818637Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "strategic-missile-fr",
+      "name": "French Strategic Missile",
+      "category": "missile",
+      "subcategory": "ballistic",
+      "description": "Strategic nuclear deterrent missiles",
+      "characteristics": [
+        {
+          "name": "range_class",
+          "value": "SLBM/IRBM",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead_type",
+          "value": "nuclear MIRV",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.818648Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_missiles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "aircraft-carrier-fr",
+      "name": "French Aircraft Carrier",
+      "category": "naval_vessel",
+      "subcategory": "aircraft carrier",
+      "description": "Nuclear-powered aircraft carrier",
+      "characteristics": [
+        {
+          "name": "propulsion",
+          "value": "nuclear",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_capacity",
+          "value": "40+ aircraft",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.822036Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "frigate-fr",
+      "name": "French Frigate",
+      "category": "naval_vessel",
+      "subcategory": "frigate",
+      "description": "Multi-mission frigate for French Navy",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "multi-mission surface combatant",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles, guns, torpedoes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.822049Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "submarine-fr",
+      "name": "French Submarine",
+      "category": "naval_vessel",
+      "subcategory": "submarine",
+      "description": "Nuclear and conventional submarines",
+      "characteristics": [
+        {
+          "name": "propulsion",
+          "value": "nuclear/conventional",
+          "dataType": "string"
+        },
+        {
+          "name": "mission_type",
+          "value": "attack/ballistic missile",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.822055Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_naval_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "assault-rifle-fr",
+      "name": "French Assault Rifle",
+      "category": "weapon",
+      "subcategory": "automatic rifle",
+      "description": "Selective-fire rifles used by French Armed Forces",
+      "characteristics": [
+        {
+          "name": "fire_modes",
+          "value": "selective fire",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "infantry primary weapon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.825089Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "sniper-rifle-fr",
+      "name": "French Precision Rifle",
+      "category": "weapon",
+      "subcategory": "precision rifle",
+      "description": "High-precision rifles for French military marksmen",
+      "characteristics": [
+        {
+          "name": "accuracy",
+          "value": "sub-MOA precision",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "800-1500m",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.825103Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "machine-gun-fr",
+      "name": "French Machine Gun",
+      "category": "weapon",
+      "subcategory": "support weapon",
+      "description": "Automatic weapons for suppressive fire",
+      "characteristics": [
+        {
+          "name": "sustained_fire",
+          "value": "continuous automatic fire",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "squad support weapon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.825112Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "pistol-fr",
+      "name": "French Service Pistol",
+      "category": "weapon",
+      "subcategory": "sidearm",
+      "description": "Standard issue pistols for French military",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "compact sidearm",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "personal defense weapon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.825120Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "military-organization-fr",
+      "name": "French Military Organization",
+      "category": "organization",
+      "subcategory": "military unit",
+      "description": "French military units and formations",
+      "characteristics": [
+        {
+          "name": "command_structure",
+          "value": "hierarchical military organization",
+          "dataType": "string"
+        },
+        {
+          "name": "operational_role",
+          "value": "combat/support/logistics",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.828149Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_units_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "main-battle-tank-fr",
+      "name": "French Main Battle Tank",
+      "category": "armored_vehicle",
+      "subcategory": "main battle tank",
+      "description": "Primary armored fighting vehicle for French ground forces",
+      "characteristics": [
+        {
+          "name": "armor_protection",
+          "value": "composite armor",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "120mm smoothbore gun",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.833354Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "infantry-fighting-vehicle-fr",
+      "name": "French Infantry Fighting Vehicle",
+      "category": "armored_vehicle",
+      "subcategory": "IFV",
+      "description": "Armored vehicle for infantry transport and support",
+      "characteristics": [
+        {
+          "name": "troop_capacity",
+          "value": "8-10 infantry",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "autocannon, anti-tank missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.833379Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "reconnaissance-vehicle-fr",
+      "name": "French Reconnaissance Vehicle",
+      "category": "armored_vehicle",
+      "subcategory": "reconnaissance",
+      "description": "Wheeled armored vehicles for reconnaissance missions",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "8x8 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "reconnaissance, fire support",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.833390Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "wheeled-vehicle-fr",
+      "name": "French Wheeled Military Vehicle",
+      "category": "vehicle",
+      "subcategory": "wheeled transport",
+      "description": "Multi-purpose wheeled vehicles for various military roles",
+      "characteristics": [
+        {
+          "name": "terrain_capability",
+          "value": "all-terrain",
+          "dataType": "string"
+        },
+        {
+          "name": "protection_level",
+          "value": "mine resistant",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.833401Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_vehicles_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "personal-equipment-fr",
+      "name": "French Personal Military Equipment",
+      "category": "equipment",
+      "subcategory": "personal gear",
+      "description": "Individual soldier equipment and protective gear",
+      "characteristics": [
+        {
+          "name": "protection_level",
+          "value": "ballistic/environmental protection",
+          "dataType": "string"
+        },
+        {
+          "name": "modularity",
+          "value": "modular system compatible",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.843657Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "ammunition-fr",
+      "name": "French Military Ammunition",
+      "category": "ammunition",
+      "subcategory": "small arms ammunition",
+      "description": "Ammunition for French military weapons",
+      "characteristics": [
+        {
+          "name": "caliber_category",
+          "value": "small arms/artillery/missile",
+          "dataType": "string"
+        },
+        {
+          "name": "performance_type",
+          "value": "standard/armor-piercing/explosive",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.843685Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_personal_equipment_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "electronic-warfare-system-fr",
+      "name": "French Electronic Warfare System",
+      "category": "electronic_system",
+      "subcategory": "EW suite",
+      "description": "Electronic warfare and countermeasures systems",
+      "characteristics": [
+        {
+          "name": "capability_type",
+          "value": "ESM/ECM/ECCM",
+          "dataType": "string"
+        },
+        {
+          "name": "platform_integration",
+          "value": "aircraft/naval/ground",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.848461Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_special_forces_ew_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "communications-system-fr",
+      "name": "French Military Communications",
+      "category": "electronic_system",
+      "subcategory": "radio communication",
+      "description": "Secure military communication systems",
+      "characteristics": [
+        {
+          "name": "encryption_level",
+          "value": "military-grade encryption",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency_bands",
+          "value": "VHF/UHF/SHF",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.848487Z",
+      "version": "1.0",
+      "type": "Vehicletype",
+      "_sourceFiles": [
+        "france\\ies4_french_special_forces_ew_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "french-infantry",
+      "name": "French Infantry Soldier",
+      "category": "professional",
+      "subcategory": "military personnel",
+      "description": "French Army infantry personnel equipped with small arms",
+      "characteristics": [
+        {
+          "name": "primary_weapon",
+          "value": "FAMAS F1/HK416F",
+          "dataType": "string"
+        },
+        {
+          "name": "service_branch",
+          "value": "Armée de Terre",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Chasseur",
+        "Tirailleur",
+        "Légionnaire",
+        "Parachutiste"
+      ],
+      "timestamp": "2025-08-22T07:34:19.825296Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "french-special-forces",
+      "name": "French Special Forces",
+      "category": "professional",
+      "subcategory": "elite military",
+      "description": "French special operations forces",
+      "characteristics": [
+        {
+          "name": "equipment_access",
+          "value": "Advanced weapons systems",
+          "dataType": "string"
+        },
+        {
+          "name": "training_level",
+          "value": "Elite specialized training",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Commando Marine",
+        "1er RPIMa",
+        "13e RDP",
+        "CPA 10"
+      ],
+      "timestamp": "2025-08-22T07:34:19.825307Z",
+      "version": "1.0",
+      "type": "Peopletype",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    }
+  ],
+  "people": [],
+  "representations": [
+    {
+      "id": "rep-rafale-technical",
+      "type": "document",
+      "format": "application/pdf",
+      "title": "Dassault Rafale Technical Manual",
+      "description": "Official technical documentation for Rafale operations",
+      "createdDate": "2006-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:19.802873Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_aircraft_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    },
+    {
+      "id": "rep-famas-manual",
+      "type": "document",
+      "format": "application/pdf",
+      "title": "FAMAS F1 Technical Manual",
+      "description": "Official French Army technical manual for FAMAS operation",
+      "createdDate": "1978-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:19.825492Z",
+      "version": "1.0",
+      "_sourceFiles": [
+        "france\\ies4_french_military_small_arms_Version2.json"
+      ],
+      "_consolidatedAt": "2025-08-22T07:34:19.798741"
+    }
+  ],
+  "organizations": [],
+  "events": [],
+  "activities": [],
+  "facilities": [],
+  "items": [],
+  "locations": [],
+  "relationships": [],
+  "ammunition": [],
+  "electronicSystems": [],
+  "weapons": [],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:19.862283Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 109,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  }
+}

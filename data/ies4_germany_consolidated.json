@@ -1,0 +1,1990 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IES4-Based German Military Database",
+  "description": "Comprehensive German military database based on IES4 standard covering all military assets, units, and capabilities",
+  "countries": [
+    {
+      "id": "country-germany",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/Germany",
+      "names": [
+        {
+          "value": "Federal Republic of Germany",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Bundesrepublik Deutschland",
+          "language": "de",
+          "nameType": "official"
+        },
+        {
+          "value": "Germany",
+          "language": "en",
+          "nameType": "common"
+        },
+        {
+          "value": "Deutschland",
+          "language": "de",
+          "nameType": "common"
+        }
+      ],
+      "iso3166Alpha2": "DE",
+      "iso3166Alpha3": "DEU",
+      "telephoneCountryCode": "+49",
+      "currency": "EUR",
+      "languages": [
+        "German"
+      ],
+      "sovereignty": "Federal Republic",
+      "timestamp": "2025-08-22T07:34:19.886812Z",
+      "version": "1.0"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "vt-small-arms",
+      "name": "Small Arms Weapons",
+      "category": "other",
+      "subcategory": "infantry weapon",
+      "description": "Individual and crew-served small arms for infantry and support units",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "man-portable",
+          "dataType": "string"
+        },
+        {
+          "name": "caliber_range",
+          "value": "5.56mm to 12.7mm",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889171Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Armed rotorcraft designed for anti-tank and close air support missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "anti-tank warfare",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles and cannon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889188Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Rotorcraft designed for personnel and cargo transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "personnel/cargo transport",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889196Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-aircraft",
+      "name": "Attack Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Fixed-wing aircraft designed for ground attack missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground attack",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889203Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Fixed-wing aircraft for strategic and tactical airlift",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "airlift operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889210Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-missile-system",
+      "name": "Missile System",
+      "category": "other",
+      "subcategory": "guided missile",
+      "description": "Guided missile systems for various combat roles",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "precision guided",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889217Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radar-system",
+      "name": "Radar System",
+      "category": "other",
+      "subcategory": "sensor",
+      "description": "Radio detection and ranging systems",
+      "characteristics": [
+        {
+          "name": "function",
+          "value": "surveillance and tracking",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889225Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-air-defense",
+      "name": "Air Defense System",
+      "category": "other",
+      "subcategory": "surface-to-air",
+      "description": "Systems designed to defend against aerial threats",
+      "characteristics": [
+        {
+          "name": "primary_target",
+          "value": "aircraft and missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889232Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-artillery",
+      "name": "Artillery System",
+      "category": "other",
+      "subcategory": "indirect fire",
+      "description": "Large-caliber weapons for indirect fire support",
+      "characteristics": [
+        {
+          "name": "fire_type",
+          "value": "indirect fire",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889239Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-mlrs",
+      "name": "Multiple Launch Rocket System",
+      "category": "other",
+      "subcategory": "rocket artillery",
+      "description": "Systems capable of launching multiple rockets in rapid succession",
+      "characteristics": [
+        {
+          "name": "fire_rate",
+          "value": "rapid multiple launch",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889246Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "other",
+      "subcategory": "armored fighting vehicle",
+      "description": "Heavy armored combat vehicles with main gun",
+      "characteristics": [
+        {
+          "name": "armor_type",
+          "value": "composite armor",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "120mm gun",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889253Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Vehicles designed for reconnaissance and surveillance missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "reconnaissance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889260Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-wheeled-vehicle",
+      "name": "Wheeled Military Vehicle",
+      "category": "other",
+      "subcategory": "wheeled",
+      "description": "Wheeled vehicles for various military purposes",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "wheeled",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889266Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-tracked-vehicle",
+      "name": "Tracked Military Vehicle",
+      "category": "other",
+      "subcategory": "tracked",
+      "description": "Tracked vehicles for various military purposes",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "tracked",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889273Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-watercraft",
+      "name": "Military Watercraft",
+      "category": "boat",
+      "subcategory": "naval vessel",
+      "description": "Naval vessels and boats for various maritime operations",
+      "characteristics": [
+        {
+          "name": "environment",
+          "value": "maritime",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889280Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-drone",
+      "name": "Unmanned Aerial Vehicle",
+      "category": "aircraft",
+      "subcategory": "unmanned",
+      "description": "Unmanned aircraft for various military missions",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "unmanned",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889287Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-electronic-warfare",
+      "name": "Electronic Warfare System",
+      "category": "other",
+      "subcategory": "electronic warfare",
+      "description": "Systems for electronic warfare and countermeasures",
+      "characteristics": [
+        {
+          "name": "capability",
+          "value": "electronic warfare",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889294Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radio-system",
+      "name": "Military Radio System",
+      "category": "other",
+      "subcategory": "communications",
+      "description": "Radio communication systems for military use",
+      "characteristics": [
+        {
+          "name": "function",
+          "value": "communications",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889301Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-personal-equipment",
+      "name": "Personal Military Equipment",
+      "category": "other",
+      "subcategory": "individual equipment",
+      "description": "Individual equipment for military personnel",
+      "characteristics": [
+        {
+          "name": "user",
+          "value": "individual soldier",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889307Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-ammunition",
+      "name": "Military Ammunition",
+      "category": "other",
+      "subcategory": "ammunition",
+      "description": "Various types of military ammunition",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "expendable ordnance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.889314Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "weapon-hk416-a7",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Heckler_%26_Koch_HK416",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "HK416 A7",
+          "nameType": "official"
+        },
+        {
+          "value": "Gewehr G38",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "G38",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Heckler & Koch",
+      "model": "HK416 A7",
+      "year": 2017,
+      "owner": "country-germany",
+      "representations": [
+        {
+          "id": "hk416-spec",
+          "type": "webpage",
+          "url": "https://www.heckler-koch.com/en/products/military/assault-rifles/hk416/hk416-a7/overview.html",
+          "title": "HK416 A7 Specifications"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.888120Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-hk417-a2",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Heckler_%26_Koch_HK417",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "HK417 A2",
+          "nameType": "official"
+        },
+        {
+          "value": "Gewehr G28",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "G28",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Heckler & Koch",
+      "model": "HK417 A2",
+      "year": 2012,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888146Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-mg5",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Heckler_%26_Koch_MG5",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "MG5",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MG5",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Heckler & Koch",
+      "model": "MG5",
+      "year": 2015,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888158Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-p8",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Heckler_%26_Koch_P8",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "P8",
+          "nameType": "official"
+        },
+        {
+          "value": "USP Compact",
+          "nameType": "common"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "P8",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Heckler & Koch",
+      "model": "USP Compact",
+      "year": 1994,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888171Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-tiger-uht",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Eurocopter_Tiger",
+      "vehicleType": "vt-attack-helicopter",
+      "names": [
+        {
+          "value": "Tiger UHT",
+          "nameType": "official"
+        },
+        {
+          "value": "Kampfhubschrauber Tiger",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "UHT",
+          "identifierType": "variant_designation",
+          "issuingAuthority": "Airbus Helicopters"
+        }
+      ],
+      "make": "Airbus Helicopters",
+      "model": "Tiger UHT",
+      "year": 2005,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888182Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-nh90-tth",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/NHIndustries_NH90",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "NH90 TTH",
+          "nameType": "official"
+        },
+        {
+          "value": "Transporthubschrauber NH90",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "TTH",
+          "identifierType": "variant_designation",
+          "issuingAuthority": "NHIndustries"
+        }
+      ],
+      "make": "NHIndustries",
+      "model": "NH90 TTH",
+      "year": 2006,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888195Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-ch-53g",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sikorsky_CH-53_Sea_Stallion",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "CH-53G",
+          "nameType": "official"
+        },
+        {
+          "value": "Schwerer Transporthubschrauber CH-53G",
+          "nameType": "official"
+        }
+      ],
+      "make": "Sikorsky/Rheinmetall",
+      "model": "CH-53G",
+      "year": 1975,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888206Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-ch-47f",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Boeing_CH-47_Chinook",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "CH-47F Chinook",
+          "nameType": "official"
+        },
+        {
+          "value": "Schwerer Transporthubschrauber CH-47F",
+          "nameType": "official"
+        }
+      ],
+      "make": "Boeing",
+      "model": "CH-47F",
+      "year": 2020,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888218Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-tornado-ids",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Panavia_Tornado",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "Tornado IDS",
+          "nameType": "official"
+        },
+        {
+          "value": "Jagdbomber Tornado",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "IDS",
+          "identifierType": "variant_designation",
+          "issuingAuthority": "Panavia"
+        }
+      ],
+      "make": "Panavia",
+      "model": "Tornado IDS",
+      "year": 1980,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888230Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-tornado-ecr",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Panavia_Tornado",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "Tornado ECR",
+          "nameType": "official"
+        },
+        {
+          "value": "Electronic Combat Reconnaissance",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "ECR",
+          "identifierType": "variant_designation",
+          "issuingAuthority": "Panavia"
+        }
+      ],
+      "make": "Panavia",
+      "model": "Tornado ECR",
+      "year": 1990,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888242Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-eurofighter",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Eurofighter_Typhoon",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "Eurofighter Typhoon",
+          "nameType": "official"
+        },
+        {
+          "value": "Eurofighter",
+          "nameType": "common"
+        }
+      ],
+      "make": "Eurofighter GmbH",
+      "model": "Typhoon",
+      "year": 2003,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888254Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-a400m",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Airbus_A400M_Atlas",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "A400M Atlas",
+          "nameType": "official"
+        },
+        {
+          "value": "Transportflugzeug A400M",
+          "nameType": "official"
+        }
+      ],
+      "make": "Airbus",
+      "model": "A400M Atlas",
+      "year": 2014,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888265Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-c-160",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Transall_C-160",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "Transall C-160",
+          "nameType": "official"
+        }
+      ],
+      "make": "Transall",
+      "model": "C-160",
+      "year": 1967,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888277Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-pars-3-lr",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/PARS_3_LR",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "PARS 3 LR",
+          "nameType": "official"
+        },
+        {
+          "value": "Panzerabwehr-Raketen-System 3 Langstrecke",
+          "nameType": "official"
+        }
+      ],
+      "make": "MBDA",
+      "model": "PARS 3 LR",
+      "year": 2006,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888289Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-taurus-kepd-350",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Taurus_(missile)",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "Taurus KEPD 350",
+          "nameType": "official"
+        }
+      ],
+      "make": "Taurus Systems",
+      "model": "KEPD 350",
+      "year": 2005,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888301Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-iris-t-sl",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/IRIS-T",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "IRIS-T SL",
+          "nameType": "official"
+        },
+        {
+          "value": "Surface Launched IRIS-T",
+          "nameType": "official"
+        }
+      ],
+      "make": "Diehl Defence",
+      "model": "IRIS-T SL",
+      "year": 2014,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888312Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radar-trml-4d",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/TRML-4D",
+      "vehicleType": "vt-radar-system",
+      "names": [
+        {
+          "value": "TRML-4D",
+          "nameType": "official"
+        }
+      ],
+      "make": "Hensoldt",
+      "model": "TRML-4D",
+      "year": 2019,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888324Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radar-ground-master-400",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Ground_Master",
+      "vehicleType": "vt-radar-system",
+      "names": [
+        {
+          "value": "Ground Master 400",
+          "nameType": "official"
+        }
+      ],
+      "make": "Thales",
+      "model": "Ground Master 400",
+      "year": 2010,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888335Z",
+      "version": "1.0"
+    },
+    {
+      "id": "air-defense-patriot",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/MIM-104_Patriot",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "Patriot PAC-3",
+          "nameType": "official"
+        },
+        {
+          "value": "Flugabwehrraketen-System Patriot",
+          "nameType": "official"
+        }
+      ],
+      "make": "Raytheon",
+      "model": "MIM-104 Patriot",
+      "year": 1984,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888347Z",
+      "version": "1.0"
+    },
+    {
+      "id": "air-defense-mantis",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/NBS_MANTIS",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "NBS MANTIS",
+          "nameType": "official"
+        },
+        {
+          "value": "Nächstbereichsschutzsystem MANTIS",
+          "nameType": "official"
+        }
+      ],
+      "make": "Rheinmetall",
+      "model": "MANTIS",
+      "year": 2009,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888358Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-pzh2000",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Panzerhaubitze_2000",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "Panzerhaubitze 2000",
+          "nameType": "official"
+        },
+        {
+          "value": "PzH 2000",
+          "nameType": "common"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "PzH 2000",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "Panzerhaubitze 2000",
+      "year": 1998,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888370Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-m109a7",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M109_howitzer",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "M109A7 Paladin",
+          "nameType": "official"
+        }
+      ],
+      "make": "BAE Systems",
+      "model": "M109A7",
+      "year": 2020,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888381Z",
+      "version": "1.0"
+    },
+    {
+      "id": "mlrs-mars-ii",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M270_Multiple_Launch_Rocket_System",
+      "vehicleType": "vt-mlrs",
+      "names": [
+        {
+          "value": "MARS II",
+          "nameType": "official"
+        },
+        {
+          "value": "Mittleres Artillerie-Raketen-System",
+          "nameType": "official"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "M270 MLRS",
+      "year": 1990,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888393Z",
+      "version": "1.0"
+    },
+    {
+      "id": "mlrs-himars",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M142_HIMARS",
+      "vehicleType": "vt-mlrs",
+      "names": [
+        {
+          "value": "HIMARS",
+          "nameType": "official"
+        },
+        {
+          "value": "High Mobility Artillery Rocket System",
+          "nameType": "official"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "M142 HIMARS",
+      "year": 2024,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888404Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-leopard-2a7v",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Leopard_2",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "Leopard 2A7V",
+          "nameType": "official"
+        },
+        {
+          "value": "Kampfpanzer Leopard 2A7V",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Leopard 2A7V",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "Leopard 2A7V",
+      "year": 2014,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888416Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-leopard-2a6",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Leopard_2",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "Leopard 2A6",
+          "nameType": "official"
+        },
+        {
+          "value": "Kampfpanzer Leopard 2A6",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Leopard 2A6",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "Leopard 2A6",
+      "year": 2001,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888428Z",
+      "version": "1.0"
+    },
+    {
+      "id": "recon-fennek",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Fennek",
+      "vehicleType": "vt-reconnaissance-vehicle",
+      "names": [
+        {
+          "value": "Fennek",
+          "nameType": "official"
+        },
+        {
+          "value": "Spähpanzer Fennek",
+          "nameType": "official"
+        }
+      ],
+      "make": "ARTEC",
+      "model": "Fennek",
+      "year": 2003,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888440Z",
+      "version": "1.0"
+    },
+    {
+      "id": "recon-luchs",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Luchs_(vehicle)",
+      "vehicleType": "vt-reconnaissance-vehicle",
+      "names": [
+        {
+          "value": "Luchs",
+          "nameType": "official"
+        },
+        {
+          "value": "Spähpanzer Luchs",
+          "nameType": "official"
+        }
+      ],
+      "make": "Rheinmetall",
+      "model": "Luchs A1",
+      "year": 1975,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888451Z",
+      "version": "1.0"
+    },
+    {
+      "id": "wheeled-gtk-boxer",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Boxer_(armoured_fighting_vehicle)",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "GTK Boxer",
+          "nameType": "official"
+        },
+        {
+          "value": "Gepanzertes Transport-Kraftfahrzeug Boxer",
+          "nameType": "official"
+        }
+      ],
+      "make": "ARTEC",
+      "model": "Boxer",
+      "year": 2009,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888463Z",
+      "version": "1.0"
+    },
+    {
+      "id": "wheeled-dingo",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/ATF_Dingo",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "ATF Dingo",
+          "nameType": "official"
+        },
+        {
+          "value": "Allschutz-Transport-Fahrzeug Dingo",
+          "nameType": "official"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "ATF Dingo 2",
+      "year": 2003,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888475Z",
+      "version": "1.0"
+    },
+    {
+      "id": "wheeled-eagle",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/MOWAG_Eagle",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "Eagle IV",
+          "nameType": "official"
+        },
+        {
+          "value": "Geschütztes Führungs- und Funkfahrzeug",
+          "nameType": "official"
+        }
+      ],
+      "make": "MOWAG",
+      "model": "Eagle IV",
+      "year": 2007,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888487Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tracked-puma-ifv",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Puma_(IFV)",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "Puma IFV",
+          "nameType": "official"
+        },
+        {
+          "value": "Schützenpanzer Puma",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SPz Puma",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "PSM (KMW & Rheinmetall)",
+      "model": "Puma",
+      "year": 2015,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888498Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tracked-marder-1a5",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Marder_(IFV)",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "Marder 1A5",
+          "nameType": "official"
+        },
+        {
+          "value": "Schützenpanzer Marder 1A5",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "SPz Marder 1A5",
+          "identifierType": "bundeswehr_designation",
+          "issuingAuthority": "German Armed Forces"
+        }
+      ],
+      "make": "Rheinmetall",
+      "model": "Marder 1A5",
+      "year": 1971,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888509Z",
+      "version": "1.0"
+    },
+    {
+      "id": "watercraft-class-212a",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Type_212_submarine",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Type 212A Submarine",
+          "nameType": "official"
+        },
+        {
+          "value": "U-Boot Klasse 212A",
+          "nameType": "official"
+        }
+      ],
+      "make": "Howaldtswerke-Deutsche Werft",
+      "model": "Type 212A",
+      "year": 2005,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888522Z",
+      "version": "1.0"
+    },
+    {
+      "id": "watercraft-bremen-class",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Bremen-class_frigate",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Bremen-class Frigate",
+          "nameType": "official"
+        },
+        {
+          "value": "Fregatte Klasse 122",
+          "nameType": "official"
+        }
+      ],
+      "make": "Blohm + Voss",
+      "model": "F122",
+      "year": 1982,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888533Z",
+      "version": "1.0"
+    },
+    {
+      "id": "watercraft-baden-wurttemberg-class",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Baden-W%C3%BCrttemberg-class_frigate",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Baden-Württemberg-class Frigate",
+          "nameType": "official"
+        },
+        {
+          "value": "Fregatte Klasse 125",
+          "nameType": "official"
+        }
+      ],
+      "make": "ThyssenKrupp Marine Systems",
+      "model": "F125",
+      "year": 2019,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888545Z",
+      "version": "1.0"
+    },
+    {
+      "id": "drone-heron-tp",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/IAI_Heron",
+      "vehicleType": "vt-drone",
+      "names": [
+        {
+          "value": "Heron TP",
+          "nameType": "official"
+        },
+        {
+          "value": "Eurodrohne",
+          "nameType": "alias"
+        }
+      ],
+      "make": "Israel Aerospace Industries",
+      "model": "Heron TP",
+      "year": 2010,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888556Z",
+      "version": "1.0"
+    },
+    {
+      "id": "drone-luna-x-2000",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/EMT_Luna",
+      "vehicleType": "vt-drone",
+      "names": [
+        {
+          "value": "Luna X-2000",
+          "nameType": "official"
+        }
+      ],
+      "make": "EMT Penzberg",
+      "model": "Luna X-2000",
+      "year": 2000,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888568Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ew-koral",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/KORAL_(electronic_warfare)",
+      "vehicleType": "vt-electronic-warfare",
+      "names": [
+        {
+          "value": "KORAL",
+          "nameType": "official"
+        }
+      ],
+      "make": "Aselsan",
+      "model": "KORAL",
+      "year": 2020,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888579Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ew-pegasus",
+      "type": "Vehicle",
+      "uri": "https://www.hensoldt.net/solutions/electronic-warfare/pegasus/",
+      "vehicleType": "vt-electronic-warfare",
+      "names": [
+        {
+          "value": "PEGASUS",
+          "nameType": "official"
+        }
+      ],
+      "make": "Hensoldt",
+      "model": "PEGASUS",
+      "year": 2018,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888591Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radio-svfua",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/SEM_70",
+      "vehicleType": "vt-radio-system",
+      "names": [
+        {
+          "value": "SVFuA",
+          "nameType": "official"
+        },
+        {
+          "value": "Digitales Taktisches Funkgerät",
+          "nameType": "official"
+        }
+      ],
+      "make": "Rohde & Schwarz",
+      "model": "M3TR",
+      "year": 2015,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888602Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radio-sem-70",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/SEM_70",
+      "vehicleType": "vt-radio-system",
+      "names": [
+        {
+          "value": "SEM 70",
+          "nameType": "official"
+        }
+      ],
+      "make": "Rohde & Schwarz",
+      "model": "SEM 70",
+      "year": 1995,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888614Z",
+      "version": "1.0"
+    },
+    {
+      "id": "equipment-idz-es",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/IdZ",
+      "vehicleType": "vt-personal-equipment",
+      "names": [
+        {
+          "value": "IdZ-ES",
+          "nameType": "official"
+        },
+        {
+          "value": "Infanterist der Zukunft - Erweitertes System",
+          "nameType": "official"
+        }
+      ],
+      "make": "Rheinmetall",
+      "model": "Gladius 2.0",
+      "year": 2020,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888626Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ammo-dm63",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Rheinmetall_120_mm_gun",
+      "vehicleType": "vt-ammunition",
+      "names": [
+        {
+          "value": "DM63 APFSDS",
+          "nameType": "official"
+        }
+      ],
+      "make": "Rheinmetall",
+      "model": "DM63",
+      "year": 2016,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888637Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ammo-dm12-he",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/155_mm_howitzer",
+      "vehicleType": "vt-ammunition",
+      "names": [
+        {
+          "value": "DM12 HE",
+          "nameType": "official"
+        }
+      ],
+      "make": "Rheinmetall",
+      "model": "DM12",
+      "year": 1998,
+      "owner": "country-germany",
+      "timestamp": "2025-08-22T07:34:19.888649Z",
+      "version": "1.0"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "special-forces-ksk",
+      "name": "Kommando Spezialkräfte (KSK)",
+      "category": "professional",
+      "subcategory": "special operations",
+      "description": "German Army's special forces unit for counter-terrorism and special operations",
+      "characteristics": [
+        {
+          "name": "selection_process",
+          "value": "Extremely rigorous multi-phase selection",
+          "dataType": "string"
+        },
+        {
+          "name": "training_duration",
+          "value": "2+ years",
+          "dataType": "string"
+        },
+        {
+          "name": "unit_size",
+          "value": "~1,000 personnel",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Counter-terrorism specialist",
+        "Special reconnaissance operator",
+        "Direct action specialist",
+        "HALO/HAHO qualified"
+      ],
+      "timestamp": "2025-08-22T07:34:19.889632Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "special-forces-gsg9",
+      "name": "GSG 9",
+      "category": "professional",
+      "subcategory": "counter-terrorism",
+      "description": "Federal Police tactical unit specializing in counter-terrorism and hostage rescue",
+      "characteristics": [
+        {
+          "name": "parent_organization",
+          "value": "Federal Police",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_mission",
+          "value": "Counter-terrorism, hostage rescue",
+          "dataType": "string"
+        },
+        {
+          "name": "unit_size",
+          "value": "~400 personnel",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Hostage rescue specialist",
+        "Counter-terrorism operator",
+        "Sniper",
+        "Explosives specialist"
+      ],
+      "timestamp": "2025-08-22T07:34:19.889659Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "special-forces-sek",
+      "name": "Spezialeinsatzkommando (SEK)",
+      "category": "professional",
+      "subcategory": "tactical police",
+      "description": "State police tactical units for high-risk operations",
+      "characteristics": [
+        {
+          "name": "organization_level",
+          "value": "State police",
+          "dataType": "string"
+        },
+        {
+          "name": "deployment",
+          "value": "High-risk arrests, armed standoffs",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Tactical operator",
+        "Breacher",
+        "Marksman",
+        "Negotiator"
+      ],
+      "timestamp": "2025-08-22T07:34:19.889672Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "military-personnel-officer",
+      "name": "Bundeswehr Officer",
+      "category": "professional",
+      "subcategory": "military leadership",
+      "description": "Commissioned officers of the German Armed Forces",
+      "characteristics": [
+        {
+          "name": "education_requirement",
+          "value": "University degree or equivalent",
+          "dataType": "string"
+        },
+        {
+          "name": "training_location",
+          "value": "Bundeswehr universities and academies",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Company Commander",
+        "Battalion Commander",
+        "Staff Officer",
+        "Pilot"
+      ],
+      "timestamp": "2025-08-22T07:34:19.889686Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "military-personnel-nco",
+      "name": "Bundeswehr NCO",
+      "category": "professional",
+      "subcategory": "military leadership",
+      "description": "Non-commissioned officers of the German Armed Forces",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Technical and tactical leadership",
+          "dataType": "string"
+        },
+        {
+          "name": "career_progression",
+          "value": "Multiple advancement levels",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Sergeant",
+        "Staff Sergeant",
+        "Technical Specialist",
+        "Squad Leader"
+      ],
+      "timestamp": "2025-08-22T07:34:19.889699Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "military-regiment-personnel",
+      "name": "Regiment Personnel",
+      "category": "organizational",
+      "subcategory": "military unit",
+      "description": "Personnel serving in various German military regiments",
+      "characteristics": [
+        {
+          "name": "unit_size",
+          "value": "1,000-3,000 personnel",
+          "dataType": "string"
+        },
+        {
+          "name": "command_level",
+          "value": "Brigade subordinate",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Tank Regiment",
+        "Artillery Regiment",
+        "Infantry Regiment",
+        "Engineer Regiment"
+      ],
+      "timestamp": "2025-08-22T07:34:19.889713Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-boris-pistorius",
+      "type": "Person",
+      "uri": "https://en.wikipedia.org/wiki/Boris_Pistorius",
+      "names": [
+        {
+          "value": "Boris Pistorius",
+          "nameType": "formal"
+        }
+      ],
+      "birthDate": "1960-03-14",
+      "gender": "Male",
+      "nationality": "country-germany",
+      "personTypes": [
+        "military-personnel-officer"
+      ],
+      "states": [
+        {
+          "id": "state-pistorius-minister",
+          "stateType": "employed",
+          "startTime": "2023-01-19T00:00:00Z",
+          "organisation": "Federal Ministry of Defence",
+          "role": "Federal Minister of Defence"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.890172Z",
+      "version": "1.0"
+    },
+    {
+      "id": "person-carsten-breuer",
+      "type": "Person",
+      "uri": "https://en.wikipedia.org/wiki/Carsten_Breuer",
+      "names": [
+        {
+          "value": "Carsten Breuer",
+          "nameType": "formal"
+        }
+      ],
+      "birthDate": "1964-10-20",
+      "gender": "Male",
+      "nationality": "country-germany",
+      "personTypes": [
+        "military-personnel-officer"
+      ],
+      "states": [
+        {
+          "id": "state-breuer-inspector",
+          "stateType": "employed",
+          "startTime": "2022-04-12T00:00:00Z",
+          "organisation": "German Armed Forces",
+          "role": "Inspector General"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:19.890188Z",
+      "version": "1.0"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-berlin-ministry",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Federal Ministry of Defence",
+          "nameType": "official"
+        },
+        {
+          "value": "Bundesministerium der Verteidigung",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 1,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          13.3777,
+          52.5076
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887480Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-potsdam-joint-forces",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Joint Forces Operations Command",
+          "nameType": "official"
+        },
+        {
+          "value": "Einsatzführungskommando der Bundeswehr",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          13.0591,
+          52.4009
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887507Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-koblenz-army-command",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "German Army Command",
+          "nameType": "official"
+        },
+        {
+          "value": "Kommando Heer",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          7.5936,
+          50.3569
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887520Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-rostock-air-force",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "German Air Force Command",
+          "nameType": "official"
+        },
+        {
+          "value": "Kommando Luftwaffe",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          12.0996,
+          54.0887
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887531Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-rostock-navy-command",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "German Navy Command",
+          "nameType": "official"
+        },
+        {
+          "value": "Kommando Marine",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          12.0996,
+          54.0887
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887543Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-calw-ksk-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "KSK Base Calw",
+          "nameType": "official"
+        },
+        {
+          "value": "Graf-Zeppelin-Kaserne",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          8.7408,
+          48.7156
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887554Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-munster-training",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Munster Training Area",
+          "nameType": "official"
+        },
+        {
+          "value": "Truppenübungsplatz Munster",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          10.0814,
+          52.9897
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887565Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-augustdorf-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Augustdorf Training Area",
+          "nameType": "official"
+        },
+        {
+          "value": "Truppenübungsplatz Augustdorf",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          8.8167,
+          51.9167
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887576Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-ramstein-air-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Ramstein Air Base",
+          "nameType": "official"
+        },
+        {
+          "value": "Luftwaffenstützpunkt Ramstein",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          7.6003,
+          49.4367
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887588Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-eckernforde-naval-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Eckernförde Naval Base",
+          "nameType": "official"
+        },
+        {
+          "value": "Marinestützpunkt Eckernförde",
+          "nameType": "official"
+        }
+      ],
+      "country": "country-germany",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          9.8364,
+          54.4742
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:19.887599Z",
+      "version": "1.0"
+    }
+  ],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:19.893066Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 84,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  },
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:19.890717",
+    "consolidatedFiles": [
+      {
+        "path": "germany\\ies4_german_military_database_Version2.json",
+        "size": 44095,
+        "processedAt": "2025-08-22T07:34:19.890717"
+      }
+    ],
+    "sourceFileCount": 1,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 10,
+      "vehicles": 45,
+      "vehicleTypes": 20,
+      "peopleTypes": 6,
+      "people": 2
+    }
+  }
+}

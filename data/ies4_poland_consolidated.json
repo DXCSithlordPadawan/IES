@@ -1,0 +1,2089 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IES4-Based Polish Military Database",
+  "description": "Comprehensive JSON data based on the UK Government's Information Exchange Standard (IES4) for Polish Armed Forces equipment, personnel, and organizational structure",
+  "countries": [
+    {
+      "id": "country-poland",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/Poland",
+      "names": [
+        {
+          "value": "Republic of Poland",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Poland",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "Rzeczpospolita Polska",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Polska",
+          "nameType": "common",
+          "language": "pl"
+        }
+      ],
+      "iso3166Alpha2": "PL",
+      "iso3166Alpha3": "POL",
+      "telephoneCountryCode": "+48",
+      "currency": "PLN",
+      "languages": [
+        "Polish"
+      ],
+      "sovereignty": "Sovereign state",
+      "timestamp": "2025-08-22T07:34:20.037147Z",
+      "version": "1.0"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "vt-small-arms",
+      "name": "Small Arms",
+      "category": "weapon",
+      "subcategory": "individual weapon",
+      "description": "Portable firearms for individual soldiers",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "man-portable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040504Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Armed helicopters designed for close air support",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "attack",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040516Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Helicopters designed for troop and cargo transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "transport",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040523Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-aircraft",
+      "name": "Attack Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Fixed-wing aircraft designed for ground attack",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground attack",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040529Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Aircraft designed for cargo and personnel transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "transport",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040535Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-missile-system",
+      "name": "Missile System",
+      "category": "weapon",
+      "subcategory": "guided munition",
+      "description": "Self-propelled guided weapons",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "guided",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040542Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radar-system",
+      "name": "Radar System",
+      "category": "sensor",
+      "subcategory": "electronic",
+      "description": "Radio detection and ranging systems",
+      "characteristics": [
+        {
+          "name": "detection_method",
+          "value": "radio waves",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040548Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-air-defense",
+      "name": "Air Defense System",
+      "category": "weapon",
+      "subcategory": "anti-aircraft",
+      "description": "Systems designed to defend against aerial threats",
+      "characteristics": [
+        {
+          "name": "target_type",
+          "value": "aircraft",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040554Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-artillery",
+      "name": "Artillery",
+      "category": "weapon",
+      "subcategory": "indirect fire",
+      "description": "Large-caliber crew-served weapons",
+      "characteristics": [
+        {
+          "name": "fire_type",
+          "value": "indirect",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040560Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-mlrs",
+      "name": "Multiple Launch Rocket System",
+      "category": "weapon",
+      "subcategory": "rocket artillery",
+      "description": "Systems firing multiple unguided rockets",
+      "characteristics": [
+        {
+          "name": "munition_type",
+          "value": "unguided rockets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040566Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "vehicle",
+      "subcategory": "armored fighting vehicle",
+      "description": "Primary armored combat vehicles",
+      "characteristics": [
+        {
+          "name": "armor_level",
+          "value": "heavy",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040573Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "vehicle",
+      "subcategory": "armored vehicle",
+      "description": "Vehicles designed for reconnaissance missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "reconnaissance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040579Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-wheeled-vehicle",
+      "name": "Wheeled Vehicle",
+      "category": "vehicle",
+      "subcategory": "tactical vehicle",
+      "description": "Wheeled military vehicles",
+      "characteristics": [
+        {
+          "name": "mobility_type",
+          "value": "wheeled",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040585Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-tracked-vehicle",
+      "name": "Tracked Vehicle",
+      "category": "vehicle",
+      "subcategory": "armored vehicle",
+      "description": "Tracked military vehicles",
+      "characteristics": [
+        {
+          "name": "mobility_type",
+          "value": "tracked",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040591Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-watercraft",
+      "name": "Military Watercraft",
+      "category": "vessel",
+      "subcategory": "naval vessel",
+      "description": "Military naval vessels",
+      "characteristics": [
+        {
+          "name": "environment",
+          "value": "maritime",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040598Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-drone",
+      "name": "Unmanned Aerial Vehicle",
+      "category": "aircraft",
+      "subcategory": "unmanned",
+      "description": "Remotely piloted or autonomous aircraft",
+      "characteristics": [
+        {
+          "name": "crew_type",
+          "value": "unmanned",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040604Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-electronic-warfare",
+      "name": "Electronic Warfare System",
+      "category": "sensor",
+      "subcategory": "electronic",
+      "description": "Systems for electronic attack, protection, and support",
+      "characteristics": [
+        {
+          "name": "warfare_domain",
+          "value": "electronic",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040610Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radio-system",
+      "name": "Radio Communication System",
+      "category": "sensor",
+      "subcategory": "communication",
+      "description": "Military radio communication equipment",
+      "characteristics": [
+        {
+          "name": "communication_type",
+          "value": "radio",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040616Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-personal-equipment",
+      "name": "Personal Equipment",
+      "category": "equipment",
+      "subcategory": "individual",
+      "description": "Individual soldier equipment and gear",
+      "characteristics": [
+        {
+          "name": "usage_type",
+          "value": "personal",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040622Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-ammunition",
+      "name": "Ammunition",
+      "category": "weapon",
+      "subcategory": "munition",
+      "description": "Military ammunition and ordnance",
+      "characteristics": [
+        {
+          "name": "item_type",
+          "value": "expendable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040628Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "weapon-beryl-rifle",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FB_Beryl",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "FB Beryl",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Karabinek Beryl",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "make": "Fabryka Broni Radom",
+      "model": "Beryl",
+      "year": 1996,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "500m",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040191Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-grot-rifle",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FB_MSBS_Grot",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "MSBS Grot",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Modular Small Arms System",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Fabryka Broni Radom",
+      "model": "MSBS-5.56",
+      "year": 2016,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "design",
+          "value": "Modular system",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Replacing Beryl",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040202Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-alex-sniper",
+      "type": "Vehicle",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "Alex .338",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Fabryka Broni Radom",
+      "model": "Alex",
+      "year": 2018,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": ".338 Lapua Magnum",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Sniper rifle",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "1500m",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040208Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-w3-sokol",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/PZL_W-3_Sok%C3%B3%C5%82",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "PZL W-3 Sokół",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Falcon",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "PZL-Świdnik",
+      "model": "W-3",
+      "year": 1979,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "crew",
+          "value": "2-3",
+          "dataType": "string"
+        },
+        {
+          "name": "passengers",
+          "value": "12",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "255 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "730 km",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040214Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-w3wa-sokol",
+      "type": "Vehicle",
+      "vehicleType": "vt-attack-helicopter",
+      "names": [
+        {
+          "value": "PZL W-3WA Sokół",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Armed Falcon",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "PZL-Świdnik",
+      "model": "W-3WA",
+      "year": 1992,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "armament",
+          "value": "23mm cannon, rockets, missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Attack helicopter",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040219Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-ansat",
+      "type": "Vehicle",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "Ansat-U",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Kazan Helicopters",
+      "model": "Ansat-U",
+      "year": 2015,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Training helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "2",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040225Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-f16c",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "F-16C Fighting Falcon",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Viper",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "make": "General Dynamics/Lockheed Martin",
+      "model": "F-16C Block 52+",
+      "year": 1976,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Multirole fighter",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "48",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 2+",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040231Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-fa50",
+      "type": "Vehicle",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "FA-50 Fighting Eagle",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Korea Aerospace Industries",
+      "model": "FA-50",
+      "year": 2013,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Light attack aircraft",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "48 (planned)",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 1.5",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040236Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-c130e",
+      "type": "Vehicle",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "C-130E Hercules",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Lockheed",
+      "model": "C-130E",
+      "year": 1956,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Transport aircraft",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "5",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "19,090 kg",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040241Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-casa295",
+      "type": "Vehicle",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "CASA C-295M",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Airbus",
+      "model": "C-295M",
+      "year": 1997,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Tactical transport",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "16",
+          "dataType": "string"
+        },
+        {
+          "name": "cargo_capacity",
+          "value": "9,250 kg",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040247Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-spike-lr",
+      "type": "Vehicle",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "Spike-LR",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Rafael Advanced Defense Systems",
+      "model": "Spike-LR",
+      "year": 1997,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Anti-tank missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "4 km",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Fire-and-forget",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040253Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-poprad",
+      "type": "Vehicle",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "Poprad",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "make": "Mesko",
+      "model": "Poprad",
+      "year": 2003,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Short-range air defense",
+          "dataType": "string"
+        },
+        {
+          "name": "missile_type",
+          "value": "Grom MANPADS",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "5.5 km",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040258Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radar-trs22",
+      "type": "Vehicle",
+      "vehicleType": "vt-radar-system",
+      "names": [
+        {
+          "value": "TRS-22",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "PIT-Radwar",
+      "model": "TRS-22",
+      "year": 2010,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "3D surveillance radar",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "200 km",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency",
+          "value": "S-band",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040263Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-krab",
+      "type": "Vehicle",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "AHS Krab",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Samobieżna haubica Krab",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "make": "Huta Stalowa Wola",
+      "model": "Krab",
+      "year": 2009,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "155mm",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Self-propelled howitzer",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "40 km",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "5",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040269Z",
+      "version": "1.0"
+    },
+    {
+      "id": "mlrs-langusta",
+      "type": "Vehicle",
+      "vehicleType": "vt-mlrs",
+      "names": [
+        {
+          "value": "WR-40 Langusta",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Lobster",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Huta Stalowa Wola",
+      "model": "Langusta",
+      "year": 1998,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "122mm",
+          "dataType": "string"
+        },
+        {
+          "name": "rockets",
+          "value": "40",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "20 km",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040274Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-leopard-2a4",
+      "type": "Vehicle",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "Leopard 2A4",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "Leopard 2A4",
+      "year": 1985,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "main_gun",
+          "value": "120mm L/44",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "128",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "55.15 tonnes",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040279Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-leopard-2a5",
+      "type": "Vehicle",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "Leopard 2A5",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "Leopard 2A5",
+      "year": 1995,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "main_gun",
+          "value": "120mm L/44",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "105",
+          "dataType": "string"
+        },
+        {
+          "name": "armor_upgrade",
+          "value": "Improved frontal armor",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040285Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-k2-black-panther",
+      "type": "Vehicle",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "K2 Black Panther",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "K2PL",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "make": "Hyundai Rotem",
+      "model": "K2PL",
+      "year": 2014,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "main_gun",
+          "value": "120mm L/55",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "180 (planned)",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "On order",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040290Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-bwp-1",
+      "type": "Vehicle",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "BWP-1",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "BMP-1",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Kurganmashzavod",
+      "model": "BMP-1",
+      "year": 1966,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Infantry fighting vehicle",
+          "dataType": "string"
+        },
+        {
+          "name": "main_gun",
+          "value": "73mm",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3 + 8 troops",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040296Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-borsuk",
+      "type": "Vehicle",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "Borsuk IFV",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Bojowy Wóz Piechoty Borsuk",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "make": "Huta Stalowa Wola",
+      "model": "Borsuk",
+      "year": 2017,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Infantry fighting vehicle",
+          "dataType": "string"
+        },
+        {
+          "name": "main_gun",
+          "value": "30mm autocannon",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "In development",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040302Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-rosomak",
+      "type": "Vehicle",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "KTO Rosomak",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Wolverine",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Rosomak S.A.",
+      "model": "Rosomak",
+      "year": 2004,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Armored personnel carrier",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "8x8 wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3 + 8 troops",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040307Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-rak",
+      "type": "Vehicle",
+      "vehicleType": "vt-reconnaissance-vehicle",
+      "names": [
+        {
+          "value": "BWR-1S Rak",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Crayfish",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "AMZ-Kutno",
+      "model": "Rak",
+      "year": 2004,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Reconnaissance vehicle",
+          "dataType": "string"
+        },
+        {
+          "name": "configuration",
+          "value": "Tracked",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "12.7mm machine gun",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040312Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ship-kormoran",
+      "type": "Vehicle",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "ORP Kormoran",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Kormoran-class corvette",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Remontowa Shipbuilding",
+      "model": "Kormoran",
+      "year": 2017,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Patrol corvette",
+          "dataType": "string"
+        },
+        {
+          "name": "length",
+          "value": "95 meters",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "76mm gun, missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040318Z",
+      "version": "1.0"
+    },
+    {
+      "id": "drone-flyeye",
+      "type": "Vehicle",
+      "vehicleType": "vt-drone",
+      "names": [
+        {
+          "value": "FlyEye",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "WB Electronics",
+      "model": "FlyEye",
+      "year": 2012,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Reconnaissance UAV",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "3 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "60 km",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040323Z",
+      "version": "1.0"
+    },
+    {
+      "id": "equipment-combat-helmet",
+      "type": "Vehicle",
+      "vehicleType": "vt-personal-equipment",
+      "names": [
+        {
+          "value": "Combat Helmet",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "make": "Various",
+      "model": "FAST/MICH type",
+      "year": 2010,
+      "owner": "country-poland",
+      "characteristics": [
+        {
+          "name": "protection_level",
+          "value": "NIJ IIIA",
+          "dataType": "string"
+        },
+        {
+          "name": "material",
+          "value": "Kevlar/UHMWPE",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.040328Z",
+      "version": "1.0"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "pt-special-forces",
+      "name": "Special Forces Operator",
+      "category": "professional",
+      "subcategory": "elite military",
+      "description": "Elite military personnel trained for special operations",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "specialized advanced",
+          "dataType": "string"
+        },
+        {
+          "name": "selection_process",
+          "value": "highly selective",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "GROM Operator",
+        "JW Formoza Operator",
+        "JW Agat Operator",
+        "NIL Operator"
+      ],
+      "timestamp": "2025-08-22T07:34:20.040798Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-army-personnel",
+      "name": "Army Personnel",
+      "category": "professional",
+      "subcategory": "military",
+      "description": "Regular army soldiers and officers",
+      "characteristics": [
+        {
+          "name": "service_branch",
+          "value": "land forces",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Infantry Soldier",
+        "Tank Crew",
+        "Artillery Operator",
+        "Engineer"
+      ],
+      "timestamp": "2025-08-22T07:34:20.040809Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-air-force-personnel",
+      "name": "Air Force Personnel",
+      "category": "professional",
+      "subcategory": "military",
+      "description": "Air force pilots and support personnel",
+      "characteristics": [
+        {
+          "name": "service_branch",
+          "value": "air force",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Fighter Pilot",
+        "Transport Pilot",
+        "Air Traffic Controller",
+        "Aircraft Mechanic"
+      ],
+      "timestamp": "2025-08-22T07:34:20.040815Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-navy-personnel",
+      "name": "Navy Personnel",
+      "category": "professional",
+      "subcategory": "military",
+      "description": "Naval officers and sailors",
+      "characteristics": [
+        {
+          "name": "service_branch",
+          "value": "navy",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Naval Officer",
+        "Sailor",
+        "Marine",
+        "Naval Aviator"
+      ],
+      "timestamp": "2025-08-22T07:34:20.040821Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-mariusz-blaszczak",
+      "type": "Person",
+      "names": [
+        {
+          "value": "Mariusz Błaszczak",
+          "nameType": "formal",
+          "language": "pl"
+        }
+      ],
+      "nationality": "country-poland",
+      "personTypes": [
+        "pt-army-personnel"
+      ],
+      "states": [
+        {
+          "id": "state-defense-minister",
+          "stateType": "employed",
+          "startTime": "2018-01-09T00:00:00Z",
+          "endTime": "2023-12-13T00:00:00Z",
+          "role": "Minister of National Defence"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.041218Z",
+      "version": "1.0"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-warsaw-garrison",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Warsaw Garrison",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Garnizon Warszawa",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          21.0122,
+          52.2297
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Military headquarters complex",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039809Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-krzesiny-air-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Krzesiny Air Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "31. Baza Lotnictwa Taktycznego",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          17.0497,
+          52.3319
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "F-16 fighter base",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "F-16C Fighting Falcon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039831Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-lask-air-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Łask Air Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "32. Baza Lotnictwa Taktycznego",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          19.1786,
+          51.5522
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "F-16 fighter base",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "F-16C Fighting Falcon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039837Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-powidz-air-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Powidz Air Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "33. Baza Lotnictwa Transportowego",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          17.8583,
+          52.3167
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Transport aircraft base",
+          "dataType": "string"
+        },
+        {
+          "name": "aircraft_based",
+          "value": "C-130E, C-295M",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039842Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-gdynia-naval-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Gdynia Naval Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Baza Marynarki Wojennej Gdynia",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          18.5481,
+          54.5189
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Main naval base",
+          "dataType": "string"
+        },
+        {
+          "name": "ships_based",
+          "value": "Frigates, corvettes, submarines",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039848Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-hel-naval-base",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Hel Naval Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Baza Marynarki Wojennej Hel",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          18.8069,
+          54.6089
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Naval aviation and patrol boats",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039853Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-swietoszow-training",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Świętoszów Training Area",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ośrodek Szkolenia Poligonowego Świętoszów",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          15.1167,
+          51.3667
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Combined arms training area",
+          "dataType": "string"
+        },
+        {
+          "name": "size",
+          "value": "165 km²",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039858Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-drawsko-training",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Drawsko Pomorskie Training Area",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ośrodek Szkolenia Poligonowego Drawsko Pomorskie",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "country": "country-poland",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          15.8167,
+          53.5833
+        ],
+        "crs": "EPSG:4326"
+      },
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Major training area",
+          "dataType": "string"
+        },
+        {
+          "name": "size",
+          "value": "330 km²",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.039863Z",
+      "version": "1.0"
+    }
+  ],
+  "militaryOrganizations": [
+    {
+      "id": "org-polish-armed-forces",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "Polish Armed Forces",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Siły Zbrojne Rzeczypospolitej Polskiej",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Armed Forces",
+      "country": "country-poland",
+      "headquarters": "area-warsaw-garrison",
+      "personnelStrength": 144000,
+      "characteristics": [
+        {
+          "name": "supreme_commander",
+          "value": "President of Poland",
+          "dataType": "string"
+        },
+        {
+          "name": "minister_of_defense",
+          "value": "Minister of National Defence",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "org-polish-land-forces",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "Polish Land Forces",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Wojska Lądowe",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Land Forces",
+      "parentOrganization": "org-polish-armed-forces",
+      "country": "country-poland",
+      "personnelStrength": 65000,
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "Ground combat operations",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "org-polish-air-force",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "Polish Air Force",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Siły Powietrzne",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Air Force",
+      "parentOrganization": "org-polish-armed-forces",
+      "country": "country-poland",
+      "personnelStrength": 17500,
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "Air operations and defense",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "org-polish-navy",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "Polish Navy",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Marynarka Wojenna",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Navy",
+      "parentOrganization": "org-polish-armed-forces",
+      "country": "country-poland",
+      "headquarters": "area-gdynia-naval-base",
+      "personnelStrength": 7000,
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "Naval operations",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "org-grom",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "JW GROM",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Grupa Reagowania Operacyjno-Manewrowego",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Special Forces Unit",
+      "parentOrganization": "org-polish-armed-forces",
+      "country": "country-poland",
+      "personnelStrength": 300,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Counter-terrorism, special operations",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1990",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "org-formoza",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "JW Formoza",
+          "nameType": "official",
+          "language": "pl"
+        },
+        {
+          "value": "Jednostka Wojskowa Formoza",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Naval Special Forces",
+      "parentOrganization": "org-polish-navy",
+      "country": "country-poland",
+      "personnelStrength": 200,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Naval special operations",
+          "dataType": "string"
+        },
+        {
+          "name": "established",
+          "value": "1957",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "org-11th-armoured-division",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "11th Armoured Cavalry Division",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "11 Lubuska Dywizja Kawalerii Pancernej",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Division",
+      "parentOrganization": "org-polish-land-forces",
+      "country": "country-poland",
+      "personnelStrength": 9000,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Armoured operations",
+          "dataType": "string"
+        },
+        {
+          "name": "location",
+          "value": "Żagań",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "org-12th-mechanized-division",
+      "type": "MilitaryOrganization",
+      "names": [
+        {
+          "value": "12th Mechanized Division",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "12 Szczecińska Dywizja Zmechanizowana",
+          "nameType": "official",
+          "language": "pl"
+        }
+      ],
+      "organizationType": "Division",
+      "parentOrganization": "org-polish-land-forces",
+      "country": "country-poland",
+      "personnelStrength": 8500,
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Mechanized infantry operations",
+          "dataType": "string"
+        },
+        {
+          "name": "location",
+          "value": "Szczecin",
+          "dataType": "string"
+        }
+      ]
+    }
+  ],
+  "representations": [
+    {
+      "id": "rep-polish-mod-website",
+      "type": "webpage",
+      "format": "text/html",
+      "title": "Polish Ministry of National Defence",
+      "description": "Official website of the Polish Ministry of National Defence",
+      "url": "https://www.gov.pl/web/obrona-narodowa",
+      "createdDate": "2024-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:20.040989Z",
+      "version": "1.0"
+    },
+    {
+      "id": "rep-polish-armed-forces-website",
+      "type": "webpage",
+      "format": "text/html",
+      "title": "Polish Armed Forces Official Website",
+      "description": "Official information about Polish Armed Forces",
+      "url": "https://www.wojsko-polskie.pl/",
+      "createdDate": "2024-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:20.040998Z",
+      "version": "1.0"
+    }
+  ],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:20.044197Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 61,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  },
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:20.041714",
+    "consolidatedFiles": [
+      {
+        "path": "poland\\ies4_polish_military_database_Version3.json",
+        "size": 45338,
+        "processedAt": "2025-08-22T07:34:20.041714"
+      }
+    ],
+    "sourceFileCount": 1,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 8,
+      "vehicles": 25,
+      "vehicleTypes": 20,
+      "peopleTypes": 4,
+      "people": 1,
+      "representations": 2
+    }
+  }
+}

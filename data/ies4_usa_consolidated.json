@@ -1,0 +1,1703 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IES4-Based US Military Comprehensive Database",
+  "description": "Comprehensive JSON database based on the UK Government's Information Exchange Standard (IES4) populated with United States military assets, personnel, and organizational data from open sources",
+  "countries": [
+    {
+      "id": "usa-001",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/United_States",
+      "names": [
+        {
+          "value": "United States of America",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "United States",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "USA",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "iso3166Alpha2": "US",
+      "iso3166Alpha3": "USA",
+      "telephoneCountryCode": "+1",
+      "currency": "USD",
+      "languages": [
+        "English"
+      ],
+      "sovereignty": "Sovereign state",
+      "geographicBounds": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -179.148909,
+              18.910361
+            ],
+            [
+              -66.949895,
+              18.910361
+            ],
+            [
+              -66.949895,
+              71.365162
+            ],
+            [
+              -179.148909,
+              71.365162
+            ],
+            [
+              -179.148909,
+              18.910361
+            ]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.310610Z",
+      "version": "1.0"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-pentagon",
+      "type": "Area",
+      "uri": "https://en.wikipedia.org/wiki/The_Pentagon",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "The Pentagon",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Pentagon Building",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "country": "usa-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -77.0563,
+          38.8719
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.310991Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-fort-bragg",
+      "type": "Area",
+      "uri": "https://en.wikipedia.org/wiki/Fort_Liberty",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Fort Liberty",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Fort Bragg",
+          "nameType": "alias",
+          "language": "en"
+        }
+      ],
+      "country": "usa-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -79.0059,
+          35.1384
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.311005Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-camp-pendleton",
+      "type": "Area",
+      "uri": "https://en.wikipedia.org/wiki/Marine_Corps_Base_Camp_Pendleton",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Marine Corps Base Camp Pendleton",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Camp Pendleton",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "country": "usa-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -117.3016,
+          33.3816
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.311013Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-norfolk-naval-base",
+      "type": "Area",
+      "uri": "https://en.wikipedia.org/wiki/Naval_Station_Norfolk",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Naval Station Norfolk",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Norfolk Naval Base",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "country": "usa-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -76.295,
+          36.9467
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.311021Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-wright-patterson-afb",
+      "type": "Area",
+      "uri": "https://en.wikipedia.org/wiki/Wright-Patterson_Air_Force_Base",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Wright-Patterson Air Force Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Wright-Patterson AFB",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "country": "usa-001",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          -84.0466,
+          39.8217
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.311028Z",
+      "version": "1.0"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "vt-small-arms",
+      "name": "Small Arms",
+      "category": "other",
+      "subcategory": "infantry weapon",
+      "description": "Portable firearms designed for individual soldier use",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "individual carry",
+          "dataType": "string"
+        },
+        {
+          "name": "primary_use",
+          "value": "infantry combat",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311676Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopters designed primarily for engaging ground targets",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground attack",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles, cannon, rockets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311692Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopters designed for personnel and cargo transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "transport",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "personnel and cargo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311701Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-aircraft",
+      "name": "Attack Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Military aircraft designed for close air support and ground attack",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "close air support",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "bombs, missiles, cannon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311710Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Military aircraft designed for personnel and cargo transport",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "large personnel and cargo loads",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311719Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-missile-system",
+      "name": "Missile System",
+      "category": "other",
+      "subcategory": "guided weapon",
+      "description": "Self-propelled guided weapons systems",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "various guidance systems",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "variable range capabilities",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311727Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radar-system",
+      "name": "Radar System",
+      "category": "other",
+      "subcategory": "sensor",
+      "description": "Electronic detection and tracking systems",
+      "characteristics": [
+        {
+          "name": "detection_capability",
+          "value": "air and ground targets",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "variable detection range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311736Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-air-defense",
+      "name": "Air Defense System",
+      "category": "other",
+      "subcategory": "defensive weapon",
+      "description": "Systems designed to counter aerial threats",
+      "characteristics": [
+        {
+          "name": "target_type",
+          "value": "aircraft and missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "engagement_method",
+          "value": "missiles or cannon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311744Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-artillery",
+      "name": "Artillery",
+      "category": "other",
+      "subcategory": "field gun",
+      "description": "Large-caliber weapons for indirect fire support",
+      "characteristics": [
+        {
+          "name": "fire_type",
+          "value": "indirect fire",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "towed or self-propelled",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311753Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-mlrs",
+      "name": "Multiple Launch Rocket System",
+      "category": "other",
+      "subcategory": "rocket artillery",
+      "description": "Systems for launching multiple rockets simultaneously",
+      "characteristics": [
+        {
+          "name": "fire_type",
+          "value": "area saturation",
+          "dataType": "string"
+        },
+        {
+          "name": "reload_capability",
+          "value": "rapid reload",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311761Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Primary armored fighting vehicles for direct combat",
+      "characteristics": [
+        {
+          "name": "armor_protection",
+          "value": "heavy armor",
+          "dataType": "string"
+        },
+        {
+          "name": "main_armament",
+          "value": "large caliber cannon",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311769Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Vehicles designed for reconnaissance and surveillance",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "reconnaissance",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "high mobility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311777Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-wheeled-vehicle",
+      "name": "Wheeled Military Vehicle",
+      "category": "other",
+      "subcategory": "utility vehicle",
+      "description": "Wheeled vehicles for military transport and support",
+      "characteristics": [
+        {
+          "name": "mobility_type",
+          "value": "wheeled",
+          "dataType": "string"
+        },
+        {
+          "name": "terrain_capability",
+          "value": "road and off-road",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311785Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-tracked-vehicle",
+      "name": "Tracked Military Vehicle",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Tracked vehicles for military operations",
+      "characteristics": [
+        {
+          "name": "mobility_type",
+          "value": "tracked",
+          "dataType": "string"
+        },
+        {
+          "name": "terrain_capability",
+          "value": "all-terrain",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311794Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-watercraft",
+      "name": "Military Watercraft",
+      "category": "boat",
+      "subcategory": "naval vessel",
+      "description": "Naval vessels and watercraft for military operations",
+      "characteristics": [
+        {
+          "name": "operating_environment",
+          "value": "maritime",
+          "dataType": "string"
+        },
+        {
+          "name": "mission_type",
+          "value": "naval operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311802Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-drone",
+      "name": "Unmanned Aerial Vehicle",
+      "category": "aircraft",
+      "subcategory": "unmanned",
+      "description": "Remotely piloted or autonomous aircraft",
+      "characteristics": [
+        {
+          "name": "operation_type",
+          "value": "unmanned",
+          "dataType": "string"
+        },
+        {
+          "name": "mission_capability",
+          "value": "surveillance or combat",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311810Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-ew-system",
+      "name": "Electronic Warfare System",
+      "category": "other",
+      "subcategory": "electronic system",
+      "description": "Systems for electronic warfare operations",
+      "characteristics": [
+        {
+          "name": "capability",
+          "value": "electronic attack or defense",
+          "dataType": "string"
+        },
+        {
+          "name": "spectrum",
+          "value": "electromagnetic spectrum",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311818Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radio-system",
+      "name": "Military Radio System",
+      "category": "other",
+      "subcategory": "communication",
+      "description": "Military communication radio systems",
+      "characteristics": [
+        {
+          "name": "communication_type",
+          "value": "voice and data",
+          "dataType": "string"
+        },
+        {
+          "name": "security_level",
+          "value": "encrypted",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311827Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-personal-equipment",
+      "name": "Personal Military Equipment",
+      "category": "other",
+      "subcategory": "individual equipment",
+      "description": "Individual soldier equipment and gear",
+      "characteristics": [
+        {
+          "name": "user_level",
+          "value": "individual soldier",
+          "dataType": "string"
+        },
+        {
+          "name": "purpose",
+          "value": "protection and capability enhancement",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311835Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-ammunition",
+      "name": "Military Ammunition",
+      "category": "other",
+      "subcategory": "ordnance",
+      "description": "Various types of military ammunition and ordnance",
+      "characteristics": [
+        {
+          "name": "purpose",
+          "value": "kinetic or explosive effect",
+          "dataType": "string"
+        },
+        {
+          "name": "delivery_method",
+          "value": "various weapon systems",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.311843Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "weapon-m4-carbine",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M4_carbine",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "M4 Carbine",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "M4A1",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M4",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Colt",
+      "model": "M4A1",
+      "year": 1994,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311258Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-m16a4",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M16_rifle",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "M16A4 Rifle",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M16A4",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Colt",
+      "model": "M16A4",
+      "year": 1997,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311271Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-m249-saw",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M249_light_machine_gun",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "M249 Squad Automatic Weapon",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "M249 SAW",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M249",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "FN Herstal",
+      "model": "M249",
+      "year": 1984,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311279Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-ah-64-apache",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Boeing_AH-64_Apache",
+      "vehicleType": "vt-attack-helicopter",
+      "names": [
+        {
+          "value": "AH-64 Apache",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Apache",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AH-64",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Boeing",
+      "model": "AH-64E Guardian",
+      "year": 1984,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311286Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-ah-1z-viper",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Bell_AH-1Z_Viper",
+      "vehicleType": "vt-attack-helicopter",
+      "names": [
+        {
+          "value": "AH-1Z Viper",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Viper",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AH-1Z",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Bell",
+      "model": "AH-1Z",
+      "year": 2010,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311294Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-uh-60-blackhawk",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sikorsky_UH-60_Black_Hawk",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "UH-60 Black Hawk",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Black Hawk",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "UH-60",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Sikorsky",
+      "model": "UH-60M",
+      "year": 1979,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311301Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-ch-47-chinook",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Boeing_CH-47_Chinook",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "CH-47 Chinook",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Chinook",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "CH-47",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Boeing",
+      "model": "CH-47F",
+      "year": 1962,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311308Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-a-10-thunderbolt",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Fairchild_Republic_A-10_Thunderbolt_II",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "A-10 Thunderbolt II",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Warthog",
+          "nameType": "nickname",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "A-10",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Fairchild Republic",
+      "model": "A-10C",
+      "year": 1976,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311315Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-f-35-lightning",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "F-35 Lightning II",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Lightning II",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "F-35",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "F-35A/B/C",
+      "year": 2015,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311323Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-c-17-globemaster",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Boeing_C-17_Globemaster_III",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "C-17A Globemaster III",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Globemaster",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "C-17",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Boeing",
+      "model": "C-17A",
+      "year": 1995,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311330Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-c-130-hercules",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Lockheed_C-130_Hercules",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "C-130 Hercules",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Hercules",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "C-130J",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "C-130J Super Hercules",
+      "year": 1956,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311337Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-patriot-system",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/MIM-104_Patriot",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "MIM-104 Patriot",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Patriot",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MIM-104",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Raytheon",
+      "model": "PAC-3",
+      "year": 1981,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311345Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-javelin",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FGM-148_Javelin",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "FGM-148 Javelin",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Javelin",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "FGM-148",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Raytheon/Lockheed Martin",
+      "model": "Javelin",
+      "year": 1996,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311352Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radar-an-tpy-2",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AN/TPY-2",
+      "vehicleType": "vt-radar-system",
+      "names": [
+        {
+          "value": "AN/TPY-2 Radar",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "THAAD Radar",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AN/TPY-2",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Raytheon",
+      "model": "TPY-2",
+      "year": 2008,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311359Z",
+      "version": "1.0"
+    },
+    {
+      "id": "air-defense-thaad",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Terminal_High_Altitude_Area_Defense",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "Terminal High Altitude Area Defense",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "THAAD",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "THAAD",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "THAAD",
+      "year": 2008,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311366Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-m777-howitzer",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M777_howitzer",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "M777 Lightweight Howitzer",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "M777",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M777",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "BAE Systems",
+      "model": "M777A2",
+      "year": 2005,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311374Z",
+      "version": "1.0"
+    },
+    {
+      "id": "mlrs-m270",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M270_Multiple_Launch_Rocket_System",
+      "vehicleType": "vt-mlrs",
+      "names": [
+        {
+          "value": "M270 Multiple Launch Rocket System",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "M270 MLRS",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M270",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Lockheed Martin",
+      "model": "M270A1",
+      "year": 1983,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311382Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-m1a2-abrams",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M1_Abrams",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "M1A2 Abrams",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Abrams",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M1A2",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "General Dynamics",
+      "model": "M1A2 SEPv3",
+      "year": 1980,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311389Z",
+      "version": "1.0"
+    },
+    {
+      "id": "recon-m1127-stryker",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Stryker",
+      "vehicleType": "vt-reconnaissance-vehicle",
+      "names": [
+        {
+          "value": "M1127 Stryker Reconnaissance Vehicle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Stryker RV",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M1127",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "General Dynamics",
+      "model": "Stryker",
+      "year": 2002,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311396Z",
+      "version": "1.0"
+    },
+    {
+      "id": "wheeled-hmmwv",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Humvee",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "High Mobility Multipurpose Wheeled Vehicle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "HMMWV",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "Humvee",
+          "nameType": "nickname",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M998",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "AM General",
+      "model": "M1151",
+      "year": 1984,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311403Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tracked-m2-bradley",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/M2_Bradley",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "M2 Bradley Infantry Fighting Vehicle",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Bradley",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M2",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "BAE Systems",
+      "model": "M2A4",
+      "year": 1981,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311410Z",
+      "version": "1.0"
+    },
+    {
+      "id": "watercraft-lcac",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Landing_Craft_Air_Cushion",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Landing Craft Air Cushion",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "LCAC",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "LCAC-1",
+          "identifierType": "hull_number",
+          "issuingAuthority": "US Navy"
+        }
+      ],
+      "make": "Textron",
+      "model": "LCAC",
+      "year": 1984,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311417Z",
+      "version": "1.0"
+    },
+    {
+      "id": "drone-mq-9-reaper",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/General_Atomics_MQ-9_Reaper",
+      "vehicleType": "vt-drone",
+      "names": [
+        {
+          "value": "MQ-9 Reaper",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Reaper",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "MQ-9",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "General Atomics",
+      "model": "MQ-9B",
+      "year": 2007,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311425Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ew-an-alq-99",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AN/ALQ-99",
+      "vehicleType": "vt-ew-system",
+      "names": [
+        {
+          "value": "AN/ALQ-99 Tactical Jamming System",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "ALQ-99",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AN/ALQ-99",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Northrop Grumman",
+      "model": "ALQ-99F",
+      "year": 1971,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311432Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radio-an-prc-117g",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/AN/PRC-117",
+      "vehicleType": "vt-radio-system",
+      "names": [
+        {
+          "value": "AN/PRC-117G Multiband Manpack Radio",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "PRC-117G",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "AN/PRC-117G",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Harris Corporation",
+      "model": "PRC-117G",
+      "year": 2006,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311439Z",
+      "version": "1.0"
+    },
+    {
+      "id": "equipment-iotv",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Improved_Outer_Tactical_Vest",
+      "vehicleType": "vt-personal-equipment",
+      "names": [
+        {
+          "value": "Improved Outer Tactical Vest",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "IOTV",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "IOTV",
+          "identifierType": "military_designation",
+          "issuingAuthority": "US Army"
+        }
+      ],
+      "make": "BAE Systems",
+      "model": "IOTV Gen III",
+      "year": 2007,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311446Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ammo-556-nato",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/5.56%C3%9745mm_NATO",
+      "vehicleType": "vt-ammunition",
+      "names": [
+        {
+          "value": "5.56×45mm NATO",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "5.56 NATO",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "M855A1",
+          "identifierType": "ammunition_designation",
+          "issuingAuthority": "US Department of Defense"
+        }
+      ],
+      "make": "Various manufacturers",
+      "model": "M855A1 EPR",
+      "year": 1980,
+      "owner": "usa-001",
+      "timestamp": "2025-08-22T07:34:20.311454Z",
+      "version": "1.0"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "pt-special-forces",
+      "name": "Special Forces Operator",
+      "category": "professional",
+      "subcategory": "elite military",
+      "description": "Highly trained special operations personnel",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "advanced specialized",
+          "dataType": "string"
+        },
+        {
+          "name": "selection_process",
+          "value": "rigorous selection and assessment",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Green Beret",
+        "Navy SEAL",
+        "Delta Force Operator",
+        "Army Ranger",
+        "Air Force Pararescue",
+        "Marine Force Recon"
+      ],
+      "timestamp": "2025-08-22T07:34:20.312067Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-infantry",
+      "name": "Infantry Soldier",
+      "category": "professional",
+      "subcategory": "ground forces",
+      "description": "Front-line combat troops",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "ground combat",
+          "dataType": "string"
+        },
+        {
+          "name": "equipment",
+          "value": "small arms and personal equipment",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Rifleman",
+        "Squad Leader",
+        "Machine Gunner",
+        "Grenadier"
+      ],
+      "timestamp": "2025-08-22T07:34:20.312080Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-pilot",
+      "name": "Military Pilot",
+      "category": "professional",
+      "subcategory": "aviation",
+      "description": "Trained aircraft operators",
+      "characteristics": [
+        {
+          "name": "training_requirement",
+          "value": "flight training and certification",
+          "dataType": "string"
+        },
+        {
+          "name": "specialization",
+          "value": "specific aircraft types",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Fighter Pilot",
+        "Transport Pilot",
+        "Helicopter Pilot",
+        "Drone Operator"
+      ],
+      "timestamp": "2025-08-22T07:34:20.312088Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-officer",
+      "name": "Military Officer",
+      "category": "professional",
+      "subcategory": "leadership",
+      "description": "Military leaders and commanders",
+      "characteristics": [
+        {
+          "name": "leadership_role",
+          "value": "command and control",
+          "dataType": "string"
+        },
+        {
+          "name": "education_requirement",
+          "value": "officer training or academy",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Company Commander",
+        "Battalion Commander",
+        "Staff Officer",
+        "General Officer"
+      ],
+      "timestamp": "2025-08-22T07:34:20.312097Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-joint-chiefs-chairman",
+      "type": "Person",
+      "names": [
+        {
+          "value": "Chairman of the Joint Chiefs of Staff",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "personTypes": [
+        "pt-officer"
+      ],
+      "nationality": "usa-001",
+      "states": [
+        {
+          "id": "state-cjcs",
+          "stateType": "employed",
+          "startTime": "2023-09-21T00:00:00Z",
+          "organisation": "Joint Chiefs of Staff",
+          "role": "Chairman"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.312544Z",
+      "version": "1.0"
+    }
+  ],
+  "representations": [
+    {
+      "id": "rep-dod-fact-sheet",
+      "type": "document",
+      "format": "application/pdf",
+      "title": "Department of Defense Equipment Fact Sheets",
+      "description": "Official DoD documentation of military equipment specifications",
+      "createdDate": "2023-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:20.312316Z",
+      "version": "1.0"
+    },
+    {
+      "id": "rep-army-field-manual",
+      "type": "document",
+      "format": "application/pdf",
+      "title": "US Army Field Manual Collection",
+      "description": "Comprehensive collection of Army field manuals and technical documentation",
+      "createdDate": "2023-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:20.312327Z",
+      "version": "1.0"
+    }
+  ],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:20.315951Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 60,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  },
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:20.313081",
+    "consolidatedFiles": [
+      {
+        "path": "usa\\ies4_usa_military_comprehensive_Version3.json",
+        "size": 38201,
+        "processedAt": "2025-08-22T07:34:20.313081"
+      }
+    ],
+    "sourceFileCount": 1,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 5,
+      "vehicles": 27,
+      "vehicleTypes": 20,
+      "peopleTypes": 4,
+      "people": 1,
+      "representations": 2
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "areas": [
+    {
+      "id": "area-dnipropetrovsk-oblast-001",
+      "uri": "https://ukraine.gov.ua/areas/dnipropetrovsk-oblast",
+      "type": "Area",
+      "names": [
+        {
+          "value": "Dnipropetrovsk Oblast",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Дніпропетровська область",
+          "language": "uk",
+          "nameType": "official"
+        },
+        {
+          "value": "Dnipropetrovska oblast",
+          "language": "uk",
+          "nameType": "formal"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "UA12",
+          "identifierType": "ISO_3166-2",
+          "issuingAuthority": "ISO"
+        }
+      ],
+      "areaType": "administrative",
+      "administrativeLevel": 1,
+      "country": "Ukraine",
+      "coordinates": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [33.4, 49.8],
+            [36.6, 49.8],
+            [36.6, 47.4],
+            [33.4, 47.4],
+            [33.4, 49.8]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "representations": [
+        {
+          "id": "dnipropetrovsk-oblast-map",
+          "type": "document",
+          "title": "Administrative map of Dnipropetrovsk Oblast",
+          "description": "Official administrative boundaries of Dnipropetrovsk Oblast, administrative center: Dnipro"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "dnipropetrovsk-establishment",
+          "stateType": "established",
+          "startTime": "1932-02-27T00:00:00Z",
+          "location": "Ukraine"
+        }
+      ]
+    }
+  ]
+}

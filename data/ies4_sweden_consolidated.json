@@ -1,0 +1,1994 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IES4-Based Swedish Military Database",
+  "description": "Comprehensive JSON database based on the UK Government's Information Exchange Standard (IES4) populated with Swedish military information across all domains",
+  "countries": [
+    {
+      "id": "country-sweden",
+      "type": "Country",
+      "uri": "https://en.wikipedia.org/wiki/Sweden",
+      "names": [
+        {
+          "value": "Kingdom of Sweden",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Konungariket Sverige",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Sweden",
+          "nameType": "common",
+          "language": "en"
+        },
+        {
+          "value": "Sverige",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "iso3166Alpha2": "SE",
+      "iso3166Alpha3": "SWE",
+      "telephoneCountryCode": "+46",
+      "currency": "SEK",
+      "languages": [
+        "Swedish"
+      ],
+      "sovereignty": "Constitutional monarchy",
+      "geographicBounds": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10.0273686052,
+              55.0059799225
+            ],
+            [
+              24.1776819134,
+              55.0059799225
+            ],
+            [
+              24.1776819134,
+              69.0599269406
+            ],
+            [
+              10.0273686052,
+              69.0599269406
+            ],
+            [
+              10.0273686052,
+              55.0059799225
+            ]
+          ]
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.086055Z",
+      "version": "1.0"
+    }
+  ],
+  "areas": [
+    {
+      "id": "area-stockholm-garrison",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Stockholm Garrison",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Stockholms garnison",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "country": "country-sweden",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          18.0686,
+          59.3293
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.086523Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-karlsborg-garrison",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Karlsborg Garrison",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Karlsborgs garnison",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "country": "country-sweden",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          14.5069,
+          58.5369
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.086538Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-gotland-regiment",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Gotland Regiment Base",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Gotlands regemente",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "country": "country-sweden",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          18.2948,
+          57.6348
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.086544Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-boden-garrison",
+      "type": "Area",
+      "areaType": "military",
+      "names": [
+        {
+          "value": "Boden Garrison",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Bodens garnison",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "country": "country-sweden",
+      "administrativeLevel": 2,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          21.6887,
+          65.8258
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.086550Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-saab-linkoping",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Saab AB Linköping",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-sweden",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          15.6219,
+          58.4108
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.086555Z",
+      "version": "1.0"
+    },
+    {
+      "id": "area-kockums-malmo",
+      "type": "Area",
+      "areaType": "industrial",
+      "names": [
+        {
+          "value": "Kockums Shipyard Malmö",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "country": "country-sweden",
+      "administrativeLevel": 3,
+      "coordinates": {
+        "type": "Point",
+        "coordinates": [
+          12.9915,
+          55.6059
+        ],
+        "crs": "EPSG:4326"
+      },
+      "timestamp": "2025-08-22T07:34:20.086561Z",
+      "version": "1.0"
+    }
+  ],
+  "vehicleTypes": [
+    {
+      "id": "vt-small-arms",
+      "name": "Small Arms Weapon",
+      "category": "other",
+      "subcategory": "infantry weapon",
+      "description": "Individual portable firearms for infantry use",
+      "characteristics": [
+        {
+          "name": "portability",
+          "value": "individual carry",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "infantry combat",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087246Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopter designed for armed attack missions",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "close air support",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "missiles and guns",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087260Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-helicopter",
+      "name": "Transport Helicopter",
+      "category": "aircraft",
+      "subcategory": "rotorcraft",
+      "description": "Military helicopter for personnel and cargo transport",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "troop transport",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "personnel and cargo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087267Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-attack-aircraft",
+      "name": "Attack Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Military aircraft designed for ground attack missions",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "ground attack",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "bombs and missiles",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087274Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-transport-aircraft",
+      "name": "Transport Aircraft",
+      "category": "aircraft",
+      "subcategory": "fixed-wing",
+      "description": "Military aircraft for personnel and cargo transport",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "airlift",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "heavy cargo",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087281Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-missile-system",
+      "name": "Missile System",
+      "category": "other",
+      "subcategory": "weapon system",
+      "description": "Guided missile weapon systems",
+      "characteristics": [
+        {
+          "name": "guidance",
+          "value": "precision guided",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "variable",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087288Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radar-system",
+      "name": "Radar System",
+      "category": "other",
+      "subcategory": "sensor",
+      "description": "Radio detection and ranging systems",
+      "characteristics": [
+        {
+          "name": "function",
+          "value": "detection and tracking",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "long range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087295Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-air-defense",
+      "name": "Air Defense System",
+      "category": "other",
+      "subcategory": "weapon system",
+      "description": "Surface-to-air defense systems",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "air defense",
+          "dataType": "string"
+        },
+        {
+          "name": "engagement",
+          "value": "aerial targets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087302Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-artillery",
+      "name": "Artillery System",
+      "category": "other",
+      "subcategory": "weapon system",
+      "description": "Long-range indirect fire support systems",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "indirect fire",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "long range",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087309Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-mlrs",
+      "name": "Multiple Launch Rocket System",
+      "category": "other",
+      "subcategory": "weapon system",
+      "description": "Multiple rocket launcher systems",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "area saturation",
+          "dataType": "string"
+        },
+        {
+          "name": "ammunition",
+          "value": "rockets",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087315Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Heavy armored fighting vehicles with main gun",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "armored warfare",
+          "dataType": "string"
+        },
+        {
+          "name": "protection",
+          "value": "heavy armor",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087322Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-reconnaissance-vehicle",
+      "name": "Reconnaissance Vehicle",
+      "category": "other",
+      "subcategory": "armored vehicle",
+      "description": "Vehicles designed for reconnaissance missions",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "reconnaissance",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "high mobility",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087328Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-wheeled-vehicle",
+      "name": "Wheeled Military Vehicle",
+      "category": "other",
+      "subcategory": "military vehicle",
+      "description": "Wheeled vehicles for military use",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "road mobility",
+          "dataType": "string"
+        },
+        {
+          "name": "terrain",
+          "value": "all-terrain",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087335Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-tracked-vehicle",
+      "name": "Tracked Military Vehicle",
+      "category": "other",
+      "subcategory": "military vehicle",
+      "description": "Tracked vehicles for military use",
+      "characteristics": [
+        {
+          "name": "mobility",
+          "value": "cross-country",
+          "dataType": "string"
+        },
+        {
+          "name": "terrain",
+          "value": "rough terrain",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087341Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-watercraft",
+      "name": "Military Watercraft",
+      "category": "boat",
+      "subcategory": "naval vessel",
+      "description": "Military vessels for naval operations",
+      "characteristics": [
+        {
+          "name": "environment",
+          "value": "maritime",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "naval operations",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087348Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-drone",
+      "name": "Unmanned Aerial Vehicle",
+      "category": "aircraft",
+      "subcategory": "unmanned",
+      "description": "Remotely piloted or autonomous aircraft",
+      "characteristics": [
+        {
+          "name": "operation",
+          "value": "unmanned",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "surveillance or combat",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087354Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-electronic-warfare",
+      "name": "Electronic Warfare System",
+      "category": "other",
+      "subcategory": "electronic system",
+      "description": "Systems for electronic warfare operations",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "electronic warfare",
+          "dataType": "string"
+        },
+        {
+          "name": "capability",
+          "value": "jamming and interception",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087361Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-radio-system",
+      "name": "Military Radio System",
+      "category": "other",
+      "subcategory": "communication",
+      "description": "Military communication radio systems",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "communication",
+          "dataType": "string"
+        },
+        {
+          "name": "security",
+          "value": "encrypted",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087367Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-personal-equipment",
+      "name": "Personal Military Equipment",
+      "category": "other",
+      "subcategory": "personal gear",
+      "description": "Individual soldier equipment and gear",
+      "characteristics": [
+        {
+          "name": "user",
+          "value": "individual soldier",
+          "dataType": "string"
+        },
+        {
+          "name": "portability",
+          "value": "personal carry",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087374Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    },
+    {
+      "id": "vt-ammunition",
+      "name": "Military Ammunition",
+      "category": "other",
+      "subcategory": "consumable",
+      "description": "Military ammunition and ordnance",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "expendable",
+          "dataType": "string"
+        },
+        {
+          "name": "purpose",
+          "value": "weapon ammunition",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.087380Z",
+      "version": "1.0",
+      "type": "Vehicletype"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "weapon-ak5c",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Ak_5",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "Automatkarbin 5C",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Ak 5C",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "make": "FN Herstal",
+      "model": "FNC-based",
+      "year": 1986,
+      "owner": "country-sweden",
+      "identifiers": [
+        {
+          "value": "Ak 5C",
+          "identifierType": "military_designation",
+          "issuingAuthority": "Swedish Armed Forces"
+        }
+      ],
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "action",
+          "value": "Gas-operated",
+          "dataType": "string"
+        },
+        {
+          "name": "effective_range",
+          "value": "400m",
+          "dataType": "string"
+        },
+        {
+          "name": "magazine_capacity",
+          "value": "30 rounds",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "3.9 kg",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086857Z",
+      "version": "1.0"
+    },
+    {
+      "id": "weapon-ksp58",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/FN_MAG",
+      "vehicleType": "vt-small-arms",
+      "names": [
+        {
+          "value": "Kulspruta 58",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Ksp 58",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "make": "FN Herstal",
+      "model": "MAG",
+      "year": 1958,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "7.62×51mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "type",
+          "value": "General purpose machine gun",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "650-1000 rpm",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "11.79 kg",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086867Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-jas39-gripen",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Saab_JAS_39_Gripen",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "JAS 39 Gripen",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Gripen",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "make": "Saab",
+      "model": "JAS 39C/D",
+      "year": 1996,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Multirole fighter",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 2.0",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "27mm cannon, missiles, bombs",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "96",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086874Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-jas39e-gripen",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Saab_JAS_39_Gripen",
+      "vehicleType": "vt-attack-aircraft",
+      "names": [
+        {
+          "value": "JAS 39E Gripen",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Gripen E",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "make": "Saab",
+      "model": "JAS 39E",
+      "year": 2019,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Next-generation multirole fighter",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "Mach 2.0+",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "1300 km",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "27mm cannon, advanced missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "status",
+          "value": "Entering service",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086879Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-c130h-hercules",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Lockheed_C-130_Hercules",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "Tp 84 Hercules",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "C-130H",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Lockheed",
+      "model": "C-130H",
+      "year": 1965,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Tactical transport",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "19,050 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "3,800 km",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "5",
+          "dataType": "number"
+        },
+        {
+          "name": "fleet_size",
+          "value": "4",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086886Z",
+      "version": "1.0"
+    },
+    {
+      "id": "aircraft-s102b-korpen",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Gulfstream_IV",
+      "vehicleType": "vt-transport-aircraft",
+      "names": [
+        {
+          "value": "S 102B Korpen",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Korpen",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "make": "Gulfstream",
+      "model": "Gulfstream IV",
+      "year": 1994,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "VIP transport and ELINT",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "7,820 km",
+          "dataType": "string"
+        },
+        {
+          "name": "special_equipment",
+          "value": "Electronic intelligence gathering",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "2",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086891Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-hkp14-apache",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Boeing_AH-64_Apache",
+      "vehicleType": "vt-attack-helicopter",
+      "names": [
+        {
+          "value": "Hkp 14 Apache",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "AH-64D Apache Longbow",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Boeing",
+      "model": "AH-64D",
+      "year": 2009,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Attack helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "30mm cannon, Hellfire missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "293 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "combat_radius",
+          "value": "476 km",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "18",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086897Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-hkp10-blackhawk",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Sikorsky_UH-60_Black_Hawk",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "Hkp 10 Black Hawk",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "UH-60M Black Hawk",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Sikorsky",
+      "model": "UH-60M",
+      "year": 2011,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Utility helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "11 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "361 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "584 km",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "15",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086903Z",
+      "version": "1.0"
+    },
+    {
+      "id": "helicopter-hkp16-super-puma",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Eurocopter_AS332_Super_Puma",
+      "vehicleType": "vt-transport-helicopter",
+      "names": [
+        {
+          "value": "Hkp 16 Super Puma",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "AS332M1 Super Puma",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Eurocopter",
+      "model": "AS332M1",
+      "year": 2005,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Medium transport helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "21 troops",
+          "dataType": "string"
+        },
+        {
+          "name": "max_speed",
+          "value": "278 km/h",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "841 km",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "5",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086909Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-rbs15",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/RBS15",
+      "vehicleType": "vt-missile-system",
+      "names": [
+        {
+          "value": "Robot 15",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "RBS15",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Saab",
+      "model": "RBS15 Mk3",
+      "year": 1985,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Anti-ship missile",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "200 km",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Inertial/GPS/Active radar",
+          "dataType": "string"
+        },
+        {
+          "name": "warhead",
+          "value": "200 kg HE",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086915Z",
+      "version": "1.0"
+    },
+    {
+      "id": "missile-rbs70",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/RBS_70",
+      "vehicleType": "vt-air-defense",
+      "names": [
+        {
+          "value": "Robot 70",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "RBS70",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Saab",
+      "model": "RBS70 NG",
+      "year": 1977,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Man-portable air defense",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "9 km",
+          "dataType": "string"
+        },
+        {
+          "name": "guidance",
+          "value": "Laser beam riding",
+          "dataType": "string"
+        },
+        {
+          "name": "altitude",
+          "value": "5000 m",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086921Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radar-ps870",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Saab_Giraffe_radar",
+      "vehicleType": "vt-radar-system",
+      "names": [
+        {
+          "value": "PS-870 Giraffe",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Giraffe AMB",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Saab",
+      "model": "Giraffe AMB",
+      "year": 1977,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "3D air surveillance radar",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "120 km",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency",
+          "value": "C-band",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Vehicle mounted",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086926Z",
+      "version": "1.0"
+    },
+    {
+      "id": "artillery-archer",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Archer_Artillery_System",
+      "vehicleType": "vt-artillery",
+      "names": [
+        {
+          "value": "Archer Artillery System",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Bandkanon 1A",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "make": "BAE Systems Bofors",
+      "model": "Archer",
+      "year": 2013,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "155mm",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "50 km",
+          "dataType": "string"
+        },
+        {
+          "name": "rate_of_fire",
+          "value": "9 rounds/min",
+          "dataType": "string"
+        },
+        {
+          "name": "mobility",
+          "value": "Self-propelled wheeled",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086932Z",
+      "version": "1.0"
+    },
+    {
+      "id": "tank-strv122",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Stridsvagn_122",
+      "vehicleType": "vt-main-battle-tank",
+      "names": [
+        {
+          "value": "Stridsvagn 122",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Strv 122",
+          "nameType": "common",
+          "language": "sv"
+        }
+      ],
+      "make": "Krauss-Maffei Wegmann",
+      "model": "Leopard 2A5",
+      "year": 1997,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "main_gun",
+          "value": "120mm L/44",
+          "dataType": "string"
+        },
+        {
+          "name": "armor",
+          "value": "Composite armor",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "62.3 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "4",
+          "dataType": "number"
+        },
+        {
+          "name": "fleet_size",
+          "value": "120",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086938Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-cv9040",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Combat_Vehicle_90",
+      "vehicleType": "vt-tracked-vehicle",
+      "names": [
+        {
+          "value": "Stridfordon 9040",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "CV9040",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "BAE Systems Hägglunds",
+      "model": "CV9040C",
+      "year": 1993,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Infantry fighting vehicle",
+          "dataType": "string"
+        },
+        {
+          "name": "main_gun",
+          "value": "40mm Bofors L/70",
+          "dataType": "string"
+        },
+        {
+          "name": "crew",
+          "value": "3+7",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "23 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "354",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086945Z",
+      "version": "1.0"
+    },
+    {
+      "id": "vehicle-galten",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Mercedes-Benz_G-Class",
+      "vehicleType": "vt-wheeled-vehicle",
+      "names": [
+        {
+          "value": "Galten",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Mercedes G 290",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Mercedes-Benz",
+      "model": "G 290 CDI",
+      "year": 2004,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Light utility vehicle",
+          "dataType": "string"
+        },
+        {
+          "name": "drive",
+          "value": "4WD",
+          "dataType": "string"
+        },
+        {
+          "name": "capacity",
+          "value": "8 personnel",
+          "dataType": "string"
+        },
+        {
+          "name": "role",
+          "value": "Transport and reconnaissance",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086951Z",
+      "version": "1.0"
+    },
+    {
+      "id": "watercraft-visby-corvette",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Visby-class_corvette",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Visby-class corvette",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Korvett typ Visby",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "make": "Kockums",
+      "model": "Visby-class",
+      "year": 2009,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Stealth corvette",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement",
+          "value": "640 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "57mm gun, RBS15 missiles",
+          "dataType": "string"
+        },
+        {
+          "name": "speed",
+          "value": "35+ knots",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "5",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086957Z",
+      "version": "1.0"
+    },
+    {
+      "id": "watercraft-gotland-submarine",
+      "type": "Vehicle",
+      "uri": "https://en.wikipedia.org/wiki/Gotland-class_submarine",
+      "vehicleType": "vt-watercraft",
+      "names": [
+        {
+          "value": "Gotland-class submarine",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "Ubåt typ Gotland",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "make": "Kockums",
+      "model": "Gotland-class",
+      "year": 1996,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "AIP submarine",
+          "dataType": "string"
+        },
+        {
+          "name": "displacement",
+          "value": "1494 tonnes",
+          "dataType": "string"
+        },
+        {
+          "name": "propulsion",
+          "value": "Stirling AIP",
+          "dataType": "string"
+        },
+        {
+          "name": "armament",
+          "value": "Torpedoes, mines",
+          "dataType": "string"
+        },
+        {
+          "name": "fleet_size",
+          "value": "3",
+          "dataType": "number"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086964Z",
+      "version": "1.0"
+    },
+    {
+      "id": "drone-uav01",
+      "type": "Vehicle",
+      "vehicleType": "vt-drone",
+      "names": [
+        {
+          "value": "UAV 01",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "make": "Saab",
+      "model": "Skeldar V-200",
+      "year": 2018,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Tactical UAV",
+          "dataType": "string"
+        },
+        {
+          "name": "endurance",
+          "value": "5 hours",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "100 km",
+          "dataType": "string"
+        },
+        {
+          "name": "payload",
+          "value": "Surveillance sensors",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086969Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ew-system-ericsson",
+      "type": "Vehicle",
+      "vehicleType": "vt-electronic-warfare",
+      "names": [
+        {
+          "value": "Electronic Warfare System",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "EW System",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Saab",
+      "model": "IDAS",
+      "year": 2010,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Integrated defensive aids",
+          "dataType": "string"
+        },
+        {
+          "name": "capability",
+          "value": "Jamming and deception",
+          "dataType": "string"
+        },
+        {
+          "name": "platform",
+          "value": "Aircraft mounted",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086976Z",
+      "version": "1.0"
+    },
+    {
+      "id": "radio-ra180",
+      "type": "Vehicle",
+      "vehicleType": "vt-radio-system",
+      "names": [
+        {
+          "value": "Ra 180",
+          "nameType": "official",
+          "language": "sv"
+        }
+      ],
+      "make": "Saab",
+      "model": "Ra 180",
+      "year": 2005,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "type",
+          "value": "Tactical radio",
+          "dataType": "string"
+        },
+        {
+          "name": "frequency",
+          "value": "30-512 MHz",
+          "dataType": "string"
+        },
+        {
+          "name": "encryption",
+          "value": "COMSEC",
+          "dataType": "string"
+        },
+        {
+          "name": "range",
+          "value": "30 km",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086983Z",
+      "version": "1.0"
+    },
+    {
+      "id": "equipment-body-armor",
+      "type": "Vehicle",
+      "vehicleType": "vt-personal-equipment",
+      "names": [
+        {
+          "value": "Skottsäker väst",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Body Armor",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Allprotec",
+      "model": "Level IIIA",
+      "year": 2015,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "protection_level",
+          "value": "NIJ Level IIIA",
+          "dataType": "string"
+        },
+        {
+          "name": "weight",
+          "value": "2.5 kg",
+          "dataType": "string"
+        },
+        {
+          "name": "coverage",
+          "value": "Torso protection",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086989Z",
+      "version": "1.0"
+    },
+    {
+      "id": "ammunition-556nato",
+      "type": "Vehicle",
+      "vehicleType": "vt-ammunition",
+      "names": [
+        {
+          "value": "5.56×45mm NATO",
+          "nameType": "official",
+          "language": "en"
+        },
+        {
+          "value": "5.56mm ammunition",
+          "nameType": "common",
+          "language": "en"
+        }
+      ],
+      "make": "Nammo",
+      "model": "5.56×45mm",
+      "year": 1980,
+      "owner": "country-sweden",
+      "characteristics": [
+        {
+          "name": "caliber",
+          "value": "5.56×45mm NATO",
+          "dataType": "string"
+        },
+        {
+          "name": "type",
+          "value": "Ball ammunition",
+          "dataType": "string"
+        },
+        {
+          "name": "velocity",
+          "value": "940 m/s",
+          "dataType": "string"
+        },
+        {
+          "name": "purpose",
+          "value": "Small arms",
+          "dataType": "string"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.086996Z",
+      "version": "1.0"
+    }
+  ],
+  "peopleTypes": [
+    {
+      "id": "pt-special-forces",
+      "name": "Special Forces Operator",
+      "category": "professional",
+      "subcategory": "elite military",
+      "description": "Elite special operations forces personnel",
+      "characteristics": [
+        {
+          "name": "training_level",
+          "value": "Advanced special operations",
+          "dataType": "string"
+        },
+        {
+          "name": "selection_process",
+          "value": "Rigorous selection and training",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Särskilda Operationsgruppen (SOG)",
+        "Särskilda Skyddsgruppen (SSG)",
+        "Fallskärmsjägare",
+        "Kustjägare",
+        "Attackdykare"
+      ],
+      "timestamp": "2025-08-22T07:34:20.087591Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-infantry-soldier",
+      "name": "Infantry Soldier",
+      "category": "professional",
+      "subcategory": "ground forces",
+      "description": "Regular infantry soldiers",
+      "characteristics": [
+        {
+          "name": "role",
+          "value": "Ground combat operations",
+          "dataType": "string"
+        },
+        {
+          "name": "equipment",
+          "value": "Small arms and personal equipment",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Pansarskyttesoldat",
+        "Jägarsoldat",
+        "Granatkastaresoldat"
+      ],
+      "timestamp": "2025-08-22T07:34:20.087607Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-pilot",
+      "name": "Military Pilot",
+      "category": "professional",
+      "subcategory": "aircrew",
+      "description": "Military aviation personnel",
+      "characteristics": [
+        {
+          "name": "training",
+          "value": "Flight training and certification",
+          "dataType": "string"
+        },
+        {
+          "name": "platforms",
+          "value": "Various aircraft types",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Fighter pilot",
+        "Transport pilot",
+        "Helicopter pilot"
+      ],
+      "timestamp": "2025-08-22T07:34:20.087616Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    },
+    {
+      "id": "pt-naval-personnel",
+      "name": "Naval Personnel",
+      "category": "professional",
+      "subcategory": "naval forces",
+      "description": "Swedish Navy personnel",
+      "characteristics": [
+        {
+          "name": "environment",
+          "value": "Maritime operations",
+          "dataType": "string"
+        },
+        {
+          "name": "specializations",
+          "value": "Various naval disciplines",
+          "dataType": "string"
+        }
+      ],
+      "examples": [
+        "Submarine crew",
+        "Surface vessel crew",
+        "Naval infantry"
+      ],
+      "timestamp": "2025-08-22T07:34:20.087625Z",
+      "version": "1.0",
+      "type": "Peopletype"
+    }
+  ],
+  "people": [
+    {
+      "id": "person-supreme-commander",
+      "type": "Person",
+      "names": [
+        {
+          "value": "Överbefälhavare",
+          "nameType": "official",
+          "language": "sv"
+        },
+        {
+          "value": "Supreme Commander",
+          "nameType": "official",
+          "language": "en"
+        }
+      ],
+      "personTypes": [
+        "pt-military-leadership"
+      ],
+      "nationality": "country-sweden",
+      "states": [
+        {
+          "id": "state-supreme-commander",
+          "stateType": "employed",
+          "startTime": "2015-01-01T00:00:00Z",
+          "organisation": "Swedish Armed Forces",
+          "role": "Supreme Commander"
+        }
+      ],
+      "timestamp": "2025-08-22T07:34:20.088109Z",
+      "version": "1.0"
+    }
+  ],
+  "representations": [
+    {
+      "id": "rep-swedish-defense-materiel",
+      "type": "webpage",
+      "format": "text/html",
+      "url": "https://www.fmv.se/",
+      "title": "Swedish Defence Materiel Administration",
+      "description": "Official website of FMV - Swedish defense procurement agency",
+      "createdDate": "2024-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:20.087855Z",
+      "version": "1.0"
+    },
+    {
+      "id": "rep-swedish-armed-forces",
+      "type": "webpage",
+      "format": "text/html",
+      "url": "https://www.forsvarsmakten.se/",
+      "title": "Swedish Armed Forces",
+      "description": "Official website of the Swedish Armed Forces",
+      "createdDate": "2024-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:20.087866Z",
+      "version": "1.0"
+    },
+    {
+      "id": "rep-saab-defense",
+      "type": "webpage",
+      "format": "text/html",
+      "url": "https://www.saab.com/",
+      "title": "Saab AB",
+      "description": "Swedish aerospace and defense company",
+      "createdDate": "2024-01-01T00:00:00Z",
+      "timestamp": "2025-08-22T07:34:20.087873Z",
+      "version": "1.0"
+    }
+  ],
+  "enhancementMetadata": {
+    "fieldEnhancement": {
+      "timestamp": "2025-08-22T07:34:20.091337Z",
+      "enhancementTool": "IES4FieldEnhancer",
+      "statistics": {
+        "entities_processed": 58,
+        "timestamps_added": 0,
+        "versions_added": 0,
+        "types_added": 0,
+        "ids_generated": 0
+      }
+    }
+  },
+  "ies4Version": "4.3.0",
+  "specificationDate": "2024-12-16",
+  "consolidationMetadata": {
+    "timestamp": "2025-08-22T07:34:20.088647",
+    "consolidatedFiles": [
+      {
+        "path": "sweden\\ies4_swedish_military_database_Version3.json",
+        "size": 43152,
+        "processedAt": "2025-08-22T07:34:20.088647"
+      }
+    ],
+    "sourceFileCount": 1,
+    "consolidationTool": "IES4Consolidator",
+    "toolVersion": "2.1",
+    "entityCounts": {
+      "countries": 1,
+      "areas": 6,
+      "vehicles": 23,
+      "vehicleTypes": 20,
+      "peopleTypes": 4,
+      "people": 1,
+      "representations": 3
+    }
+  }
+}
