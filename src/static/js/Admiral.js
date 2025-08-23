@@ -663,11 +663,20 @@ async function performAddOperation() {
             console.log('   ✅ Analysis refreshed with new data');
             console.log('   ✅ Auto-refresh system will detect changes within 5 seconds');
             console.log('\n🌐 You can now view the updated data in your web browser');
-            console.log('💡 Open the Analysis page to see the updated results');
+            console.log('💡 If you have the Analysis page open with auto-refresh enabled,');
+            console.log('    the changes will appear automatically within a few seconds!');
+        } else {
+            console.log('\n⚠️ Partial success:');
+            console.log(`   ✅ Admiral Chabanenko added to ${OPERATION_CONFIG.displayName}`);
+            console.log('   ✅ Database reloaded in web interface');
+            console.log('   ❌ Analysis refresh failed');
+            console.log('💡 Open the Analysis page and the auto-refresh will pick up the changes');
         }
         
+        verifyFileStructure();
+        
     } catch (error) {
-        console.error('\n❌ Error during remove operation:', error.message);
+        console.error('\n❌ Error during add operation:', error.message);
         if (error.stack) {
             console.error('Stack trace:', error.stack);
         }
@@ -902,25 +911,7 @@ module.exports = {
     listAvailableDatabases,
     DATABASE_CONFIGS,
     WEB_INTERFACE_CONFIG
-}; If you have the Analysis page open with auto-refresh enabled,');
-            console.log('    the changes will appear automatically within a few seconds!');
-        } else {
-            console.log('\n⚠️ Partial success:');
-            console.log(`   ✅ Admiral Chabanenko added to ${OPERATION_CONFIG.displayName}`);
-            console.log('   ✅ Database reloaded in web interface');
-            console.log('   ❌ Analysis refresh failed');
-            console.log('💡 Open the Analysis page and the auto-refresh will pick up the changes');
-        }
-        
-        verifyFileStructure();
-        
-    } catch (error) {
-        console.error('\n❌ Error during add operation:', error.message);
-        if (error.stack) {
-            console.error('Stack trace:', error.stack);
-        }
-    }
-}
+};
 
 // Main remove operation
 async function performRemoveOperation() {
@@ -1010,4 +1001,15 @@ async function performRemoveOperation() {
             console.log(`   ✅ Admiral Chabanenko removed from ${OPERATION_CONFIG.displayName}`);
             console.log('   ✅ Database reloaded in web interface');
             console.log('   ❌ Analysis refresh failed');
-            console.log('💡
+            console.log('💡 Open the Analysis page and the auto-refresh will pick up the changes');
+        }
+        
+        verifyFileStructure();
+        
+    } catch (error) {
+        console.error('\n❌ Error during remove operation:', error.message);
+        if (error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
+    }
+}

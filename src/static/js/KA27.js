@@ -664,17 +664,18 @@ async function performAddOperation() {
             console.log('   ✅ Analysis refreshed with new data');
             console.log('   ✅ Auto-refresh system will detect changes within 5 seconds');
             console.log('\n🌐 You can now view the updated data in your web browser');
-            console.log('💡 The Ka-27 helicopter should no longer appear in any analysis');
+            console.log('💡 If you have the Analysis page open with auto-refresh enabled,');
+            console.log('    the changes will appear automatically within a few seconds!');
         } else {
             console.log('\n⚠️ Partial success:');
-            console.log(`   ✅ Ka-27 helicopter removed from ${OPERATION_CONFIG.displayName}`);
+            console.log(`   ✅ Ka-27 helicopter added to ${OPERATION_CONFIG.displayName}`);
             console.log('   ✅ Database reloaded in web interface');
             console.log('   ❌ Analysis refresh failed');
-            console.log('💡 Open the Analysis page to see the updated results');
+            console.log('💡 Open the Analysis page and the auto-refresh will pick up the changes');
         }
         
     } catch (error) {
-        console.error('\n❌ Error during remove operation:', error.message);
+        console.error('\n❌ Error during add operation:', error.message);
         if (error.stack) {
             console.error('Stack trace:', error.stack);
         }
@@ -797,25 +798,6 @@ if (require.main === module) {
         }
         process.exit(1);
     });
-} You can now view the updated data in your web browser');
-            console.log('💡 If you have the Analysis page open with auto-refresh enabled,');
-            console.log('    the changes will appear automatically within a few seconds!');
-        } else {
-            console.log('\n⚠️ Partial success:');
-            console.log(`   ✅ Ka-27 helicopter added to ${OPERATION_CONFIG.displayName}`);
-            console.log('   ✅ Database reloaded in web interface');
-            console.log('   ❌ Analysis refresh failed');
-            console.log('💡 Open the Analysis page and the auto-refresh will pick up the changes');
-        }
-        
-        verifyFileStructure();
-        
-    } catch (error) {
-        console.error('\n❌ Error during add operation:', error.message);
-        if (error.stack) {
-            console.error('Stack trace:', error.stack);
-        }
-    }
 }
 
 // Main remove operation
@@ -899,4 +881,90 @@ async function performRemoveOperation() {
             console.log('   ✅ Database reloaded in web interface');
             console.log('   ✅ Analysis refreshed with updated data');
             console.log('   ✅ Cache cleared');
-            console.log('\n🌐
+            console.log('\n🌐 You can now view the updated data in your web browser');
+            console.log('💡 The Ka-27 helicopter should no longer appear in any analysis');
+        } else {
+            console.log('\n⚠️ Partial success:');
+            console.log(`   ✅ Ka-27 helicopter removed from ${OPERATION_CONFIG.displayName}`);
+            console.log('   ✅ Database reloaded in web interface');
+            console.log('   ❌ Analysis refresh failed');
+            console.log('💡 Open the Analysis page and the auto-refresh will pick up the changes');
+        }
+        
+        verifyFileStructure();
+        
+    } catch (error) {
+        console.error('\n❌ Error during remove operation:', error.message);
+        if (error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
+    }
+}
+
+// Main execution logic
+async function main() {
+    const args = process.argv.slice(2);
+    
+    if (args.length === 0) {
+        console.log('🚁 Ka-27 Helicopter Database Manager');
+        console.log('====================================\n');
+        await listAvailableDatabases();
+        return;
+    }
+    
+    const operation = args[0].toLowerCase();
+    const database = args[1] ? args[1].toUpperCase() : null;
+    
+    switch (operation) {
+        case 'add':
+            if (!database) {
+                console.error('❌ Database parameter required for add operation');
+                console.log('Usage: node KA27.js add <database>');
+                return;
+            }
+            initializeOperationConfig(database);
+            await performAddOperation();
+            break;
+            
+        case 'remove':
+            if (!database) {
+                console.error('❌ Database parameter required for remove operation');
+                console.log('Usage: node KA27.js remove <database>');
+                return;
+            }
+            initializeOperationConfig(database);
+            await performRemoveOperation();
+            break;
+            
+        case 'list':
+            await listAvailableDatabases();
+            break;
+            
+        default:
+            console.error(`❌ Unknown operation: ${operation}`);
+            console.log('Available operations: add, remove, list');
+            await listAvailableDatabases();
+    }
+}
+
+// Export functions for potential module usage
+module.exports = {
+    initializeOperationConfig,
+    addKa27Helicopter,
+    removeKa27Helicopter,
+    performAddOperation,
+    performRemoveOperation,
+    listAvailableDatabases,
+    verifyFileStructure
+};
+
+// Run if called directly
+if (require.main === module) {
+    main().catch(error => {
+        console.error('❌ Fatal error:', error.message);
+        if (error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
+        process.exit(1);
+    });
+}
