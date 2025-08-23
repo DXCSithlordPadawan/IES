@@ -31,11 +31,18 @@ class DataPopupManager {
     init() {
         if (this.isInitialized) return;
         
-        this.createPopupHTML();
-        this.setupEventListeners();
-        this.isInitialized = true;
-        
-        console.log('✅ Data popup system initialized');
+        try {
+            this.createPopupHTML();
+            this.setupEventListeners();
+            this.isInitialized = true;
+            
+            console.log('✅ Data popup system initialized');
+        } catch (error) {
+            console.error('❌ Error initializing popup system:', error);
+            // Continue with limited functionality
+            this.setupEventListeners();
+            this.isInitialized = false;
+        }
     }
 
     /**
@@ -43,8 +50,9 @@ class DataPopupManager {
      */
     createPopupHTML() {
         // Check if modal already exists
-        if (document.getElementById('dataPointModal')) {
-            this.modal = this.createBootstrapModal(document.getElementById('dataPointModal'));
+        const existingModal = document.getElementById('dataPointModal');
+        if (existingModal) {
+            this.modal = this.createBootstrapModal(existingModal);
             return;
         }
 
@@ -57,7 +65,7 @@ class DataPopupManager {
                                 <i class="fas fa-info-circle"></i>
                                 <span id="entityTitle">Entity Details</span>
                             </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.dataPopupManager && window.dataPopupManager.modal && window.dataPopupManager.modal.hide()"></button>
                         </div>
                         <div class="modal-body data-popup-body" id="dataPointModalBody">
                             <div class="loading-spinner">
@@ -637,22 +645,26 @@ function addPlotlyClickHandler() {
  */
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize popup manager
-    window.dataPopupManager = new DataPopupManager();
-    
-    // Add click handler when visualization is created
-    const originalDisplayVisualization = window.displayVisualization;
-    if (originalDisplayVisualization) {
-        window.displayVisualization = function(data) {
-            originalDisplayVisualization(data);
-            
-            // Set current database for popup manager
-            if (window.dataPopupManager && window.currentDatabase) {
-                window.dataPopupManager.setCurrentDatabase(window.currentDatabase);
-            }
-            
-            // Add click handler after a short delay to ensure Plotly is ready
-            setTimeout(addPlotlyClickHandler, 500);
-        };
+    try {
+        window.dataPopupManager = new DataPopupManager();
+        
+        // Add click handler when visualization is created
+        const originalDisplayVisualization = window.displayVisualization;
+        if (originalDisplayVisualization) {
+            window.displayVisualization = function(data) {
+                originalDisplayVisualization(data);
+                
+                // Set current database for popup manager
+                if (window.dataPopupManager && window.currentDatabase) {
+                    window.dataPopupManager.setCurrentDatabase(window.currentDatabase);
+                }
+                
+                // Add click handler after a short delay to ensure Plotly is ready
+                setTimeout(addPlotlyClickHandler, 500);
+            };
+        }
+    } catch (error) {
+        console.error('❌ Failed to initialize data popup manager:', error);
     }
 });
 
