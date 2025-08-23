@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Comparison - IES4 Military Database Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>
+                IES4 Military Analysis
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/analysis">Analysis</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/comparison">Comparison</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-4">
+        <h1 class="mb-4">
+            <i class="fas fa-balance-scale me-2"></i>
+            Country Military Comparison
+        </h1>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Select Countries to Compare</h5>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">Country 1</label>
+                                    <select class="form-select" id="country1">
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="USA">United States</option>
+                                        <option value="Russia">Russia</option>
+                                        <option value="China">China</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Country 2</label>
+                                    <select class="form-select" id="country2">
+                                        <option value="USA">United States</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="Russia">Russia</option>
+                                        <option value="China">China</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-end">
+                                    <button type="button" class="btn btn-primary" onclick="runComparison()">
+                                        <i class="fas fa-chart-bar me-2"></i>Compare Countries
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="comparison-results" style="display: none;">
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Comparison Results</h5>
+                            <div id="comparison-chart" style="min-height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function runComparison() {
+            const country1 = document.getElementById('country1').value;
+            const country2 = document.getElementById('country2').value;
+            
+            const resultsDiv = document.getElementById('comparison-results');
+            resultsDiv.style.display = 'block';
+            
+            fetch('/api/compare_countries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ countries: [country1, country2] })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    displayComparisonResults(data.comparison);
+                } else {
+                    document.getElementById('comparison-chart').innerHTML = 
+                        '<div class="alert alert-danger">Comparison failed: ' + data.message + '</div>';
+                }
+            })
+            .catch(error => {
+                document.getElementById('comparison-chart').innerHTML = 
+                    '<div class="alert alert-danger">Error: ' + error.message + '</div>';
+            });
+        }
+        
+        function displayComparisonResults(comparison) {
+            // Simple comparison chart
+            const countries = Object.keys(comparison.countries || {});
+            const assetCounts = countries.map(country => 
+                comparison.countries[country]?.total_assets || 0
+            );
+            
+            const data = [{
+                type: 'bar',
+                x: countries,
+                y: assetCounts,
+                marker: { color: ['#C8102E', '#002868', '#DA020E', '#DE2910'] }
+            }];
+            
+            const layout = {
+                title: 'Total Assets Comparison',
+                xaxis: { title: 'Countries' },
+                yaxis: { title: 'Total Assets' }
+            };
+            
+            Plotly.newPlot('comparison-chart', data, layout);
+        }
+    </script>
+</body>
+</html>

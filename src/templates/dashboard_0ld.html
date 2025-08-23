@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - IES4 Military Database Analysis</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+    <script src="/static/js/plotly-3.1.0.min.js"></script>
+	<script src="/static/enhanced-database-manager.js"></script>
+    <style>
+        .chart-container {
+            min-height: 400px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>
+                IES4 Military Analysis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/analysis">Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comparison">Comparison</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">
+                    <i class="fas fa-chart-line me-2"></i>
+                    Comprehensive Dashboard
+                </h1>
+            </div>
+        </div>
+
+        <!-- Key Metrics Row -->
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="metric-card">
+                    <div class="metric-number" id="total-entities">-</div>
+                    <div>Total Entities</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="metric-card">
+                    <div class="metric-number" id="total-relationships">-</div>
+                    <div>Relationships</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="metric-card">
+                    <div class="metric-number" id="databases-loaded">-</div>
+                    <div>Databases Loaded</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="metric-card">
+                    <div class="metric-number" id="data-quality">-</div>
+                    <div>Data Quality Score</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 1 -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="chart-container">
+                    <h5><i class="fas fa-pie-chart me-2"></i>Entity Distribution</h5>
+                    <div id="entity-distribution-chart">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="chart-container">
+                    <h5><i class="fas fa-flag me-2"></i>Country Asset Comparison</h5>
+                    <div id="country-assets-chart">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 2 -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="chart-container">
+                    <h5><i class="fas fa-clock me-2"></i>Technology Evolution Timeline</h5>
+                    <div id="timeline-chart">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row 3 -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="chart-container">
+                    <h5><i class="fas fa-industry me-2"></i>Top Manufacturers</h5>
+                    <div id="manufacturers-chart">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="chart-container">
+                    <h5><i class="fas fa-sitemap me-2"></i>Relationship Matrix</h5>
+                    <div id="relationship-matrix">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-cog me-2"></i>Dashboard Actions</h5>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary" onclick="refreshDashboard()">
+                                <i class="fas fa-sync-alt me-2"></i>Refresh Data
+                            </button>
+                            <button type="button" class="btn btn-success" onclick="generateReport()">
+                                <i class="fas fa-file-alt me-2"></i>Generate Report
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="exportData()">
+                                <i class="fas fa-download me-2"></i>Export Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize dashboard on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboardData();
+        });
+
+        function loadDashboardData() {
+            // Load comprehensive report data
+            fetch('/api/comprehensive_report')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        updateMetrics(data.report);
+                        createCharts(data.report);
+                    } else {
+                        showError('Failed to load dashboard data: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading dashboard:', error);
+                    showError('Connection error while loading dashboard');
+                });
+        }
+
+        function updateMetrics(reportData) {
+            // Update key metrics
+            const executiveSummary = reportData.executive_summary || {};
+            
+            document.getElementById('total-entities').textContent = 
+                (executiveSummary.total_entities || 0).toLocaleString();
+            document.getElementById('total-relationships').textContent = 
+                (executiveSummary.total_relationships || 0).toLocaleString();
+            document.getElementById('databases-loaded').textContent = 
+                executiveSummary.databases_analyzed || 0;
+            
+            const qualityScore = executiveSummary.data_quality_score || 0;
+            document.getElementById('data-quality').textContent = 
+                (qualityScore * 100).toFixed(1) + '%';
+        }
+
+        function createCharts(reportData) {
+            // Entity Distribution Pie Chart
+            const entityStats = reportData.entity_statistics || {};
+            if (entityStats && Object.keys(entityStats).length > 0) {
+                const labels = Object.keys(entityStats).map(key => 
+                    key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+                );
+                const values = Object.values(entityStats).map(stat => 
+                    stat.total_count || Object.keys(stat).length || 0
+                );
+
+                const entityChart = {
+                    data: [{
+                        type: 'pie',
+                        labels: labels,
+                        values: values,
+                        hole: 0.4,
+                        textinfo: 'label+percent',
+                        textposition: 'auto'
+                    }],
+                    layout: {
+                        margin: { t: 30, b: 30, l: 30, r: 30 },
+                        showlegend: true,
+                        legend: { orientation: 'h', y: -0.1 }
+                    },
+                    config: { responsive: true }
+                };
+
+                Plotly.newPlot('entity-distribution-chart', entityChart.data, entityChart.layout, entityChart.config);
+            }
+
+            // Country Assets Comparison
+            const countryComparison = reportData.country_comparison || {};
+            const countries = countryComparison.countries || {};
+            if (Object.keys(countries).length > 0) {
+                const countryNames = Object.keys(countries);
+                const assetCounts = countryNames.map(country => countries[country].total_assets || 0);
+
+                const countryChart = {
+                    data: [{
+                        type: 'bar',
+                        x: countryNames,
+                        y: assetCounts,
+                        marker: {
+                            color: ['#C8102E', '#002868', '#DA020E', '#DE2910', '#228B22'],
+                            opacity: 0.8
+                        }
+                    }],
+                    layout: {
+                        title: '',
+                        xaxis: { title: 'Countries' },
+                        yaxis: { title: 'Total Assets' },
+                        margin: { t: 30, b: 60, l: 60, r: 30 }
+                    },
+                    config: { responsive: true }
+                };
+
+                Plotly.newPlot('country-assets-chart', countryChart.data, countryChart.layout, countryChart.config);
+            }
+
+            // Technology Timeline
+            const timeline = reportData.technology_timeline || {};
+            if (Object.keys(timeline).length > 0) {
+                const traces = [];
+                const colors = ['#C8102E', '#002868', '#DA020E', '#DE2910', '#228B22'];
+                let colorIndex = 0;
+
+                Object.keys(timeline).forEach(country => {
+                    const countryData = timeline[country];
+                    if (countryData && Object.keys(countryData).length > 0) {
+                        const years = Object.keys(countryData).map(Number).sort();
+                        const counts = years.map(year => countryData[year] || 0);
+
+                        traces.push({
+                            type: 'scatter',
+                            mode: 'lines+markers',
+                            name: country,
+                            x: years,
+                            y: counts,
+                            line: { color: colors[colorIndex % colors.length], width: 3 },
+                            marker: { size: 6 }
+                        });
+                        colorIndex++;
+                    }
+                });
+
+                const timelineLayout = {
+                    title: '',
+                    xaxis: { title: 'Year' },
+                    yaxis: { title: 'Number of Systems' },
+                    margin: { t: 30, b: 60, l: 60, r: 30 },
+                    hovermode: 'x unified'
+                };
+
+                Plotly.newPlot('timeline-chart', traces, timelineLayout, { responsive: true });
+            }
+
+            // Top Manufacturers
+            const techAnalysis = reportData.technology_analysis || {};
+            const manufacturers = techAnalysis.top_manufacturers || {};
+            if (Object.keys(manufacturers).length > 0) {
+                const manufacturerNames = Object.keys(manufacturers).slice(0, 10);
+                const manufacturerCounts = manufacturerNames.map(name => manufacturers[name]);
+
+                const manufacturerChart = {
+                    data: [{
+                        type: 'bar',
+                        x: manufacturerCounts,
+                        y: manufacturerNames,
+                        orientation: 'h',
+                        marker: { color: '#17a2b8', opacity: 0.8 }
+                    }],
+                    layout: {
+                        title: '',
+                        xaxis: { title: 'Number of Systems' },
+                        margin: { t: 30, b: 60, l: 120, r: 30 },
+                        height: 400
+                    },
+                    config: { responsive: true }
+                };
+
+                Plotly.newPlot('manufacturers-chart', manufacturerChart.data, manufacturerChart.layout, manufacturerChart.config);
+            }
+
+            // Relationship Matrix
+            const relationshipAnalysis = reportData.relationship_analysis || {};
+            const relationshipMatrix = relationshipAnalysis.relationship_matrix || {};
+            if (Object.keys(relationshipMatrix).length > 0) {
+                const entityTypes = Object.keys(relationshipMatrix);
+                const matrixData = entityTypes.map(sourceType => 
+                    entityTypes.map(targetType => 
+                        relationshipMatrix[sourceType][targetType] || 0
+                    )
+                );
+
+                const matrixChart = {
+                    data: [{
+                        type: 'heatmap',
+                        z: matrixData,
+                        x: entityTypes.map(type => type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())),
+                        y: entityTypes.map(type => type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())),
+                        colorscale: 'Blues',
+                        showscale: true
+                    }],
+                    layout: {
+                        title: '',
+                        margin: { t: 30, b: 100, l: 120, r: 30 },
+                        height: 400
+                    },
+                    config: { responsive: true }
+                };
+
+                Plotly.newPlot('relationship-matrix', matrixChart.data, matrixChart.layout, matrixChart.config);
+            }
+        }
+
+        function refreshDashboard() {
+            // Show loading state
+            document.querySelectorAll('.chart-container > div').forEach(div => {
+                if (div.id && div.id.includes('-chart')) {
+                    div.innerHTML = '<div class="loading-spinner"><div class="spinner-border text-primary" role="status"></div></div>';
+                }
+            });
+
+            // Reload data
+            loadDashboardData();
+        }
+
+        function generateReport() {
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.

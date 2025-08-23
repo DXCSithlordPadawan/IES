@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - IES4 Military Database Analysis</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+	<script src="/static/enhanced-database-manager.js"></script>
+    <style>
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .error-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+        }
+        .error-icon {
+            font-size: 4rem;
+            color: #dc3545;
+            margin-bottom: 1rem;
+        }
+        .error-code {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #dc3545;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>
+                IES4 Military Analysis
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/analysis">Analysis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comparison">Comparison</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <div class="container">
+        <div class="error-container">
+            <div class="error-card">
+                <i class="fas fa-exclamation-triangle error-icon"></i>
+                <div class="error-code" id="error-code">Error</div>
+                <h2 class="mb-3">Oops! Something went wrong</h2>
+                <p class="text-muted mb-4" id="error-message">
+                    {{ error if error else "An unexpected error occurred while processing your request." }}
+                </p>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-home me-2"></i>
+                        Return Home
+                    </a>
+                    <button class="btn btn-outline-secondary" onclick="history.back()">
+                        <i class="fas fa-arrow-left me-2"></i>
+                        Go Back
+                    </button>
+                    <button class="btn btn-outline-info" onclick="window.location.reload()">
+                        <i class="fas fa-sync-alt me-2"></i>
+                        Retry
+                    </button>
+                </div>
+                
+                <hr class="my-4">
+                
+                <div class="text-start">
+                    <h5>Troubleshooting Tips:</h5>
+                    <ul class="text-muted">
+                        <li>Check that all required databases are loaded</li>
+                        <li>Verify your network connection</li>
+                        <li>Try refreshing the page</li>
+                        <li>Clear your browser cache if the problem persists</li>
+                    </ul>
+                </div>
+                
+                <div class="text-start mt-4">
+                    <h6>Common Solutions:</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card border-info">
+                                <div class="card-body">
+                                    <h6 class="card-title text-info">
+                                        <i class="fas fa-database me-2"></i>Database Issues
+                                    </h6>
+                                    <p class="card-text small">
+                                        If you're seeing database errors, try loading databases from the <a href="/">home page</a> first.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-warning">
+                                <div class="card-body">
+                                    <h6 class="card-title text-warning">
+                                        <i class="fas fa-chart-line me-2"></i>Analysis Issues
+                                    </h6>
+                                    <p class="card-text small">
+                                        For analysis problems, ensure you've selected a valid database and filters.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Check URL for error codes and update display
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorCode = urlParams.get('code');
+            const errorMsg = urlParams.get('message');
+            
+            if (errorCode) {
+                document.getElementById('error-code').textContent = `Error ${errorCode}`;
+                
+                // Update icon and message based on error code
+                const iconElement = document.querySelector('.error-icon');
+                const messageElement = document.getElementById('error-message');
+                
+                switch(errorCode) {
+                    case '404':
+                        iconElement.className = 'fas fa-search error-icon';
+                        messageElement.textContent = 'The page you are looking for could not be found.';
+                        break;
+                    case '500':
+                        iconElement.className = 'fas fa-server error-icon';
+                        messageElement.textContent = 'Internal server error. Please try again later.';
+                        break;
+                    case '403':
+                        iconElement.className = 'fas fa-lock error-icon';
+                        messageElement.textContent = 'Access forbidden. You do not have permission to access this resource.';
+                        break;
+                    default:
+                        messageElement.textContent = errorMsg || 'An unexpected error occurred.';
+                }
+            }
+            
+            if (errorMsg && !errorCode) {
+                document.getElementById('error-message').textContent = errorMsg;
+            }
+        });
+    </script>
+</body>
+</html>
