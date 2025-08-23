@@ -587,6 +587,68 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
             logger.error(f"Error exporting data: {e}")
             return jsonify({'status': 'error', 'message': str(e)}), 500
     
+    @app.route('/api/entity/<entity_id>')
+    def get_entity_details(entity_id):
+        """Get detailed information about a specific entity."""
+        try:
+            database_name = request.args.get('database')
+            if not database_name:
+                return jsonify({'status': 'error', 'message': 'Database name required'}), 400
+            
+            # Ensure database is loaded
+            if database_name not in analyzer.databases:
+                try:
+                    analyzer.load_database(database_name)
+                except Exception as e:
+                    return jsonify({'status': 'error', 'message': f'Database {database_name} not found'}), 404
+            
+            database = analyzer.databases[database_name]
+            
+            # Search through different entity types
+            entity_types = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes']
+            
+            for entity_type in entity_types:
+                if entity_type in database and isinstance(database[entity_type], list):
+                    for entity in database[entity_type]:
+                        if entity.get('id') == entity_id:
+                            # Add entity type information
+                            entity_with_type = dict(entity)
+                            entity_with_type['entityType'] = entity_type
+                            return jsonify({
+                                'status': 'success',
+                                'entity': entity_with_type
+                            })
+            
+            # If not found in main entity types, search in other sections
+            def search_recursive(obj, target_id):
+                if isinstance(obj, dict):
+                    if obj.get('id') == target_id:
+                        return obj
+                    for value in obj.values():
+                        result = search_recursive(value, target_id)
+                        if result:
+                            return result
+                elif isinstance(obj, list):
+                    for item in obj:
+                        result = search_recursive(item, target_id)
+                        if result:
+                            return result
+                return None
+            
+            # Deep search in the database
+            found_entity = search_recursive(database, entity_id)
+            if found_entity:
+                return jsonify({
+                    'status': 'success',
+                    'entity': found_entity
+                })
+            
+            return jsonify({'status': 'error', 'message': f'Entity {entity_id} not found'}), 404
+            
+        except Exception as e:
+            logger.error(f"Error fetching entity details: {e}")
+            return jsonify({'status': 'error', 'message': str(e)}), 500
+    
     @app.route('/dashboard')
     def dashboard():
         """Dashboard page with automatic database loading."""

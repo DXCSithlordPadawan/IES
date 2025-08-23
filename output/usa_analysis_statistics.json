@@ -1,0 +1,270 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-23T20:52:11.489997",
+    "node_count": 60,
+    "edge_count": 61,
+    "database_info": {
+      "filename": "unknown",
+      "loaded_at": "",
+      "entity_counts": {
+        "vehicles": 27,
+        "areas": 5,
+        "organizations": 0,
+        "persons": 0,
+        "weapons": 0,
+        "events": 0,
+        "vehicleTypes": 20,
+        "areaTypes": 0,
+        "organizationTypes": 0,
+        "weaponTypes": 0
+      },
+      "title": "IES4-Based US Military Comprehensive Database",
+      "description": "Comprehensive JSON database based on the UK Government's Information Exchange Standard (IES4) populated with United States military assets, personnel, and organizational data from open sources"
+    },
+    "entity_counts": {
+      "countries": 1,
+      "vehicles": 27,
+      "vehicleTypes": 20,
+      "people": 1,
+      "peopleTypes": 4,
+      "areas": 5,
+      "representations": 2
+    }
+  },
+  "node_statistics": {
+    "total_nodes": 60,
+    "node_types": {
+      "countries": 1,
+      "vehicles": 27,
+      "vehicleTypes": 20,
+      "people": 1,
+      "peopleTypes": 4,
+      "areas": 5,
+      "representations": 2
+    },
+    "degree_distribution": {
+      "33": 1,
+      "2": 33,
+      "3": 1,
+      "1": 20,
+      "0": 5
+    },
+    "isolated_nodes": [
+      "pt-special-forces",
+      "pt-infantry",
+      "pt-pilot",
+      "rep-dod-fact-sheet",
+      "rep-army-field-manual"
+    ],
+    "degree_stats": {
+      "mean": 2.033333333333333,
+      "median": 2.0,
+      "std": 4.086427399194666,
+      "min": 0,
+      "max": 33
+    }
+  },
+  "edge_statistics": {
+    "total_edges": 61,
+    "relationship_types": {
+      "owner": 27,
+      "nationality": 1,
+      "country": 5,
+      "vehicleType": 27,
+      "personTypes": 1
+    },
+    "edge_weight_distribution": {
+      "1.0": 61
+    }
+  },
+  "connectivity": {
+    "is_connected": false,
+    "number_of_components": 6,
+    "density": 0.03446327683615819,
+    "component_sizes": [
+      55,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "largest_component_size": 55,
+    "average_clustering": 0.0,
+    "largest_component_avg_path": 2.6895622895622897,
+    "largest_component_diameter": 4
+  },
+  "centrality": {
+    "top_degree_centrality": [
+      [
+        "usa-001",
+        0.559322033898305
+      ],
+      [
+        "vt-small-arms",
+        0.05084745762711865
+      ],
+      [
+        "weapon-m4-carbine",
+        0.03389830508474576
+      ],
+      [
+        "weapon-m16a4",
+        0.03389830508474576
+      ],
+      [
+        "weapon-m249-saw",
+        0.03389830508474576
+      ],
+      [
+        "aircraft-ah-64-apache",
+        0.03389830508474576
+      ],
+      [
+        "aircraft-ah-1z-viper",
+        0.03389830508474576
+      ],
+      [
+        "aircraft-uh-60-blackhawk",
+        0.03389830508474576
+      ],
+      [
+        "aircraft-ch-47-chinook",
+        0.03389830508474576
+      ],
+      [
+        "aircraft-a-10-thunderbolt",
+        0.03389830508474576
+      ]
+    ],
+    "top_betweenness_centrality": [
+      [
+        "usa-001",
+        0.8176504967855055
+      ],
+      [
+        "radar-an-tpy-2",
+        0.0309760374050263
+      ],
+      [
+        "air-defense-thaad",
+        0.0309760374050263
+      ],
+      [
+        "artillery-m777-howitzer",
+        0.0309760374050263
+      ],
+      [
+        "mlrs-m270",
+        0.0309760374050263
+      ],
+      [
+        "tank-m1a2-abrams",
+        0.0309760374050263
+      ],
+      [
+        "recon-m1127-stryker",
+        0.0309760374050263
+      ],
+      [
+        "wheeled-hmmwv",
+        0.0309760374050263
+      ],
+      [
+        "tracked-m2-bradley",
+        0.0309760374050263
+      ],
+      [
+        "watercraft-lcac",
+        0.0309760374050263
+      ]
+    ],
+    "top_eigenvector_centrality": [
+      [
+        "usa-001",
+        0.6927922908396217
+      ],
+      [
+        "weapon-m4-carbine",
+        0.12950774009007113
+      ],
+      [
+        "weapon-m16a4",
+        0.12950774009007113
+      ],
+      [
+        "weapon-m249-saw",
+        0.12950774009007113
+      ],
+      [
+        "aircraft-ah-64-apache",
+        0.12550501472629366
+      ],
+      [
+        "aircraft-ah-1z-viper",
+        0.12550501472629366
+      ],
+      [
+        "aircraft-uh-60-blackhawk",
+        0.12550501472629366
+      ],
+      [
+        "aircraft-ch-47-chinook",
+        0.12550501472629366
+      ],
+      [
+        "aircraft-a-10-thunderbolt",
+        0.12550501472629366
+      ],
+      [
+        "aircraft-f-35-lightning",
+        0.12550501472629366
+      ]
+    ]
+  },
+  "entity_analysis": {
+    "countries": {},
+    "vehicles": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_manufacturer": {},
+      "by_decade": {},
+      "age_distribution": {}
+    },
+    "organizations": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "personnel_stats": {}
+    },
+    "people": {
+      "total_count": 0,
+      "by_type": {},
+      "by_nationality": {},
+      "birth_decades": {}
+    },
+    "areas": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_admin_level": {}
+    }
+  },
+  "temporal_analysis": {
+    "technology_timeline": {},
+    "service_periods": [],
+    "modernization_trends": {}
+  },
+  "geographic_analysis": {
+    "country_assets": {},
+    "regional_distribution": {},
+    "base_locations": {}
+  },
+  "technology_analysis": {
+    "manufacturers": {},
+    "technology_generations": {},
+    "capability_gaps": {},
+    "modernization_patterns": {}
+  }
+}
