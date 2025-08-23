@@ -1,0 +1,710 @@
+2025-08-21 10:18:11,028 - INFO - Starting IES4 JSON combination process...
+2025-08-21 10:18:11,032 - INFO - Found 8 country folders: ['finland', 'germany', 'north_korea', 'poland', 'russia', 'sweden', 'uk', 'usa']
+2025-08-21 10:18:11,035 - INFO - Found 1 JSON files in finland
+2025-08-21 10:18:11,042 - INFO - Found 1 JSON files in germany
+2025-08-21 10:18:11,053 - INFO - Found 9 JSON files in north_korea
+2025-08-21 10:18:11,056 - INFO - Found 1 JSON files in poland
+2025-08-21 10:18:11,058 - INFO - Found 1 JSON files in russia
+2025-08-21 10:18:11,060 - INFO - Found 1 JSON files in sweden
+2025-08-21 10:18:11,062 - INFO - Found 23 JSON files in uk
+2025-08-21 10:18:11,064 - INFO - Found 1 JSON files in usa
+2025-08-21 10:18:11,065 - INFO - Total JSON files found: 38
+2025-08-21 10:18:11,065 - INFO - Processing file: C:\ies4-military-database-analysis\data\finland\data_ies4_finland_comprehensive_military_database_Version3.json
+2025-08-21 10:18:11,069 - INFO - Successfully processed C:\ies4-military-database-analysis\data\finland\data_ies4_finland_comprehensive_military_database_Version3.json - added 57 entities
+2025-08-21 10:18:11,070 - INFO - Processing file: C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json
+2025-08-21 10:18:11,073 - WARNING - Duplicate ID 'tank-leopard-2a6' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,074 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,074 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,075 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,075 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,076 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,077 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,077 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,078 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,079 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,079 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,082 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,082 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,087 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,088 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,089 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,089 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,090 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,090 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,091 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:11,091 - INFO - Successfully processed C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - added 64 entities
+2025-08-21 10:18:11,092 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_aircraft_Version3.json
+2025-08-21 10:18:11,094 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_aircraft_Version3.json - added 14 entities
+2025-08-21 10:18:11,094 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json
+2025-08-21 10:18:11,097 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json - skipping
+2025-08-21 10:18:11,097 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json - added 8 entities
+2025-08-21 10:18:11,098 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json
+2025-08-21 10:18:11,105 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json - skipping
+2025-08-21 10:18:11,105 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json - added 8 entities
+2025-08-21 10:18:11,106 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json
+2025-08-21 10:18:11,109 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json - skipping
+2025-08-21 10:18:11,109 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json - added 11 entities
+2025-08-21 10:18:11,110 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json
+2025-08-21 10:18:11,112 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json - skipping
+2025-08-21 10:18:11,113 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json - added 12 entities
+2025-08-21 10:18:11,114 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json
+2025-08-21 10:18:11,116 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json - skipping
+2025-08-21 10:18:11,118 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json - added 9 entities
+2025-08-21 10:18:11,120 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json
+2025-08-21 10:18:11,122 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json - skipping
+2025-08-21 10:18:11,122 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json - added 11 entities
+2025-08-21 10:18:11,123 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json
+2025-08-21 10:18:11,125 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json - skipping
+2025-08-21 10:18:11,126 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json - added 12 entities
+2025-08-21 10:18:11,126 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json
+2025-08-21 10:18:11,129 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - skipping
+2025-08-21 10:18:11,129 - WARNING - Duplicate ID 'kpa-special-forces' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - skipping
+2025-08-21 10:18:11,130 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - added 11 entities
+2025-08-21 10:18:11,130 - INFO - Processing file: C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json
+2025-08-21 10:18:11,134 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,134 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,135 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,136 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,140 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,141 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,141 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,142 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,143 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,143 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,144 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,145 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,146 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,148 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,148 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,149 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,150 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,150 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,151 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,151 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,152 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,157 - INFO - Successfully processed C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - added 38 entities
+2025-08-21 10:18:11,157 - INFO - Processing file: C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json
+2025-08-21 10:18:11,160 - WARNING - Duplicate ID 'aircraft-su-25' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,161 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,161 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,162 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,163 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,165 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,165 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,166 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,166 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,167 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,167 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,173 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,173 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,174 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,175 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,175 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,176 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,176 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,177 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,177 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,179 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,179 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:11,181 - INFO - Successfully processed C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - added 38 entities
+2025-08-21 10:18:11,182 - INFO - Processing file: C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json
+2025-08-21 10:18:11,185 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,188 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,189 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,189 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,190 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,191 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,191 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,192 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,193 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,194 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,195 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,196 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,198 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,199 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,200 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,200 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,201 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,201 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,202 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,203 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,203 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,204 - WARNING - Duplicate ID 'pt-pilot' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:11,204 - INFO - Successfully processed C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - added 33 entities
+2025-08-21 10:18:11,205 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_air_defence_Version2.json
+2025-08-21 10:18:11,207 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_air_defence_Version2.json - added 10 entities
+2025-08-21 10:18:11,207 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json
+2025-08-21 10:18:11,210 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json - skipping
+2025-08-21 10:18:11,214 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json - added 14 entities
+2025-08-21 10:18:11,214 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json
+2025-08-21 10:18:11,217 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json - skipping
+2025-08-21 10:18:11,217 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json - added 11 entities
+2025-08-21 10:18:11,217 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json
+2025-08-21 10:18:11,220 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json - skipping
+2025-08-21 10:18:11,220 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json - added 8 entities
+2025-08-21 10:18:11,221 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json
+2025-08-21 10:18:11,223 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - skipping
+2025-08-21 10:18:11,224 - WARNING - Duplicate ID 'attack-helicopter' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - skipping
+2025-08-21 10:18:11,224 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - added 4 entities
+2025-08-21 10:18:11,225 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json
+2025-08-21 10:18:11,227 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json - skipping
+2025-08-21 10:18:11,227 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json - added 10 entities
+2025-08-21 10:18:11,228 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_database_summary_Version2.json
+2025-08-21 10:18:11,230 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_database_summary_Version2.json - added 0 entities
+2025-08-21 10:18:11,231 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json
+2025-08-21 10:18:11,233 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - skipping
+2025-08-21 10:18:11,233 - WARNING - Duplicate ID 'target-drone' found in C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - skipping
+2025-08-21 10:18:11,234 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - added 10 entities
+2025-08-21 10:18:11,235 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json
+2025-08-21 10:18:11,237 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json - skipping
+2025-08-21 10:18:11,240 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json - added 11 entities
+2025-08-21 10:18:11,241 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json
+2025-08-21 10:18:11,243 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json - skipping
+2025-08-21 10:18:11,243 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json - added 10 entities
+2025-08-21 10:18:11,244 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json
+2025-08-21 10:18:11,247 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - skipping
+2025-08-21 10:18:11,247 - WARNING - Duplicate ID 'main-battle-tank' found in C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - skipping
+2025-08-21 10:18:11,248 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - added 6 entities
+2025-08-21 10:18:11,248 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json
+2025-08-21 10:18:11,250 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json - skipping
+2025-08-21 10:18:11,251 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json - added 11 entities
+2025-08-21 10:18:11,252 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json
+2025-08-21 10:18:11,257 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json - skipping
+2025-08-21 10:18:11,257 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json - added 11 entities
+2025-08-21 10:18:11,258 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json
+2025-08-21 10:18:11,260 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json - skipping
+2025-08-21 10:18:11,261 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json - added 11 entities
+2025-08-21 10:18:11,261 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json
+2025-08-21 10:18:11,264 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json - skipping
+2025-08-21 10:18:11,264 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json - added 11 entities
+2025-08-21 10:18:11,265 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json
+2025-08-21 10:18:11,268 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json - skipping
+2025-08-21 10:18:11,271 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json - added 7 entities
+2025-08-21 10:18:11,271 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json
+2025-08-21 10:18:11,274 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json - skipping
+2025-08-21 10:18:11,275 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json - added 14 entities
+2025-08-21 10:18:11,275 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json
+2025-08-21 10:18:11,278 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:11,278 - WARNING - Duplicate ID 'assault-rifle' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:11,279 - WARNING - Duplicate ID 'machine-gun' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:11,279 - WARNING - Duplicate ID 'sniper-rifle' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:11,281 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - added 11 entities
+2025-08-21 10:18:11,282 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json
+2025-08-21 10:18:11,288 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json - skipping
+2025-08-21 10:18:11,292 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json - added 12 entities
+2025-08-21 10:18:11,292 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json
+2025-08-21 10:18:11,296 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:18:11,296 - WARNING - Duplicate ID 'area-catterick-garrison' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:18:11,297 - WARNING - Duplicate ID 'armored-personnel-carrier' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:18:11,298 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - added 9 entities
+2025-08-21 10:18:11,298 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json
+2025-08-21 10:18:11,301 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - skipping
+2025-08-21 10:18:11,301 - WARNING - Duplicate ID 'area-raf-brize-norton' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - skipping
+2025-08-21 10:18:11,302 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - added 8 entities
+2025-08-21 10:18:11,302 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json
+2025-08-21 10:18:11,305 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json - skipping
+2025-08-21 10:18:11,305 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json - added 9 entities
+2025-08-21 10:18:11,306 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json
+2025-08-21 10:18:11,308 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - skipping
+2025-08-21 10:18:11,313 - WARNING - Duplicate ID 'area-hmnb-portsmouth' found in C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - skipping
+2025-08-21 10:18:11,314 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - added 10 entities
+2025-08-21 10:18:11,315 - INFO - Processing file: C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json
+2025-08-21 10:18:11,317 - WARNING - Duplicate ID 'mlrs-m270' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,317 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,318 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,318 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,319 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,319 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,320 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,320 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,321 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,321 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,322 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,322 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,323 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,323 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,323 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,324 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,324 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,325 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,325 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,326 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,326 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,327 - WARNING - Duplicate ID 'pt-pilot' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:11,328 - INFO - Successfully processed C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - added 36 entities
+2025-08-21 10:18:11,329 - ERROR - Failed to load schema from C:\ies4-military-database-analysis\ies4_json_schema.json: [Errno 2] No such file or directory: 'C:\\ies4-military-database-analysis\\ies4_json_schema.json'
+2025-08-21 10:18:11,333 - ERROR - Unexpected error: [Errno 2] No such file or directory: 'C:\\ies4-military-database-analysis\\ies4_json_schema.json'
+2025-08-21 10:18:40,386 - INFO - Starting IES4 JSON combination process...
+2025-08-21 10:18:40,389 - INFO - Found 8 country folders: ['finland', 'germany', 'north_korea', 'poland', 'russia', 'sweden', 'uk', 'usa']
+2025-08-21 10:18:40,393 - INFO - Found 1 JSON files in finland
+2025-08-21 10:18:40,396 - INFO - Found 1 JSON files in germany
+2025-08-21 10:18:40,398 - INFO - Found 9 JSON files in north_korea
+2025-08-21 10:18:40,400 - INFO - Found 1 JSON files in poland
+2025-08-21 10:18:40,404 - INFO - Found 1 JSON files in russia
+2025-08-21 10:18:40,407 - INFO - Found 1 JSON files in sweden
+2025-08-21 10:18:40,409 - INFO - Found 23 JSON files in uk
+2025-08-21 10:18:40,412 - INFO - Found 1 JSON files in usa
+2025-08-21 10:18:40,412 - INFO - Total JSON files found: 38
+2025-08-21 10:18:40,413 - INFO - Processing file: C:\ies4-military-database-analysis\data\finland\data_ies4_finland_comprehensive_military_database_Version3.json
+2025-08-21 10:18:40,416 - INFO - Successfully processed C:\ies4-military-database-analysis\data\finland\data_ies4_finland_comprehensive_military_database_Version3.json - added 57 entities
+2025-08-21 10:18:40,416 - INFO - Processing file: C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json
+2025-08-21 10:18:40,419 - WARNING - Duplicate ID 'tank-leopard-2a6' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,423 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,423 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,425 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,427 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,428 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,428 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,429 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,430 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,431 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,432 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,432 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,433 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,434 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,435 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,435 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,436 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,437 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,437 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,438 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:18:40,439 - INFO - Successfully processed C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - added 64 entities
+2025-08-21 10:18:40,439 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_aircraft_Version3.json
+2025-08-21 10:18:40,441 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_aircraft_Version3.json - added 14 entities
+2025-08-21 10:18:40,441 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json
+2025-08-21 10:18:40,443 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json - skipping
+2025-08-21 10:18:40,443 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json - added 8 entities
+2025-08-21 10:18:40,444 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json
+2025-08-21 10:18:40,445 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json - skipping
+2025-08-21 10:18:40,449 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json - added 8 entities
+2025-08-21 10:18:40,450 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json
+2025-08-21 10:18:40,452 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json - skipping
+2025-08-21 10:18:40,453 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json - added 11 entities
+2025-08-21 10:18:40,453 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json
+2025-08-21 10:18:40,455 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json - skipping
+2025-08-21 10:18:40,456 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json - added 12 entities
+2025-08-21 10:18:40,456 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json
+2025-08-21 10:18:40,459 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json - skipping
+2025-08-21 10:18:40,459 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json - added 9 entities
+2025-08-21 10:18:40,460 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json
+2025-08-21 10:18:40,462 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json - skipping
+2025-08-21 10:18:40,468 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json - added 11 entities
+2025-08-21 10:18:40,468 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json
+2025-08-21 10:18:40,471 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json - skipping
+2025-08-21 10:18:40,472 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json - added 12 entities
+2025-08-21 10:18:40,473 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json
+2025-08-21 10:18:40,475 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - skipping
+2025-08-21 10:18:40,476 - WARNING - Duplicate ID 'kpa-special-forces' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - skipping
+2025-08-21 10:18:40,477 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - added 11 entities
+2025-08-21 10:18:40,478 - INFO - Processing file: C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json
+2025-08-21 10:18:40,485 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,486 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,487 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,488 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,489 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,489 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,490 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,491 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,491 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,492 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,494 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,500 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,500 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,502 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,503 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,503 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,504 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,505 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,506 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,506 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,508 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,509 - INFO - Successfully processed C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - added 38 entities
+2025-08-21 10:18:40,517 - INFO - Processing file: C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json
+2025-08-21 10:18:40,520 - WARNING - Duplicate ID 'aircraft-su-25' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,521 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,522 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,523 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,523 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,524 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,525 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,528 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,528 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,529 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,534 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,535 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,536 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,537 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,538 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,539 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,540 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,541 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,542 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,544 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,545 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,551 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:18:40,552 - INFO - Successfully processed C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - added 38 entities
+2025-08-21 10:18:40,554 - INFO - Processing file: C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json
+2025-08-21 10:18:40,557 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,558 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,559 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,560 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,561 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,562 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,568 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,569 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,571 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,571 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,573 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,574 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,575 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,575 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,578 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,579 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,580 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,581 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,581 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,582 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,583 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,584 - WARNING - Duplicate ID 'pt-pilot' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:18:40,584 - INFO - Successfully processed C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - added 33 entities
+2025-08-21 10:18:40,585 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_air_defence_Version2.json
+2025-08-21 10:18:40,587 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_air_defence_Version2.json - added 10 entities
+2025-08-21 10:18:40,588 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json
+2025-08-21 10:18:40,598 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json - skipping
+2025-08-21 10:18:40,599 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json - added 14 entities
+2025-08-21 10:18:40,600 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json
+2025-08-21 10:18:40,602 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json - skipping
+2025-08-21 10:18:40,602 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json - added 11 entities
+2025-08-21 10:18:40,603 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json
+2025-08-21 10:18:40,605 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json - skipping
+2025-08-21 10:18:40,605 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json - added 8 entities
+2025-08-21 10:18:40,606 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json
+2025-08-21 10:18:40,608 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - skipping
+2025-08-21 10:18:40,609 - WARNING - Duplicate ID 'attack-helicopter' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - skipping
+2025-08-21 10:18:40,610 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - added 4 entities
+2025-08-21 10:18:40,610 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json
+2025-08-21 10:18:40,613 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json - skipping
+2025-08-21 10:18:40,613 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json - added 10 entities
+2025-08-21 10:18:40,614 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_database_summary_Version2.json
+2025-08-21 10:18:40,616 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_database_summary_Version2.json - added 0 entities
+2025-08-21 10:18:40,616 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json
+2025-08-21 10:18:40,618 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - skipping
+2025-08-21 10:18:40,619 - WARNING - Duplicate ID 'target-drone' found in C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - skipping
+2025-08-21 10:18:40,619 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - added 10 entities
+2025-08-21 10:18:40,626 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json
+2025-08-21 10:18:40,629 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json - skipping
+2025-08-21 10:18:40,629 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json - added 11 entities
+2025-08-21 10:18:40,630 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json
+2025-08-21 10:18:40,632 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json - skipping
+2025-08-21 10:18:40,633 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json - added 10 entities
+2025-08-21 10:18:40,634 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json
+2025-08-21 10:18:40,636 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - skipping
+2025-08-21 10:18:40,639 - WARNING - Duplicate ID 'main-battle-tank' found in C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - skipping
+2025-08-21 10:18:40,640 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - added 6 entities
+2025-08-21 10:18:40,641 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json
+2025-08-21 10:18:40,643 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json - skipping
+2025-08-21 10:18:40,644 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json - added 11 entities
+2025-08-21 10:18:40,645 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json
+2025-08-21 10:18:40,647 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json - skipping
+2025-08-21 10:18:40,647 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json - added 11 entities
+2025-08-21 10:18:40,648 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json
+2025-08-21 10:18:40,650 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json - skipping
+2025-08-21 10:18:40,651 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json - added 11 entities
+2025-08-21 10:18:40,651 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json
+2025-08-21 10:18:40,654 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json - skipping
+2025-08-21 10:18:40,654 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json - added 11 entities
+2025-08-21 10:18:40,655 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json
+2025-08-21 10:18:40,656 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json - skipping
+2025-08-21 10:18:40,657 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json - added 7 entities
+2025-08-21 10:18:40,658 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json
+2025-08-21 10:18:40,660 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json - skipping
+2025-08-21 10:18:40,660 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json - added 14 entities
+2025-08-21 10:18:40,661 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json
+2025-08-21 10:18:40,663 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:40,667 - WARNING - Duplicate ID 'assault-rifle' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:40,668 - WARNING - Duplicate ID 'machine-gun' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:40,669 - WARNING - Duplicate ID 'sniper-rifle' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:18:40,669 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - added 11 entities
+2025-08-21 10:18:40,670 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json
+2025-08-21 10:18:40,671 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json - skipping
+2025-08-21 10:18:40,672 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json - added 12 entities
+2025-08-21 10:18:40,672 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json
+2025-08-21 10:18:40,674 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:18:40,675 - WARNING - Duplicate ID 'area-catterick-garrison' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:18:40,675 - WARNING - Duplicate ID 'armored-personnel-carrier' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:18:40,677 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - added 9 entities
+2025-08-21 10:18:40,677 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json
+2025-08-21 10:18:40,679 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - skipping
+2025-08-21 10:18:40,679 - WARNING - Duplicate ID 'area-raf-brize-norton' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - skipping
+2025-08-21 10:18:40,680 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - added 8 entities
+2025-08-21 10:18:40,681 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json
+2025-08-21 10:18:40,682 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json - skipping
+2025-08-21 10:18:40,683 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json - added 9 entities
+2025-08-21 10:18:40,683 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json
+2025-08-21 10:18:40,685 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - skipping
+2025-08-21 10:18:40,685 - WARNING - Duplicate ID 'area-hmnb-portsmouth' found in C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - skipping
+2025-08-21 10:18:40,686 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - added 10 entities
+2025-08-21 10:18:40,687 - INFO - Processing file: C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json
+2025-08-21 10:18:40,689 - WARNING - Duplicate ID 'mlrs-m270' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,689 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,695 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,696 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,697 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,697 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,698 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,699 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,699 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,700 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,701 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,701 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,702 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,702 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,703 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,704 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,704 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,705 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,711 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,712 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,713 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,714 - WARNING - Duplicate ID 'pt-pilot' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:18:40,715 - INFO - Successfully processed C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - added 36 entities
+2025-08-21 10:18:40,716 - ERROR - Failed to load schema from C:\ies4-military-database-analysis\ies4_json_schema.json: [Errno 2] No such file or directory: 'C:\\ies4-military-database-analysis\\ies4_json_schema.json'
+2025-08-21 10:18:40,716 - ERROR - Unexpected error: [Errno 2] No such file or directory: 'C:\\ies4-military-database-analysis\\ies4_json_schema.json'
+2025-08-21 10:20:50,831 - INFO - Starting IES4 JSON combination process...
+2025-08-21 10:20:50,835 - INFO - Found 8 country folders: ['finland', 'germany', 'north_korea', 'poland', 'russia', 'sweden', 'uk', 'usa']
+2025-08-21 10:20:50,839 - INFO - Found 1 JSON files in finland
+2025-08-21 10:20:50,842 - INFO - Found 1 JSON files in germany
+2025-08-21 10:20:50,843 - INFO - Found 9 JSON files in north_korea
+2025-08-21 10:20:50,845 - INFO - Found 1 JSON files in poland
+2025-08-21 10:20:50,846 - INFO - Found 1 JSON files in russia
+2025-08-21 10:20:50,848 - INFO - Found 1 JSON files in sweden
+2025-08-21 10:20:50,850 - INFO - Found 23 JSON files in uk
+2025-08-21 10:20:50,852 - INFO - Found 1 JSON files in usa
+2025-08-21 10:20:50,853 - INFO - Total JSON files found: 38
+2025-08-21 10:20:50,854 - INFO - Processing file: C:\ies4-military-database-analysis\data\finland\data_ies4_finland_comprehensive_military_database_Version3.json
+2025-08-21 10:20:50,857 - INFO - Successfully processed C:\ies4-military-database-analysis\data\finland\data_ies4_finland_comprehensive_military_database_Version3.json - added 57 entities
+2025-08-21 10:20:50,858 - INFO - Processing file: C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json
+2025-08-21 10:20:50,861 - WARNING - Duplicate ID 'tank-leopard-2a6' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,862 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,862 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,863 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,864 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,864 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,865 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,865 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,866 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,866 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,867 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,868 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,869 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,869 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,876 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,876 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,878 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,878 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,879 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,880 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - skipping
+2025-08-21 10:20:50,880 - INFO - Successfully processed C:\ies4-military-database-analysis\data\germany\data_ies4_german_military_database_Version2.json - added 64 entities
+2025-08-21 10:20:50,881 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_aircraft_Version3.json
+2025-08-21 10:20:50,883 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_aircraft_Version3.json - added 14 entities
+2025-08-21 10:20:50,884 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json
+2025-08-21 10:20:50,886 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json - skipping
+2025-08-21 10:20:50,886 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_drones_Version2.json - added 8 entities
+2025-08-21 10:20:50,887 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json
+2025-08-21 10:20:50,889 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json - skipping
+2025-08-21 10:20:50,890 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_electronic_warfare_comms_Version2.json - added 8 entities
+2025-08-21 10:20:50,891 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json
+2025-08-21 10:20:50,893 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json - skipping
+2025-08-21 10:20:50,893 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_ground_vehicles_Version3.json - added 11 entities
+2025-08-21 10:20:50,894 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json
+2025-08-21 10:20:50,896 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json - skipping
+2025-08-21 10:20:50,900 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_missiles_air_defense_Version2.json - added 12 entities
+2025-08-21 10:20:50,902 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json
+2025-08-21 10:20:50,903 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json - skipping
+2025-08-21 10:20:50,904 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_naval_Version2.json - added 9 entities
+2025-08-21 10:20:50,904 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json
+2025-08-21 10:20:50,907 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json - skipping
+2025-08-21 10:20:50,908 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_personal_equipment_ammunition_Version2.json - added 11 entities
+2025-08-21 10:20:50,908 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json
+2025-08-21 10:20:50,919 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json - skipping
+2025-08-21 10:20:50,921 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_small_arms_Version3.json - added 12 entities
+2025-08-21 10:20:50,922 - INFO - Processing file: C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json
+2025-08-21 10:20:50,929 - WARNING - Duplicate ID 'country-north-korea' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - skipping
+2025-08-21 10:20:50,931 - WARNING - Duplicate ID 'kpa-special-forces' found in C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - skipping
+2025-08-21 10:20:50,932 - INFO - Successfully processed C:\ies4-military-database-analysis\data\north_korea\data_ies4_north_korea_special_forces_organizations_Version2.json - added 11 entities
+2025-08-21 10:20:50,934 - INFO - Processing file: C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json
+2025-08-21 10:20:50,937 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,937 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,938 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,939 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,940 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,942 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,942 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,943 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,944 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,944 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,945 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,946 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,946 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,947 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,947 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,948 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,948 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,949 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,950 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,957 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,959 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - skipping
+2025-08-21 10:20:50,960 - INFO - Successfully processed C:\ies4-military-database-analysis\data\poland\data_ies4_polish_military_database_Version3.json - added 38 entities
+2025-08-21 10:20:50,962 - INFO - Processing file: C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json
+2025-08-21 10:20:50,967 - WARNING - Duplicate ID 'aircraft-su-25' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,970 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,974 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,974 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,976 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,977 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,978 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,978 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,979 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,980 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,981 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,982 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,988 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,990 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,991 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,994 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,995 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:50,996 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:51,000 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:51,002 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:51,002 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:51,003 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - skipping
+2025-08-21 10:20:51,004 - INFO - Successfully processed C:\ies4-military-database-analysis\data\russia\data_ies4_russian_federation_military_comprehensive_Version2.json - added 38 entities
+2025-08-21 10:20:51,005 - INFO - Processing file: C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json
+2025-08-21 10:20:51,008 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,012 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,012 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,014 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,015 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,016 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,017 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,018 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,019 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,020 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,020 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,021 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,027 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,028 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,030 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,030 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,031 - WARNING - Duplicate ID 'vt-electronic-warfare' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,032 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,033 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,035 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,035 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,036 - WARNING - Duplicate ID 'pt-pilot' found in C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - skipping
+2025-08-21 10:20:51,037 - INFO - Successfully processed C:\ies4-military-database-analysis\data\sweden\data_ies4_swedish_military_database_Version3.json - added 33 entities
+2025-08-21 10:20:51,038 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_air_defence_Version2.json
+2025-08-21 10:20:51,040 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_air_defence_Version2.json - added 10 entities
+2025-08-21 10:20:51,041 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json
+2025-08-21 10:20:51,043 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json - skipping
+2025-08-21 10:20:51,044 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_ammunition_Version2.json - added 14 entities
+2025-08-21 10:20:51,044 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json
+2025-08-21 10:20:51,046 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json - skipping
+2025-08-21 10:20:51,047 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_artillery_Version2.json - added 11 entities
+2025-08-21 10:20:51,047 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json
+2025-08-21 10:20:51,053 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json - skipping
+2025-08-21 10:20:51,053 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_attack_aircraft_Version2.json - added 8 entities
+2025-08-21 10:20:51,054 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json
+2025-08-21 10:20:51,056 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - skipping
+2025-08-21 10:20:51,056 - WARNING - Duplicate ID 'attack-helicopter' found in C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - skipping
+2025-08-21 10:20:51,057 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_attack_helicopters_Version2.json - added 4 entities
+2025-08-21 10:20:51,058 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json
+2025-08-21 10:20:51,060 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json - skipping
+2025-08-21 10:20:51,060 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_base_locations_Version2.json - added 10 entities
+2025-08-21 10:20:51,061 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_database_summary_Version2.json
+2025-08-21 10:20:51,062 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_database_summary_Version2.json - added 0 entities
+2025-08-21 10:20:51,063 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json
+2025-08-21 10:20:51,064 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - skipping
+2025-08-21 10:20:51,065 - WARNING - Duplicate ID 'target-drone' found in C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - skipping
+2025-08-21 10:20:51,066 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_drones_Version2.json - added 10 entities
+2025-08-21 10:20:51,066 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json
+2025-08-21 10:20:51,068 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json - skipping
+2025-08-21 10:20:51,069 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_electronic_warfare_Version2.json - added 11 entities
+2025-08-21 10:20:51,070 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json
+2025-08-21 10:20:51,074 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json - skipping
+2025-08-21 10:20:51,077 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_headquarters_Version2.json - added 10 entities
+2025-08-21 10:20:51,078 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json
+2025-08-21 10:20:51,080 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - skipping
+2025-08-21 10:20:51,080 - WARNING - Duplicate ID 'main-battle-tank' found in C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - skipping
+2025-08-21 10:20:51,081 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_main_battle_tanks_Version2.json - added 6 entities
+2025-08-21 10:20:51,082 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json
+2025-08-21 10:20:51,083 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json - skipping
+2025-08-21 10:20:51,084 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_missiles_Version2.json - added 11 entities
+2025-08-21 10:20:51,084 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json
+2025-08-21 10:20:51,086 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json - skipping
+2025-08-21 10:20:51,086 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_personal_equipment_Version2.json - added 11 entities
+2025-08-21 10:20:51,087 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json
+2025-08-21 10:20:51,089 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json - skipping
+2025-08-21 10:20:51,090 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_radar_Version2.json - added 11 entities
+2025-08-21 10:20:51,090 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json
+2025-08-21 10:20:51,092 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json - skipping
+2025-08-21 10:20:51,093 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_radios_Version2.json - added 11 entities
+2025-08-21 10:20:51,093 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json
+2025-08-21 10:20:51,095 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json - skipping
+2025-08-21 10:20:51,095 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_reconnaissance_vehicles_Version2.json - added 7 entities
+2025-08-21 10:20:51,096 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json
+2025-08-21 10:20:51,102 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json - skipping
+2025-08-21 10:20:51,102 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_regiments_Version2.json - added 14 entities
+2025-08-21 10:20:51,103 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json
+2025-08-21 10:20:51,105 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:20:51,105 - WARNING - Duplicate ID 'assault-rifle' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:20:51,106 - WARNING - Duplicate ID 'machine-gun' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:20:51,106 - WARNING - Duplicate ID 'sniper-rifle' found in C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - skipping
+2025-08-21 10:20:51,108 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_small_arms_Version2.json - added 11 entities
+2025-08-21 10:20:51,109 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json
+2025-08-21 10:20:51,114 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json - skipping
+2025-08-21 10:20:51,114 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_special_forces_Version2.json - added 12 entities
+2025-08-21 10:20:51,115 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json
+2025-08-21 10:20:51,117 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:20:51,117 - WARNING - Duplicate ID 'area-catterick-garrison' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:20:51,118 - WARNING - Duplicate ID 'armored-personnel-carrier' found in C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - skipping
+2025-08-21 10:20:51,119 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_tracked_vehicles_Version2.json - added 9 entities
+2025-08-21 10:20:51,119 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json
+2025-08-21 10:20:51,121 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - skipping
+2025-08-21 10:20:51,125 - WARNING - Duplicate ID 'area-raf-brize-norton' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - skipping
+2025-08-21 10:20:51,126 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_transport_aircraft_Version2.json - added 8 entities
+2025-08-21 10:20:51,127 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json
+2025-08-21 10:20:51,128 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json - skipping
+2025-08-21 10:20:51,129 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_transport_helicopters_Version2.json - added 9 entities
+2025-08-21 10:20:51,130 - INFO - Processing file: C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json
+2025-08-21 10:20:51,131 - WARNING - Duplicate ID 'uk-001' found in C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - skipping
+2025-08-21 10:20:51,132 - WARNING - Duplicate ID 'area-hmnb-portsmouth' found in C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - skipping
+2025-08-21 10:20:51,132 - INFO - Successfully processed C:\ies4-military-database-analysis\data\uk\data_british_military_water_craft_Version2.json - added 10 entities
+2025-08-21 10:20:51,133 - INFO - Processing file: C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json
+2025-08-21 10:20:51,135 - WARNING - Duplicate ID 'mlrs-m270' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,135 - WARNING - Duplicate ID 'vt-small-arms' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,136 - WARNING - Duplicate ID 'vt-attack-helicopter' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,137 - WARNING - Duplicate ID 'vt-transport-helicopter' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,142 - WARNING - Duplicate ID 'vt-attack-aircraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,143 - WARNING - Duplicate ID 'vt-transport-aircraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,144 - WARNING - Duplicate ID 'vt-missile-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,144 - WARNING - Duplicate ID 'vt-radar-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,145 - WARNING - Duplicate ID 'vt-air-defense' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,146 - WARNING - Duplicate ID 'vt-artillery' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,146 - WARNING - Duplicate ID 'vt-mlrs' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,147 - WARNING - Duplicate ID 'vt-main-battle-tank' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,147 - WARNING - Duplicate ID 'vt-reconnaissance-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,148 - WARNING - Duplicate ID 'vt-wheeled-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,149 - WARNING - Duplicate ID 'vt-tracked-vehicle' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,149 - WARNING - Duplicate ID 'vt-watercraft' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,150 - WARNING - Duplicate ID 'vt-drone' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,151 - WARNING - Duplicate ID 'vt-radio-system' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,152 - WARNING - Duplicate ID 'vt-personal-equipment' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,158 - WARNING - Duplicate ID 'vt-ammunition' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,158 - WARNING - Duplicate ID 'pt-special-forces' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,160 - WARNING - Duplicate ID 'pt-pilot' found in C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - skipping
+2025-08-21 10:20:51,160 - INFO - Successfully processed C:\ies4-military-database-analysis\data\usa\data_ies4_usa_military_comprehensive_Version3.json - added 36 entities
+2025-08-21 10:20:51,162 - INFO - Loaded schema from C:\ies4-military-database-analysis\ies4_json_schema.json
+2025-08-21 10:20:51,233 - INFO - Combined file saved successfully: C:\ies4-military-database-analysis\combined_ies4_military_database.json
+2025-08-21 10:20:51,233 - INFO - File size: 0.61 MB
+2025-08-21 10:20:51,248 - INFO - IES4 JSON combination completed successfully!

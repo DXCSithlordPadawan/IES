@@ -1,0 +1,16 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-08-21T15:43:29.245956",
+    "ies4_version": "4.3.0",
+    "processor_version": "1.0.0",
+    "base_path": "C:\\ies4-military-database-analysis",
+    "processing_time_seconds": 1.194682
+  },
+  "summary_statistics": {
+    "total_files_processed": 83,
+    "total_folders_processed": 6,
+    "successful_combinations": 6,
+    "failed_combinations": 0,
+    "validation_errors": 0,
+    "files_backed_up": 83,
+    "start_time": 

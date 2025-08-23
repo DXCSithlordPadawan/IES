@@ -1,0 +1,52 @@
+{
+  "ies4": {
+    "version": "4.3.0",
+    "namespace_uri": "http://ies.data.gov.uk/ontology/ies4#",
+    "enforce_strict_validation": true,
+    "auto_fix_compliance_issues": true,
+    "merge_duplicate_entities": true,
+    "normalize_property_names": true,
+    "auto_populate_missing_fields": true,
+    "default_version": "1.0",
+    "validate_field_formats": true
+  },
+  "processing": {
+    "backup_original_files": true,
+    "output_format": "pretty_json",
+    "validation_level": "strict",
+    "log_level": "INFO",
+    "max_workers": 4,
+    "include_enhancement_metadata": true
+  },
+  "file_handling": {
+    "max_file_size_mb": 100,
+    "encoding": "utf-8",
+    "create_index_files": true,
+    "compress_large_files": false
+  },
+  "military_specific": {
+    "classification_levels": ["UNCLASSIFIED", "RESTRICTED", "OFFICIAL", "OFFICIAL-SENSITIVE", "CONFIDENTIAL", "SECRET", "TOP-SECRET"],
+    "default_classification": "UNCLASSIFIED",
+    "include_provenance": true,
+    "sanitize_sensitive_data": true,
+    "redact_coordinates": false,
+    "preserve_operational_security": true
+  },
+  "field_enhancement": {
+    "auto_generate_ids": true,
+    "auto_add_timestamps": true,
+    "auto_add_versions": true,
+    "auto_infer_types": true,
+    "fix_invalid_timestamps": true,
+    "fix_invalid_versions": true,
+    "timestamp_format": "ISO8601",
+    "version_format": "semantic"
+  },
+  "output": {
+    "create_summary_reports": true,
+    "include_validation_details": true,
+    "export_statistics": true,
+    "create_index_files": true,
+    "include_enhancement_stats": true
+  }
+}

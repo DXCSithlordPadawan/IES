@@ -1,0 +1,1167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Extended IES4-Based Entity Schema",
+  "description": "JSON schema based on the UK Government's Information Exchange Standard (IES4) for countries, areas, vehicles, vehicle types, people types, ammunition, electronic systems, weapons, and organizations",
+  "type": "object",
+  "properties": {
+    "countries": {
+      "type": "array",
+      "description": "Collection of country entities",
+      "items": {
+        "$ref": "#/definitions/Country"
+      }
+    },
+    "areas": {
+      "type": "array",
+      "description": "Collection of geographical area entities",
+      "items": {
+        "$ref": "#/definitions/Area"
+      }
+    },
+    "vehicles": {
+      "type": "array",
+      "description": "Collection of vehicle entities",
+      "items": {
+        "$ref": "#/definitions/Vehicle"
+      }
+    },
+    "vehicleTypes": {
+      "type": "array",
+      "description": "Collection of vehicle type classifications",
+      "items": {
+        "$ref": "#/definitions/VehicleType"
+      }
+    },
+    "peopleTypes": {
+      "type": "array",
+      "description": "Collection of people type classifications",
+      "items": {
+        "$ref": "#/definitions/PeopleType"
+      }
+    },
+    "people": {
+      "type": "array",
+      "description": "Collection of person entities",
+      "items": {
+        "$ref": "#/definitions/Person"
+      }
+    },
+    "ammunition": {
+      "type": "array",
+      "description": "Collection of ammunition entities",
+      "items": {
+        "$ref": "#/definitions/Ammunition"
+      }
+    },
+    "electronicSystems": {
+      "type": "array",
+      "description": "Collection of electronic system entities",
+      "items": {
+        "$ref": "#/definitions/ElectronicSystem"
+      }
+    },
+    "weapons": {
+      "type": "array",
+      "description": "Collection of weapon entities",
+      "items": {
+        "$ref": "#/definitions/Weapon"
+      }
+    },
+    "organizations": {
+      "type": "array",
+      "description": "Collection of organization entities",
+      "items": {
+        "$ref": "#/definitions/Organization"
+      }
+    }
+  },
+  "definitions": {
+    "BaseEntity": {
+      "type": "object",
+      "description": "Base class for all IES4 entities",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the entity"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri",
+          "description": "RDF URI for the entity"
+        },
+        "names": {
+          "type": "array",
+          "description": "Collection of names for this entity",
+          "items": {
+            "$ref": "#/definitions/Name"
+          }
+        },
+        "identifiers": {
+          "type": "array",
+          "description": "Collection of identifiers for this entity",
+          "items": {
+            "$ref": "#/definitions/Identifier"
+          }
+        },
+        "representations": {
+          "type": "array",
+          "description": "Documents, images, or other representations of this entity",
+          "items": {
+            "$ref": "#/definitions/Representation"
+          }
+        },
+        "temporalParts": {
+          "type": "array",
+          "description": "Temporal states or phases of this entity",
+          "items": {
+            "$ref": "#/definitions/State"
+          }
+        }
+      },
+      "required": ["id"]
+    },
+    "Country": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Country"
+            },
+            "iso3166Alpha2": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$",
+              "description": "ISO 3166-1 alpha-2 country code"
+            },
+            "iso3166Alpha3": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$",
+              "description": "ISO 3166-1 alpha-3 country code"
+            },
+            "telephoneCountryCode": {
+              "type": "string",
+              "description": "International telephone dialing code"
+            },
+            "currency": {
+              "type": "string",
+              "description": "Primary currency code (ISO 4217)"
+            },
+            "languages": {
+              "type": "array",
+              "description": "Official or primary languages",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sovereignty": {
+              "type": "string",
+              "description": "Sovereignty status"
+            },
+            "geographicBounds": {
+              "$ref": "#/definitions/GeoRepresentation"
+            }
+          }
+        }
+      ]
+    },
+    "Area": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Area"
+            },
+            "areaType": {
+              "type": "string",
+              "enum": ["administrative", "geographic", "military", "commercial", "residential", "industrial", "natural", "other"],
+              "description": "Classification of area type"
+            },
+            "parentArea": {
+              "type": "string",
+              "description": "Reference to parent area entity"
+            },
+            "childAreas": {
+              "type": "array",
+              "description": "References to child area entities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "country": {
+              "type": "string",
+              "description": "Reference to country entity"
+            },
+            "coordinates": {
+              "$ref": "#/definitions/GeoRepresentation"
+            },
+            "administrativeLevel": {
+              "type": "integer",
+              "description": "Administrative hierarchy level (0=country, 1=state/province, 2=county, etc.)"
+            }
+          }
+        }
+      ]
+    },
+    "Vehicle": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Vehicle"
+            },
+            "vehicleType": {
+              "type": "string",
+              "description": "Reference to vehicle type classification"
+            },
+            "registrationNumber": {
+              "type": "string",
+              "description": "Vehicle registration/license plate number"
+            },
+            "vin": {
+              "type": "string",
+              "description": "Vehicle Identification Number"
+            },
+            "make": {
+              "type": "string",
+              "description": "Vehicle manufacturer"
+            },
+            "model": {
+              "type": "string",
+              "description": "Vehicle model"
+            },
+            "year": {
+              "type": "integer",
+              "description": "Year of manufacture"
+            },
+            "colour": {
+              "type": "string",
+              "description": "Primary vehicle colour"
+            },
+            "engineSize": {
+              "type": "number",
+              "description": "Engine size in liters"
+            },
+            "fuelType": {
+              "type": "string",
+              "enum": ["petrol", "diesel", "electric", "hybrid", "lpg", "cng", "hydrogen", "other"]
+            },
+            "owner": {
+              "type": "string",
+              "description": "Reference to owner entity (Person or Organisation)"
+            },
+            "states": {
+              "type": "array",
+              "description": "Vehicle states (parked, moving, etc.)",
+              "items": {
+                "$ref": "#/definitions/VehicleState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "VehicleType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for vehicle type"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the vehicle type"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["unmanned aircraft","communication equipment","electronic system","computer system","artillery","missile","defense system","sensor", "sensor system", "equipment", "ammunition", "armored vehicle", "vehicle", "car", "motorcycle", "truck", "bus", "van", "bicycle", "naval vessel", "vessel", "boat", "watercraft", "aircraft", "train", "electronic_system", "weapon", "organization", "other"","communication equipment","electronic system","computer system","artillery","missile","defense system","sensor", "sensor system", "equipment", "ammunition", "armored vehicle", "vehicle", "car", "motorcycle", "truck", "bus", "van", "bicycle", "naval vessel", "vessel", "boat", "watercraft", "aircraft", "train", "electronic_system", "weapon", "organization", "other"],
+          "description": "Primary vehicle category"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "More specific vehicle subcategory"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of vehicle type"
+        },
+        "characteristics": {
+          "type": "array",
+          "description": "Defining characteristics of this vehicle type",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          }
+        }
+      },
+      "required": ["id", "name", "category"]
+    },
+    "PeopleType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for people type"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the people type classification"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["professional", "demographic", "social", "organizational", "legal", "other"],
+          "description": "Primary classification category"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "More specific subcategory"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of people type"
+        },
+        "characteristics": {
+          "type": "array",
+          "description": "Defining characteristics of this people type",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "description": "Example roles or positions within this type",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["id", "name", "category"]
+    },
+    "Person": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Person"
+            },
+            "birthDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date of birth"
+            },
+            "deathDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date of death (if applicable)"
+            },
+            "gender": {
+              "type": "string",
+              "description": "Gender identity"
+            },
+            "nationality": {
+              "type": "string",
+              "description": "Reference to country of nationality"
+            },
+            "placeOfBirth": {
+              "type": "string",
+              "description": "Reference to location of birth"
+            },
+            "personTypes": {
+              "type": "array",
+              "description": "Classifications this person belongs to",
+              "items": {
+                "type": "string"
+              }
+            },
+            "states": {
+              "type": "array",
+              "description": "Person states (married, employed, etc.)",
+              "items": {
+                "$ref": "#/definitions/PersonState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Ammunition": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Ammunition"
+            },
+            "ammunitionType": {
+              "type": "string",
+              "enum": ["small_arms", "artillery", "mortar", "missile", "rocket", "grenade", "mine", "explosive", "other"],
+              "description": "Primary ammunition classification"
+            },
+            "caliber": {
+              "type": "string",
+              "description": "Caliber or size designation"
+            },
+            "manufacturer": {
+              "type": "string",
+              "description": "Manufacturing organization"
+            },
+            "lotNumber": {
+              "type": "string",
+              "description": "Manufacturing lot or batch number"
+            },
+            "manufactureDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date of manufacture"
+            },
+            "expiryDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Expiry or shelf-life date"
+            },
+            "warhead": {
+              "type": "string",
+              "enum": ["high_explosive", "armor_piercing", "incendiary", "fragmentation", "chemical", "nuclear", "training", "blank", "other"],
+              "description": "Type of warhead or payload"
+            },
+            "propellant": {
+              "type": "string",
+              "description": "Type of propellant used"
+            },
+            "weight": {
+              "type": "number",
+              "description": "Weight in kilograms"
+            },
+            "length": {
+              "type": "number",
+              "description": "Length in millimeters"
+            },
+            "compatibleWeapons": {
+              "type": "array",
+              "description": "References to compatible weapon entities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "storageRequirements": {
+              "type": "array",
+              "description": "Special storage or handling requirements",
+              "items": {
+                "type": "string"
+              }
+            },
+            "dangerClassification": {
+              "type": "string",
+              "description": "UN hazard classification or similar safety rating"
+            },
+            "states": {
+              "type": "array",
+              "description": "Ammunition states (stored, deployed, fired, etc.)",
+              "items": {
+                "$ref": "#/definitions/AmmunitionState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ElectronicSystem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "ElectronicSystem"
+            },
+            "systemType": {
+              "type": "string",
+              "enum": ["radar", "communication", "navigation", "surveillance", "electronic_warfare", "sensor", "computer", "control_system", "other"],
+              "description": "Primary system classification"
+            },
+            "manufacturer": {
+              "type": "string",
+              "description": "Manufacturing organization"
+            },
+            "model": {
+              "type": "string",
+              "description": "System model designation"
+            },
+            "serialNumber": {
+              "type": "string",
+              "description": "Unique serial number"
+            },
+            "softwareVersion": {
+              "type": "string",
+              "description": "Current software/firmware version"
+            },
+            "operatingFrequency": {
+              "type": "object",
+              "properties": {
+                "min": {
+                  "type": "number",
+                  "description": "Minimum frequency in Hz"
+                },
+                "max": {
+                  "type": "number",
+                  "description": "Maximum frequency in Hz"
+                },
+                "unit": {
+                  "type": "string",
+                  "default": "Hz"
+                }
+              },
+              "description": "Operating frequency range"
+            },
+            "powerConsumption": {
+              "type": "number",
+              "description": "Power consumption in watts"
+            },
+            "range": {
+              "type": "number",
+              "description": "Operational range in meters"
+            },
+            "accuracy": {
+              "type": "string",
+              "description": "System accuracy specification"
+            },
+            "encryptionCapable": {
+              "type": "boolean",
+              "description": "Whether system supports encryption"
+            },
+            "networkCapable": {
+              "type": "boolean",
+              "description": "Whether system can connect to networks"
+            },
+            "connectedSystems": {
+              "type": "array",
+              "description": "References to connected electronic systems",
+              "items": {
+                "type": "string"
+              }
+            },
+            "securityClassification": {
+              "type": "string",
+              "enum": ["unclassified", "restricted", "confidential", "secret", "top_secret", "other"],
+              "description": "Security classification level"
+            },
+            "states": {
+              "type": "array",
+              "description": "Electronic system states (operational, maintenance, etc.)",
+              "items": {
+                "$ref": "#/definitions/ElectronicSystemState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Weapon": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Weapon"
+            },
+            "weaponType": {
+              "type": "string",
+              "enum": ["small_arms", "machine_gun", "artillery", "missile_system", "rocket_launcher", "mortar", "tank_gun", "naval_gun", "aircraft_gun", "other"],
+              "description": "Primary weapon classification"
+            },
+            "category": {
+              "type": "string",
+              "enum": ["individual", "crew_served", "vehicle_mounted", "ship_mounted", "aircraft_mounted", "fixed_installation", "other"],
+              "description": "Weapon deployment category"
+            },
+            "manufacturer": {
+              "type": "string",
+              "description": "Manufacturing organization"
+            },
+            "model": {
+              "type": "string",
+              "description": "Weapon model designation"
+            },
+            "serialNumber": {
+              "type": "string",
+              "description": "Unique serial number"
+            },
+            "manufactureDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date of manufacture"
+            },
+            "caliber": {
+              "type": "string",
+              "description": "Caliber or bore size"
+            },
+            "barrelLength": {
+              "type": "number",
+              "description": "Barrel length in millimeters"
+            },
+            "weight": {
+              "type": "number",
+              "description": "Weight in kilograms"
+            },
+            "effectiveRange": {
+              "type": "number",
+              "description": "Effective range in meters"
+            },
+            "maximumRange": {
+              "type": "number",
+              "description": "Maximum range in meters"
+            },
+            "rateOfFire": {
+              "type": "number",
+              "description": "Rate of fire in rounds per minute"
+            },
+            "muzzleVelocity": {
+              "type": "number",
+              "description": "Muzzle velocity in meters per second"
+            },
+            "ammunitionTypes": {
+              "type": "array",
+              "description": "Compatible ammunition types",
+              "items": {
+                "type": "string"
+              }
+            },
+            "firingModes": {
+              "type": "array",
+              "description": "Available firing modes",
+              "items": {
+                "type": "string",
+                "enum": ["single", "burst", "automatic", "other"]
+              }
+            },
+            "sightingSystems": {
+              "type": "array",
+              "description": "Attached sighting or targeting systems",
+              "items": {
+                "type": "string"
+              }
+            },
+            "attachments": {
+              "type": "array",
+              "description": "Weapon attachments or accessories",
+              "items": {
+                "type": "string"
+              }
+            },
+            "owner": {
+              "type": "string",
+              "description": "Reference to owner entity (Person or Organisation)"
+            },
+            "states": {
+              "type": "array",
+              "description": "Weapon states (ready, maintenance, fired, etc.)",
+              "items": {
+                "$ref": "#/definitions/WeaponState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Organization": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Organization"
+            },
+            "organizationType": {
+              "type": "string",
+              "enum": ["government", "military", "commercial", "non_profit", "international", "criminal", "terrorist", "other"],
+              "description": "Primary organization classification"
+            },
+            "parentOrganization": {
+              "type": "string",
+              "description": "Reference to parent organization entity"
+            },
+            "childOrganizations": {
+              "type": "array",
+              "description": "References to child organization entities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "establishedDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date organization was established"
+            },
+            "dissolvedDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date organization was dissolved (if applicable)"
+            },
+            "headquarters": {
+              "type": "string",
+              "description": "Reference to headquarters location"
+            },
+            "operationalAreas": {
+              "type": "array",
+              "description": "References to areas where organization operates",
+              "items": {
+                "type": "string"
+              }
+            },
+            "primaryCountry": {
+              "type": "string",
+              "description": "Reference to primary country of operation"
+            },
+            "legalStatus": {
+              "type": "string",
+              "enum": ["legal", "illegal", "sanctioned", "under_investigation", "unknown", "other"],
+              "description": "Legal status of the organization"
+            },
+            "size": {
+              "type": "object",
+              "properties": {
+                "personnel": {
+                  "type": "integer",
+                  "description": "Number of personnel"
+                },
+                "estimatedPersonnel": {
+                  "type": "object",
+                  "properties": {
+                    "min": {
+                      "type": "integer"
+                    },
+                    "max": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "Estimated personnel range if exact number unknown"
+                }
+              },
+              "description": "Organization size information"
+            },
+            "budget": {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "number",
+                  "description": "Budget amount"
+                },
+                "currency": {
+                  "type": "string",
+                  "description": "Currency code (ISO 4217)"
+                },
+                "year": {
+                  "type": "integer",
+                  "description": "Budget year"
+                }
+              },
+              "description": "Organization budget information"
+            },
+            "activities": {
+              "type": "array",
+              "description": "Primary activities or functions",
+              "items": {
+                "type": "string"
+              }
+            },
+            "affiliatedOrganizations": {
+              "type": "array",
+              "description": "References to affiliated organizations",
+              "items": {
+                "type": "string"
+              }
+            },
+            "keyPersonnel": {
+              "type": "array",
+              "description": "References to key personnel",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "type": "string",
+                    "description": "Reference to person entity"
+                  },
+                  "role": {
+                    "type": "string",
+                    "description": "Role within organization"
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Start date of role"
+                  },
+                  "endDate": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "End date of role (if applicable)"
+                  }
+                },
+                "required": ["person", "role"]
+              }
+            },
+            "states": {
+              "type": "array",
+              "description": "Organization states (active, inactive, etc.)",
+              "items": {
+                "$ref": "#/definitions/OrganizationState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Name": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "The name value"
+        },
+        "language": {
+          "type": "string",
+          "description": "Language of the name"
+        },
+        "nameType": {
+          "type": "string",
+          "enum": ["formal", "common", "official", "alias", "nickname", "other"],
+          "description": "Type of name"
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this name became valid"
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this name ceased to be valid"
+        }
+      },
+      "required": ["value"]
+    },
+    "Identifier": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "The identifier value"
+        },
+        "identifierType": {
+          "type": "string",
+          "description": "Type of identifier (passport, SSN, etc.)"
+        },
+        "issuingAuthority": {
+          "type": "string",
+          "description": "Authority that issued this identifier"
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this identifier became valid"
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this identifier expires"
+        }
+      },
+      "required": ["value", "identifierType"]
+    },
+    "State": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the state"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this state began"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this state ended"
+        },
+        "stateType": {
+          "type": "string",
+          "description": "Type of state"
+        },
+        "location": {
+          "type": "string",
+          "description": "Reference to location where state occurred"
+        }
+      },
+      "required": ["id", "stateType"]
+    },
+    "VehicleState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["parked", "moving", "stationary", "maintenance", "impounded", "destroyed", "other"]
+            },
+            "speed": {
+              "type": "number",
+              "description": "Speed in km/h (if moving)"
+            },
+            "direction": {
+              "type": "number",
+              "description": "Direction in degrees (if moving)"
+            }
+          }
+        }
+      ]
+    },
+    "PersonState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["employed", "unemployed", "married", "single", "divorced", "widowed", "student", "retired", "other"]
+            },
+            "organisation": {
+              "type": "string",
+              "description": "Reference to associated organisation (if applicable)"
+            },
+            "role": {
+              "type": "string",
+              "description": "Role or position held during this state"
+            }
+          }
+        }
+      ]
+    },
+    "AmmunitionState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["stored", "deployed", "loaded", "fired", "disposed", "expired", "maintenance", "other"]
+            },
+            "weapon": {
+              "type": "string",
+              "description": "Reference to weapon if loaded or fired"
+            },
+            "roundsRemaining": {
+              "type": "integer",
+              "description": "Number of rounds remaining in batch"
+            }
+          }
+        }
+      ]
+    },
+    "ElectronicSystemState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["operational", "standby", "maintenance", "offline", "damaged", "destroyed", "other"]
+            },
+            "operationalMode": {
+              "type": "string",
+              "description": "Specific operational mode or configuration"
+            },
+            "powerLevel": {
+              "type": "number",
+              "description": "Current power level as percentage"
+            },
+            "targetLock": {
+              "type": "boolean",
+              "description": "Whether system has target lock (if applicable)"
+            }
+          }
+        }
+      ]
+    },
+    "WeaponState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["ready", "safe", "maintenance", "fired", "jammed", "damaged", "destroyed", "other"]
+            },
+            "safetyStatus": {
+              "type": "string",
+              "enum": ["safe", "armed", "unknown"],
+              "description": "Safety mechanism status"
+            },
+            "roundsRemaining": {
+              "type": "integer",
+              "description": "Number of rounds remaining in weapon"
+            },
+            "target": {
+              "type": "string",
+              "description": "Reference to target entity (if applicable)"
+            }
+          }
+        }
+      ]
+    },
+    "OrganizationState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["active", "inactive", "suspended", "under_investigation", "sanctioned", "dissolved", "reformed", "other"]
+            },
+            "operationalStatus": {
+              "type": "string",
+              "enum": ["fully_operational", "limited_operations", "non_operational", "unknown"],
+              "description": "Current operational capability"
+            },
+            "personnelCount": {
+              "type": "integer",
+              "description": "Current personnel count during this state"
+            },
+            "primaryLocation": {
+              "type": "string",
+              "description": "Reference to primary operational location during this state"
+            }
+          }
+        }
+      ]
+    },
+    "Characteristic": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the characteristic"
+        },
+        "value": {
+          "type": "string",
+          "description": "Value or description of the characteristic"
+        },
+        "dataType": {
+          "type": "string",
+          "enum": ["string", "number", "boolean", "date", "other"],
+          "description": "Data type of the characteristic value"
+        }
+      },
+      "required": ["name", "value"]
+    },
+    "GeoRepresentation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["Point", "LineString", "Polygon", "MultiPoint", "MultiLineString", "MultiPolygon", "GeometryCollection"],
+          "description": "GeoJSON geometry type"
+        },
+        "coordinates": {
+          "description": "GeoJSON coordinates array"
+        },
+        "crs": {
+          "type": "string",
+          "description": "Coordinate reference system",
+          "default": "EPSG:4326"
+        },
+        "wkt": {
+          "type": "string",
+          "description": "Well-Known Text representation"
+        }
+      }
+    },
+    "Representation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the representation"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["document", "image", "video", "audio", "webpage", "other"],
+          "description": "Type of representation"
+        },
+        "format": {
+          "type": "string",
+          "description": "MIME type or format of the representation"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to access the representation"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the representation"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the representation"
+        },
+        "createdDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the representation was created"
+        }
+      },
+      "required": ["id", "type"]
+    }
+  }
+}

@@ -1,0 +1,588 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IES4-Based Entity Schema",
+  "description": "JSON schema based on the UK Government's Information Exchange Standard (IES4) for countries, areas, vehicles, vehicle types, and people types",
+  "type": "object",
+  "properties": {
+    "countries": {
+      "type": "array",
+      "description": "Collection of country entities",
+      "items": {
+        "$ref": "#/definitions/Country"
+      }
+    },
+    "areas": {
+      "type": "array",
+      "description": "Collection of geographical area entities",
+      "items": {
+        "$ref": "#/definitions/Area"
+      }
+    },
+    "vehicles": {
+      "type": "array",
+      "description": "Collection of vehicle entities",
+      "items": {
+        "$ref": "#/definitions/Vehicle"
+      }
+    },
+    "vehicleTypes": {
+      "type": "array",
+      "description": "Collection of vehicle type classifications",
+      "items": {
+        "$ref": "#/definitions/VehicleType"
+      }
+    },
+    "peopleTypes": {
+      "type": "array",
+      "description": "Collection of people type classifications",
+      "items": {
+        "$ref": "#/definitions/PeopleType"
+      }
+    },
+    "people": {
+      "type": "array",
+      "description": "Collection of person entities",
+      "items": {
+        "$ref": "#/definitions/Person"
+      }
+    }
+  },
+  "definitions": {
+    "BaseEntity": {
+      "type": "object",
+      "description": "Base class for all IES4 entities",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the entity"
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri",
+          "description": "RDF URI for the entity"
+        },
+        "names": {
+          "type": "array",
+          "description": "Collection of names for this entity",
+          "items": {
+            "$ref": "#/definitions/Name"
+          }
+        },
+        "identifiers": {
+          "type": "array",
+          "description": "Collection of identifiers for this entity",
+          "items": {
+            "$ref": "#/definitions/Identifier"
+          }
+        },
+        "representations": {
+          "type": "array",
+          "description": "Documents, images, or other representations of this entity",
+          "items": {
+            "$ref": "#/definitions/Representation"
+          }
+        },
+        "temporalParts": {
+          "type": "array",
+          "description": "Temporal states or phases of this entity",
+          "items": {
+            "$ref": "#/definitions/State"
+          }
+        }
+      },
+      "required": ["id"]
+    },
+    "Country": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Country"
+            },
+            "iso3166Alpha2": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$",
+              "description": "ISO 3166-1 alpha-2 country code"
+            },
+            "iso3166Alpha3": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$",
+              "description": "ISO 3166-1 alpha-3 country code"
+            },
+            "telephoneCountryCode": {
+              "type": "string",
+              "description": "International telephone dialing code"
+            },
+            "currency": {
+              "type": "string",
+              "description": "Primary currency code (ISO 4217)"
+            },
+            "languages": {
+              "type": "array",
+              "description": "Official or primary languages",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sovereignty": {
+              "type": "string",
+              "description": "Sovereignty status"
+            },
+            "geographicBounds": {
+              "$ref": "#/definitions/GeoRepresentation"
+            }
+          }
+        }
+      ]
+    },
+    "Area": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Area"
+            },
+            "areaType": {
+              "type": "string",
+              "enum": ["administrative", "geographic", "military", "commercial", "residential", "industrial", "natural", "other"],
+              "description": "Classification of area type"
+            },
+            "parentArea": {
+              "type": "string",
+              "description": "Reference to parent area entity"
+            },
+            "childAreas": {
+              "type": "array",
+              "description": "References to child area entities",
+              "items": {
+                "type": "string"
+              }
+            },
+            "country": {
+              "type": "string",
+              "description": "Reference to country entity"
+            },
+            "coordinates": {
+              "$ref": "#/definitions/GeoRepresentation"
+            },
+            "administrativeLevel": {
+              "type": "integer",
+              "description": "Administrative hierarchy level (0=country, 1=state/province, 2=county, etc.)"
+            }
+          }
+        }
+      ]
+    },
+    "Vehicle": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Vehicle"
+            },
+            "vehicleType": {
+              "type": "string",
+              "description": "Reference to vehicle type classification"
+            },
+            "registrationNumber": {
+              "type": "string",
+              "description": "Vehicle registration/license plate number"
+            },
+            "vin": {
+              "type": "string",
+              "description": "Vehicle Identification Number"
+            },
+            "make": {
+              "type": "string",
+              "description": "Vehicle manufacturer"
+            },
+            "model": {
+              "type": "string",
+              "description": "Vehicle model"
+            },
+            "year": {
+              "type": "integer",
+              "description": "Year of manufacture"
+            },
+            "colour": {
+              "type": "string",
+              "description": "Primary vehicle colour"
+            },
+            "engineSize": {
+              "type": "number",
+              "description": "Engine size in liters"
+            },
+            "fuelType": {
+              "type": "string",
+              "enum": ["petrol", "diesel", "electric", "hybrid", "lpg", "cng", "hydrogen", "other"]
+            },
+            "owner": {
+              "type": "string",
+              "description": "Reference to owner entity (Person or Organisation)"
+            },
+            "states": {
+              "type": "array",
+              "description": "Vehicle states (parked, moving, etc.)",
+              "items": {
+                "$ref": "#/definitions/VehicleState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "VehicleType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for vehicle type"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the vehicle type"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["car", "motorcycle", "truck", "bus", "van", "bicycle", "boat", "aircraft", "train", "weapon", "electronic_system", "organization", "other"],
+          "description": "Primary vehicle category"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "More specific vehicle subcategory"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of vehicle type"
+        },
+        "characteristics": {
+          "type": "array",
+          "description": "Defining characteristics of this vehicle type",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          }
+        }
+      },
+      "required": ["id", "name", "category"]
+    },
+    "PeopleType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for people type"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the people type classification"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["professional", "demographic", "social", "organizational", "legal", "other"],
+          "description": "Primary classification category"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "More specific subcategory"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of people type"
+        },
+        "characteristics": {
+          "type": "array",
+          "description": "Defining characteristics of this people type",
+          "items": {
+            "$ref": "#/definitions/Characteristic"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "description": "Example roles or positions within this type",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["id", "name", "category"]
+    },
+    "Person": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseEntity"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "Person"
+            },
+            "birthDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date of birth"
+            },
+            "deathDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Date of death (if applicable)"
+            },
+            "gender": {
+              "type": "string",
+              "description": "Gender identity"
+            },
+            "nationality": {
+              "type": "string",
+              "description": "Reference to country of nationality"
+            },
+            "placeOfBirth": {
+              "type": "string",
+              "description": "Reference to location of birth"
+            },
+            "personTypes": {
+              "type": "array",
+              "description": "Classifications this person belongs to",
+              "items": {
+                "type": "string"
+              }
+            },
+            "states": {
+              "type": "array",
+              "description": "Person states (married, employed, etc.)",
+              "items": {
+                "$ref": "#/definitions/PersonState"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Name": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "The name value"
+        },
+        "language": {
+          "type": "string",
+          "description": "Language of the name"
+        },
+        "nameType": {
+          "type": "string",
+          "enum": ["formal", "common", "official", "alias", "nickname", "other"],
+          "description": "Type of name"
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this name became valid"
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this name ceased to be valid"
+        }
+      },
+      "required": ["value"]
+    },
+    "Identifier": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "The identifier value"
+        },
+        "identifierType": {
+          "type": "string",
+          "description": "Type of identifier (passport, SSN, etc.)"
+        },
+        "issuingAuthority": {
+          "type": "string",
+          "description": "Authority that issued this identifier"
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this identifier became valid"
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this identifier expires"
+        }
+      },
+      "required": ["value", "identifierType"]
+    },
+    "State": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the state"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this state began"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When this state ended"
+        },
+        "stateType": {
+          "type": "string",
+          "description": "Type of state"
+        },
+        "location": {
+          "type": "string",
+          "description": "Reference to location where state occurred"
+        }
+      },
+      "required": ["id", "stateType"]
+    },
+    "VehicleState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["parked", "moving", "stationary", "maintenance", "impounded", "destroyed", "other"]
+            },
+            "speed": {
+              "type": "number",
+              "description": "Speed in km/h (if moving)"
+            },
+            "direction": {
+              "type": "number",
+              "description": "Direction in degrees (if moving)"
+            }
+          }
+        }
+      ]
+    },
+    "PersonState": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/State"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stateType": {
+              "type": "string",
+              "enum": ["employed", "unemployed", "married", "single", "divorced", "widowed", "student", "retired", "other"]
+            },
+            "organisation": {
+              "type": "string",
+              "description": "Reference to associated organisation (if applicable)"
+            },
+            "role": {
+              "type": "string",
+              "description": "Role or position held during this state"
+            }
+          }
+        }
+      ]
+    },
+    "Characteristic": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the characteristic"
+        },
+        "value": {
+          "type": "string",
+          "description": "Value or description of the characteristic"
+        },
+        "dataType": {
+          "type": "string",
+          "enum": ["string", "number", "boolean", "date", "other"],
+          "description": "Data type of the characteristic value"
+        }
+      },
+      "required": ["name", "value"]
+    },
+    "GeoRepresentation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["Point", "LineString", "Polygon", "MultiPoint", "MultiLineString", "MultiPolygon", "GeometryCollection"],
+          "description": "GeoJSON geometry type"
+        },
+        "coordinates": {
+          "description": "GeoJSON coordinates array"
+        },
+        "crs": {
+          "type": "string",
+          "description": "Coordinate reference system",
+          "default": "EPSG:4326"
+        },
+        "wkt": {
+          "type": "string",
+          "description": "Well-Known Text representation"
+        }
+      }
+    },
+    "Representation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the representation"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["document", "image", "video", "audio", "webpage", "other"],
+          "description": "Type of representation"
+        },
+        "format": {
+          "type": "string",
+          "description": "MIME type or format of the representation"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to access the representation"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the representation"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the representation"
+        },
+        "createdDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the representation was created"
+        }
+      },
+      "required": ["id", "type"]
+    }
+  }
+}
