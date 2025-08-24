@@ -8,11 +8,11 @@ if (typeof currentFilters === 'undefined') {
 if (typeof equipmentCategories === 'undefined') {
     var equipmentCategories = {};
 }
-if (typeof window.currentDatabase === 'undefined') {
-    window.currentDatabase = '';
+if (typeof currentDatabase === 'undefined') {
+    var currentDatabase = '';
 }
-if (typeof window.currentVisualization === 'undefined') {
-    window.currentVisualization = null;
+if (typeof currentVisualization === 'undefined') {
+    var currentVisualization = null;
 }
 
 // Equipment categories data structure
@@ -186,7 +186,7 @@ function applyFilters() {
     // Run analysis with filters if database is selected
     const databaseSelect = document.getElementById('databaseSelect');
     if (databaseSelect && databaseSelect.value) {
-        window.currentDatabase = databaseSelect.value;
+        currentDatabase = databaseSelect.value;
         runFilteredAnalysis();
     } else {
         showNotification('Please select a database first', 'warning');
