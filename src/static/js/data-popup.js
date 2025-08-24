@@ -857,7 +857,21 @@ function addPlotlyClickHandler() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize popup manager
     try {
+        console.log('🚀 Initializing data popup manager...');
         window.dataPopupManager = new DataPopupManager();
+        
+        // Initialize database manager with OP7 data if not already done
+        if (window.databaseManager && !window.databaseManager.isInitialized) {
+            window.databaseManager.initializeWithOP7();
+        }
+        
+        // Set default database if not set
+        if (!window.currentDatabase) {
+            window.currentDatabase = 'OP7';
+            if (window.dataPopupManager) {
+                window.dataPopupManager.setCurrentDatabase('OP7');
+            }
+        }
         
         // Add click handler when visualization is created
         const originalDisplayVisualization = window.displayVisualization;
