@@ -127,6 +127,9 @@ class DatabaseManager {
                 console.log(`✅ Analysis completed for ${databaseName}`);
                 console.log(`📊 Graph: ${analysisData.node_count} nodes, ${analysisData.edge_count} edges`);
                 console.log(`🚗 Entities: ${analysisData.vehicle_count} vehicles, ${analysisData.area_count} areas`);
+                if (analysisData.military_unit_count !== undefined) {
+                    console.log(`🪖 Military Units: ${analysisData.military_unit_count} units`);
+                }
                 
                 // Update our tracking
                 this.lastAnalysisTime[databaseName] = Date.now();
@@ -329,6 +332,7 @@ window.enhancedUIFunctions = {
                         <span class="stat-item">🔗 ${result.edge_count} edges</span>
                         <span class="stat-item">🚗 ${result.vehicle_count} vehicles</span>
                         <span class="stat-item">📍 ${result.area_count} areas</span>
+                        ${result.military_unit_count !== undefined ? `<span class="stat-item">🪖 ${result.military_unit_count} military units</span>` : ''}
                     </div>
                 </div>
                 
