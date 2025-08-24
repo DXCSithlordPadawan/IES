@@ -63,6 +63,202 @@ const DATABASE_CONFIGS = {
     }
 };
 
+// Function to find the data directory
+function findDataDirectory() {
+    const possiblePaths = [
+        path.join('/home/runner/work/IES/IES', 'data'),
+        path.join(process.cwd(), '..', '..', '..', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'data'),
+        path.join(process.cwd(), 'data'),
+        path.join(process.cwd(), '..', 'data'),
+        path.join(process.cwd(), '..', '..', 'data'),
+        path.join(process.cwd(), 'ies4-military-database-analysis', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'src', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'backend', 'data')
+    ];
+    
+    console.log('🔍 Searching for data directory...');
+    
+    for (const testPath of possiblePaths) {
+        console.log(`   Testing: ${testPath}`);
+        if (fs.existsSync(testPath)) {
+            console.log(`   ✅ Found data directory: ${testPath}`);
+            return testPath;
+        } else {
+            console.log(`   ❌ Not found: ${testPath}`);
+        }
+    }
+    
+    console.log('⚠️ No data directory found, using default path');
+    return path.join('C:', 'ies4-military-database-analysis', 'data');
+}
+
+// Function to scan for actual JSON files in the data directory
+function scanForJsonFiles() {
+    const dataDir = findDataDirectory();
+    console.log(`\n📂 Scanning for JSON files in: ${dataDir}`);
+    
+    if (!fs.existsSync(dataDir)) {
+        console.log('❌ Data directory does not exist!');
+        return [];
+    }
+    
+    try {
+        const files = fs.readdirSync(dataDir);
+        const jsonFiles = files.filter(file => file.endsWith('.json'));
+        
+        console.log('📄 Found JSON files:');
+        jsonFiles.forEach(file => {
+            const filePath = path.join(dataDir, file);
+            const stats = fs.statSync(filePath);
+            console.log(`   ✅ ${file} (${(stats.size / 1024).toFixed(2)} KB)`);
+        });
+        
+        return jsonFiles;
+    } catch (error) {
+        console.error('❌ Error reading directory:', error.message);
+        return [];
+    }
+}
+
+// Function to parse command line arguments in the new format
+function parseArguments(args) {
+    const parsed = {
+        command: null,
+        database: 'OP7', // default database
+        help: false,
+        diagnostic: false
+    };
+    
+    for (let i = 0; i < args.length; i++) {
+        const arg = args[i];
+        
+        switch (arg) {
+            case '--add':
+                parsed.command = 'add';
+                break;
+            case '--del':
+                parsed.command = 'remove';
+                break;
+            case '--list':
+                parsed.command = 'list';
+                break;
+            case '--diagnostic':
+            case '--debug':
+                parsed.diagnostic = true;
+                break;
+            case '--db':
+                if (i + 1 < args.length) {
+                    parsed.database = args[i + 1].toUpperCase();
+                    i++; // Skip the next argument since we consumed it
+                } else {
+                    throw new Error('--db flag requires a database name');
+                }
+                break;
+            case '--help':
+            case '-h':
+                parsed.help = true;
+                break;
+            default:
+                throw new Error(`Unknown argument: ${arg}`);
+        }
+    }
+    
+    return parsed;
+}
+
+// Function to display help information
+function displayHelp() {
+    console.log('🎯 Tor Missile System Database Management Tool');
+    console.log('==============================================\n');
+    console.log('Usage: node Tor.js [command] [options]\n');
+    console.log('Commands:');
+    console.log('  --add              Add Tor missile system to specified database');
+    console.log('  --del              Remove Tor missile system from specified database');
+    console.log('  --list             List available databases');
+    console.log('  --diagnostic       Run diagnostic checks');
+    console.log('  --help, -h         Show this help message\n');
+    console.log('Options:');
+    console.log('  --db [database]    Specify database (OP1-OP8, default: OP7)\n');
+    console.log('Available Databases: OP1, OP2, OP3, OP4, OP5, OP6, OP7, OP8\n');
+    console.log('Examples:');
+    console.log('  node Tor.js --add --db OP7       Add Tor to Odesa Oblast database');
+    console.log('  node Tor.js --del --db OP1       Remove Tor from Donetsk Oblast database');
+    console.log('  node Tor.js --list               Show all available databases');
+    console.log('  node Tor.js --diagnostic         Run system diagnostics');
+}
+
+// Function to run comprehensive diagnostics
+function runDiagnostics() {
+    console.log('🔧 Running Tor.js Diagnostic Checks');
+    console.log('===================================\n');
+    
+    // 1. Check current working directory
+    console.log('1. 📁 Current Working Directory:');
+    console.log(`   ${process.cwd()}\n`);
+    
+    // 2. Check data directory
+    console.log('2. 📂 Data Directory Detection:');
+    const dataDir = findDataDirectory();
+    
+    // 3. Scan for JSON files
+    console.log('\n3. 📄 JSON File Detection:');
+    const jsonFiles = scanForJsonFiles();
+    
+    // 4. Check database configurations
+    console.log('\n4. ⚙️ Database Configuration Check:');
+    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
+        const filePath = path.join(dataDir, config.dataFile);
+        const exists = fs.existsSync(filePath);
+        const status = exists ? '✅' : '❌';
+        console.log(`   ${key}: ${config.displayName} - ${config.description} ${status}`);
+    });
+    
+    // 5. Check web interface connectivity
+    console.log('\n5. 🌐 Web Interface Connectivity:');
+    checkWebInterface().then(isAccessible => {
+        if (isAccessible) {
+            console.log(`   ✅ Web interface is accessible at ${WEB_INTERFACE_CONFIG.baseUrl}`);
+        } else {
+            console.log(`   ❌ Web interface is not accessible at ${WEB_INTERFACE_CONFIG.baseUrl}`);
+        }
+    });
+    
+    // 6. Check file permissions
+    console.log('\n6. 🔐 File Permissions Check:');
+    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
+        const filePath = path.join(dataDir, config.dataFile);
+        if (fs.existsSync(filePath)) {
+            try {
+                fs.accessSync(filePath, fs.constants.R_OK | fs.constants.W_OK);
+                console.log(`   ${key}: ✅ Read/Write access OK`);
+            } catch (error) {
+                console.log(`   ${key}: ❌ Permission denied - ${error.message}`);
+            }
+        }
+    });
+    
+    console.log('\n📋 Diagnostic Summary:');
+    console.log('====================');
+    console.log(`Data directory: ${dataDir}`);
+    console.log(`JSON files found: ${jsonFiles.length}`);
+    console.log(`Configured databases: ${Object.keys(DATABASE_CONFIGS).length}`);
+    
+    return true;
+}
+
+// Simplified versions of other functions for testing
+async function checkWebInterface() {
+    try {
+        const response = await axios.get(`${WEB_INTERFACE_CONFIG.baseUrl}/api/databases`, {
+            timeout: 5000
+        });
+        return response.status === 200;
+    } catch (error) {
+        return false;
+    }
+}
+
 // Function to initialize operation configuration
 function initializeOperationConfig(database) {
     OPERATION_CONFIG.database = database;
@@ -824,49 +1020,120 @@ module.exports = {
     WEB_INTERFACE_CONFIG
 };
 
-// If this script is run directly (not imported as a module)
+// Command line interface
 if (require.main === module) {
     const args = process.argv.slice(2);
     
-    if (args.length === 0) {
-        console.log('🎯 Tor Missile System Database Management Tool');
-        console.log('==============================================\n');
-        console.log('Usage: node Tor.js <operation> [database]');
-        console.log('\nOperations:');
-        console.log('  add      - Add Tor missile system to database');
-        console.log('  remove   - Remove Tor missile system from database');
-        console.log('  list     - List available databases');
-        console.log('\nDatabases:');
-        Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-            console.log(`  ${key}      - ${config.displayName}`);
-        });
-        console.log('\nExamples:');
-        console.log('  node Tor.js add OP7          # Add to Odesa Oblast');
-        console.log('  node Tor.js remove OP1       # Remove from Kyiv Oblast');
-        console.log('  node Tor.js list             # List all databases');
+    // Handle no arguments or help request
+    if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
+        displayHelp();
         process.exit(0);
     }
     
-    const operation = args[0].toLowerCase();
-    const database = args[1] || 'OP7'; // Default to OP7
-    
-    // Initialize configuration
-    initializeOperationConfig(database);
-    
-    // Execute the requested operation
-    switch (operation) {
-        case 'add':
-            performAddOperation();
-            break;
-        case 'remove':
-            performRemoveOperation();
-            break;
-        case 'list':
+    try {
+        // Check for old format: "add <database>" or "remove <database>"
+        if ((args[0] === 'add' || args[0] === 'remove') && args.length >= 2) {
+            const command = args[0];
+            const database = args[1].toUpperCase();
+            
+            // Validate database
+            if (!DATABASE_CONFIGS[database]) {
+                console.error(`❌ Invalid database: ${database}`);
+                console.error('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
+                process.exit(1);
+            }
+            
+            // Initialize and perform operation (legacy format)
+            initializeOperationConfig(database);
+            if (command === 'add') {
+                performAddOperation();
+            } else {
+                performRemoveOperation();
+            }
+            return;
+        }
+        
+        // Check for legacy format: "add" or "remove" without database (defaults to OP7)
+        if (args[0] === 'add' || args[0] === 'remove') {
+            const command = args[0];
+            const database = 'OP7';
+            
+            // Initialize and perform operation (legacy format with default database)
+            initializeOperationConfig(database);
+            if (command === 'add') {
+                performAddOperation();
+            } else {
+                performRemoveOperation();
+            }
+            return;
+        }
+        
+        // Check for legacy list command
+        if (args[0] === 'list') {
             listAvailableDatabases();
-            break;
-        default:
-            console.error(`❌ Unknown operation: ${operation}`);
-            console.log('Valid operations: add, remove, list');
+            return;
+        }
+        
+        // Parse arguments using the new format
+        const parsedArgs = parseArguments(args);
+        
+        if (parsedArgs.help) {
+            displayHelp();
+            process.exit(0);
+        }
+        
+        if (parsedArgs.diagnostic) {
+            runDiagnostics();
+            return;
+        }
+        
+        // Validate command
+        if (!parsedArgs.command) {
+            console.error('❌ No command specified. Use --add, --del, --list, or --diagnostic');
+            console.error('Use --help for usage information');
             process.exit(1);
+        }
+        
+        // Handle list command without database validation
+        if (parsedArgs.command === 'list') {
+            listAvailableDatabases();
+            return;
+        }
+        
+        // Validate database for add/remove commands
+        if (!DATABASE_CONFIGS[parsedArgs.database]) {
+            console.error(`❌ Invalid database: ${parsedArgs.database}`);
+            console.error('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
+            console.error('Use --list to see all available databases');
+            process.exit(1);
+        }
+        
+        // Initialize configuration
+        try {
+            initializeOperationConfig(parsedArgs.database);
+        } catch (error) {
+            console.error('❌ Initialization failed:', error.message);
+            console.log('\n💡 Try running: node Tor.js --diagnostic');
+            process.exit(1);
+        }
+        
+        // Execute command
+        switch (parsedArgs.command) {
+            case 'add':
+                performAddOperation();
+                break;
+            case 'remove':
+                performRemoveOperation();
+                break;
+            default:
+                console.error(`❌ Unknown command: ${parsedArgs.command}`);
+                console.error('Available commands: --add, --del, --list, --diagnostic');
+                process.exit(1);
+        }
+        
+    } catch (error) {
+        console.error('❌ Error parsing arguments:', error.message);
+        console.error('Use --help for usage information');
+        process.exit(1);
     }
 }
