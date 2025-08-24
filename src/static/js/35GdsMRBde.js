@@ -19,42 +19,47 @@ let OPERATION_CONFIG = {
     displayName: null
 };
 
-// Database configuration mapping
+// Updated Database configuration mapping - added OP8 and made more flexible
 const DATABASE_CONFIGS = {
+    'OP1': {
+        dataFile: 'donetsk_oblast.json',
+        displayName: 'Donetsk Oblast',
+        description: 'Ukrainian Donetsk Oblast military database'
+    },
+    'OP2': {
+        dataFile: 'dnipropetrovsk.json',
+        displayName: 'Dnipropetrovsk Oblast',
+        description: 'Ukrainian Dnipropetrovsk Oblast military database'
+    },
+    'OP3': {
+        dataFile: 'Zaporizhzhia_oblast.json',
+        displayName: 'Zaporizhzhia Oblast',
+        description: 'Ukrainian Zaporizhzhia Oblast military database'
+    },
+    'OP4': {
+        dataFile: 'kyiv_oblast.json',
+        displayName: 'Kyiv Oblast',
+        description: 'Ukrainian Kyiv Oblast military database'
+    },
+    'OP5': {
+        dataFile: 'kirovohrad_oblast.json',
+        displayName: 'Kirovohrad Oblast',
+        description: 'Ukrainian Kirovohrad Oblast military database'
+    },
+    'OP6': {
+        dataFile: 'mykolaiv_oblast.json',
+        displayName: 'Mykolaiv Oblast',
+        description: 'Ukrainian Mykolaiv Oblast military database'
+    },
     'OP7': {
         dataFile: 'odesa_oblast.json',
         displayName: 'Odesa Oblast',
         description: 'Ukrainian Odesa Oblast military database'
     },
-    'OP1': {
-        dataFile: 'kyiv_oblast.json',
-        displayName: 'Kyiv Oblast',
-        description: 'Ukrainian Kyiv Oblast military database'
-    },
-    'OP2': {
-        dataFile: 'kharkiv_oblast.json',
-        displayName: 'Kharkiv Oblast',
-        description: 'Ukrainian Kharkiv Oblast military database'
-    },
-    'OP3': {
-        dataFile: 'dnipro_oblast.json',
-        displayName: 'Dnipro Oblast',
-        description: 'Ukrainian Dnipro Oblast military database'
-    },
-    'OP4': {
-        dataFile: 'zaporizhzhia_oblast.json',
-        displayName: 'Zaporizhzhia Oblast',
-        description: 'Ukrainian Zaporizhzhia Oblast military database'
-    },
-    'OP5': {
-        dataFile: 'donetsk_oblast.json',
-        displayName: 'Donetsk Oblast',
-        description: 'Ukrainian Donetsk Oblast military database'
-    },
-    'OP6': {
-        dataFile: 'luhansk_oblast.json',
-        displayName: 'Luhansk Oblast',
-        description: 'Ukrainian Luhansk Oblast military database'
+    'OP8': {
+        dataFile: 'sumy_oblast.json',
+        displayName: 'Sumy Oblast',
+        description: 'Ukrainian Sumy Oblast military database'
     }
 };
 
