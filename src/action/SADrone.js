@@ -19,61 +19,297 @@ let OPERATION_CONFIG = {
     displayName: null
 };
 
-// Database configuration mapping
+// Updated Database configuration mapping - added OP8 and made more flexible
 const DATABASE_CONFIGS = {
+    'OP1': {
+        dataFile: 'donetsk_oblast.json',
+        displayName: 'Donetsk Oblast',
+        description: 'Ukrainian Donetsk Oblast military database'
+    },
+    'OP2': {
+        dataFile: 'dnipropetrovsk.json',
+        displayName: 'Dnipropetrovsk Oblast',
+        description: 'Ukrainian Dnipropetrovsk Oblast military database'
+    },
+    'OP3': {
+        dataFile: 'Zaporizhzhia_oblast.json',
+        displayName: 'Zaporizhzhia Oblast',
+        description: 'Ukrainian Zaporizhzhia Oblast military database'
+    },
+    'OP4': {
+        dataFile: 'kyiv_oblast.json',
+        displayName: 'Kyiv Oblast',
+        description: 'Ukrainian Kyiv Oblast military database'
+    },
+    'OP5': {
+        dataFile: 'kirovohrad_oblast.json',
+        displayName: 'Kirovohrad Oblast',
+        description: 'Ukrainian Kirovohrad Oblast military database'
+    },
+    'OP6': {
+        dataFile: 'mykolaiv_oblast.json',
+        displayName: 'Mykolaiv Oblast',
+        description: 'Ukrainian Mykolaiv Oblast military database'
+    },
     'OP7': {
         dataFile: 'odesa_oblast.json',
         displayName: 'Odesa Oblast',
         description: 'Ukrainian Odesa Oblast military database'
     },
-    'OP1': {
-        dataFile: 'kyiv_oblast.json',
-        displayName: 'Kyiv Oblast',
-        description: 'Ukrainian Kyiv Oblast military database'
-    },
-    'OP2': {
-        dataFile: 'kharkiv_oblast.json',
-        displayName: 'Kharkiv Oblast',
-        description: 'Ukrainian Kharkiv Oblast military database'
-    },
-    'OP3': {
-        dataFile: 'dnipro_oblast.json',
-        displayName: 'Dnipro Oblast',
-        description: 'Ukrainian Dnipro Oblast military database'
-    },
-    'OP4': {
-        dataFile: 'zaporizhzhia_oblast.json',
-        displayName: 'Zaporizhzhia Oblast',
-        description: 'Ukrainian Zaporizhzhia Oblast military database'
-    },
-    'OP5': {
-        dataFile: 'donetsk_oblast.json',
-        displayName: 'Donetsk Oblast',
-        description: 'Ukrainian Donetsk Oblast military database'
-    },
-    'OP6': {
-        dataFile: 'luhansk_oblast.json',
-        displayName: 'Luhansk Oblast',
-        description: 'Ukrainian Luhansk Oblast military database'
+    'OP8': {
+        dataFile: 'sumy_oblast.json',
+        displayName: 'Sumy Oblast',
+        description: 'Ukrainian Sumy Oblast military database'
     }
 };
 
-// Function to initialize operation configuration
+// Function to detect the correct data directory path
+function findDataDirectory() {
+    const possiblePaths = [
+        path.join('/home/runner/work/IES/IES', 'data'),
+        path.join(process.cwd(), '..', '..', '..', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'data'),
+        path.join(process.cwd(), 'data'),
+        path.join(process.cwd(), '..', 'data'),
+        path.join(process.cwd(), '..', '..', 'data'),
+        path.join(process.cwd(), 'ies4-military-database-analysis', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'src', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'backend', 'data')
+    ];
+    
+    console.log('🔍 Searching for data directory...');
+    
+    for (const testPath of possiblePaths) {
+        console.log(`   Testing: ${testPath}`);
+        if (fs.existsSync(testPath)) {
+            console.log(`   ✅ Found data directory: ${testPath}`);
+            return testPath;
+        } else {
+            console.log(`   ❌ Not found: ${testPath}`);
+        }
+    }
+    
+    console.log('⚠️ No data directory found, using default path');
+    return path.join('C:', 'ies4-military-database-analysis', 'data');
+}
+
+// Function to scan for actual JSON files in the data directory
+function scanForJsonFiles() {
+    const dataDir = findDataDirectory();
+    console.log(`\n📂 Scanning for JSON files in: ${dataDir}`);
+    
+    if (!fs.existsSync(dataDir)) {
+        console.log('❌ Data directory does not exist!');
+        return [];
+    }
+    
+    try {
+        const files = fs.readdirSync(dataDir);
+        const jsonFiles = files.filter(file => file.endsWith('.json'));
+        
+        console.log('📄 Found JSON files:');
+        jsonFiles.forEach(file => {
+            const filePath = path.join(dataDir, file);
+            const stats = fs.statSync(filePath);
+            console.log(`   ✅ ${file} (${(stats.size / 1024).toFixed(2)} KB)`);
+        });
+        
+        return jsonFiles;
+    } catch (error) {
+        console.error('❌ Error reading directory:', error.message);
+        return [];
+    }
+}
+
+// Function to parse command line arguments in the new format
+function parseArguments(args) {
+    const parsed = {
+        command: null,
+        database: 'OP7', // default database
+        help: false,
+        diagnostic: false
+    };
+    
+    for (let i = 0; i < args.length; i++) {
+        const arg = args[i];
+        
+        switch (arg) {
+            case '--add':
+                parsed.command = 'add';
+                break;
+            case '--del':
+                parsed.command = 'remove';
+                break;
+            case '--list':
+                parsed.command = 'list';
+                break;
+            case '--diagnostic':
+            case '--debug':
+                parsed.diagnostic = true;
+                break;
+            case '--db':
+                if (i + 1 < args.length) {
+                    parsed.database = args[i + 1].toUpperCase();
+                    i++; // Skip the next argument since we consumed it
+                } else {
+                    throw new Error('--db flag requires a database name');
+                }
+                break;
+            case '--help':
+            case '-h':
+                parsed.help = true;
+                break;
+            default:
+                throw new Error(`Unknown argument: ${arg}`);
+        }
+    }
+    
+    return parsed;
+}
+
+// Function to display help information
+function displayHelp() {
+    console.log('🛩️ Sokol Altius Drone Database Management Tool');
+    console.log('===============================================\n');
+    console.log('Usage: node SADrone.js [command] [options]\n');
+    console.log('Commands:');
+    console.log('  --add              Add Sokol Altius drone to specified database');
+    console.log('  --del              Remove Sokol Altius drone from specified database');
+    console.log('  --list             List available databases');
+    console.log('  --diagnostic       Run diagnostic checks');
+    console.log('  --help, -h         Show this help message\n');
+    console.log('Options:');
+    console.log('  --db [database]    Specify database (OP1-OP8, default: OP7)\n');
+    console.log('Alternative Usage (Legacy Format):');
+    console.log('  add <database>     Add Sokol Altius drone to specified database');
+    console.log('  remove <database>  Remove Sokol Altius drone from specified database\n');
+    console.log('Available Databases: OP1, OP2, OP3, OP4, OP5, OP6, OP7, OP8\n');
+    console.log('Examples:');
+    console.log('  node SADrone.js --add --db OP7      Add Sokol Altius drone to Odesa Oblast database');
+    console.log('  node SADrone.js --del --db OP1      Remove Sokol Altius drone from Donetsk Oblast database');
+    console.log('  node SADrone.js add OP7             Add Sokol Altius drone to Odesa Oblast (legacy)');
+    console.log('  node SADrone.js --list              Show all available databases');
+    console.log('  node SADrone.js --diagnostic        Run system diagnostics');
+}
+
+// Function to run comprehensive diagnostics
+function runDiagnostics() {
+    console.log('🔧 Running SADrone.js Diagnostic Checks');
+    console.log('========================================\n');
+    
+    // 1. Check current working directory
+    console.log('1. 📁 Current Working Directory:');
+    console.log(`   ${process.cwd()}\n`);
+    
+    // 2. Check data directory
+    console.log('2. 📂 Data Directory Detection:');
+    const dataDir = findDataDirectory();
+    
+    // 3. Scan for JSON files
+    console.log('\n3. 📄 JSON File Detection:');
+    const jsonFiles = scanForJsonFiles();
+    
+    // 4. Check database configurations
+    console.log('\n4. ⚙️ Database Configuration Check:');
+    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
+        const filePath = path.join(dataDir, config.dataFile);
+        const exists = fs.existsSync(filePath);
+        const status = exists ? '✅' : '❌';
+        console.log(`   ${key}: ${config.dataFile} ${status}`);
+        
+        if (exists) {
+            try {
+                const stats = fs.statSync(filePath);
+                console.log(`       Size: ${(stats.size / 1024).toFixed(2)} KB`);
+                
+                // Try to parse JSON
+                const content = fs.readFileSync(filePath, 'utf8');
+                const data = JSON.parse(content);
+                console.log(`       Aircraft count: ${data.aircraft ? data.aircraft.length : 0}`);
+                console.log(`       Areas count: ${data.areas ? data.areas.length : 0}`);
+            } catch (error) {
+                console.log(`       ❌ Error reading file: ${error.message}`);
+            }
+        }
+    });
+    
+    // 5. Check web interface connectivity
+    console.log('\n5. 🌐 Web Interface Check:');
+    checkWebInterface().then(isRunning => {
+        if (isRunning) {
+            console.log(`   ✅ Web interface is accessible at ${WEB_INTERFACE_CONFIG.baseUrl}`);
+        } else {
+            console.log(`   ❌ Web interface is not accessible at ${WEB_INTERFACE_CONFIG.baseUrl}`);
+        }
+    });
+    
+    // 6. Check file permissions
+    console.log('\n6. 🔐 File Permissions Check:');
+    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
+        const filePath = path.join(dataDir, config.dataFile);
+        if (fs.existsSync(filePath)) {
+            try {
+                fs.accessSync(filePath, fs.constants.R_OK | fs.constants.W_OK);
+                console.log(`   ${key}: ✅ Read/Write access OK`);
+            } catch (error) {
+                console.log(`   ${key}: ❌ Permission denied - ${error.message}`);
+            }
+        }
+    });
+    
+    console.log('\n📋 Diagnostic Summary:');
+    console.log('====================');
+    console.log(`Data directory: ${dataDir}`);
+    console.log(`JSON files found: ${jsonFiles.length}`);
+    console.log(`Configured databases: ${Object.keys(DATABASE_CONFIGS).length}`);
+    
+    return true;
+}
+
+// Function to initialize operation configuration with better error handling
 function initializeOperationConfig(database) {
+    console.log(`\n🎯 Initializing operation for database: ${database}`);
+    
     OPERATION_CONFIG.database = database;
     
     const dbConfig = DATABASE_CONFIGS[database];
     if (dbConfig) {
         OPERATION_CONFIG.dataFile = dbConfig.dataFile;
         OPERATION_CONFIG.displayName = dbConfig.displayName;
+        
+        // Check if the data file actually exists
+        const dataDir = findDataDirectory();
+        const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
+        
+        console.log(`📁 Data file path: ${filePath}`);
+        
+        if (fs.existsSync(filePath)) {
+            console.log('✅ Data file exists');
+            try {
+                const stats = fs.statSync(filePath);
+                console.log(`📊 File size: ${(stats.size / 1024).toFixed(2)} KB`);
+                
+                // Test JSON parsing
+                const content = fs.readFileSync(filePath, 'utf8');
+                const data = JSON.parse(content);
+                console.log(`✅ JSON is valid`);
+                console.log(`📈 Contains ${data.aircraft ? data.aircraft.length : 0} aircraft entries`);
+                
+            } catch (error) {
+                console.error(`❌ Error reading/parsing file: ${error.message}`);
+                throw new Error(`Invalid JSON file: ${filePath}`);
+            }
+        } else {
+            console.error(`❌ Data file not found: ${filePath}`);
+            throw new Error(`Data file not found: ${filePath}`);
+        }
     } else {
-        // Fallback for unknown databases
-        OPERATION_CONFIG.dataFile = `${database.toLowerCase()}.json`;
-        OPERATION_CONFIG.displayName = database;
+        console.error(`❌ Unknown database: ${database}`);
+        console.log('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
+        throw new Error(`Unknown database: ${database}`);
     }
     
-    console.log(`🎯 Targeting database: ${OPERATION_CONFIG.database} (${OPERATION_CONFIG.displayName})`);
-    console.log(`📁 Data file: ${OPERATION_CONFIG.dataFile}`);
+    console.log(`✅ Operation initialized for ${OPERATION_CONFIG.displayName}`);
 }
 
 // Function to get available databases from the web interface
@@ -785,33 +1021,24 @@ async function listAvailableDatabases() {
     console.log('📋 Available Databases:');
     console.log('=====================\n');
     
-    // Try to get databases from web interface first
-    const webDatabases = await getAvailableDatabases();
-    const isWebRunning = await checkWebInterface();
+    const dataDir = findDataDirectory();
     
-    if (isWebRunning && webDatabases.length > 0) {
-        console.log('🌐 From Web Interface:');
-        webDatabases.forEach(db => {
-            const config = DATABASE_CONFIGS[db];
-            if (config) {
-                console.log(`   ${db}: ${config.displayName} - ${config.description}`);
-            } else {
-                console.log(`   ${db}: Unknown database`);
-            }
-        });
-    } else {
-        console.log('📁 From Local Configuration:');
-        Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-            const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', config.dataFile);
-            const exists = fs.existsSync(filePath) ? '✅' : '❌';
-            console.log(`   ${key}: ${config.displayName} - ${config.description} ${exists}`);
-        });
+    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
+        const filePath = path.join(dataDir, config.dataFile);
+        const exists = fs.existsSync(filePath) ? '✅' : '❌';
+        console.log(`   ${key}: ${config.displayName} - ${config.description} ${exists}`);
         
-        if (!isWebRunning) {
-            console.log('\n⚠️ Web interface not running - showing local configuration only');
-            console.log('   Start web interface for live database status');
+        if (exists) {
+            try {
+                const stats = fs.statSync(filePath);
+                const content = fs.readFileSync(filePath, 'utf8');
+                const data = JSON.parse(content);
+                console.log(`       📊 Size: ${(stats.size / 1024).toFixed(2)} KB, Aircraft: ${data.aircraft ? data.aircraft.length : 0}`);
+            } catch (error) {
+                console.log(`       ❌ Error reading: ${error.message}`);
+            }
         }
-    }
+    });
 }
 
 // Export functions for use in other modules
@@ -827,42 +1054,120 @@ module.exports = {
     DATABASE_CONFIGS
 };
 
-// If running directly from command line
+// Command line interface
 if (require.main === module) {
     const args = process.argv.slice(2);
     
-    if (args.length === 0) {
-        console.log('🛩️ Sokol Altius Drone Database Manager');
-        console.log('===================================\n');
-        console.log('Usage:');
-        console.log('  node SADrone.js add [database]     - Add Sokol Altius drone to database');
-        console.log('  node SADrone.js remove [database]  - Remove Sokol Altius drone from database');
-        console.log('  node SADrone.js list               - List available databases');
-        console.log('\nAvailable databases: OP1, OP2, OP3, OP4, OP5, OP6, OP7');
-        console.log('Default database: OP7 (Odesa Oblast)');
-        process.exit(1);
+    // Handle no arguments or help request
+    if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
+        displayHelp();
+        process.exit(0);
     }
     
-    const operation = args[0];
-    const database = args[1] || 'OP7';
-    
-    // Initialize configuration
-    initializeOperationConfig(database);
-    
-    // Execute operation
-    switch (operation.toLowerCase()) {
-        case 'add':
-            performAddOperation();
-            break;
-        case 'remove':
-            performRemoveOperation();
-            break;
-        case 'list':
+    try {
+        // Check for old format: "add <database>" or "remove <database>"
+        if ((args[0] === 'add' || args[0] === 'remove') && args.length >= 2) {
+            const command = args[0];
+            const database = args[1].toUpperCase();
+            
+            // Validate database
+            if (!DATABASE_CONFIGS[database]) {
+                console.error(`❌ Invalid database: ${database}`);
+                console.error('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
+                process.exit(1);
+            }
+            
+            // Initialize and perform operation (legacy format)
+            initializeOperationConfig(database);
+            if (command === 'add') {
+                performAddOperation();
+            } else {
+                performRemoveOperation();
+            }
+            return;
+        }
+        
+        // Check for legacy format: "add" or "remove" without database (defaults to OP7)
+        if (args[0] === 'add' || args[0] === 'remove') {
+            const command = args[0];
+            const database = 'OP7';
+            
+            // Initialize and perform operation (legacy format with default database)
+            initializeOperationConfig(database);
+            if (command === 'add') {
+                performAddOperation();
+            } else {
+                performRemoveOperation();
+            }
+            return;
+        }
+        
+        // Check for legacy list command
+        if (args[0] === 'list') {
             listAvailableDatabases();
-            break;
-        default:
-            console.error(`❌ Unknown operation: ${operation}`);
-            console.log('Available operations: add, remove, list');
+            return;
+        }
+        
+        // Parse arguments using the new format
+        const parsedArgs = parseArguments(args);
+        
+        if (parsedArgs.help) {
+            displayHelp();
+            process.exit(0);
+        }
+        
+        if (parsedArgs.diagnostic) {
+            runDiagnostics();
+            return;
+        }
+        
+        // Validate command
+        if (!parsedArgs.command) {
+            console.error('❌ No command specified. Use --add, --del, --list, or --diagnostic');
+            console.error('Use --help for usage information');
             process.exit(1);
+        }
+        
+        // Handle list command without database validation
+        if (parsedArgs.command === 'list') {
+            listAvailableDatabases();
+            return;
+        }
+        
+        // Validate database for add/remove commands
+        if (!DATABASE_CONFIGS[parsedArgs.database]) {
+            console.error(`❌ Invalid database: ${parsedArgs.database}`);
+            console.error('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
+            console.error('Use --list to see all available databases');
+            process.exit(1);
+        }
+        
+        // Initialize configuration
+        try {
+            initializeOperationConfig(parsedArgs.database);
+        } catch (error) {
+            console.error('❌ Initialization failed:', error.message);
+            console.log('\n💡 Try running: node SADrone.js --diagnostic');
+            process.exit(1);
+        }
+        
+        // Execute command
+        switch (parsedArgs.command) {
+            case 'add':
+                performAddOperation();
+                break;
+            case 'remove':
+                performRemoveOperation();
+                break;
+            default:
+                console.error(`❌ Unknown command: ${parsedArgs.command}`);
+                console.error('Available commands: --add, --del, --list, --diagnostic');
+                process.exit(1);
+        }
+        
+    } catch (error) {
+        console.error('❌ Error parsing arguments:', error.message);
+        console.error('Use --help for usage information');
+        process.exit(1);
     }
 }
