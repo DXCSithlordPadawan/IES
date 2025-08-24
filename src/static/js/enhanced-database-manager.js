@@ -102,6 +102,12 @@ class DatabaseManager {
             if (jsonData.areas) {
                 console.log(`   - Areas: ${jsonData.areas.length}`);
             }
+            if (jsonData.militaryUnits) {
+                console.log(`   - Military Units: ${jsonData.militaryUnits.length}`);
+            }
+            if (jsonData.unitTypes) {
+                console.log(`   - Unit Types: ${jsonData.unitTypes.length}`);
+            }
             
             return jsonData;
             
@@ -192,6 +198,9 @@ class DatabaseManager {
                 console.log(`✅ Analysis completed for ${databaseName}`);
                 console.log(`📊 Graph: ${analysisData.node_count} nodes, ${analysisData.edge_count} edges`);
                 console.log(`🚗 Entities: ${analysisData.vehicle_count} vehicles, ${analysisData.area_count} areas`);
+                if (analysisData.military_unit_count !== undefined) {
+                    console.log(`🪖 Military Units: ${analysisData.military_unit_count} units`);
+                }
                 
                 // Update our tracking
                 this.lastAnalysisTime[databaseName] = Date.now();
@@ -366,7 +375,7 @@ class DatabaseManager {
             }
             
             // Search through different entity types
-            const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes'];
+            const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes', 'militaryUnits'];
             
             for (const entityType of entityTypes) {
                 if (database[entityType] && Array.isArray(database[entityType])) {

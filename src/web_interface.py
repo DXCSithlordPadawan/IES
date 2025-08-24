@@ -238,6 +238,7 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
             database = analyzer.databases[database_name]
             vehicle_count = len(database.get('vehicles', []))
             area_count = len(database.get('areas', []))
+            military_unit_count = len(database.get('militaryUnits', []))
             
             return jsonify({
                 'status': 'success',
@@ -247,6 +248,7 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
                 'edge_count': len(result['graph'].edges),
                 'vehicle_count': vehicle_count,
                 'area_count': area_count,
+                'military_unit_count': military_unit_count,
                 'force_reloaded': force_reload,
                 'analysis_timestamp': analyzer.loader.last_load_time if hasattr(analyzer.loader, 'last_load_time') else None
             })
@@ -417,18 +419,22 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
                     file_data = json.load(f)
                 file_vehicle_count = len(file_data.get('vehicles', []))
                 file_area_count = len(file_data.get('areas', []))
+                file_military_unit_count = len(file_data.get('militaryUnits', []))
             except Exception as e:
                 logger.error(f"Error reading file for stats: {e}")
                 file_vehicle_count = 0
                 file_area_count = 0
+                file_military_unit_count = 0
             
             # Get entity counts from memory if loaded
             memory_vehicle_count = 0
             memory_area_count = 0
+            memory_military_unit_count = 0
             if is_loaded:
                 db = analyzer.databases[database_name]
                 memory_vehicle_count = len(db.get('vehicles', []))
                 memory_area_count = len(db.get('areas', []))
+                memory_military_unit_count = len(db.get('militaryUnits', []))
             
             return jsonify({
                 'status': 'success',
@@ -439,13 +445,15 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
                 'is_loaded_in_memory': is_loaded,
                 'file_entity_counts': {
                     'vehicles': file_vehicle_count,
-                    'areas': file_area_count
+                    'areas': file_area_count,
+                    'militaryUnits': file_military_unit_count
                 },
                 'memory_entity_counts': {
                     'vehicles': memory_vehicle_count,
-                    'areas': memory_area_count
+                    'areas': memory_area_count,
+                    'militaryUnits': memory_military_unit_count
                 } if is_loaded else None,
-                'data_sync_status': 'synced' if (file_vehicle_count == memory_vehicle_count and file_area_count == memory_area_count) or not is_loaded else 'out_of_sync'
+                'data_sync_status': 'synced' if (file_vehicle_count == memory_vehicle_count and file_area_count == memory_area_count and file_military_unit_count == memory_military_unit_count) or not is_loaded else 'out_of_sync'
             })
             
         except Exception as e:
