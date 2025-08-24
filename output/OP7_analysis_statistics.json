@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-08-24T08:02:47.362839",
-    "node_count": 2,
+    "generated_at": "2025-08-24T09:45:45.229035",
+    "node_count": 3,
     "edge_count": 0,
     "database_info": {
       "filename": "unknown",
@@ -13,6 +13,7 @@
         "persons": 0,
         "weapons": 0,
         "events": 0,
+        "aircraft": 1,
         "vehicleTypes": 0,
         "areaTypes": 0,
         "organizationTypes": 0,
@@ -23,21 +24,24 @@
     },
     "entity_counts": {
       "vehicles": 1,
-      "areas": 1
+      "areas": 1,
+      "aircraft": 1
     }
   },
   "node_statistics": {
-    "total_nodes": 2,
+    "total_nodes": 3,
     "node_types": {
       "vehicles": 1,
-      "areas": 1
+      "areas": 1,
+      "aircraft": 1
     },
     "degree_distribution": {
-      "0": 2
+      "0": 3
     },
     "isolated_nodes": [
       "vehicle-t80-tank-op7-001",
-      "area-odesa-oblast-001"
+      "area-odesa-oblast-001",
+      "aircraft-a50-awacs-op7-001"
     ],
     "degree_stats": {
       "mean": 0.0,
@@ -54,9 +58,10 @@
   },
   "connectivity": {
     "is_connected": false,
-    "number_of_components": 2,
+    "number_of_components": 3,
     "density": 0,
     "component_sizes": [
+      1,
       1,
       1
     ],
@@ -72,6 +77,10 @@
       [
         "area-odesa-oblast-001",
         0.0
+      ],
+      [
+        "aircraft-a50-awacs-op7-001",
+        0.0
       ]
     ],
     "top_betweenness_centrality": [
@@ -82,16 +91,24 @@
       [
         "area-odesa-oblast-001",
         0.0
+      ],
+      [
+        "aircraft-a50-awacs-op7-001",
+        0.0
       ]
     ],
     "top_eigenvector_centrality": [
       [
         "vehicle-t80-tank-op7-001",
-        0.7071067811865476
+        0.5773502691896258
       ],
       [
         "area-odesa-oblast-001",
-        0.7071067811865476
+        0.5773502691896258
+      ],
+      [
+        "aircraft-a50-awacs-op7-001",
+        0.5773502691896258
       ]
     ]
   },

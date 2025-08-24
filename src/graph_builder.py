@@ -18,7 +18,7 @@ class GraphBuilder:
         """Initialize the graph builder."""
         self.entity_types = [
             'countries', 'vehicles', 'vehicleTypes', 'people', 'peopleTypes',
-            'areas', 'militaryOrganizations', 'representations'
+            'areas', 'militaryOrganizations', 'representations', 'aircraft'
         ]
         
         # Define relationship patterns
@@ -41,7 +41,8 @@ class GraphBuilder:
             'militaryOrganization': '#FECA57',  # Yellow
             'vehicleType': '#A8E6CF',       # Light Green
             'peopleType': '#DDA0DD',        # Plum
-            'representation': '#F8B500'     # Orange
+            'representation': '#F8B500',    # Orange
+            'aircraft': '#FF8C00'           # Dark Orange
         }
     
     def build_graph(self, database: Dict, include_metadata: bool = True) -> nx.Graph:
