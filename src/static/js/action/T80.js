@@ -63,6 +63,30 @@ const DATABASE_CONFIGS = {
     }
 };
 
+// Function to detect the correct data directory path
+function findDataDirectory() {
+    const possiblePaths = [
+        path.join('/home/runner/work/IES/IES', 'data'),
+        path.join(process.cwd(), '..', '..', '..', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'data'),
+        path.join(process.cwd(), 'data'),
+        path.join(process.cwd(), '..', 'data'),
+        path.join(process.cwd(), '..', '..', 'data'),
+        path.join(process.cwd(), 'ies4-military-database-analysis', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'src', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'backend', 'data')
+    ];
+    
+    for (const testPath of possiblePaths) {
+        if (fs.existsSync(testPath)) {
+            return testPath;
+        }
+    }
+    
+    // Fallback to default path
+    return path.join('C:', 'ies4-military-database-analysis', 'data');
+}
+
 // Function to initialize operation configuration
 function initializeOperationConfig(database) {
     OPERATION_CONFIG.database = database;
@@ -221,9 +245,10 @@ async function clearCachedData() {
 
 // Function to backup the file before modification
 function backupFile() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-    const backupPath = path.join('C:', 'ies4-military-database-analysis', 'data', 
+    const backupPath = path.join(dataDir, 
         `${path.basename(OPERATION_CONFIG.dataFile, '.json')}_backup_${timestamp}.json`);
     
     try {
@@ -243,7 +268,8 @@ function backupFile() {
 // Function to add T-80 tank to the JSON data
 function addT80Tank() {
     // Define the file path
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     // Check if file exists
     if (!fs.existsSync(filePath)) {
@@ -449,7 +475,8 @@ function addT80Tank() {
 
 // Function to remove T-80 tank from the JSON data
 function removeT80Tank() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     try {
         // Check if file exists
@@ -532,7 +559,8 @@ function removeT80Tank() {
 
 // Function to verify file structure after operation
 function verifyFileStructure() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     try {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -777,8 +805,9 @@ async function listAvailableDatabases() {
         });
     } else {
         console.log('📁 From Local Configuration:');
+        const dataDir = findDataDirectory();
         Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-            const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', config.dataFile);
+            const filePath = path.join(dataDir, config.dataFile);
             const exists = fs.existsSync(filePath) ? '✅' : '❌';
             console.log(`   ${key}: ${config.displayName} - ${config.description} ${exists}`);
         });
@@ -949,8 +978,9 @@ function runDiagnostics() {
     
     // 2. Check database configurations
     console.log('2. ⚙️ Database Configuration Check:');
+    const dataDir = findDataDirectory();
     Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-        const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', config.dataFile);
+        const filePath = path.join(dataDir, config.dataFile);
         const exists = fs.existsSync(filePath);
         const status = exists ? '✅' : '❌';
         console.log(`   ${key}: ${config.dataFile} ${status}`);
@@ -998,50 +1028,22 @@ function runDiagnostics() {
     return true;
 }
 
-// Function to initialize operation configuration with better error handling
+// Function to initialize operation configuration
 function initializeOperationConfig(database) {
-    console.log(`\n🎯 Initializing operation for database: ${database}`);
-    
     OPERATION_CONFIG.database = database;
     
     const dbConfig = DATABASE_CONFIGS[database];
     if (dbConfig) {
         OPERATION_CONFIG.dataFile = dbConfig.dataFile;
         OPERATION_CONFIG.displayName = dbConfig.displayName;
-        
-        // Check if the data file actually exists
-        const dataDir = findDataDirectory();
-        const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
-        
-        console.log(`📁 Data file path: ${filePath}`);
-        
-        if (fs.existsSync(filePath)) {
-            console.log('✅ Data file exists');
-            try {
-                const stats = fs.statSync(filePath);
-                console.log(`📊 File size: ${(stats.size / 1024).toFixed(2)} KB`);
-                
-                // Test JSON parsing
-                const content = fs.readFileSync(filePath, 'utf8');
-                const data = JSON.parse(content);
-                console.log(`✅ JSON is valid`);
-                console.log(`📈 Contains ${data.aircraft ? data.aircraft.length : 0} aircraft entries`);
-                
-            } catch (error) {
-                console.error(`❌ Error reading/parsing file: ${error.message}`);
-                throw new Error(`Invalid JSON file: ${filePath}`);
-            }
-        } else {
-            console.error(`❌ Data file not found: ${filePath}`);
-            throw new Error(`Data file not found: ${filePath}`);
-        }
     } else {
-        console.error(`❌ Unknown database: ${database}`);
-        console.log('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
-        throw new Error(`Unknown database: ${database}`);
+        // Fallback for unknown databases
+        OPERATION_CONFIG.dataFile = `${database.toLowerCase()}.json`;
+        OPERATION_CONFIG.displayName = database;
     }
     
-    console.log(`✅ Operation initialized for ${OPERATION_CONFIG.displayName}`);
+    console.log(`🎯 Targeting database: ${OPERATION_CONFIG.database} (${OPERATION_CONFIG.displayName})`);
+    console.log(`📁 Data file: ${OPERATION_CONFIG.dataFile}`);
 }
 
 // Run main function if called directly

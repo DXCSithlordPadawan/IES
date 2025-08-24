@@ -63,6 +63,30 @@ const DATABASE_CONFIGS = {
     }
 };
 
+// Function to detect the correct data directory path
+function findDataDirectory() {
+    const possiblePaths = [
+        path.join('/home/runner/work/IES/IES', 'data'),
+        path.join(process.cwd(), '..', '..', '..', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'data'),
+        path.join(process.cwd(), 'data'),
+        path.join(process.cwd(), '..', 'data'),
+        path.join(process.cwd(), '..', '..', 'data'),
+        path.join(process.cwd(), 'ies4-military-database-analysis', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'src', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'backend', 'data')
+    ];
+    
+    for (const testPath of possiblePaths) {
+        if (fs.existsSync(testPath)) {
+            return testPath;
+        }
+    }
+    
+    // Fallback to default path
+    return path.join('C:', 'ies4-military-database-analysis', 'data');
+}
+
 // Function to initialize operation configuration
 function initializeOperationConfig(database) {
     OPERATION_CONFIG.database = database;
@@ -221,9 +245,10 @@ async function clearCachedData() {
 
 // Function to backup the file before modification
 function backupFile() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-    const backupPath = path.join('C:', 'ies4-military-database-analysis', 'data', 
+    const backupPath = path.join(dataDir, 
         `${path.basename(OPERATION_CONFIG.dataFile, '.json')}_backup_${timestamp}.json`);
     
     try {
@@ -243,7 +268,8 @@ function backupFile() {
 // Function to add T-90 tank to the JSON data
 function addT90Tank() {
     // Define the file path
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     // Check if file exists
     if (!fs.existsSync(filePath)) {
@@ -459,7 +485,8 @@ function addT90Tank() {
 
 // Function to remove T-90 tank from the JSON data
 function removeT90Tank() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     try {
         // Check if file exists
@@ -543,7 +570,8 @@ function removeT90Tank() {
 
 // Function to verify file structure after operation
 function verifyFileStructure() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     try {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -789,8 +817,9 @@ async function listAvailableDatabases() {
         });
     } else {
         console.log('📁 From Local Configuration:');
+        const dataDir = findDataDirectory();
         Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-            const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', config.dataFile);
+            const filePath = path.join(dataDir, config.dataFile);
             const exists = fs.existsSync(filePath) ? '✅' : '❌';
             console.log(`   ${key}: ${config.displayName} - ${config.description} ${exists}`);
         });
@@ -843,8 +872,9 @@ function runDiagnostics() {
     
     // 2. Check database configurations
     console.log('2. ⚙️ Database Configuration Check:');
+    const dataDir = findDataDirectory();
     Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-        const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', config.dataFile);
+        const filePath = path.join(dataDir, config.dataFile);
         const exists = fs.existsSync(filePath);
         const status = exists ? '✅' : '❌';
         console.log(`   ${key}: ${config.dataFile} ${status}`);
