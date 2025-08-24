@@ -848,25 +848,172 @@
         }
 
         function loadAvailableDatabases() {
+            console.log('🔄 Loading available databases...');
+            
+            const select = document.getElementById('databaseSelect');
+            if (!select) {
+                console.error('❌ Database select element not found');
+                return;
+            }
+            
+            // Show loading state
+            select.innerHTML = '<option value="">Loading databases...</option>';
+            select.disabled = true;
+            
             fetch('/api/databases')
-                .then(response => response.json())
-                .then(data => {
-                    const select = document.getElementById('databaseSelect');
-                    select.innerHTML = '<option value="">Select database...</option>';
+                .then(response => {
+                    console.log(`📡 API response status: ${response.status} ${response.statusText}`);
                     
-                    if (data.status === 'success') {
-                        data.available.forEach(db => {
-                            const option = document.createElement('option');
-                            option.value = db;
-                            option.textContent = db.replace(/_/g, ' ').toUpperCase();
-                            if (data.loaded.includes(db)) {
-                                option.textContent += ' (Loaded)';
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('📊 Raw API response:', data);
+                    
+                    // Reset select element
+                    select.innerHTML = '<option value="">Select database...</option>';
+                    select.disabled = false;
+                    
+                    // Handle various response formats
+                    let databases = [];
+                    let loadedDatabases = [];
+                    let success = false;
+                    
+                    // Primary format: {status: 'success', available: [...], loaded: [...]}
+                    if (data && data.status === 'success') {
+                        databases = data.available || [];
+                        loadedDatabases = data.loaded || [];
+                        success = true;
+                        console.log(`✅ Standard format: ${databases.length} available, ${loadedDatabases.length} loaded`);
+                    }
+                    // Fallback format 1: {databases: [...], loaded: [...]}
+                    else if (data && data.databases) {
+                        databases = data.databases;
+                        loadedDatabases = data.loaded || [];
+                        success = true;
+                        console.log(`✅ Fallback format 1: ${databases.length} databases found`);
+                    }
+                    // Fallback format 2: {available: [...]}
+                    else if (data && data.available) {
+                        databases = data.available;
+                        loadedDatabases = [];
+                        success = true;
+                        console.log(`✅ Fallback format 2: ${databases.length} databases found`);
+                    }
+                    // Fallback format 3: Direct array
+                    else if (Array.isArray(data)) {
+                        databases = data;
+                        loadedDatabases = [];
+                        success = true;
+                        console.log(`✅ Fallback format 3: ${databases.length} databases in array`);
+                    }
+                    
+                    if (success && databases.length > 0) {
+                        // Populate dropdown with databases
+                        databases.forEach(db => {
+                            if (db && typeof db === 'string') {
+                                const option = document.createElement('option');
+                                option.value = db;
+                                option.textContent = db.replace(/_/g, ' ').toUpperCase();
+                                
+                                // Check if database is loaded
+                                if (loadedDatabases.includes(db)) {
+                                    option.textContent += ' (Loaded)';
+                                    option.style.fontWeight = 'bold';
+                                    option.style.color = '#28a745';
+                                }
+                                
+                                select.appendChild(option);
                             }
-                            select.appendChild(option);
                         });
+                        
+                        console.log(`✅ Successfully populated dropdown with ${databases.length} databases`);
+                        
+                        // Show success notification if available
+                        if (typeof showNotification === 'function') {
+                            showNotification(`Loaded ${databases.length} available databases`, 'success');
+                        }
+                    } else if (success && databases.length === 0) {
+                        // No databases available
+                        console.warn('⚠️ No databases available');
+                        select.innerHTML = '<option value="">No databases available</option>';
+                        
+                        if (typeof showNotification === 'function') {
+                            showNotification('No databases are currently available', 'warning');
+                        }
+                    } else {
+                        // API returned error status or unexpected format
+                        const errorMsg = data.message || data.error || 'Unknown API error';
+                        console.error('❌ API error:', errorMsg);
+                        console.error('❌ Full response data:', data);
+                        
+                        select.innerHTML = '<option value="">Error loading databases</option>';
+                        
+                        if (typeof showNotification === 'function') {
+                            showNotification(`Database loading failed: ${errorMsg}`, 'error');
+                        }
+                        
+                        // Attempt fallback with hardcoded database list
+                        loadFallbackDatabases();
                     }
                 })
-                .catch(error => console.error('Error loading databases:', error));
+                .catch(error => {
+                    console.error('❌ Network/fetch error:', error.message);
+                    console.error('❌ Full error object:', error);
+                    
+                    // Reset select element
+                    select.innerHTML = '<option value="">Connection error</option>';
+                    select.disabled = false;
+                    
+                    // Show user-friendly error message
+                    if (typeof showNotification === 'function') {
+                        showNotification(`Failed to load databases: ${error.message}`, 'error');
+                    }
+                    
+                    // Attempt fallback with hardcoded database list
+                    loadFallbackDatabases();
+                });
+        }
+        
+        function loadFallbackDatabases() {
+            console.log('🔄 Attempting fallback database loading...');
+            
+            const select = document.getElementById('databaseSelect');
+            if (!select) return;
+            
+            // Common database names as fallback
+            const fallbackDatabases = [
+                'ies4_military_complete',
+                'ies4_ukraine_military',
+                'ies4_russia_military',
+                'ies4_nato_military',
+                'default_military'
+            ];
+            
+            try {
+                // Clear existing options except the first one
+                select.innerHTML = '<option value="">Select database...</option>';
+                
+                fallbackDatabases.forEach(db => {
+                    const option = document.createElement('option');
+                    option.value = db;
+                    option.textContent = db.replace(/_/g, ' ').toUpperCase() + ' (Fallback)';
+                    option.style.fontStyle = 'italic';
+                    option.style.color = '#6c757d';
+                    select.appendChild(option);
+                });
+                
+                console.log(`✅ Loaded ${fallbackDatabases.length} fallback databases`);
+                
+                if (typeof showNotification === 'function') {
+                    showNotification('Using fallback database list - some features may be limited', 'warning');
+                }
+            } catch (fallbackError) {
+                console.error('❌ Fallback loading also failed:', fallbackError);
+            }
         }
 
         function loadFilterSuggestions() {
