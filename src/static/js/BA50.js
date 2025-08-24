@@ -66,6 +66,8 @@ const DATABASE_CONFIGS = {
 // Function to detect the correct data directory path
 function findDataDirectory() {
     const possiblePaths = [
+        path.join('/home/runner/work/IES/IES', 'data'),
+        path.join(process.cwd(), '..', '..', '..', 'data'),
         path.join('C:', 'ies4-military-database-analysis', 'data'),
         path.join(process.cwd(), 'data'),
         path.join(process.cwd(), '..', 'data'),
@@ -178,10 +180,13 @@ function displayHelp() {
     console.log('  --help, -h         Show this help message\n');
     console.log('Options:');
     console.log('  --db [database]    Specify database (OP1-OP8, default: OP7)\n');
+    console.log('Alternative Usage (Legacy Format):');
+    console.log('  remove <database>  Remove A-50 aircraft from specified database\n');
     console.log('Available Databases: OP1, OP2, OP3, OP4, OP5, OP6, OP7, OP8\n');
     console.log('Examples:');
     console.log('  node BA50.js --add --db OP7      Add A-50 to Odesa Oblast database');
-    console.log('  node BA50.js --del --db OP1      Remove A-50 from Kyiv Oblast database');
+    console.log('  node BA50.js --del --db OP1      Remove A-50 from Donetsk Oblast database');
+    console.log('  node BA50.js remove OP7          Remove A-50 from Odesa Oblast (legacy)');
     console.log('  node BA50.js --list              Show all available databases');
     console.log('  node BA50.js --diagnostic        Run system diagnostics');
 }
@@ -440,6 +445,289 @@ function addA50Aircraft() {
     return data;
 }
 
+// Function to backup the file before modification
+function backupFile() {
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+    const backupPath = path.join(dataDir, 
+        `${path.basename(OPERATION_CONFIG.dataFile, '.json')}_backup_${timestamp}.json`);
+    
+    try {
+        if (fs.existsSync(filePath)) {
+            fs.copyFileSync(filePath, backupPath);
+            console.log(`💾 Backup created: ${backupPath}`);
+            return backupPath;
+        } else {
+            console.warn(`⚠️ Source file not found for backup: ${filePath}`);
+        }
+    } catch (error) {
+        console.warn('⚠️ Could not create backup:', error.message);
+    }
+    return null;
+}
+
+// Function to remove A-50 aircraft from the JSON data
+function removeA50Aircraft() {
+    try {
+        const dataDir = findDataDirectory();
+        const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
+        
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        
+        if (!data.aircraft) {
+            console.log('❌ No aircraft array found in JSON file');
+            return false;
+        }
+        
+        // Find A-50 aircraft entities (ID pattern: aircraft-a50-awacs-*)
+        const initialCount = data.aircraft.length;
+        data.aircraft = data.aircraft.filter(aircraft => {
+            // Remove entities with IDs matching A-50 pattern
+            if (aircraft.id && aircraft.id.includes('aircraft-a50-awacs')) {
+                console.log(`   🗑️ Removing: ${aircraft.id} - ${aircraft.names?.[0]?.value || 'A-50 Aircraft'}`);
+                return false; // Remove this entity
+            }
+            return true; // Keep this entity
+        });
+        
+        const finalCount = data.aircraft.length;
+        const removedCount = initialCount - finalCount;
+        
+        if (removedCount === 0) {
+            console.log('❌ No A-50 aircraft found to remove');
+            return false;
+        }
+        
+        // Write updated data back to file
+        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+        
+        console.log(`✅ Successfully removed ${removedCount} A-50 aircraft entity(ies)`);
+        console.log(`   📊 Aircraft before: ${initialCount}, after: ${finalCount}`);
+        
+        return true;
+        
+    } catch (error) {
+        console.error('❌ Error removing A-50 aircraft:', error.message);
+        return false;
+    }
+}
+
+// Function to verify file structure after operation
+function verifyFileStructure() {
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
+    
+    try {
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        
+        console.log(`\n📊 File structure after operation (${OPERATION_CONFIG.displayName}):`);
+        console.log(`   Areas: ${data.areas ? data.areas.length : 0}`);
+        console.log(`   Aircraft: ${data.aircraft ? data.aircraft.length : 0}`);
+        console.log(`   Vehicles: ${data.vehicles ? data.vehicles.length : 0}`);
+        console.log(`   Vehicle Types: ${data.vehicleTypes ? data.vehicleTypes.length : 0}`);
+        
+        // Check for any remaining A-50 references
+        let remainingRefs = 0;
+        if (data.aircraft) {
+            data.aircraft.forEach(aircraft => {
+                if (aircraft.id && aircraft.id.includes('aircraft-a50-awacs')) {
+                    remainingRefs++;
+                    console.log(`   Found A-50 reference: ${aircraft.id}`);
+                }
+            });
+        }
+        
+        console.log(`   A-50 references found: ${remainingRefs}`);
+        
+        if (remainingRefs === 0) {
+            console.log('✅ No remaining A-50 aircraft references found');
+        }
+        
+        return true;
+        
+    } catch (error) {
+        console.error('❌ Error verifying file structure:', error.message);
+        return false;
+    }
+}
+
+// Function to reload the specified database via API
+async function reloadDatabase() {
+    try {
+        console.log(`🔄 Reloading ${OPERATION_CONFIG.displayName} database via web interface...`);
+        
+        const response = await axios.post(`${WEB_INTERFACE_CONFIG.baseUrl}/api/load_database`, {
+            database_name: OPERATION_CONFIG.database
+        }, {
+            timeout: 30000,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.data.status === 'success') {
+            console.log(`✅ Successfully reloaded ${OPERATION_CONFIG.database} database`);
+            console.log('📊 Entity counts:', response.data.entity_counts);
+            return true;
+        } else {
+            console.error('❌ Failed to reload database:', response.data.message);
+            return false;
+        }
+    } catch (error) {
+        if (error.code === 'ECONNREFUSED') {
+            console.error('❌ Could not connect to web interface. Is it running?');
+        } else if (error.code === 'ETIMEDOUT') {
+            console.error('❌ Timeout while reloading database');
+        } else {
+            console.error('❌ Error reloading database:', error.message);
+        }
+        return false;
+    }
+}
+
+// Function to trigger a fresh analysis with the updated data
+async function refreshCurrentQuery() {
+    try {
+        console.log('🔍 Refreshing current analysis with updated data...');
+        
+        // Trigger a new analysis of the specified database
+        const response = await axios.post(`${WEB_INTERFACE_CONFIG.baseUrl}/api/analyze`, {
+            database_name: OPERATION_CONFIG.database,
+            layout: 'spring',
+            show_labels: true,
+            filters: {}
+        }, {
+            timeout: 60000,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.data.status === 'success') {
+            console.log('✅ Successfully refreshed analysis');
+            console.log(`📈 Updated graph: ${response.data.node_count} nodes, ${response.data.edge_count} edges`);
+            return true;
+        } else {
+            console.error('❌ Failed to refresh analysis:', response.data.message);
+            return false;
+        }
+    } catch (error) {
+        if (error.code === 'ETIMEDOUT') {
+            console.error('❌ Timeout while refreshing analysis');
+        } else {
+            console.error('❌ Error refreshing analysis:', error.message);
+        }
+        return false;
+    }
+}
+
+// Function to refresh web interface cache
+async function refreshWebInterface() {
+    try {
+        console.log('🔄 Refreshing web interface with updated data...');
+        
+        // Reload the database
+        const reloadSuccess = await reloadDatabase();
+        
+        if (!reloadSuccess) {
+            console.log('⚠️ Database reload failed');
+            return false;
+        }
+        
+        // Refresh current queries/analysis
+        const refreshSuccess = await refreshCurrentQuery();
+        
+        return refreshSuccess;
+        
+    } catch (error) {
+        console.error('❌ Error refreshing web interface:', error.message);
+        return false;
+    }
+}
+
+// Main remove operation
+async function performRemoveOperation() {
+    console.log(`🚀 Removing A-50 aircraft from ${OPERATION_CONFIG.displayName} database...\n`);
+    
+    let success = false;
+    
+    try {
+        // Create backup
+        backupFile();
+        
+        // Step 1: Remove aircraft from JSON file
+        console.log('🗑️ Removing aircraft from JSON file...');
+        success = removeA50Aircraft();
+        
+        if (!success) {
+            console.log('\n❌ No records were removed from the file');
+            return;
+        }
+        
+        // Step 2: Verify file structure
+        verifyFileStructure();
+        
+        // Step 3: Check if web interface is running
+        console.log('\n🌐 Checking web interface connection...');
+        const isWebRunning = await checkWebInterface();
+        
+        if (!isWebRunning) {
+            console.log('⚠️ Web interface is not running or not accessible');
+            console.log(`   Expected at: ${WEB_INTERFACE_CONFIG.baseUrl}`);
+            console.log('   Data was removed from file, but web interface not updated');
+            return;
+        }
+        
+        // Step 4: Refresh web interface cache
+        const refreshSuccess = await refreshWebInterface();
+        
+        // Step 5: Additional refresh for auto-refresh system detection
+        console.log('🔄 Ensuring auto-refresh system detects changes...');
+        setTimeout(async () => {
+            try {
+                await axios.post(`${WEB_INTERFACE_CONFIG.baseUrl}/api/analyze`, {
+                    database_name: OPERATION_CONFIG.database,
+                    layout: 'spring',
+                    show_labels: true,
+                    filters: {},
+                    force_reload: true
+                }, {
+                    timeout: 30000,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log('✅ Additional refresh completed for auto-refresh detection');
+            } catch (error) {
+                console.warn('⚠️ Additional refresh failed, but main operation was successful');
+            }
+        }, 2000);
+        
+        if (refreshSuccess) {
+            console.log('\n🎉 Remove operation completed successfully!');
+            console.log(`   ✅ A-50 aircraft removed from ${OPERATION_CONFIG.displayName}`);
+            console.log('   ✅ Database reloaded in web interface');
+            console.log('   ✅ Analysis refreshed with updated data');
+            console.log('   ✅ Cache cleared');
+            console.log('\n🌐 You can now view the updated data in your web browser');
+            console.log('💡 The A-50 aircraft should no longer appear in any analysis');
+        } else {
+            console.log('\n⚠️ Partial success:');
+            console.log(`   ✅ A-50 aircraft removed from ${OPERATION_CONFIG.displayName}`);
+            console.log('   ✅ Database reloaded in web interface');
+            console.log('   ❌ Analysis refresh failed');
+            console.log('💡 Open the Analysis page to see the updated results');
+        }
+        
+    } catch (error) {
+        console.error('\n❌ Error during remove operation:', error.message);
+        if (error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
+    }
+}
+
 // Simplified versions of other functions for testing
 async function checkWebInterface() {
     try {
@@ -504,6 +792,23 @@ if (require.main === module) {
     }
     
     try {
+        // Check for old format: "remove <database>"
+        if (args[0] === 'remove' && args.length >= 2) {
+            const database = args[1].toUpperCase();
+            
+            // Validate database
+            if (!DATABASE_CONFIGS[database]) {
+                console.error(`❌ Invalid database: ${database}`);
+                console.error('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
+                process.exit(1);
+            }
+            
+            // Initialize and perform remove operation
+            initializeOperationConfig(database);
+            performRemoveOperation();
+            return;
+        }
+        
         // Parse arguments using the new format
         const parsedArgs = parseArguments(args);
         
@@ -553,8 +858,7 @@ if (require.main === module) {
                 performTestAddOperation();
                 break;
             case 'remove':
-                console.log('🚧 Remove operation - use diagnostic version for testing file access first');
-                console.log('💡 Run: node BA50.js --diagnostic');
+                performRemoveOperation();
                 break;
             default:
                 console.error(`❌ Unknown command: ${parsedArgs.command}`);

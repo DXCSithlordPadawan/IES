@@ -56,3 +56,7 @@ temp/
 # Test output files
 test_*.html
 *_test_output.*
+
+# Backup files created by scripts
+*_backup_*.json
+*.backup
