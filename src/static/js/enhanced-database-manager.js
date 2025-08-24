@@ -95,19 +95,21 @@ class DatabaseManager {
             // Store the data
             this.databases[databaseName] = jsonData;
             
-            // Log entity counts for verification
-            if (jsonData.vehicles) {
-                console.log(`   - Vehicles: ${jsonData.vehicles.length}`);
-            }
-            if (jsonData.areas) {
-                console.log(`   - Areas: ${jsonData.areas.length}`);
-            }
-            if (jsonData.militaryUnits) {
-                console.log(`   - Military Units: ${jsonData.militaryUnits.length}`);
-            }
-            if (jsonData.unitTypes) {
-                console.log(`   - Unit Types: ${jsonData.unitTypes.length}`);
-            }
+            // Log entity counts for verification - show ALL entity types
+            const entityTypes = ['vehicles', 'areas', 'people', 'militaryUnits', 'aircraft', 'weapons', 'organizations'];
+            entityTypes.forEach(entityType => {
+                if (jsonData[entityType]) {
+                    console.log(`   - ${entityType.charAt(0).toUpperCase() + entityType.slice(1)}: ${jsonData[entityType].length}`);
+                }
+            });
+            
+            // Also log type definitions
+            const typeDefinitions = ['vehicleTypes', 'unitTypes', 'peopleTypes', 'weaponTypes'];
+            typeDefinitions.forEach(typeDefType => {
+                if (jsonData[typeDefType]) {
+                    console.log(`   - ${typeDefType.charAt(0).toUpperCase() + typeDefType.slice(1)}: ${jsonData[typeDefType].length}`);
+                }
+            });
             
             return jsonData;
             
@@ -197,9 +199,18 @@ class DatabaseManager {
             if (analysisData.status === 'success') {
                 console.log(`✅ Analysis completed for ${databaseName}`);
                 console.log(`📊 Graph: ${analysisData.node_count} nodes, ${analysisData.edge_count} edges`);
-                console.log(`🚗 Entities: ${analysisData.vehicle_count} vehicles, ${analysisData.area_count} areas`);
+                console.log(`🚗 Entities: ${analysisData.vehicle_count || 0} vehicles, ${analysisData.area_count || 0} areas`);
+                if (analysisData.people_count !== undefined) {
+                    console.log(`👥 People: ${analysisData.people_count} people`);
+                }
                 if (analysisData.military_unit_count !== undefined) {
                     console.log(`🪖 Military Units: ${analysisData.military_unit_count} units`);
+                }
+                if (analysisData.aircraft_count !== undefined) {
+                    console.log(`✈️ Aircraft: ${analysisData.aircraft_count} aircraft`);
+                }
+                if (analysisData.weapon_count !== undefined) {
+                    console.log(`⚔️ Weapons: ${analysisData.weapon_count} weapons`);
                 }
                 
                 // Update our tracking
@@ -375,7 +386,7 @@ class DatabaseManager {
             }
             
             // Search through different entity types
-            const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes', 'militaryUnits'];
+            const entityTypes = ['vehicles', 'areas', 'people', 'militaryUnits', 'aircraft', 'weapons', 'organizations', 'countries', 'vehicleTypes', 'peopleTypes', 'unitTypes'];
             
             for (const entityType of entityTypes) {
                 if (database[entityType] && Array.isArray(database[entityType])) {
@@ -515,8 +526,12 @@ window.enhancedUIFunctions = {
                     <div class="stats-summary">
                         <span class="stat-item">📊 ${result.node_count} nodes</span>
                         <span class="stat-item">🔗 ${result.edge_count} edges</span>
-                        <span class="stat-item">🚗 ${result.vehicle_count} vehicles</span>
-                        <span class="stat-item">📍 ${result.area_count} areas</span>
+                        <span class="stat-item">🚗 ${result.vehicle_count || 0} vehicles</span>
+                        <span class="stat-item">📍 ${result.area_count || 0} areas</span>
+                        ${result.people_count ? `<span class="stat-item">👥 ${result.people_count} people</span>` : ''}
+                        ${result.military_unit_count ? `<span class="stat-item">🪖 ${result.military_unit_count} units</span>` : ''}
+                        ${result.aircraft_count ? `<span class="stat-item">✈️ ${result.aircraft_count} aircraft</span>` : ''}
+                        ${result.weapon_count ? `<span class="stat-item">⚔️ ${result.weapon_count} weapons</span>` : ''}
                     </div>
                 </div>
                 

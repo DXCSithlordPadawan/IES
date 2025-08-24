@@ -17,8 +17,8 @@ class GraphBuilder:
     def __init__(self):
         """Initialize the graph builder."""
         self.entity_types = [
-            'countries', 'vehicles', 'vehicleTypes', 'people', 'peopleTypes',
-            'areas', 'militaryOrganizations', 'representations', 'aircraft', 'militaryUnits', 'unitTypes'
+            'vehicles', 'vehicleTypes', 'people', 'peopleTypes', 'areas', 'areaTypes',
+            'militaryUnits', 'unitTypes', 'aircraft', 'weapons', 'organizations', 'countries'
         ]
         
         # Define relationship patterns
@@ -37,14 +37,18 @@ class GraphBuilder:
             'country': '#FF6B6B',           # Red
             'vehicle': '#4ECDC4',           # Teal
             'person': '#45B7D1',            # Blue
+            'people': '#45B7D1',            # Blue (alias)
             'area': '#96CEB4',              # Green
             'militaryOrganization': '#FECA57',  # Yellow
+            'militaryUnit': '#8B4513',      # Saddle Brown
             'vehicleType': '#A8E6CF',       # Light Green
             'peopleType': '#DDA0DD',        # Plum
-            'representation': '#F8B500',    # Orange
+            'unitType': '#CD853F',          # Peru
             'aircraft': '#FF8C00',          # Dark Orange
-            'militaryUnit': '#8B4513',      # Saddle Brown
-            'unitType': '#CD853F'           # Peru
+            'weapon': '#DC143C',            # Crimson
+            'weapons': '#DC143C',           # Crimson (alias)
+            'organization': '#FECA57',      # Yellow
+            'organizations': '#FECA57'      # Yellow (alias)
         }
     
     def build_graph(self, database: Dict, include_metadata: bool = True) -> nx.Graph:
@@ -152,15 +156,17 @@ class GraphBuilder:
             if 'fuelType' in entity:
                 attributes['fuel_type'] = entity['fuelType']
         
-        elif entity_type == 'person':
+        elif entity_type in ['person', 'people']:
             if 'personTypes' in entity:
                 attributes['person_types'] = entity['personTypes']
             if 'birthDate' in entity:
                 attributes['birth_date'] = entity['birthDate']
         
-        elif entity_type == 'militaryOrganization':
+        elif entity_type in ['militaryOrganization', 'militaryUnit']:
             if 'organizationType' in entity:
                 attributes['organization_type'] = entity['organizationType']
+            if 'unitType' in entity:
+                attributes['unit_type'] = entity['unitType']
             if 'personnelStrength' in entity:
                 attributes['personnel_strength'] = entity['personnelStrength']
         
@@ -169,6 +175,22 @@ class GraphBuilder:
                 attributes['area_type'] = entity['areaType']
             if 'administrativeLevel' in entity:
                 attributes['admin_level'] = entity['administrativeLevel']
+        
+        elif entity_type in ['aircraft']:
+            if 'aircraftType' in entity:
+                attributes['aircraft_type'] = entity['aircraftType']
+            if 'manufacturer' in entity:
+                attributes['manufacturer'] = entity['manufacturer']
+            if 'operator' in entity:
+                attributes['operator'] = entity['operator']
+        
+        elif entity_type in ['weapon', 'weapons']:
+            if 'weaponType' in entity:
+                attributes['weapon_type'] = entity['weaponType']
+            if 'caliber' in entity:
+                attributes['caliber'] = entity['caliber']
+            if 'range' in entity:
+                attributes['range'] = entity['range']
         
         return attributes
     
