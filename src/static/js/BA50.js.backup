@@ -68,10 +68,9 @@ function findDataDirectory() {
     const possiblePaths = [
         path.join('/home/runner/work/IES/IES', 'data'),
         path.join(process.cwd(), '..', '..', '..', 'data'),
-        path.join('C:', 'ies4-military-database-analysis', 'data'),
-        path.join(process.cwd(), 'data'),
-        path.join(process.cwd(), '..', 'data'),
         path.join(process.cwd(), '..', '..', 'data'),
+        path.join(process.cwd(), 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'data'),
         path.join(process.cwd(), 'ies4-military-database-analysis', 'data'),
         path.join('C:', 'ies4-military-database-analysis', 'src', 'data'),
         path.join('C:', 'ies4-military-database-analysis', 'backend', 'data')
@@ -160,6 +159,10 @@ function parseArguments(args) {
                 parsed.help = true;
                 break;
             default:
+                // Skip non-flag arguments in new format since old format is handled separately
+                if (!arg.startsWith('-')) {
+                    continue;
+                }
                 throw new Error(`Unknown argument: ${arg}`);
         }
     }
@@ -442,31 +445,6 @@ function addA50Aircraft() {
     }
     
     console.log(`✅ Successfully added A-50 aircraft to ${OPERATION_CONFIG.displayName}`);
-    return data;
-}
-
-// Function to backup the file before modification
-function backupFile() {
-    const dataDir = findDataDirectory();
-    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-    const backupPath = path.join(dataDir, 
-        `${path.basename(OPERATION_CONFIG.dataFile, '.json')}_backup_${timestamp}.json`);
-    
-    try {
-        if (fs.existsSync(filePath)) {
-            fs.copyFileSync(filePath, backupPath);
-            console.log(`💾 Backup created: ${backupPath}`);
-            return backupPath;
-        } else {
-            console.warn(`⚠️ Source file not found for backup: ${filePath}`);
-        }
-    } catch (error) {
-        console.warn('⚠️ Could not create backup:', error.message);
-    }
-    return null;
-}
-
 // Function to remove A-50 aircraft from the JSON data
 function removeA50Aircraft() {
     try {
@@ -552,6 +530,18 @@ function verifyFileStructure() {
     }
 }
 
+// Function to check if web interface is running
+async function checkWebInterface() {
+    try {
+        const response = await axios.get(`${WEB_INTERFACE_CONFIG.baseUrl}/api/databases`, {
+            timeout: 5000
+        });
+        return response.status === 200;
+    } catch (error) {
+        return false;
+    }
+}
+
 // Function to reload the specified database via API
 async function reloadDatabase() {
     try {
@@ -627,6 +617,9 @@ async function refreshWebInterface() {
     try {
         console.log('🔄 Refreshing web interface with updated data...');
         
+        // Clear any cached data first
+        await clearCachedData();
+        
         // Reload the database
         const reloadSuccess = await reloadDatabase();
         
@@ -642,6 +635,87 @@ async function refreshWebInterface() {
         
     } catch (error) {
         console.error('❌ Error refreshing web interface:', error.message);
+        return false;
+    }
+}
+
+// Function to clear any cached data that might contain A-50
+async function clearCachedData() {
+    try {
+        console.log('🗑️ Clearing any cached analysis data...');
+        
+        // Try to get fresh filter suggestions (this will rebuild internal caches)
+        await axios.get(`${WEB_INTERFACE_CONFIG.baseUrl}/api/filter_suggestions?database=${OPERATION_CONFIG.database}`, {
+            timeout: 10000
+        });
+        
+        console.log('✅ Cache clearing completed');
+        return true;
+    } catch (error) {
+        console.warn('⚠️ Could not clear cached data:', error.message);
+        return false;
+    }
+}
+
+// Function to backup the file before modification
+function backupFile() {
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+    const backupPath = path.join(dataDir, 
+        `${path.basename(OPERATION_CONFIG.dataFile, '.json')}_backup_${timestamp}.json`);
+    
+    try {
+        if (fs.existsSync(filePath)) {
+            fs.copyFileSync(filePath, backupPath);
+            console.log(`💾 Backup created: ${backupPath}`);
+            return backupPath;
+        } else {
+            console.warn(`⚠️ Source file not found for backup: ${filePath}`);
+        }
+    } catch (error) {
+        console.warn('⚠️ Could not create backup:', error.message);
+    }
+    return null;
+}
+
+async function listAvailableDatabases() {
+    console.log('📋 Available Databases:');
+    console.log('=====================\n');
+    
+    const dataDir = findDataDirectory();
+    
+    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
+        const filePath = path.join(dataDir, config.dataFile);
+        const exists = fs.existsSync(filePath) ? '✅' : '❌';
+        console.log(`   ${key}: ${config.displayName} - ${config.description} ${exists}`);
+        
+        if (exists) {
+            try {
+                const stats = fs.statSync(filePath);
+                const content = fs.readFileSync(filePath, 'utf8');
+                const data = JSON.parse(content);
+                console.log(`       📊 Size: ${(stats.size / 1024).toFixed(2)} KB, Aircraft: ${data.aircraft ? data.aircraft.length : 0}`);
+            } catch (error) {
+                console.log(`       ❌ Error reading: ${error.message}`);
+            }
+        }
+    });
+}
+
+// Simple test add operation
+async function performTestAddOperation() {
+    console.log(`🧪 TEST: Adding A-50 aircraft to ${OPERATION_CONFIG.displayName} database...\n`);
+    
+    try {
+        addA50Aircraft();
+        console.log('\n🎉 TEST ADD OPERATION COMPLETED SUCCESSFULLY!');
+        return true;
+    } catch (error) {
+        console.error('\n❌ TEST ADD OPERATION FAILED:', error.message);
+        if (error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
         return false;
     }
 }
@@ -680,6 +754,7 @@ async function performRemoveOperation() {
         }
         
         // Step 4: Refresh web interface cache
+        console.log('🔄 Refreshing web interface with updated data...');
         const refreshSuccess = await refreshWebInterface();
         
         // Step 5: Additional refresh for auto-refresh system detection
@@ -728,59 +803,6 @@ async function performRemoveOperation() {
     }
 }
 
-// Simplified versions of other functions for testing
-async function checkWebInterface() {
-    try {
-        const response = await axios.get(`${WEB_INTERFACE_CONFIG.baseUrl}/api/databases`, {
-            timeout: 5000
-        });
-        return response.status === 200;
-    } catch (error) {
-        return false;
-    }
-}
-
-async function listAvailableDatabases() {
-    console.log('📋 Available Databases:');
-    console.log('=====================\n');
-    
-    const dataDir = findDataDirectory();
-    
-    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-        const filePath = path.join(dataDir, config.dataFile);
-        const exists = fs.existsSync(filePath) ? '✅' : '❌';
-        console.log(`   ${key}: ${config.displayName} - ${config.description} ${exists}`);
-        
-        if (exists) {
-            try {
-                const stats = fs.statSync(filePath);
-                const content = fs.readFileSync(filePath, 'utf8');
-                const data = JSON.parse(content);
-                console.log(`       📊 Size: ${(stats.size / 1024).toFixed(2)} KB, Aircraft: ${data.aircraft ? data.aircraft.length : 0}`);
-            } catch (error) {
-                console.log(`       ❌ Error reading: ${error.message}`);
-            }
-        }
-    });
-}
-
-// Simple test add operation
-async function performTestAddOperation() {
-    console.log(`🧪 TEST: Adding A-50 aircraft to ${OPERATION_CONFIG.displayName} database...\n`);
-    
-    try {
-        addA50Aircraft();
-        console.log('\n🎉 TEST ADD OPERATION COMPLETED SUCCESSFULLY!');
-        return true;
-    } catch (error) {
-        console.error('\n❌ TEST ADD OPERATION FAILED:', error.message);
-        if (error.stack) {
-            console.error('Stack trace:', error.stack);
-        }
-        return false;
-    }
-}
-
 // Command line interface
 if (require.main === module) {
     const args = process.argv.slice(2);
@@ -792,7 +814,7 @@ if (require.main === module) {
     }
     
     try {
-        // Check for old format: "remove <database>"
+        // Check for old format: "remove <database>" or "add <aircraft-id> <label> <database>"
         if (args[0] === 'remove' && args.length >= 2) {
             const database = args[1].toUpperCase();
             

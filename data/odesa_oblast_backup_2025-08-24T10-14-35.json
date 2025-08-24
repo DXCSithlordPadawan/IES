@@ -124,5 +124,53 @@
     }
   ],
   "vehicleTypes": [],
-  "aircraft": []
+  "aircraft": [
+    {
+      "id": "aircraft-a50-awacs-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/Beriev_A-50",
+      "type": "Aircraft",
+      "names": [
+        {
+          "value": "A-50",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Beriev A-50",
+          "language": "en",
+          "nameType": "full_designation"
+        },
+        {
+          "value": "А-50",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "Shmel",
+          "language": "en",
+          "nameType": "nato_code"
+        },
+        {
+          "value": "Mainstay",
+          "language": "en",
+          "nameType": "nato_reporting"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "A-50",
+          "identifierType": "MODEL_DESIGNATION",
+          "issuingAuthority": "Soviet Union"
+        }
+      ],
+      "aircraftType": "airborne-early-warning-control",
+      "manufacturer": "Beriev Aircraft Company",
+      "basedOn": "Ilyushin Il-76MD",
+      "model": "A-50",
+      "firstFlight": 1978,
+      "enteredService": 1984,
+      "owner": "Soviet Union/Russian Federation",
+      "location": "Odesa Oblast"
+    }
+  ]
 }
