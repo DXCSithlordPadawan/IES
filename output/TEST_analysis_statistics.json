@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-24T21:52:42.816938",
+    "node_count": 7,
+    "edge_count": 2,
+    "database_info": {
+      "filename": "unknown",
+      "loaded_at": "",
+      "entity_counts": {
+        "vehicles": 2,
+        "areas": 1,
+        "organizations": 0,
+        "persons": 0,
+        "weapons": 0,
+        "events": 0,
+        "aircraft": 0,
+        "militaryUnits": 2,
+        "vehicleTypes": 1,
+        "areaTypes": 0,
+        "organizationTypes": 0,
+        "weaponTypes": 0,
+        "unitTypes": 1
+      },
+      "title": "",
+      "description": ""
+    },
+    "entity_counts": {
+      "vehicles": 2,
+      "vehicleTypes": 1,
+      "areas": 1,
+      "militaryUnits": 2,
+      "unitTypes": 1
+    }
+  },
+  "node_statistics": {
+    "total_nodes": 7,
+    "node_types": {
+      "vehicles": 2,
+      "vehicleTypes": 1,
+      "areas": 1,
+      "militaryUnits": 2,
+      "unitTypes": 1
+    },
+    "degree_distribution": {
+      "1": 2,
+      "2": 1,
+      "0": 4
+    },
+    "isolated_nodes": [
+      "area-odesa-oblast-001",
+      "unit-39th-guards-mrb-op7-001",
+      "unit-35-gds-mrb-op7-001",
+      "motor-rifle-brigade"
+    ],
+    "degree_stats": {
+      "mean": 0.5714285714285714,
+      "median": 0.0,
+      "std": 0.7284313590846835,
+      "min": 0,
+      "max": 2
+    }
+  },
+  "edge_statistics": {
+    "total_edges": 2,
+    "relationship_types": {
+      "vehicleType": 2
+    },
+    "edge_weight_distribution": {
+      "1.0": 2
+    }
+  },
+  "connectivity": {
+    "is_connected": false,
+    "number_of_components": 5,
+    "density": 0.09523809523809523,
+    "component_sizes": [
+      3,
+      1,
+      1,
+      1,
+      1
+    ],
+    "largest_component_size": 3,
+    "average_clustering": 0.0,
+    "largest_component_avg_path": 1.3333333333333333,
+    "largest_component_diameter": 2
+  },
+  "centrality": {
+    "top_degree_centrality": [
+      [
+        "main-battle-tank",
+        0.3333333333333333
+      ],
+      [
+        "vehicle-t80-tank-op7-001",
+        0.16666666666666666
+      ],
+      [
+        "vehicle-t90-tank-op7-001",
+        0.16666666666666666
+      ],
+      [
+        "area-odesa-oblast-001",
+        0.0
+      ],
+      [
+        "unit-39th-guards-mrb-op7-001",
+        0.0
+      ],
+      [
+        "unit-35-gds-mrb-op7-001",
+        0.0
+      ],
+      [
+        "motor-rifle-brigade",
+        0.0
+      ]
+    ],
+    "top_betweenness_centrality": [
+      [
+        "main-battle-tank",
+        0.06666666666666667
+      ],
+      [
+        "vehicle-t80-tank-op7-001",
+        0.0
+      ],
+      [
+        "vehicle-t90-tank-op7-001",
+        0.0
+      ],
+      [
+        "area-odesa-oblast-001",
+        0.0
+      ],
+      [
+        "unit-39th-guards-mrb-op7-001",
+        0.0
+      ],
+      [
+        "unit-35-gds-mrb-op7-001",
+        0.0
+      ],
+      [
+        "motor-rifle-brigade",
+        0.0
+      ]
+    ],
+    "top_eigenvector_centrality": [
+      [
+        "main-battle-tank",
+        0.7071067811853513
+      ],
+      [
+        "vehicle-t80-tank-op7-001",
+        0.4999999999985903
+      ],
+      [
+        "vehicle-t90-tank-op7-001",
+        0.4999999999985903
+      ],
+      [
+        "area-odesa-oblast-001",
+        1.061949909943654e-06
+      ],
+      [
+        "unit-39th-guards-mrb-op7-001",
+        1.061949909943654e-06
+      ],
+      [
+        "unit-35-gds-mrb-op7-001",
+        1.061949909943654e-06
+      ],
+      [
+        "motor-rifle-brigade",
+        1.061949909943654e-06
+      ]
+    ]
+  },
+  "entity_analysis": {
+    "countries": {},
+    "vehicles": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_manufacturer": {},
+      "by_decade": {},
+      "age_distribution": {}
+    },
+    "organizations": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "personnel_stats": {}
+    },
+    "people": {
+      "total_count": 0,
+      "by_type": {},
+      "by_nationality": {},
+      "birth_decades": {}
+    },
+    "areas": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_admin_level": {}
+    }
+  },
+  "temporal_analysis": {
+    "technology_timeline": {},
+    "service_periods": [],
+    "modernization_trends": {}
+  },
+  "geographic_analysis": {
+    "country_assets": {},
+    "regional_distribution": {},
+    "base_locations": {}
+  },
+  "technology_analysis": {
+    "manufacturers": {},
+    "technology_generations": {},
+    "capability_gaps": {},
+    "modernization_patterns": {}
+  }
+}
