@@ -63,6 +63,30 @@ const DATABASE_CONFIGS = {
     }
 };
 
+// Function to detect the correct data directory path
+function findDataDirectory() {
+    const possiblePaths = [
+        path.join('/home/runner/work/IES/IES', 'data'),
+        path.join(process.cwd(), '..', '..', '..', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'data'),
+        path.join(process.cwd(), 'data'),
+        path.join(process.cwd(), '..', 'data'),
+        path.join(process.cwd(), '..', '..', 'data'),
+        path.join(process.cwd(), 'ies4-military-database-analysis', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'src', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'backend', 'data')
+    ];
+    
+    for (const testPath of possiblePaths) {
+        if (fs.existsSync(testPath)) {
+            return testPath;
+        }
+    }
+    
+    // Fallback to default path
+    return path.join('C:', 'ies4-military-database-analysis', 'data');
+}
+
 // Function to initialize operation configuration
 function initializeOperationConfig(database) {
     OPERATION_CONFIG.database = database;
@@ -221,9 +245,10 @@ async function clearCachedData() {
 
 // Function to backup the file before modification
 function backupFile() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-    const backupPath = path.join('C:', 'ies4-military-database-analysis', 'data', 
+    const backupPath = path.join(dataDir, 
         `${path.basename(OPERATION_CONFIG.dataFile, '.json')}_backup_${timestamp}.json`);
     
     try {
@@ -243,7 +268,8 @@ function backupFile() {
 // Function to add T-80 tank to the JSON data
 function addT80Tank() {
     // Define the file path
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     // Check if file exists
     if (!fs.existsSync(filePath)) {
@@ -449,7 +475,8 @@ function addT80Tank() {
 
 // Function to remove T-80 tank from the JSON data
 function removeT80Tank() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     try {
         // Check if file exists
@@ -532,7 +559,8 @@ function removeT80Tank() {
 
 // Function to verify file structure after operation
 function verifyFileStructure() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     try {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -777,8 +805,9 @@ async function listAvailableDatabases() {
         });
     } else {
         console.log('📁 From Local Configuration:');
+        const dataDir = findDataDirectory();
         Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-            const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', config.dataFile);
+            const filePath = path.join(dataDir, config.dataFile);
             const exists = fs.existsSync(filePath) ? '✅' : '❌';
             console.log(`   ${key}: ${config.displayName} - ${config.description} ${exists}`);
         });
@@ -794,45 +823,74 @@ async function listAvailableDatabases() {
 async function main() {
     const args = process.argv.slice(2);
     
-    if (args.length === 0) {
-        console.log('🔰 T-80 Tank Database Manager');
-        console.log('==============================\n');
-        await listAvailableDatabases();
-        return;
+    // Handle no arguments or help request
+    if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
+        displayHelp();
+        process.exit(0);
     }
     
-    const operation = args[0].toLowerCase();
-    const database = args[1] ? args[1].toUpperCase() : null;
-    
-    switch (operation) {
-        case '--add':
-            if (!database) {
-                console.error('❌ Database parameter required for add operation');
-                console.log('Usage: node T80.js add <database>');
-                return;
-            }
-            initializeOperationConfig(database);
-            await performAddOperation();
-            break;
-            
-        case '--del':
-            if (!database) {
-                console.error('❌ Database parameter required for remove operation');
-                console.log('Usage: node T80.js remove <database>');
-                return;
-            }
-            initializeOperationConfig(database);
-            await performRemoveOperation();
-            break;
-            
-        case 'list':
+    try {
+        // Parse arguments using the new format
+        const parsedArgs = parseArguments(args);
+        
+        if (parsedArgs.help) {
+            displayHelp();
+            process.exit(0);
+        }
+        
+        if (parsedArgs.diagnostic) {
+            runDiagnostics();
+            return;
+        }
+        
+        // Validate command
+        if (!parsedArgs.command) {
+            console.error('❌ No command specified. Use --add, --del, --list, or --diagnostic');
+            console.error('Use --help for usage information');
+            process.exit(1);
+        }
+        
+        // Handle list command without database validation
+        if (parsedArgs.command === 'list') {
             await listAvailableDatabases();
-            break;
-            
-        default:
-            console.error(`❌ Unknown operation: ${operation}`);
-            console.log('Available operations: add, remove, list');
-            await listAvailableDatabases();
+            return;
+        }
+        
+        // Validate database for add/remove commands
+        if (!DATABASE_CONFIGS[parsedArgs.database]) {
+            console.error(`❌ Invalid database: ${parsedArgs.database}`);
+            console.error('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
+            console.error('Use --list to see all available databases');
+            process.exit(1);
+        }
+        
+        // Initialize configuration
+        try {
+            initializeOperationConfig(parsedArgs.database);
+        } catch (error) {
+            console.error('❌ Initialization failed:', error.message);
+            console.log('\n💡 Try running: node T80.js --diagnostic');
+            process.exit(1);
+        }
+        
+        // Execute command
+        switch (parsedArgs.command) {
+            case 'add':
+                await performAddOperation();
+                break;
+            case 'remove':
+                await performRemoveOperation();
+                break;
+            default:
+                console.error(`❌ Unknown command: ${parsedArgs.command}`);
+                console.error('Available commands: --add, --del, --list, --diagnostic');
+                process.exit(1);
+        }
+        
+    } catch (error) {
+        console.error('❌ Error parsing arguments:', error.message);
+        console.error('Use --help for usage information');
+        process.exit(1);
     }
 }
 
@@ -884,47 +942,43 @@ function parseArguments(args) {
 
 // Function to display help information
 function displayHelp() {
-    console.log('🛩️ Beriev A-50 Aircraft Database Management Tool');
-    console.log('===============================================\n');
-    console.log('Usage: node BA50.js [command] [options]\n');
+    console.log('🚗 T-80 Tank Database Management Tool');
+    console.log('======================================\n');
+    console.log('Usage: node T80.js [command] [options]\n');
     console.log('Commands:');
-    console.log('  --add              Add A-50 aircraft to specified database');
-    console.log('  --del              Remove A-50 aircraft from specified database');
+    console.log('  --add              Add T-80 tank to specified database');
+    console.log('  --del              Remove T-80 tank from specified database');
     console.log('  --list             List available databases');
     console.log('  --diagnostic       Run diagnostic checks');
     console.log('  --help, -h         Show this help message\n');
     console.log('Options:');
     console.log('  --db [database]    Specify database (OP1-OP8, default: OP7)\n');
-    console.log('Alternative Usage (Legacy Format):');
-    console.log('  remove <database>  Remove A-50 aircraft from specified database\n');
     console.log('Available Databases: OP1, OP2, OP3, OP4, OP5, OP6, OP7, OP8\n');
     console.log('Examples:');
-    console.log('  node BA50.js --add --db OP7      Add A-50 to Odesa Oblast database');
-    console.log('  node BA50.js --del --db OP1      Remove A-50 from Donetsk Oblast database');
-    console.log('  node BA50.js remove OP7          Remove A-50 from Odesa Oblast (legacy)');
-    console.log('  node BA50.js --list              Show all available databases');
-    console.log('  node BA50.js --diagnostic        Run system diagnostics');
+    console.log('  node T80.js --add --db OP7       Add T-80 to Odesa Oblast database');
+    console.log('  node T80.js --del --db OP1       Remove T-80 from Donetsk Oblast database');
+    console.log('  node T80.js --list               Show all available databases');
+    console.log('  node T80.js --diagnostic         Run system diagnostics\n');
+    console.log('Tank Details:');
+    console.log('  - Soviet/Russian main battle tank (first to use gas turbine engine)');
+    console.log('  - Combat weight: 42.5 tonnes, Crew: 3');
+    console.log('  - Main gun: 125mm 2A46-1 smoothbore gun');
+    console.log('  - Engine: GTD-1000T gas turbine, 1000 hp');
+    console.log('  - Protection: Composite armor');
 }
 
 // Function to run comprehensive diagnostics
 function runDiagnostics() {
-    console.log('🔧 Running BA50.js Diagnostic Checks');
-    console.log('=====================================\n');
+    console.log('🔧 Running T80.js Diagnostic Checks');
+    console.log('====================================\n');
     
     // 1. Check current working directory
     console.log('1. 📁 Current Working Directory:');
     console.log(`   ${process.cwd()}\n`);
     
-    // 2. Check data directory
-    console.log('2. 📂 Data Directory Detection:');
+    // 2. Check database configurations
+    console.log('2. ⚙️ Database Configuration Check:');
     const dataDir = findDataDirectory();
-    
-    // 3. Scan for JSON files
-    console.log('\n3. 📄 JSON File Detection:');
-    const jsonFiles = scanForJsonFiles();
-    
-    // 4. Check database configurations
-    console.log('\n4. ⚙️ Database Configuration Check:');
     Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
         const filePath = path.join(dataDir, config.dataFile);
         const exists = fs.existsSync(filePath);
@@ -939,7 +993,7 @@ function runDiagnostics() {
                 // Try to parse JSON
                 const content = fs.readFileSync(filePath, 'utf8');
                 const data = JSON.parse(content);
-                console.log(`       Aircraft count: ${data.aircraft ? data.aircraft.length : 0}`);
+                console.log(`       Vehicle count: ${data.vehicles ? data.vehicles.length : 0}`);
                 console.log(`       Areas count: ${data.areas ? data.areas.length : 0}`);
             } catch (error) {
                 console.log(`       ❌ Error reading file: ${error.message}`);
@@ -947,8 +1001,8 @@ function runDiagnostics() {
         }
     });
     
-    // 5. Check web interface connectivity
-    console.log('\n5. 🌐 Web Interface Check:');
+    // 3. Check web interface connectivity
+    console.log('\n3. 🌐 Web Interface Check:');
     checkWebInterface().then(isRunning => {
         if (isRunning) {
             console.log(`   ✅ Web interface is accessible at ${WEB_INTERFACE_CONFIG.baseUrl}`);
@@ -957,73 +1011,39 @@ function runDiagnostics() {
         }
     });
     
-    // 6. Check file permissions
-    console.log('\n6. 🔐 File Permissions Check:');
-    Object.entries(DATABASE_CONFIGS).forEach(([key, config]) => {
-        const filePath = path.join(dataDir, config.dataFile);
-        if (fs.existsSync(filePath)) {
-            try {
-                fs.accessSync(filePath, fs.constants.R_OK | fs.constants.W_OK);
-                console.log(`   ${key}: ✅ Read/Write access OK`);
-            } catch (error) {
-                console.log(`   ${key}: ❌ Permission denied - ${error.message}`);
-            }
-        }
-    });
+    // 4. Check dependencies
+    console.log('\n4. 📦 Dependencies Check:');
+    try {
+        require('axios');
+        console.log('   ✅ axios dependency found');
+    } catch (error) {
+        console.log('   ❌ axios dependency missing - run: npm install axios');
+    }
     
     console.log('\n📋 Diagnostic Summary:');
     console.log('====================');
-    console.log(`Data directory: ${dataDir}`);
-    console.log(`JSON files found: ${jsonFiles.length}`);
     console.log(`Configured databases: ${Object.keys(DATABASE_CONFIGS).length}`);
+    console.log(`Web interface URL: ${WEB_INTERFACE_CONFIG.baseUrl}`);
     
     return true;
 }
 
-// Function to initialize operation configuration with better error handling
+// Function to initialize operation configuration
 function initializeOperationConfig(database) {
-    console.log(`\n🎯 Initializing operation for database: ${database}`);
-    
     OPERATION_CONFIG.database = database;
     
     const dbConfig = DATABASE_CONFIGS[database];
     if (dbConfig) {
         OPERATION_CONFIG.dataFile = dbConfig.dataFile;
         OPERATION_CONFIG.displayName = dbConfig.displayName;
-        
-        // Check if the data file actually exists
-        const dataDir = findDataDirectory();
-        const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
-        
-        console.log(`📁 Data file path: ${filePath}`);
-        
-        if (fs.existsSync(filePath)) {
-            console.log('✅ Data file exists');
-            try {
-                const stats = fs.statSync(filePath);
-                console.log(`📊 File size: ${(stats.size / 1024).toFixed(2)} KB`);
-                
-                // Test JSON parsing
-                const content = fs.readFileSync(filePath, 'utf8');
-                const data = JSON.parse(content);
-                console.log(`✅ JSON is valid`);
-                console.log(`📈 Contains ${data.aircraft ? data.aircraft.length : 0} aircraft entries`);
-                
-            } catch (error) {
-                console.error(`❌ Error reading/parsing file: ${error.message}`);
-                throw new Error(`Invalid JSON file: ${filePath}`);
-            }
-        } else {
-            console.error(`❌ Data file not found: ${filePath}`);
-            throw new Error(`Data file not found: ${filePath}`);
-        }
     } else {
-        console.error(`❌ Unknown database: ${database}`);
-        console.log('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
-        throw new Error(`Unknown database: ${database}`);
+        // Fallback for unknown databases
+        OPERATION_CONFIG.dataFile = `${database.toLowerCase()}.json`;
+        OPERATION_CONFIG.displayName = database;
     }
     
-    console.log(`✅ Operation initialized for ${OPERATION_CONFIG.displayName}`);
+    console.log(`🎯 Targeting database: ${OPERATION_CONFIG.database} (${OPERATION_CONFIG.displayName})`);
+    console.log(`📁 Data file: ${OPERATION_CONFIG.dataFile}`);
 }
 
 // Run main function if called directly

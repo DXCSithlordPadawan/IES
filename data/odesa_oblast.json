@@ -99,6 +99,11 @@
           "value": "T-80",
           "identifierType": "MODEL_DESIGNATION",
           "issuingAuthority": "Soviet Union"
+        },
+        {
+          "value": "Object 219",
+          "identifierType": "DEVELOPMENT_CODE",
+          "issuingAuthority": "Kirov Plant"
         }
       ],
       "vehicleType": "main-battle-tank",
@@ -107,6 +112,55 @@
       "year": 1976,
       "owner": "Soviet Union/Russian Federation",
       "location": "Odesa Oblast",
+      "representations": [
+        {
+          "id": "t80-wiki",
+          "type": "webpage",
+          "title": "T-80 - Wikipedia",
+          "description": "Wikipedia article about the T-80 main battle tank",
+          "url": "https://en.wikipedia.org/wiki/T-80"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "t80-development-start",
+          "stateType": "development_started",
+          "startTime": "1967-01-01T00:00:00Z",
+          "location": "Kirov Plant, Leningrad"
+        },
+        {
+          "id": "t80-prototype-complete",
+          "stateType": "prototype_completed",
+          "startTime": "1970-01-01T00:00:00Z",
+          "location": "Kirov Plant, Leningrad"
+        },
+        {
+          "id": "t80-production-start",
+          "stateType": "production_started",
+          "startTime": "1976-01-01T00:00:00Z",
+          "location": "Kirov Plant, Leningrad"
+        },
+        {
+          "id": "t80-service-entry",
+          "stateType": "entered_service",
+          "startTime": "1976-01-01T00:00:00Z",
+          "location": "Soviet Armed Forces"
+        },
+        {
+          "id": "t80-deployed-op7",
+          "stateType": "regional_deployment",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "states": [
+        {
+          "id": "t80-operational-op7",
+          "stateType": "active_service",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
       "specifications": {
         "weight": "42.5 tonnes",
         "length": "9.65 m",
@@ -119,10 +173,171 @@
         "powerOutput": "1,000 hp",
         "maxSpeed": "70 km/h",
         "armor": "Composite armor",
-        "operationalRange": "335 km"
-      }
+        "operationalRange": "335 km",
+        "deploymentRegion": "Odesa Oblast"
+      },
+      "variants": [
+        "T-80B",
+        "T-80BV",
+        "T-80U",
+        "T-80UD",
+        "T-80UK",
+        "T-80UM"
+      ]
+    },
+    {
+      "id": "vehicle-t90-tank-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/T-90",
+      "type": "Vehicle",
+      "names": [
+        {
+          "value": "T-90",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Т-90",
+          "language": "ru",
+          "nameType": "official"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Object 188",
+          "identifierType": "PROJECT_CODE",
+          "issuingAuthority": "Russian Armed Forces"
+        },
+        {
+          "value": "Third-generation MBT",
+          "identifierType": "CLASS_DESIGNATION",
+          "issuingAuthority": "NATO"
+        }
+      ],
+      "vehicleType": "main-battle-tank",
+      "make": "Uralvagonzavod",
+      "model": "T-90",
+      "year": 1992,
+      "owner": "Russian Armed Forces",
+      "location": "Odesa Oblast",
+      "representations": [
+        {
+          "id": "t90-wiki",
+          "type": "webpage",
+          "title": "T-90 - Wikipedia",
+          "description": "Wikipedia article about the T-90 main battle tank",
+          "url": "https://en.wikipedia.org/wiki/T-90"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "t90-development",
+          "stateType": "development",
+          "startTime": "1986-01-01T00:00:00Z",
+          "location": "Nizhny Tagil, Russia"
+        },
+        {
+          "id": "t90-first-prototype",
+          "stateType": "prototype_completed",
+          "startTime": "1988-01-01T00:00:00Z",
+          "location": "Uralvagonzavod"
+        },
+        {
+          "id": "t90-entered-service",
+          "stateType": "entered_service",
+          "startTime": "1992-01-01T00:00:00Z",
+          "location": "Russian Armed Forces"
+        },
+        {
+          "id": "t90-export-approved",
+          "stateType": "export_approved",
+          "startTime": "1995-01-01T00:00:00Z",
+          "location": "Russia"
+        },
+        {
+          "id": "t90-deployed-op7",
+          "stateType": "regional_deployment",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "states": [
+        {
+          "id": "t90-operational-op7",
+          "stateType": "active_production",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "specifications": {
+        "weight": {
+          "combat": "46.5 tonnes",
+          "empty": "44 tonnes"
+        },
+        "classification": "Third-generation main battle tank",
+        "crew": 3,
+        "armament": {
+          "main_gun": "125 mm 2A46M smoothbore gun",
+          "secondary": "12.7 mm NSV/Kord heavy machine gun, 7.62 mm PKMT coaxial machine gun"
+        },
+        "engine": {
+          "type": "V-92S2 diesel engine",
+          "power": "1000 hp (750 kW)"
+        },
+        "protection": {
+          "armor": "Composite armor with Kontakt-5 ERA",
+          "countermeasures": "Shtora-1 infrared jamming system"
+        },
+        "performance": {
+          "max_speed_road": "60 km/h",
+          "max_speed_offroad": "45 km/h",
+          "operational_range": "550 km"
+        },
+        "deploymentRegion": "Odesa Oblast"
+      },
+      "variants": [
+        "T-90A",
+        "T-90S",
+        "T-90AM",
+        "T-90M",
+        "T-90MS"
+      ]
     }
   ],
-  "vehicleTypes": [],
+  "vehicleTypes": [
+    {
+      "id": "main-battle-tank",
+      "name": "Main Battle Tank",
+      "category": "armored vehicle",
+      "subcategory": "main battle tank",
+      "description": "Third-generation main battle tank designed for frontline combat",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "frontline combat",
+          "dataType": "string"
+        },
+        {
+          "name": "generation",
+          "value": "third-generation",
+          "dataType": "string"
+        },
+        {
+          "name": "weight_combat",
+          "value": "46.5",
+          "dataType": "number"
+        },
+        {
+          "name": "main_gun_caliber",
+          "value": "125",
+          "dataType": "number"
+        },
+        {
+          "name": "crew_size",
+          "value": "3",
+          "dataType": "number"
+        }
+      ]
+    }
+  ],
   "aircraft": []
 }
