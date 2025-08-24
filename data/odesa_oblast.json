@@ -11,7 +11,7 @@
           "nameType": "official"
         },
         {
-          "value": "\u041e\u0434\u0435\u0441\u044c\u043a\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+          "value": "Одеська область",
           "language": "uk",
           "nameType": "official"
         },
@@ -89,7 +89,7 @@
           "nameType": "official"
         },
         {
-          "value": "\u0422-80",
+          "value": "Т-80",
           "language": "ru",
           "nameType": "official"
         }
@@ -196,7 +196,7 @@
           "nameType": "official"
         },
         {
-          "value": "\u0422-90",
+          "value": "Т-90",
           "language": "ru",
           "nameType": "official"
         }
@@ -301,6 +301,249 @@
         "T-90M",
         "T-90MS"
       ]
+    },
+    {
+      "id": "vehicle-mi28-helicopter-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/Mil_Mi-28",
+      "type": "Vehicle",
+      "names": [
+        {
+          "value": "Mil Mi-28",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Ми-28",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "Havoc",
+          "language": "en",
+          "nameType": "nato_reporting_name"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Mi-28",
+          "identifierType": "MODEL_DESIGNATION",
+          "issuingAuthority": "Soviet Union"
+        },
+        {
+          "value": "Havoc",
+          "identifierType": "NATO_REPORTING_NAME",
+          "issuingAuthority": "NATO"
+        }
+      ],
+      "vehicleType": "attack-helicopter",
+      "make": "Mil Moscow Helicopter Plant",
+      "model": "Mi-28",
+      "year": 1982,
+      "owner": "Soviet Union/Russian Federation",
+      "location": "Odesa Oblast",
+      "representations": [
+        {
+          "id": "mi28-wiki",
+          "type": "webpage",
+          "title": "Mil Mi-28 - Wikipedia",
+          "description": "Wikipedia article about the Mi-28 attack helicopter",
+          "url": "https://en.wikipedia.org/wiki/Mil_Mi-28"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "mi28-development-start",
+          "stateType": "development_started",
+          "startTime": "1980-01-01T00:00:00Z",
+          "location": "Mil Moscow Helicopter Plant"
+        },
+        {
+          "id": "mi28-first-flight",
+          "stateType": "first_flight",
+          "startTime": "1982-11-10T00:00:00Z",
+          "location": "Soviet Union"
+        },
+        {
+          "id": "mi28-service-entry",
+          "stateType": "entered_service",
+          "startTime": "2009-01-01T00:00:00Z",
+          "location": "Russian Armed Forces"
+        },
+        {
+          "id": "mi28-deployed-op7",
+          "stateType": "regional_deployment",
+          "startTime": "2015-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "states": [
+        {
+          "id": "mi28-operational-op7",
+          "stateType": "active_service",
+          "startTime": "2015-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "specifications": {
+        "weight": "8,890 kg (empty)",
+        "maxTakeoffWeight": "12,100 kg",
+        "length": "17.01 m",
+        "width": "15.08 m (rotor diameter)",
+        "height": "3.82 m",
+        "crew": 2,
+        "classification": "Attack helicopter",
+        "mainArmament": "30 mm 2A42 cannon",
+        "secondaryArmament": "Anti-tank missiles, rockets, bombs",
+        "engine": "2× Klimov TV3-117VMA turboshaft",
+        "powerOutput": "2,200 hp each",
+        "maxSpeed": "324 km/h",
+        "cruiseSpeed": "270 km/h",
+        "serviceRange": "435 km",
+        "serviceCeiling": "5,600 m",
+        "deploymentRegion": "Odesa Oblast"
+      },
+      "variants": [
+        "Mi-28A",
+        "Mi-28N",
+        "Mi-28NE",
+        "Mi-28NM",
+        "Mi-28UB"
+      ]
+    },
+    {
+      "id": "vehicle-ka27-helicopter-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/Kamov_Ka-27",
+      "type": "Vehicle",
+      "names": [
+        {
+          "value": "Ka-27",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Ка-27",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "Helix",
+          "language": "en",
+          "nameType": "nato_reporting_name"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "Ka-27",
+          "identifierType": "MODEL_DESIGNATION",
+          "issuingAuthority": "Soviet Union"
+        },
+        {
+          "value": "Helix",
+          "identifierType": "NATO_REPORTING_NAME",
+          "issuingAuthority": "NATO"
+        },
+        {
+          "value": "Ka-252",
+          "identifierType": "PROTOTYPE_DESIGNATION",
+          "issuingAuthority": "Kamov Design Bureau"
+        }
+      ],
+      "vehicleType": "anti-submarine-helicopter",
+      "make": "Kamov Design Bureau",
+      "model": "Ka-27",
+      "year": 1973,
+      "owner": "Soviet Union/Russian Federation",
+      "location": "Odesa Oblast",
+      "representations": [
+        {
+          "id": "ka27-wiki",
+          "type": "webpage",
+          "title": "Kamov Ka-27 - Wikipedia",
+          "description": "Wikipedia article about the Ka-27 anti-submarine helicopter",
+          "url": "https://en.wikipedia.org/wiki/Kamov_Ka-27"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "ka27-development-start",
+          "stateType": "development_started",
+          "startTime": "1969-01-01T00:00:00Z",
+          "location": "Kamov Design Bureau, Soviet Union"
+        },
+        {
+          "id": "ka27-prototype-first-flight",
+          "stateType": "first_flight",
+          "startTime": "1973-01-01T00:00:00Z",
+          "location": "Kamov Design Bureau, Soviet Union"
+        },
+        {
+          "id": "ka27-production-start",
+          "stateType": "production_started",
+          "startTime": "1979-07-01T00:00:00Z",
+          "location": "Kumertau, Soviet Union"
+        },
+        {
+          "id": "ka27-service-entry",
+          "stateType": "entered_service",
+          "startTime": "1981-04-01T00:00:00Z",
+          "location": "Soviet Navy"
+        },
+        {
+          "id": "ka27-deployed-op7",
+          "stateType": "regional_deployment",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "states": [
+        {
+          "id": "ka27-operational-op7",
+          "stateType": "active_service",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "specifications": {
+        "emptyWeight": "6,500 kg",
+        "grossWeight": "11,000 kg",
+        "maxTakeoffWeight": "12,000 kg",
+        "length": "11.3 m",
+        "height": "5.5 m",
+        "crew": 3,
+        "classification": "Anti-submarine helicopter",
+        "powerplant": "2 × Isotov TV3-117V turboshaft engines",
+        "powerOutput": "2,230 hp each",
+        "rotorDiameter": "2 × 15.8 m",
+        "maxSpeed": "270 km/h",
+        "cruiseSpeed": "205 km/h",
+        "range": "980 km",
+        "serviceCeiling": "5,000 m",
+        "rotorConfiguration": "Coaxial contra-rotating",
+        "deploymentRegion": "Odesa Oblast"
+      },
+      "variants": [
+        "Ka-27PL (Helix-A) - Anti-submarine warfare",
+        "Ka-27PS (Helix-D) - Search and rescue",
+        "Ka-27M - Modernized version",
+        "Ka-28 - Export version",
+        "Ka-29TB (Helix-B) - Assault transport",
+        "Ka-31 - Early warning radar",
+        "Ka-32 - Civilian transport"
+      ],
+      "armament": {
+        "antiSubmarineWarfare": [
+          "1 × torpedo (AT-1M, VTT-1, UMGT-1 Orlan, APR-2 Yastreb)",
+          "Up to 36 × RGB-NM/RGB-NM-1 sonobuoys",
+          "6-8 × conventional depth charges",
+          "1 × nuclear depth charge (optional)"
+        ],
+        "sensors": [
+          "Radar",
+          "Magnetic Anomaly Detector (MAD)",
+          "Dipping sonar",
+          "Sonobuoys"
+        ]
+      }
     }
   ],
   "vehicleTypes": [
@@ -337,6 +580,79 @@
           "dataType": "number"
         }
       ]
+    },
+    {
+      "id": "attack-helicopter",
+      "name": "Attack Helicopter",
+      "category": "rotorcraft",
+      "subcategory": "helicopter",
+      "description": "Dedicated attack helicopter designed for anti-armor and ground support missions",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "attack helicopter",
+          "dataType": "string"
+        },
+        {
+          "name": "crew_size",
+          "value": "2",
+          "dataType": "number"
+        },
+        {
+          "name": "max_takeoff_weight_kg",
+          "value": "12100",
+          "dataType": "number"
+        },
+        {
+          "name": "main_gun_caliber",
+          "value": "30",
+          "dataType": "number"
+        },
+        {
+          "name": "engine_type",
+          "value": "turboshaft",
+          "dataType": "string"
+        },
+        {
+          "name": "rotor_type",
+          "value": "single_main_rotor",
+          "dataType": "string"
+        }
+      ]
+    },
+    {
+      "id": "anti-submarine-helicopter",
+      "name": "Anti-submarine Helicopter",
+      "category": "aircraft",
+      "subcategory": "helicopter",
+      "description": "Military helicopter designed for anti-submarine warfare operations",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "anti-submarine warfare",
+          "dataType": "string"
+        },
+        {
+          "name": "crew_size",
+          "value": "3",
+          "dataType": "number"
+        },
+        {
+          "name": "rotor_configuration",
+          "value": "coaxial_contra_rotating",
+          "dataType": "string"
+        },
+        {
+          "name": "max_takeoff_weight_kg",
+          "value": "12000",
+          "dataType": "number"
+        },
+        {
+          "name": "powerplant",
+          "value": "turboshaft_twin",
+          "dataType": "string"
+        }
+      ]
     }
   ],
   "aircraft": [
@@ -352,6 +668,53 @@
       ],
       "aircraftType": "fighter",
       "location": "Odesa Oblast"
+    },
+    {
+      "id": "aircraft-a50-awacs-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/Beriev_A-50",
+      "type": "Aircraft",
+      "names": [
+        {
+          "value": "A-50",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Beriev A-50",
+          "language": "en",
+          "nameType": "full_designation"
+        },
+        {
+          "value": "А-50",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "Shmel",
+          "language": "en",
+          "nameType": "nato_code"
+        },
+        {
+          "value": "Mainstay",
+          "language": "en",
+          "nameType": "nato_reporting"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "A-50",
+          "identifierType": "MODEL_DESIGNATION",
+          "issuingAuthority": "Soviet Union"
+        }
+      ],
+      "aircraftType": "airborne-early-warning-control",
+      "manufacturer": "Beriev Aircraft Company",
+      "basedOn": "Ilyushin Il-76MD",
+      "model": "A-50",
+      "firstFlight": 1978,
+      "enteredService": 1984,
+      "owner": "Soviet Union/Russian Federation",
+      "location": "Odesa Oblast"
     }
   ],
   "militaryUnits": [
@@ -366,7 +729,7 @@
           "nameType": "official"
         },
         {
-          "value": "39-\u044f \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u0430\u044f \u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0430\u044f \u043c\u043e\u0442\u043e\u0441\u0442\u0440\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0431\u0440\u0438\u0433\u0430\u0434\u0430",
+          "value": "39-я отдельная гвардейская мотострелковая бригада",
           "language": "ru",
           "nameType": "official"
         },
@@ -383,7 +746,7 @@
           "issuingAuthority": "Russian Armed Forces"
         },
         {
-          "value": "\u0432/\u0447 27777",
+          "value": "в/ч 27777",
           "identifierType": "MILITARY_UNIT_NUMBER",
           "issuingAuthority": "Russian Ministry of Defence"
         }
@@ -491,12 +854,12 @@
           "nameType": "official"
         },
         {
-          "value": "35-\u044f \u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0430\u044f \u043c\u043e\u0442\u043e\u0441\u0442\u0440\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0431\u0440\u0438\u0433\u0430\u0434\u0430",
+          "value": "35-я гвардейская мотострелковая бригада",
           "language": "ru",
           "nameType": "official"
         },
         {
-          "value": "35 \u0413\u0432\u041c\u0421\u0411\u0440",
+          "value": "35 ГвМСБр",
           "language": "ru",
           "nameType": "abbreviation"
         }
@@ -508,7 +871,7 @@
           "issuingAuthority": "Russian Armed Forces"
         },
         {
-          "value": "\u0432/\u0447 52946",
+          "value": "в/ч 52946",
           "identifierType": "MILITARY_UNIT_NUMBER",
           "issuingAuthority": "Russian Ministry of Defense"
         }

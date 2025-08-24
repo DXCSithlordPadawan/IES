@@ -96,7 +96,7 @@ class DatabaseManager {
             this.databases[databaseName] = jsonData;
             
             // Log entity counts for verification - show ALL entity types
-            const entityTypes = ['vehicles', 'areas', 'people', 'militaryUnits', 'aircraft', 'weapons', 'organizations'];
+            const entityTypes = ['vehicles', 'areas', 'people', 'militaryUnits', 'aircraft', 'weapons', 'organizations', 'countries'];
             entityTypes.forEach(entityType => {
                 if (jsonData[entityType]) {
                     console.log(`   - ${entityType.charAt(0).toUpperCase() + entityType.slice(1)}: ${jsonData[entityType].length}`);
