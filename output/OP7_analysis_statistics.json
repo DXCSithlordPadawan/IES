@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-24T08:02:47.362839",
+    "node_count": 2,
+    "edge_count": 0,
+    "database_info": {
+      "filename": "unknown",
+      "loaded_at": "",
+      "entity_counts": {
+        "vehicles": 1,
+        "areas": 1,
+        "organizations": 0,
+        "persons": 0,
+        "weapons": 0,
+        "events": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "organizationTypes": 0,
+        "weaponTypes": 0
+      },
+      "title": "",
+      "description": ""
+    },
+    "entity_counts": {
+      "vehicles": 1,
+      "areas": 1
+    }
+  },
+  "node_statistics": {
+    "total_nodes": 2,
+    "node_types": {
+      "vehicles": 1,
+      "areas": 1
+    },
+    "degree_distribution": {
+      "0": 2
+    },
+    "isolated_nodes": [
+      "vehicle-t80-tank-op7-001",
+      "area-odesa-oblast-001"
+    ],
+    "degree_stats": {
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "min": 0,
+      "max": 0
+    }
+  },
+  "edge_statistics": {
+    "total_edges": 0,
+    "relationship_types": {},
+    "edge_weight_distribution": {}
+  },
+  "connectivity": {
+    "is_connected": false,
+    "number_of_components": 2,
+    "density": 0,
+    "component_sizes": [
+      1,
+      1
+    ],
+    "largest_component_size": 1,
+    "average_clustering": 0.0
+  },
+  "centrality": {
+    "top_degree_centrality": [
+      [
+        "vehicle-t80-tank-op7-001",
+        0.0
+      ],
+      [
+        "area-odesa-oblast-001",
+        0.0
+      ]
+    ],
+    "top_betweenness_centrality": [
+      [
+        "vehicle-t80-tank-op7-001",
+        0.0
+      ],
+      [
+        "area-odesa-oblast-001",
+        0.0
+      ]
+    ],
+    "top_eigenvector_centrality": [
+      [
+        "vehicle-t80-tank-op7-001",
+        0.7071067811865476
+      ],
+      [
+        "area-odesa-oblast-001",
+        0.7071067811865476
+      ]
+    ]
+  },
+  "entity_analysis": {
+    "countries": {},
+    "vehicles": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_manufacturer": {},
+      "by_decade": {},
+      "age_distribution": {}
+    },
+    "organizations": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "personnel_stats": {}
+    },
+    "people": {
+      "total_count": 0,
+      "by_type": {},
+      "by_nationality": {},
+      "birth_decades": {}
+    },
+    "areas": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_admin_level": {}
+    }
+  },
+  "temporal_analysis": {
+    "technology_timeline": {},
+    "service_periods": [],
+    "modernization_trends": {}
+  },
+  "geographic_analysis": {
+    "country_assets": {},
+    "regional_distribution": {},
+    "base_locations": {}
+  },
+  "technology_analysis": {
+    "manufacturers": {},
+    "technology_generations": {},
+    "capability_gaps": {},
+    "modernization_patterns": {}
+  }
+}
