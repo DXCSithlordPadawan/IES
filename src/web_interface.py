@@ -70,6 +70,45 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
             logger.error(f"Error getting databases: {e}")
             return jsonify({'status': 'error', 'message': str(e)}), 500
     
+    @app.route('/api/debug/databases')
+    def debug_databases():
+        """Debug endpoint for detailed database status."""
+        try:
+            databases = list(analyzer.DATABASE_CONFIGS.keys())
+            loaded_databases = list(analyzer.databases.keys())
+            
+            # Additional debug information
+            database_details = {}
+            for db_name in databases:
+                file_path = analyzer.data_dir / analyzer.DATABASE_CONFIGS[db_name]
+                database_details[db_name] = {
+                    'configured': True,
+                    'file_path': str(file_path),
+                    'file_exists': file_path.exists(),
+                    'loaded': db_name in loaded_databases,
+                    'load_status': 'loaded' if db_name in loaded_databases else 'not_loaded'
+                }
+                
+                if db_name in analyzer.databases:
+                    db_data = analyzer.databases[db_name]
+                    database_details[db_name]['entity_counts'] = {
+                        'vehicles': len(db_data.get('vehicles', [])),
+                        'areas': len(db_data.get('areas', [])),
+                        'organizations': len(db_data.get('organizations', []))
+                    }
+            
+            return jsonify({
+                'available': databases,
+                'loaded': loaded_databases,
+                'count_available': len(databases),
+                'count_loaded': len(loaded_databases),
+                'database_details': database_details,
+                'status': 'success'
+            })
+        except Exception as e:
+            logger.error(f"Error in debug databases: {e}")
+            return jsonify({'status': 'error', 'message': str(e)}), 500
+    
     @app.route('/api/load_database', methods=['POST'])
     def load_database():
         """Load a specific database."""
