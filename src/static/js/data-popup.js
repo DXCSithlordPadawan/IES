@@ -159,7 +159,12 @@ class DataPopupManager {
             const entityData = await this.fetchEntityDetails(entityId);
             
             if (entityData) {
-                this.displayEntityData(entityData, entityType);
+                // Check if this is an error entity
+                if (entityData.error) {
+                    this.showErrorState(entityData.errorMessage, entityData.debugInfo);
+                } else {
+                    this.displayEntityData(entityData, entityType);
+                }
             } else {
                 this.showErrorState(`Entity with ID "${entityId}" not found`);
             }
@@ -190,16 +195,36 @@ class DataPopupManager {
     /**
      * Show error state in modal
      */
-    showErrorState(message) {
+    showErrorState(message, debugInfo = null) {
         const titleElement = document.getElementById('entityTitle');
         const bodyElement = document.getElementById('dataPointModalBody');
         
         titleElement.textContent = 'Error Loading Entity';
+        
+        let debugContent = '';
+        if (debugInfo) {
+            debugContent = `
+                <div class="debug-info mt-3">
+                    <details>
+                        <summary>Debug Information</summary>
+                        <pre class="text-muted small mt-2">${JSON.stringify(debugInfo, null, 2)}</pre>
+                    </details>
+                </div>
+            `;
+        }
+        
         bodyElement.innerHTML = `
             <div class="error-message">
-                <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
+                <i class="fas fa-exclamation-triangle fa-2x mb-3 text-warning"></i>
                 <h5>Unable to Load Entity Details</h5>
                 <p>${message}</p>
+                ${debugContent}
+                <div class="mt-3">
+                    <small class="text-muted">
+                        💡 This might happen if the entity data hasn't been loaded yet, 
+                        or if there's a mismatch between the entity ID and the database structure.
+                    </small>
+                </div>
             </div>
         `;
     }
@@ -210,6 +235,7 @@ class DataPopupManager {
     async fetchEntityDetails(entityId) {
         try {
             console.log('🔍 Fetching entity details for ID:', entityId);
+            console.log('📋 Current database:', this.currentDatabase);
             
             // First try to get from current analysis data if available
             if (window.currentVisualization && window.currentVisualization.data) {
@@ -252,33 +278,80 @@ class DataPopupManager {
                 console.log('⚠️ Entity not found in current visualization data');
             }
 
-            // If not found in current data, try to fetch from server
+            // Try multiple approaches to find the entity
+            let entityData = null;
+            
+            // Approach 1: Try server API if database is set
             if (this.currentDatabase) {
-                console.log('🌐 Trying to fetch from server...');
-                const response = await fetch(`/api/entity/${entityId}?database=${this.currentDatabase}`);
-                if (response.ok) {
-                    const serverData = await response.json();
-                    console.log('✅ Found entity data from server:', serverData);
-                    return serverData;
-                } else {
-                    console.log('❌ Server response not ok:', response.status);
+                console.log('🌐 Trying to fetch from server API...');
+                try {
+                    const response = await fetch(`/api/entity/${entityId}?database=${this.currentDatabase}`);
+                    if (response.ok) {
+                        const serverData = await response.json();
+                        if (serverData.status === 'success' && serverData.entity) {
+                            console.log('✅ Found entity data from server:', serverData.entity);
+                            entityData = serverData.entity;
+                        } else {
+                            console.log('❌ Server responded but no entity found:', serverData);
+                        }
+                    } else {
+                        console.log('❌ Server response not ok:', response.status, response.statusText);
+                    }
+                } catch (serverError) {
+                    console.warn('⚠️ Server API call failed:', serverError);
                 }
             }
 
-            // If still not found, try to extract from database directly
-            console.log('🔍 Searching in loaded database...');
-            const dbResult = await this.searchInLoadedDatabase(entityId);
-            if (dbResult) {
-                console.log('✅ Found entity in loaded database:', dbResult);
-                return dbResult;
+            // Approach 2: Try searching in loaded database
+            if (!entityData) {
+                console.log('🔍 Searching in loaded database...');
+                entityData = await this.searchInLoadedDatabase(entityId);
+                if (entityData) {
+                    console.log('✅ Found entity in loaded database:', entityData);
+                }
             }
             
-            console.log('❌ Entity not found in any data source');
-            return null;
+            // Approach 3: Try to provide helpful error information
+            if (!entityData) {
+                console.log('❌ Entity not found in any data source');
+                console.log('🔧 Debug information:');
+                console.log('   - Entity ID:', entityId);
+                console.log('   - Current database:', this.currentDatabase);
+                console.log('   - Window databaseManager available:', !!(window.databaseManager));
+                console.log('   - Window currentVisualization available:', !!(window.currentVisualization));
+                
+                // Provide a helpful error object instead of null
+                return {
+                    id: entityId,
+                    name: `Entity ${entityId}`,
+                    type: 'Unknown',
+                    error: true,
+                    errorMessage: `Unable to find entity with ID '${entityId}' in database '${this.currentDatabase || 'unknown'}'`,
+                    debugInfo: {
+                        searchedDatabase: this.currentDatabase,
+                        hasVisualizationData: !!(window.currentVisualization),
+                        hasDatabaseManager: !!(window.databaseManager)
+                    }
+                };
+            }
+            
+            return entityData;
             
         } catch (error) {
             console.error('❌ Error fetching entity details:', error);
-            throw error;
+            
+            // Return error entity instead of throwing
+            return {
+                id: entityId,
+                name: `Error loading ${entityId}`,
+                type: 'Error',
+                error: true,
+                errorMessage: `Error loading entity: ${error.message}`,
+                debugInfo: {
+                    error: error.toString(),
+                    stack: error.stack
+                }
+            };
         }
     }
 
@@ -287,28 +360,55 @@ class DataPopupManager {
      */
     async searchInLoadedDatabase(entityId) {
         try {
-            // This would ideally be provided by the server, but we can try to search
-            // through the available analysis data
+            console.log('🔍 Searching in loaded database for:', entityId);
+            console.log('📋 Current database:', this.currentDatabase);
+            
+            // First try to get from window.databaseManager if available
             if (window.databaseManager && window.databaseManager.databases && this.currentDatabase) {
                 const database = window.databaseManager.databases[this.currentDatabase];
+                console.log('📊 Database manager data available:', !!database);
+                
                 if (database) {
                     // Search through different entity types
-                    const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations'];
+                    const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes'];
                     
                     for (const entityType of entityTypes) {
-                        if (database[entityType]) {
+                        if (database[entityType] && Array.isArray(database[entityType])) {
+                            console.log(`   Checking ${entityType} (${database[entityType].length} entries)...`);
                             const entity = database[entityType].find(e => e.id === entityId);
                             if (entity) {
+                                console.log('✅ Found entity in database manager:', entity);
                                 return { ...entity, entityType };
                             }
                         }
                     }
                 }
+            } else {
+                console.log('⚠️ Database manager not available or no current database set');
+            }
+            
+            // If database manager is not available, try to fetch data directly from server
+            if (this.currentDatabase) {
+                console.log('🌐 Attempting direct server lookup...');
+                try {
+                    const response = await fetch(`/api/entity/${entityId}?database=${this.currentDatabase}`);
+                    if (response.ok) {
+                        const serverData = await response.json();
+                        if (serverData.status === 'success' && serverData.entity) {
+                            console.log('✅ Found entity via direct server lookup:', serverData.entity);
+                            return serverData.entity;
+                        }
+                    } else {
+                        console.log('❌ Server response not ok:', response.status, response.statusText);
+                    }
+                } catch (serverError) {
+                    console.warn('⚠️ Direct server lookup failed:', serverError);
+                }
             }
             
             return null;
         } catch (error) {
-            console.error('Error searching in loaded database:', error);
+            console.error('❌ Error searching in loaded database:', error);
             return null;
         }
     }
@@ -608,6 +708,56 @@ class DataPopupManager {
                 <div class="data-field-value">${content}</div>
             </div>
         `;
+    }
+
+    /**
+     * Debug helper: Check what databases and entities are available
+     */
+    debugAvailableData() {
+        console.log('🔧 Debug: Checking available data sources...');
+        
+        // Check window.databaseManager
+        if (window.databaseManager) {
+            console.log('📊 DatabaseManager available');
+            if (window.databaseManager.databases) {
+                console.log('   Available databases:', Object.keys(window.databaseManager.databases));
+                
+                Object.entries(window.databaseManager.databases).forEach(([dbName, dbData]) => {
+                    console.log(`   Database ${dbName}:`);
+                    const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes'];
+                    entityTypes.forEach(type => {
+                        if (dbData[type] && Array.isArray(dbData[type])) {
+                            console.log(`     ${type}: ${dbData[type].length} entities`);
+                            if (dbData[type].length > 0) {
+                                console.log(`       Example IDs: ${dbData[type].slice(0, 3).map(e => e.id).join(', ')}`);
+                            }
+                        }
+                    });
+                });
+            }
+        } else {
+            console.log('❌ DatabaseManager not available');
+        }
+        
+        // Check window.currentVisualization
+        if (window.currentVisualization) {
+            console.log('📈 CurrentVisualization available');
+            if (window.currentVisualization.data) {
+                console.log('   Traces:', window.currentVisualization.data.length);
+                window.currentVisualization.data.forEach((trace, i) => {
+                    if (trace.ids) {
+                        console.log(`   Trace ${i}: ${trace.ids.length} entities`);
+                        console.log(`     Example IDs: ${trace.ids.slice(0, 3).join(', ')}`);
+                    }
+                });
+            }
+        } else {
+            console.log('❌ CurrentVisualization not available');
+        }
+        
+        // Check current database
+        console.log('📋 Current database:', this.currentDatabase);
+        console.log('📋 Window.currentDatabase:', window.currentDatabase);
     }
 }
 
