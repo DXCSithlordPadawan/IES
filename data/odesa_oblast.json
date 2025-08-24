@@ -11,7 +11,7 @@
           "nameType": "official"
         },
         {
-          "value": "\u041e\u0434\u0435\u0441\u044c\u043a\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+          "value": "Одеська область",
           "language": "uk",
           "nameType": "official"
         },
@@ -89,7 +89,7 @@
           "nameType": "official"
         },
         {
-          "value": "\u0422-80",
+          "value": "Т-80",
           "language": "ru",
           "nameType": "official"
         }
@@ -196,7 +196,7 @@
           "nameType": "official"
         },
         {
-          "value": "\u0422-90",
+          "value": "Т-90",
           "language": "ru",
           "nameType": "official"
         }
@@ -352,6 +352,53 @@
       ],
       "aircraftType": "fighter",
       "location": "Odesa Oblast"
+    },
+    {
+      "id": "aircraft-a50-awacs-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/Beriev_A-50",
+      "type": "Aircraft",
+      "names": [
+        {
+          "value": "A-50",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "Beriev A-50",
+          "language": "en",
+          "nameType": "full_designation"
+        },
+        {
+          "value": "А-50",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "Shmel",
+          "language": "en",
+          "nameType": "nato_code"
+        },
+        {
+          "value": "Mainstay",
+          "language": "en",
+          "nameType": "nato_reporting"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "A-50",
+          "identifierType": "MODEL_DESIGNATION",
+          "issuingAuthority": "Soviet Union"
+        }
+      ],
+      "aircraftType": "airborne-early-warning-control",
+      "manufacturer": "Beriev Aircraft Company",
+      "basedOn": "Ilyushin Il-76MD",
+      "model": "A-50",
+      "firstFlight": 1978,
+      "enteredService": 1984,
+      "owner": "Soviet Union/Russian Federation",
+      "location": "Odesa Oblast"
     }
   ],
   "militaryUnits": [
@@ -366,7 +413,7 @@
           "nameType": "official"
         },
         {
-          "value": "39-\u044f \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u0430\u044f \u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0430\u044f \u043c\u043e\u0442\u043e\u0441\u0442\u0440\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0431\u0440\u0438\u0433\u0430\u0434\u0430",
+          "value": "39-я отдельная гвардейская мотострелковая бригада",
           "language": "ru",
           "nameType": "official"
         },
@@ -383,7 +430,7 @@
           "issuingAuthority": "Russian Armed Forces"
         },
         {
-          "value": "\u0432/\u0447 27777",
+          "value": "в/ч 27777",
           "identifierType": "MILITARY_UNIT_NUMBER",
           "issuingAuthority": "Russian Ministry of Defence"
         }
@@ -491,12 +538,12 @@
           "nameType": "official"
         },
         {
-          "value": "35-\u044f \u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0430\u044f \u043c\u043e\u0442\u043e\u0441\u0442\u0440\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0431\u0440\u0438\u0433\u0430\u0434\u0430",
+          "value": "35-я гвардейская мотострелковая бригада",
           "language": "ru",
           "nameType": "official"
         },
         {
-          "value": "35 \u0413\u0432\u041c\u0421\u0411\u0440",
+          "value": "35 ГвМСБр",
           "language": "ru",
           "nameType": "abbreviation"
         }
@@ -508,7 +555,7 @@
           "issuingAuthority": "Russian Armed Forces"
         },
         {
-          "value": "\u0432/\u0447 52946",
+          "value": "в/ч 52946",
           "identifierType": "MILITARY_UNIT_NUMBER",
           "issuingAuthority": "Russian Ministry of Defense"
         }
