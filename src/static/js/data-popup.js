@@ -230,12 +230,58 @@ class DataPopupManager {
     }
 
     /**
+     * Ensure database is loaded for the current database
+     */
+    async ensureDatabaseLoaded() {
+        if (!this.currentDatabase) {
+            console.log('🔄 No current database set, defaulting to OP7');
+            this.currentDatabase = 'OP7';
+            window.currentDatabase = 'OP7';
+        }
+        
+        // Check if database manager is available and initialized
+        if (!window.databaseManager) {
+            console.warn('⚠️ Database manager not available');
+            return false;
+        }
+        
+        if (!window.databaseManager.isInitialized) {
+            console.log('🔄 Database manager not initialized, initializing...');
+            try {
+                await window.databaseManager.initializeWithOP7();
+            } catch (error) {
+                console.error('❌ Failed to initialize database manager:', error);
+                return false;
+            }
+        }
+        
+        // Check if current database data is loaded
+        if (!window.databaseManager.databases || !window.databaseManager.databases[this.currentDatabase]) {
+            console.log(`🔄 Loading data for database: ${this.currentDatabase}`);
+            try {
+                await window.databaseManager.loadDatabaseData(this.currentDatabase);
+            } catch (error) {
+                console.error(`❌ Failed to load database ${this.currentDatabase}:`, error);
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    /**
      * Fetch entity details from the server
      */
     async fetchEntityDetails(entityId) {
         try {
             console.log('🔍 Fetching entity details for ID:', entityId);
             console.log('📋 Current database:', this.currentDatabase);
+            
+            // Ensure database is loaded
+            const dbReady = await this.ensureDatabaseLoaded();
+            if (!dbReady) {
+                console.warn('⚠️ Database not ready, proceeding with limited functionality');
+            }
             
             // First try to get from current analysis data if available
             if (window.currentVisualization && window.currentVisualization.data) {
@@ -369,22 +415,34 @@ class DataPopupManager {
                 console.log('📊 Database manager data available:', !!database);
                 
                 if (database) {
-                    // Search through different entity types
-                    const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes'];
-                    
-                    for (const entityType of entityTypes) {
-                        if (database[entityType] && Array.isArray(database[entityType])) {
-                            console.log(`   Checking ${entityType} (${database[entityType].length} entries)...`);
-                            const entity = database[entityType].find(e => e.id === entityId);
-                            if (entity) {
-                                console.log('✅ Found entity in database manager:', entity);
-                                return { ...entity, entityType };
+                    // Use the new getEntity method if available
+                    if (window.databaseManager.getEntity) {
+                        const entity = window.databaseManager.getEntity(entityId, this.currentDatabase);
+                        if (entity) {
+                            console.log('✅ Found entity via getEntity method:', entity);
+                            return entity;
+                        }
+                    } else {
+                        // Fallback to manual search
+                        const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes'];
+                        
+                        for (const entityType of entityTypes) {
+                            if (database[entityType] && Array.isArray(database[entityType])) {
+                                console.log(`   Checking ${entityType} (${database[entityType].length} entries)...`);
+                                const entity = database[entityType].find(e => e.id === entityId);
+                                if (entity) {
+                                    console.log('✅ Found entity in database manager:', entity);
+                                    return { ...entity, entityType };
+                                }
                             }
                         }
                     }
                 }
             } else {
                 console.log('⚠️ Database manager not available or no current database set');
+                console.log('   - databaseManager available:', !!window.databaseManager);
+                console.log('   - databases property:', !!(window.databaseManager && window.databaseManager.databases));
+                console.log('   - currentDatabase:', this.currentDatabase);
             }
             
             // If database manager is not available, try to fetch data directly from server
@@ -857,7 +915,21 @@ function addPlotlyClickHandler() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize popup manager
     try {
+        console.log('🚀 Initializing data popup manager...');
         window.dataPopupManager = new DataPopupManager();
+        
+        // Initialize database manager with OP7 data if not already done
+        if (window.databaseManager && !window.databaseManager.isInitialized) {
+            window.databaseManager.initializeWithOP7();
+        }
+        
+        // Set default database if not set
+        if (!window.currentDatabase) {
+            window.currentDatabase = 'OP7';
+            if (window.dataPopupManager) {
+                window.dataPopupManager.setCurrentDatabase('OP7');
+            }
+        }
         
         // Add click handler when visualization is created
         const originalDisplayVisualization = window.displayVisualization;

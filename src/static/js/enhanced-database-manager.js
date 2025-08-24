@@ -8,6 +8,27 @@ class DatabaseManager {
         this.baseUrl = window.location.origin;
         this.lastAnalysisTime = {};
         this.fileChecksums = {};
+        this.databases = {}; // Store loaded JSON data
+        this.isInitialized = false;
+        
+        // Initialize database configurations
+        this.DATABASE_CONFIGS = {
+            'OP7': {
+                dataFile: 'odesa_oblast.json',
+                displayName: 'Odesa Oblast',
+                description: 'Ukrainian Odesa Oblast military database'
+            },
+            'OP1': {
+                dataFile: 'kyiv_oblast.json', 
+                displayName: 'Kyiv Oblast',
+                description: 'Ukrainian Kyiv Oblast military database'
+            },
+            'OP2': {
+                dataFile: 'kharkiv_oblast.json',
+                displayName: 'Kharkiv Oblast', 
+                description: 'Ukrainian Kharkiv Oblast military database'
+            }
+        };
     }
 
     /**
@@ -44,6 +65,50 @@ class DatabaseManager {
         }
         
         return hasChanged;
+    }
+
+    /**
+     * Load database JSON data directly from file
+     */
+    async loadDatabaseData(databaseName) {
+        try {
+            console.log(`📥 Loading database data for: ${databaseName}`);
+            
+            const config = this.DATABASE_CONFIGS[databaseName];
+            if (!config) {
+                throw new Error(`Unknown database: ${databaseName}`);
+            }
+            
+            // Try to load from data directory
+            const dataUrl = `/data/${config.dataFile}`;
+            console.log(`🔗 Fetching data from: ${dataUrl}`);
+            
+            const response = await fetch(dataUrl);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+            }
+            
+            const jsonData = await response.json();
+            console.log(`✅ Successfully loaded ${databaseName} data`);
+            console.log(`📊 Data contains: ${Object.keys(jsonData).join(', ')}`);
+            
+            // Store the data
+            this.databases[databaseName] = jsonData;
+            
+            // Log entity counts for verification
+            if (jsonData.vehicles) {
+                console.log(`   - Vehicles: ${jsonData.vehicles.length}`);
+            }
+            if (jsonData.areas) {
+                console.log(`   - Areas: ${jsonData.areas.length}`);
+            }
+            
+            return jsonData;
+            
+        } catch (error) {
+            console.error(`❌ Error loading database ${databaseName}:`, error);
+            throw error;
+        }
     }
 
     /**
@@ -205,6 +270,67 @@ class DatabaseManager {
         } catch (error) {
             console.error(`❌ Error generating comprehensive report:`, error);
             throw error;
+        }
+    }
+
+    /**
+     * Initialize database manager with OP7 data
+     */
+    async initializeWithOP7() {
+        try {
+            console.log('🚀 Initializing database manager with OP7 data...');
+            
+            // Load OP7 data
+            await this.loadDatabaseData('OP7');
+            
+            // Set global references
+            window.currentDatabase = 'OP7';
+            
+            // Update data popup manager if available
+            if (window.dataPopupManager) {
+                window.dataPopupManager.setCurrentDatabase('OP7');
+            }
+            
+            this.isInitialized = true;
+            console.log('✅ Database manager initialized with OP7 data');
+            
+        } catch (error) {
+            console.error('❌ Failed to initialize database manager:', error);
+            // Still mark as initialized to prevent repeated attempts
+            this.isInitialized = true;
+        }
+    }
+
+    /**
+     * Get entity by ID from loaded data
+     */
+    getEntity(entityId, databaseName = 'OP7') {
+        try {
+            const database = this.databases[databaseName];
+            if (!database) {
+                console.warn(`⚠️ Database ${databaseName} not loaded`);
+                return null;
+            }
+            
+            // Search through different entity types
+            const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes'];
+            
+            for (const entityType of entityTypes) {
+                if (database[entityType] && Array.isArray(database[entityType])) {
+                    const entity = database[entityType].find(e => e.id === entityId);
+                    if (entity) {
+                        console.log(`✅ Found entity ${entityId} in ${entityType}`);
+                        return { ...entity, entityType };
+                    }
+                }
+            }
+            
+            console.log(`⚠️ Entity ${entityId} not found in database ${databaseName}`);
+            return null;
+            
+        } catch (error) {
+            console.error(`❌ Error getting entity ${entityId}:`, error);
+            return null;
         }
     }
 }
