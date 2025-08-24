@@ -296,6 +296,41 @@ class DatabaseManager {
             
         } catch (error) {
             console.error('❌ Failed to initialize database manager:', error);
+            // Still mark as initialized to prevent repeated attempts
+            this.isInitialized = true;
+        }
+    }
+
+    /**
+     * Get entity by ID from loaded data
+     */
+    getEntity(entityId, databaseName = 'OP7') {
+        try {
+            const database = this.databases[databaseName];
+            if (!database) {
+                console.warn(`⚠️ Database ${databaseName} not loaded`);
+                return null;
+            }
+            
+            // Search through different entity types
+            const entityTypes = ['vehicles', 'areas', 'people', 'countries', 'militaryOrganizations', 'vehicleTypes', 'peopleTypes'];
+            
+            for (const entityType of entityTypes) {
+                if (database[entityType] && Array.isArray(database[entityType])) {
+                    const entity = database[entityType].find(e => e.id === entityId);
+                    if (entity) {
+                        console.log(`✅ Found entity ${entityId} in ${entityType}`);
+                        return { ...entity, entityType };
+                    }
+                }
+            }
+            
+            console.log(`⚠️ Entity ${entityId} not found in database ${databaseName}`);
+            return null;
+            
+        } catch (error) {
+            console.error(`❌ Error getting entity ${entityId}:`, error);
+            return null;
         }
     }
 }
