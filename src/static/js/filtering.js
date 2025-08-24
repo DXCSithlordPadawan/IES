@@ -1,11 +1,19 @@
 /* Enhanced Military Equipment Filtering JavaScript */
 /* Comprehensive filtering functionality for equipment categories */
 
-// Global variables for filtering state
-let currentFilters = {};
-let equipmentCategories = {};
-let currentDatabase = '';
-let currentVisualization = null;
+// Global variables for filtering state - avoid conflicts with other scripts
+if (typeof currentFilters === 'undefined') {
+    var currentFilters = {};
+}
+if (typeof equipmentCategories === 'undefined') {
+    var equipmentCategories = {};
+}
+if (typeof currentDatabase === 'undefined') {
+    var currentDatabase = '';
+}
+if (typeof currentVisualization === 'undefined') {
+    var currentVisualization = null;
+}
 
 // Equipment categories data structure
 const defaultEquipmentCategories = {
@@ -179,7 +187,7 @@ function applyFilters() {
     const databaseSelect = document.getElementById('databaseSelect');
     if (databaseSelect && databaseSelect.value) {
         currentDatabase = databaseSelect.value;
-        runAnalysis();
+        runFilteredAnalysis();
     } else {
         showNotification('Please select a database first', 'warning');
     }
@@ -209,7 +217,7 @@ function clearFilters() {
     // Re-run analysis without filters if database is selected
     const databaseSelect = document.getElementById('databaseSelect');
     if (databaseSelect && databaseSelect.value) {
-        runAnalysis();
+        runFilteredAnalysis();
     }
 }
 
@@ -233,7 +241,7 @@ function updateActiveFilters() {
     }
 }
 
-function runAnalysis() {
+function runFilteredAnalysis() {
     const databaseSelect = document.getElementById('databaseSelect');
     const layoutSelect = document.getElementById('layoutSelect');
     const showLabelsCheck = document.getElementById('showLabels');
@@ -265,7 +273,8 @@ function runAnalysis() {
         database_name: database,
         layout: layout,
         show_labels: showLabels,
-        filters: currentFilters
+        filters: currentFilters,
+        force_reload: true  // Always use fresh data from disk
     };
     
     fetch('/api/analyze', {
@@ -472,7 +481,7 @@ function getNotificationIcon(type) {
 // Export functions for global access
 window.applyFilters = applyFilters;
 window.clearFilters = clearFilters;
-window.runAnalysis = runAnalysis;
+window.runFilteredAnalysis = runFilteredAnalysis;
 window.exportVisualization = exportVisualization;
 window.exportFilteredData = exportFilteredData;
 

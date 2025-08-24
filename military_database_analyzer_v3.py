@@ -311,7 +311,14 @@ Examples:
         Path(args.output_dir).mkdir(exist_ok=True)
     
     # Initialize analyzer
-    analyzer = MilitaryDatabaseAnalyzer(args.data_dir)
+    # Ensure data_dir is absolute path relative to script location
+    script_dir = Path(__file__).parent
+    if not Path(args.data_dir).is_absolute():
+        data_dir = script_dir / args.data_dir
+    else:
+        data_dir = Path(args.data_dir)
+    
+    analyzer = MilitaryDatabaseAnalyzer(str(data_dir))
     
     # Override output directory if specified
     if args.output_dir != 'output':

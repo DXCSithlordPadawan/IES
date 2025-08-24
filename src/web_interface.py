@@ -41,6 +41,19 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
         """Main dashboard page."""
         return render_template('index.html')
     
+    @app.route('/data/<filename>')
+    def serve_data_file(filename):
+        """Serve data files for client-side access."""
+        try:
+            data_file_path = analyzer.data_dir / filename
+            if data_file_path.exists() and data_file_path.suffix == '.json':
+                return send_file(data_file_path, mimetype='application/json')
+            else:
+                return jsonify({'error': 'File not found'}), 404
+        except Exception as e:
+            logger.error(f"Error serving data file {filename}: {e}")
+            return jsonify({'error': str(e)}), 500
+    
     @app.route('/api/databases')
     def get_databases():
         """Get list of available databases."""
