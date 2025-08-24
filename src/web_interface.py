@@ -234,11 +234,15 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
             # Convert figure to JSON
             fig_json = result['visualization'].to_json()
             
-            # Get additional metadata
+            # Get additional metadata - count ALL entity types
             database = analyzer.databases[database_name]
             vehicle_count = len(database.get('vehicles', []))
             area_count = len(database.get('areas', []))
+            people_count = len(database.get('people', []))
             military_unit_count = len(database.get('militaryUnits', []))
+            aircraft_count = len(database.get('aircraft', []))
+            weapon_count = len(database.get('weapons', []))
+            organization_count = len(database.get('organizations', []))
             
             return jsonify({
                 'status': 'success',
@@ -248,6 +252,11 @@ def launch_web_interface(analyzer, host='127.0.0.1', port=8080, debug=True):
                 'edge_count': len(result['graph'].edges),
                 'vehicle_count': vehicle_count,
                 'area_count': area_count,
+                'people_count': people_count,
+                'military_unit_count': military_unit_count,
+                'aircraft_count': aircraft_count,
+                'weapon_count': weapon_count,
+                'organization_count': organization_count,
                 'military_unit_count': military_unit_count,
                 'force_reloaded': force_reload,
                 'analysis_timestamp': analyzer.loader.last_load_time if hasattr(analyzer.loader, 'last_load_time') else None

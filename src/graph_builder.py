@@ -17,8 +17,8 @@ class GraphBuilder:
     def __init__(self):
         """Initialize the graph builder."""
         self.entity_types = [
-            'countries', 'vehicles', 'vehicleTypes', 'people', 'peopleTypes',
-            'areas', 'militaryOrganizations', 'representations', 'aircraft', 'militaryUnits', 'unitTypes'
+            'vehicles', 'vehicleTypes', 'people', 'peopleTypes', 'areas', 'areaTypes',
+            'militaryUnits', 'unitTypes', 'aircraft', 'weapons', 'organizations', 'countries'
         ]
         
         # Define relationship patterns
@@ -37,14 +37,18 @@ class GraphBuilder:
             'country': '#FF6B6B',           # Red
             'vehicle': '#4ECDC4',           # Teal
             'person': '#45B7D1',            # Blue
+            'people': '#45B7D1',            # Blue (alias)
             'area': '#96CEB4',              # Green
             'militaryOrganization': '#FECA57',  # Yellow
+            'militaryUnit': '#8B4513',      # Saddle Brown
             'vehicleType': '#A8E6CF',       # Light Green
             'peopleType': '#DDA0DD',        # Plum
-            'representation': '#F8B500',    # Orange
+            'unitType': '#CD853F',          # Peru
             'aircraft': '#FF8C00',          # Dark Orange
-            'militaryUnit': '#8B4513',      # Saddle Brown
-            'unitType': '#CD853F'           # Peru
+            'weapon': '#DC143C',            # Crimson
+            'weapons': '#DC143C',           # Crimson (alias)
+            'organization': '#FECA57',      # Yellow
+            'organizations': '#FECA57'      # Yellow (alias)
         }
     
     def build_graph(self, database: Dict, include_metadata: bool = True) -> nx.Graph:
@@ -152,15 +156,17 @@ class GraphBuilder:
             if 'fuelType' in entity:
                 attributes['fuel_type'] = entity['fuelType']
         
-        elif entity_type == 'person':
+        elif entity_type in ['person', 'people']:
             if 'personTypes' in entity:
                 attributes['person_types'] = entity['personTypes']
             if 'birthDate' in entity:
                 attributes['birth_date'] = entity['birthDate']
         
-        elif entity_type == 'militaryOrganization':
+        elif entity_type in ['militaryOrganization', 'militaryUnit']:
             if 'organizationType' in entity:
                 attributes['organization_type'] = entity['organizationType']
+            if 'unitType' in entity:
+                attributes['unit_type'] = entity['unitType']
             if 'personnelStrength' in entity:
                 attributes['personnel_strength'] = entity['personnelStrength']
         
@@ -169,6 +175,22 @@ class GraphBuilder:
                 attributes['area_type'] = entity['areaType']
             if 'administrativeLevel' in entity:
                 attributes['admin_level'] = entity['administrativeLevel']
+        
+        elif entity_type in ['aircraft']:
+            if 'aircraftType' in entity:
+                attributes['aircraft_type'] = entity['aircraftType']
+            if 'manufacturer' in entity:
+                attributes['manufacturer'] = entity['manufacturer']
+            if 'operator' in entity:
+                attributes['operator'] = entity['operator']
+        
+        elif entity_type in ['weapon', 'weapons']:
+            if 'weaponType' in entity:
+                attributes['weapon_type'] = entity['weaponType']
+            if 'caliber' in entity:
+                attributes['caliber'] = entity['caliber']
+            if 'range' in entity:
+                attributes['range'] = entity['range']
         
         return attributes
     
@@ -201,6 +223,48 @@ class GraphBuilder:
                         self._add_edge(graph, entity_id, target_id, field)
                         edge_count += 1
         
+        # Add location-based relationships (entities in same location)
+        location_entities = defaultdict(list)
+        for entity_id, entity_info in entity_map.items():
+            entity = entity_info['data']
+            location = entity.get('location')
+            if location:
+                location_entities[location].append(entity_id)
+        
+        # Create location-based edges
+        for location, entities in location_entities.items():
+            if len(entities) > 1:
+                # Connect entities in same location
+                for i, entity1 in enumerate(entities):
+                    for entity2 in entities[i+1:]:
+                        self._add_edge(graph, entity1, entity2, 'co_located')
+                        edge_count += 1
+        
+        # Add organizational relationships (people assigned to military units)
+        for entity_id, entity_info in entity_map.items():
+            entity = entity_info['data']
+            entity_type = entity_info['type']
+            
+            if entity_type == 'people':
+                # Connect people to military units in same location/organization
+                person_location = entity.get('location')
+                if person_location:
+                    for other_id, other_info in entity_map.items():
+                        if (other_info['type'] == 'militaryUnits' and 
+                            other_info['data'].get('location') == person_location):
+                            self._add_edge(graph, entity_id, other_id, 'assigned_to_unit')
+                            edge_count += 1
+            
+            elif entity_type == 'militaryUnits':
+                # Connect military units to their equipment (vehicles, aircraft, weapons)
+                unit_location = entity.get('location')
+                if unit_location:
+                    for other_id, other_info in entity_map.items():
+                        if (other_info['type'] in ['vehicles', 'aircraft', 'weapons'] and 
+                            other_info['data'].get('location') == unit_location):
+                            self._add_edge(graph, entity_id, other_id, 'operates_equipment')
+                            edge_count += 1
+        
         logger.debug(f"Added {edge_count} edges")
     
     def _extract_direct_references(self, entity: Dict) -> List[Tuple[str, str]]:
@@ -208,11 +272,16 @@ class GraphBuilder:
         references = []
         
         # Standard reference fields
-        ref_fields = ['owner', 'country', 'vehicleType', 'parentArea', 'headquarters', 'nationality']
+        ref_fields = ['owner', 'country', 'vehicleType', 'aircraftType', 'weaponType', 'unitType', 
+                     'parentArea', 'headquarters', 'nationality', 'operator', 'manufacturer']
         
         for field in ref_fields:
             if field in entity and entity[field]:
                 references.append((field, str(entity[field])))
+        
+        # Location-based relationships - entities sharing same location
+        if 'location' in entity and entity['location']:
+            references.append(('location', str(entity['location'])))
         
         return references
     
@@ -220,8 +289,8 @@ class GraphBuilder:
         """Extract references from list fields."""
         references = []
         
-        # List reference fields
-        list_fields = ['personTypes', 'childAreas']
+        # List reference fields - expanded for all entity types
+        list_fields = ['personTypes', 'childAreas', 'equipment', 'personnel', 'weapons', 'vehicles', 'aircraft']
         
         for field in list_fields:
             if field in entity and isinstance(entity[field], list):

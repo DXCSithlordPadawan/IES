@@ -119,8 +119,10 @@ class DatabaseLoader:
             
             logger.info(f"Successfully loaded database: {len(data.get('vehicles', []))} vehicles, "
                        f"{len(data.get('areas', []))} areas, "
-                       f"{len(data.get('organizations', []))} organizations, "
-                       f"{len(data.get('militaryUnits', []))} military units")
+                       f"{len(data.get('people', []))} people, "
+                       f"{len(data.get('militaryUnits', []))} military units, "
+                       f"{len(data.get('aircraft', []))} aircraft, "
+                       f"{len(data.get('weapons', []))} weapons")
             
             return data
             
@@ -135,15 +137,15 @@ class DatabaseLoader:
         """Count different types of entities in the database."""
         counts = {}
         
-        # Count main entity types
-        for entity_type in ['vehicles', 'areas', 'organizations', 'persons', 'weapons', 'events', 'aircraft', 'militaryUnits']:
+        # Count main entity types - using actual entity array names from the data
+        for entity_type in ['vehicles', 'areas', 'people', 'militaryUnits', 'aircraft', 'weapons', 'events', 'organizations']:
             if entity_type in data and isinstance(data[entity_type], list):
                 counts[entity_type] = len(data[entity_type])
             else:
                 counts[entity_type] = 0
         
         # Count type definitions
-        for type_def in ['vehicleTypes', 'areaTypes', 'organizationTypes', 'weaponTypes', 'unitTypes']:
+        for type_def in ['vehicleTypes', 'areaTypes', 'peopleTypes', 'unitTypes', 'weaponTypes', 'organizationTypes']:
             if type_def in data and isinstance(data[type_def], list):
                 counts[type_def] = len(data[type_def])
             else:
@@ -165,8 +167,8 @@ class DatabaseLoader:
             issues.append("Database must be a JSON object")
             return False, issues
         
-        # Check for expected arrays
-        expected_arrays = ['vehicles', 'areas', 'organizations', 'militaryUnits']
+        # Check for expected arrays - include all entity types that scripts might add
+        expected_arrays = ['vehicles', 'areas', 'people', 'militaryUnits', 'aircraft', 'weapons', 'organizations']
         for array_name in expected_arrays:
             if array_name in data:
                 if not isinstance(data[array_name], list):
@@ -202,6 +204,36 @@ class DatabaseLoader:
                     issues.append(f"Military unit at index {i} missing required 'id' field")
                 if 'type' not in unit:
                     issues.append(f"Military unit at index {i} missing required 'type' field")
+        
+        if 'people' in data:
+            for i, person in enumerate(data['people']):
+                if not isinstance(person, dict):
+                    issues.append(f"Person at index {i} must be an object")
+                    continue
+                if 'id' not in person:
+                    issues.append(f"Person at index {i} missing required 'id' field")
+                if 'type' not in person:
+                    issues.append(f"Person at index {i} missing required 'type' field")
+        
+        if 'aircraft' in data:
+            for i, aircraft in enumerate(data['aircraft']):
+                if not isinstance(aircraft, dict):
+                    issues.append(f"Aircraft at index {i} must be an object")
+                    continue
+                if 'id' not in aircraft:
+                    issues.append(f"Aircraft at index {i} missing required 'id' field")
+                if 'type' not in aircraft:
+                    issues.append(f"Aircraft at index {i} missing required 'type' field")
+        
+        if 'weapons' in data:
+            for i, weapon in enumerate(data['weapons']):
+                if not isinstance(weapon, dict):
+                    issues.append(f"Weapon at index {i} must be an object")
+                    continue
+                if 'id' not in weapon:
+                    issues.append(f"Weapon at index {i} missing required 'id' field")
+                if 'type' not in weapon:
+                    issues.append(f"Weapon at index {i} missing required 'type' field")
         
         is_valid = len(issues) == 0
         return is_valid, issues
