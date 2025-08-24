@@ -1,0 +1,549 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-24T12:47:59.993771",
+    "node_count": 1012,
+    "edge_count": 1167,
+    "database_info": {
+      "filename": "unknown",
+      "loaded_at": "",
+      "entity_counts": {
+        "vehicles": 488,
+        "areas": 153,
+        "organizations": 0,
+        "persons": 0,
+        "weapons": 0,
+        "events": 0,
+        "aircraft": 0,
+        "vehicleTypes": 205,
+        "areaTypes": 0,
+        "organizationTypes": 0,
+        "weaponTypes": 0
+      },
+      "title": "Consolidated IES4 Military Database",
+      "description": "Consolidated IES4-compliant database from multiple source files"
+    },
+    "entity_counts": {
+      "countries": 11,
+      "vehicles": 488,
+      "vehicleTypes": 205,
+      "people": 15,
+      "peopleTypes": 77,
+      "areas": 153,
+      "militaryOrganizations": 8,
+      "representations": 55
+    }
+  },
+  "node_statistics": {
+    "total_nodes": 1012,
+    "node_types": {
+      "countries": 11,
+      "vehicles": 488,
+      "vehicleTypes": 205,
+      "people": 15,
+      "peopleTypes": 77,
+      "areas": 153,
+      "militaryOrganizations": 8,
+      "representations": 55
+    },
+    "degree_distribution": {
+      "139": 1,
+      "31": 1,
+      "73": 1,
+      "57": 1,
+      "44": 1,
+      "56": 1,
+      "42": 1,
+      "34": 1,
+      "30": 1,
+      "126": 1,
+      "32": 1,
+      "2": 562,
+      "1": 256,
+      "3": 20,
+      "4": 6,
+      "11": 1,
+      "10": 3,
+      "5": 6,
+      "17": 1,
+      "18": 1,
+      "7": 3,
+      "8": 5,
+      "6": 5,
+      "9": 1,
+      "0": 131
+    },
+    "isolated_nodes": [
+      "reconnaissance-vehicle",
+      "corvette",
+      "electronic-warfare-system",
+      "cyber-warfare-system",
+      "personal-equipment",
+      "ground-attack-aircraft",
+      "ew-ground-system",
+      "fire-control-radar",
+      "vehicle-radio",
+      "patrol-vessel",
+      "pt-infantry",
+      "pt-marksman",
+      "pt-airborne-forces",
+      "pt-marine-forces",
+      "pt-conscript",
+      "french-infantry",
+      "french-special-forces",
+      "special-forces-ksk",
+      "special-forces-gsg9",
+      "special-forces-sek",
+      "military-personnel-nco",
+      "military-regiment-personnel",
+      "infantry-soldier",
+      "special-forces",
+      "quds-force-operative",
+      "saberin-commando",
+      "takavar-naval-special-forces",
+      "kpa-infantry",
+      "kpa-special-forces",
+      "kpa-officer",
+      "state-security-personnel",
+      "pt-air-force-personnel",
+      "pt-navy-personnel",
+      "pt-tank-crew",
+      "pt-pilot",
+      "pt-engineer",
+      "pt-infantry-soldier",
+      "pt-naval-personnel",
+      "air-defence-operator",
+      "ammunition-technician",
+      "ammunition-handler",
+      "artillery-gunner",
+      "artillery-officer",
+      "fast-jet-pilot",
+      "apache-pilot",
+      "base-commander",
+      "base-support-staff",
+      "rpas-pilot",
+      "uav-technician",
+      "ew-specialist",
+      "cyber-specialist",
+      "general-staff-officer",
+      "joint-staff-officer",
+      "tank-crew",
+      "tank-officer",
+      "missile-operator",
+      "equipment-specialist",
+      "radar-operator",
+      "radar-technician",
+      "radio-operator",
+      "communications-technician",
+      "reconnaissance-operator",
+      "weapons-specialist",
+      "sas-trooper",
+      "sbs-operative",
+      "sfsg-operator",
+      "sas-officer",
+      "intelligence-specialist",
+      "tracked-vehicle-crew",
+      "engineer-operator",
+      "transport-pilot",
+      "loadmaster",
+      "helicopter-pilot",
+      "aircrew-specialist",
+      "naval-officer",
+      "naval-rating",
+      "rep-finnish-defence-forces",
+      "rep-equipment-catalog",
+      "rep-rafale-technical",
+      "rep-famas-manual",
+      "rep-iriaf-website",
+      "rep-dio-website",
+      "rep-polish-mod-website",
+      "rep-polish-armed-forces-website",
+      "rep-swedish-defense-materiel",
+      "rep-swedish-armed-forces",
+      "rep-saab-defense",
+      "rep-sea-viper-manual",
+      "rep-starstreak-datasheet",
+      "rep-ammunition-manual",
+      "rep-explosive-safety",
+      "rep-as90-manual",
+      "rep-l118-handbook",
+      "rep-typhoon-manual",
+      "rep-f35b-manual",
+      "rep-apache-manual",
+      "rep-base-directory",
+      "rep-overseas-bases",
+      "rep-rpas-doctrine",
+      "rep-uav-maintenance",
+      "rep-ew-doctrine",
+      "rep-cyber-strategy",
+      "rep-command-structure",
+      "rep-joint-doctrine",
+      "rep-challenger2-manual",
+      "rep-challenger3-specs",
+      "rep-meteor-datasheet",
+      "rep-brimstone-manual",
+      "rep-personal-equipment-manual",
+      "rep-virtus-handbook",
+      "rep-sampson-datasheet",
+      "rep-artisan-manual",
+      "rep-bowman-manual",
+      "rep-morpheus-specs",
+      "rep-ajax-manual",
+      "rep-scimitar-handbook",
+      "rep-army-orbat",
+      "rep-regimental-histories",
+      "rep-sa80-manual",
+      "rep-gpmg-manual",
+      "rep-sf-doctrine",
+      "rep-ct-procedures",
+      "rep-warrior-manual",
+      "rep-trojan-handbook",
+      "rep-atlas-manual",
+      "rep-c17-manual",
+      "rep-chinook-manual",
+      "rep-puma-manual",
+      "rep-ship-data-book",
+      "rep-dod-fact-sheet",
+      "rep-army-field-manual"
+    ],
+    "degree_stats": {
+      "mean": 2.3063241106719365,
+      "median": 2.0,
+      "std": 7.302135667191269,
+      "min": 0,
+      "max": 139
+    }
+  },
+  "edge_statistics": {
+    "total_edges": 1167,
+    "relationship_types": {
+      "owner": 488,
+      "nationality": 8,
+      "country": 161,
+      "temporal_location": 7,
+      "vehicleType": 487,
+      "personTypes": 14,
+      "headquarters": 2
+    },
+    "edge_weight_distribution": {
+      "1.0": 1167
+    }
+  },
+  "connectivity": {
+    "is_connected": false,
+    "number_of_components": 134,
+    "density": 0.002281230574354042,
+    "component_sizes": [
+      465,
+      105,
+      311,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "largest_component_size": 465,
+    "average_clustering": 0.003954864506296108,
+    "largest_component_avg_path": 4.654078605858361,
+    "largest_component_diameter": 8
+  },
+  "centrality": {
+    "top_degree_centrality": [
+      [
+        "country-china",
+        0.13748763600395647
+      ],
+      [
+        "uk-001",
+        0.12462908011869436
+      ],
+      [
+        "france-001",
+        0.0722057368941642
+      ],
+      [
+        "country-germany",
+        0.05637982195845697
+      ],
+      [
+        "country-north-korea",
+        0.05539070227497527
+      ],
+      [
+        "country-iran",
+        0.043521266073194856
+      ],
+      [
+        "country-poland",
+        0.04154302670623145
+      ],
+      [
+        "country-russia-001",
+        0.033630069238377844
+      ],
+      [
+        "usa-001",
+        0.03165182987141444
+      ],
+      [
+        "country-finland",
+        0.030662710187932738
+      ]
+    ],
+    "top_betweenness_centrality": [
+      [
+        "country-china",
+        0.16707776055423915
+      ],
+      [
+        "vt-transport-helicopter",
+        0.0821612492886708
+      ],
+      [
+        "uk-001",
+        0.06113080589158241
+      ],
+      [
+        "country-germany",
+        0.05244149600620689
+      ],
+      [
+        "country-finland",
+        0.03589092161433043
+      ],
+      [
+        "country-sweden",
+        0.024658143891033074
+      ],
+      [
+        "country-north-korea",
+        0.02391733574383091
+      ],
+      [
+        "vt-attack-aircraft",
+        0.023136059571421543
+      ],
+      [
+        "vt-attack-helicopter",
+        0.022510349180375505
+      ],
+      [
+        "usa-001",
+        0.022127333790498787
+      ]
+    ],
+    "top_eigenvector_centrality": [
+      [
+        "country-china",
+        0.7022241905436891
+      ],
+      [
+        "unit-pla-special-operations-forces",
+        0.06133394982886244
+      ],
+      [
+        "unit-eastern-theater-sof",
+        0.06133394982886244
+      ],
+      [
+        "unit-southern-theater-sof",
+        0.06133394982886244
+      ],
+      [
+        "unit-pla-airborne-forces",
+        0.06133394982886244
+      ],
+      [
+        "unit-pla-marine-corps",
+        0.06133394982886244
+      ],
+      [
+        "helo-z-8",
+        0.06107474758962624
+      ],
+      [
+        "helo-z-20",
+        0.06107474758962624
+      ],
+      [
+        "helo-z-9",
+        0.06107474758962624
+      ],
+      [
+        "helo-z-18",
+        0.06107474758962624
+      ]
+    ]
+  },
+  "entity_analysis": {
+    "countries": {},
+    "vehicles": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_manufacturer": {},
+      "by_decade": {},
+      "age_distribution": {}
+    },
+    "organizations": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "personnel_stats": {}
+    },
+    "people": {
+      "total_count": 0,
+      "by_type": {},
+      "by_nationality": {},
+      "birth_decades": {}
+    },
+    "areas": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_admin_level": {}
+    }
+  },
+  "temporal_analysis": {
+    "technology_timeline": {},
+    "service_periods": [],
+    "modernization_trends": {}
+  },
+  "geographic_analysis": {
+    "country_assets": {},
+    "regional_distribution": {},
+    "base_locations": {}
+  },
+  "technology_analysis": {
+    "manufacturers": {},
+    "technology_generations": {},
+    "capability_gaps": {},
+    "modernization_patterns": {}
+  }
+}

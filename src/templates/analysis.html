@@ -455,8 +455,14 @@
         if (typeof currentFilters === 'undefined') {
             var currentFilters = {};
         }
-        let currentDatabase = null;
-        let currentVisualization = null;
+        
+        // Use window globals to avoid conflicts with other scripts
+        if (typeof window.currentDatabase === 'undefined') {
+            window.currentDatabase = null;
+        }
+        if (typeof window.currentVisualization === 'undefined') {
+            window.currentVisualization = null;
+        }
         let previousResults = null;
         let lastRefreshTime = null;
 
@@ -482,7 +488,7 @@
             // Auto-refresh toggle
             document.getElementById('autoRefreshToggle').addEventListener('change', function() {
                 autoRefreshEnabled = this.checked;
-                if (autoRefreshEnabled && currentDatabase) {
+                if (autoRefreshEnabled && window.currentDatabase) {
                     startAutoRefresh();
                 } else {
                     stopAutoRefresh();
@@ -493,7 +499,7 @@
             // Refresh interval change
             document.getElementById('refreshInterval').addEventListener('change', function() {
                 refreshInterval = parseInt(this.value);
-                if (autoRefreshEnabled && currentDatabase) {
+                if (autoRefreshEnabled && window.currentDatabase) {
                     stopAutoRefresh();
                     startAutoRefresh();
                 }
@@ -501,7 +507,7 @@
         }
 
         function startAutoRefresh() {
-            if (!currentDatabase || !autoRefreshEnabled) return;
+            if (!window.currentDatabase || !autoRefreshEnabled) return;
             
             console.log(`🔄 Starting auto-refresh every ${refreshInterval} seconds`);
             
@@ -515,7 +521,7 @@
             
             // Set up refresh timer
             refreshTimer = setInterval(() => {
-                if (autoRefreshEnabled && currentDatabase) {
+                if (autoRefreshEnabled && window.currentDatabase) {
                     refreshAnalysis();
                     startCountdown(); // Restart countdown
                 }
@@ -578,10 +584,10 @@
             const statusEl = document.getElementById('refresh-status');
             const timeEl = document.getElementById('last-update-time');
             
-            if (autoRefreshEnabled && currentDatabase) {
+            if (autoRefreshEnabled && window.currentDatabase) {
                 statusEl.innerHTML = '<i class="fas fa-circle text-success"></i> Auto-refresh active';
                 document.getElementById('refresh-status-text').textContent = 'Auto-refresh active';
-            } else if (currentDatabase) {
+            } else if (window.currentDatabase) {
                 statusEl.innerHTML = '<i class="fas fa-circle text-warning"></i> Auto-refresh paused';
                 document.getElementById('refresh-status-text').textContent = 'Auto-refresh paused';
             } else {
@@ -595,10 +601,10 @@
         }
 
         async function refreshAnalysis() {
-            if (!currentDatabase) return;
+            if (!window.currentDatabase) return;
             
             try {
-                console.log(`🔄 Auto-refreshing analysis for ${currentDatabase}`);
+                console.log(`🔄 Auto-refreshing analysis for ${window.currentDatabase}`);
                 
                 // Show changes indicator
                 const indicator = document.getElementById('changes-indicator');
@@ -751,7 +757,7 @@
                 return;
             }
             
-            currentDatabase = database;
+            window.currentDatabase = database;
             
             // Stop auto-refresh temporarily
             const wasAutoRefreshEnabled = autoRefreshEnabled;
@@ -791,7 +797,7 @@
         }
 
         async function runAnalysisInternal(forceReload = true, showLoading = true) {
-            const database = currentDatabase;
+            const database = window.currentDatabase;
             const layout = document.getElementById('layoutSelect').value;
             const showLabels = document.getElementById('showLabels').checked;
 
@@ -849,6 +855,7 @@
 
         function loadAvailableDatabases() {
             console.log('🔄 Loading available databases...');
+            console.log('🔍 Debug: Function called successfully');
             
             const select = document.getElementById('databaseSelect');
             if (!select) {
@@ -856,11 +863,29 @@
                 return;
             }
             
+            console.log('✅ Database select element found:', select);
+            
             // Show loading state
             select.innerHTML = '<option value="">Loading databases...</option>';
             select.disabled = true;
             
-            fetch('/api/databases')
+            // First try the debug endpoint for detailed information
+            fetch('/api/debug/databases')
+                .then(response => {
+                    console.log(`📡 Debug API response status: ${response.status} ${response.statusText}`);
+                    return response.json();
+                })
+                .then(debugData => {
+                    console.log('🔍 Debug API response:', debugData);
+                    
+                    // Use the standard databases endpoint for actual loading
+                    return fetch('/api/databases');
+                })
+                .catch(debugError => {
+                    console.warn('⚠️ Debug endpoint failed (not critical):', debugError);
+                    // Continue with standard endpoint
+                    return fetch('/api/databases');
+                })
                 .then(response => {
                     console.log(`📡 API response status: ${response.status} ${response.statusText}`);
                     
@@ -1182,7 +1207,7 @@
             vizArea.style.border = 'none';
 
             // Create the plot
-            currentVisualization = data.visualization;
+            window.currentVisualization = data.visualization;
             Plotly.newPlot('visualization-area', data.visualization.data, data.visualization.layout, {
                 responsive: true,
                 displayModeBar: true,
@@ -1376,7 +1401,7 @@
                     logChange('Auto-refresh paused (tab hidden)');
                 }
             } else {
-                if (autoRefreshEnabled && currentDatabase && !refreshTimer) {
+                if (autoRefreshEnabled && window.currentDatabase && !refreshTimer) {
                     startAutoRefresh();
                     logChange('Auto-refresh resumed (tab visible)');
                 }
