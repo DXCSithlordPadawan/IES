@@ -1382,6 +1382,13 @@
                 }
             }
         });
+		
+		// This should be at the bottom of analysis.html
+		document.addEventListener('DOMContentLoaded', function() {
+			loadAvailableDatabases();
+			loadFilterSuggestions();
+			loadEquipmentCategories();
+		});
     </script>
     
     <!-- Data Popup System -->
