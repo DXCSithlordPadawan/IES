@@ -339,5 +339,291 @@
       ]
     }
   ],
-  "aircraft": []
+  "aircraft": [],
+  "militaryUnits": [
+    {
+      "id": "unit-39th-guards-mrb-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/39th_Separate_Guards_Motor_Rifle_Brigade",
+      "type": "MilitaryUnit",
+      "names": [
+        {
+          "value": "39th Separate Guards Motor Rifle Brigade",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "39-я отдельная гвардейская мотострелковая бригада",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "39th Guards Motor Rifle Brigade",
+          "language": "en",
+          "nameType": "common"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "39th Guards MRB",
+          "identifierType": "UNIT_DESIGNATION",
+          "issuingAuthority": "Russian Armed Forces"
+        },
+        {
+          "value": "в/ч 27777",
+          "identifierType": "MILITARY_UNIT_NUMBER",
+          "issuingAuthority": "Russian Ministry of Defence"
+        }
+      ],
+      "unitType": "motor-rifle-brigade",
+      "branch": "Ground Forces",
+      "nationality": "Russian Federation",
+      "parentUnit": "8th Guards Combined Arms Army",
+      "location": "Odesa Oblast",
+      "homeBase": "Sosnovy Bor, Leningrad Oblast",
+      "representations": [
+        {
+          "id": "39th-guards-wiki",
+          "type": "webpage",
+          "title": "39th Separate Guards Motor Rifle Brigade - Wikipedia",
+          "description": "Wikipedia article about the 39th Separate Guards Motor Rifle Brigade",
+          "url": "https://en.wikipedia.org/wiki/39th_Separate_Guards_Motor_Rifle_Brigade"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "39th-guards-formation",
+          "stateType": "unit_formed",
+          "startTime": "1965-05-07T00:00:00Z",
+          "location": "Soviet Union"
+        },
+        {
+          "id": "39th-guards-status-awarded",
+          "stateType": "guards_status_awarded",
+          "startTime": "1965-05-07T00:00:00Z",
+          "location": "Soviet Union"
+        },
+        {
+          "id": "39th-guards-chechen-deployment",
+          "stateType": "combat_deployment",
+          "startTime": "1994-01-01T00:00:00Z",
+          "endTime": "2009-12-31T00:00:00Z",
+          "location": "Chechnya"
+        },
+        {
+          "id": "39th-guards-ukraine-deployment",
+          "stateType": "combat_deployment",
+          "startTime": "2022-02-24T00:00:00Z",
+          "location": "Ukraine"
+        },
+        {
+          "id": "39th-guards-operational-op7",
+          "stateType": "regional_operations",
+          "startTime": "2022-02-24T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "states": [
+        {
+          "id": "39th-guards-active-op7",
+          "stateType": "active_service",
+          "startTime": "2022-02-24T00:00:00Z",
+          "location": "Odesa Oblast"
+        }
+      ],
+      "specifications": {
+        "unitSize": "Brigade (~3,000-4,000 personnel)",
+        "unitRole": "Motor Rifle Infantry",
+        "establishment": "May 7, 1965",
+        "headquarters": "Sosnovy Bor, Leningrad Oblast",
+        "parentCommand": "8th Guards Combined Arms Army",
+        "militaryDistrict": "Western Military District",
+        "guardsStatus": "Guards",
+        "currentDeployment": "Odesa Oblast",
+        "combatExperience": [
+          "First Chechen War (1994-1996)",
+          "Second Chechen War (1999-2009)",
+          "Russian invasion of Ukraine (2022-present)"
+        ]
+      },
+      "equipment": [
+        "T-80BV main battle tanks",
+        "BMP-2 infantry fighting vehicles",
+        "BTR-82A armored personnel carriers",
+        "2S1 Gvozdika self-propelled howitzers",
+        "BM-21 Grad multiple rocket launchers",
+        "Various support vehicles"
+      ],
+      "structure": [
+        "3 Motor Rifle Battalions",
+        "1 Tank Battalion",
+        "1 Artillery Battalion",
+        "1 Anti-Aircraft Battalion",
+        "Support Companies"
+      ],
+      "honors": [
+        "Guards status",
+        "Order of the Red Banner",
+        "Various campaign medals"
+      ]
+    },
+    {
+      "id": "unit-35-gds-mrb-op7-001",
+      "uri": "https://en.wikipedia.org/wiki/37th_Separate_Guards_Motor_Rifle_Brigade",
+      "type": "MilitaryUnit",
+      "names": [
+        {
+          "value": "35th Guards Motor Rifle Brigade",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "35-я гвардейская мотострелковая бригада",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "35 ГвМСБр",
+          "language": "ru",
+          "nameType": "abbreviation"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "35th Guards Motor Rifle Brigade",
+          "identifierType": "UNIT_DESIGNATION",
+          "issuingAuthority": "Russian Armed Forces"
+        },
+        {
+          "value": "в/ч 52946",
+          "identifierType": "MILITARY_UNIT_NUMBER",
+          "issuingAuthority": "Russian Ministry of Defense"
+        }
+      ],
+      "unitType": "motor-rifle-brigade",
+      "branch": "Ground Forces",
+      "formation": "Russian Armed Forces",
+      "country": "Russian Federation",
+      "status": "active",
+      "location": "Odesa Oblast",
+      "representations": [
+        {
+          "id": "37th-brigade-wiki",
+          "type": "webpage",
+          "title": "37th Separate Guards Motor Rifle Brigade - Wikipedia",
+          "description": "Wikipedia article about similar Guards Motor Rifle Brigade structure",
+          "url": "https://en.wikipedia.org/wiki/37th_Separate_Guards_Motor_Rifle_Brigade"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "35gds-formation",
+          "stateType": "unit_formation",
+          "startTime": "1995-01-01T00:00:00Z",
+          "location": "Russian Federation"
+        },
+        {
+          "id": "35gds-guards-status",
+          "stateType": "guards_designation_awarded",
+          "startTime": "1995-01-01T00:00:00Z",
+          "location": "Russian Federation"
+        },
+        {
+          "id": "35gds-deployed-op7",
+          "stateType": "regional_deployment",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        },
+        {
+          "id": "35gds-current-operations",
+          "stateType": "active_operations",
+          "startTime": "2022-02-24T00:00:00Z",
+          "location": "Ukraine"
+        }
+      ],
+      "states": [
+        {
+          "id": "35gds-operational-op7",
+          "stateType": "active_service",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Odesa Oblast"
+        },
+        {
+          "id": "35gds-combat-ready",
+          "stateType": "combat_ready",
+          "startTime": "1995-01-01T00:00:00Z",
+          "location": "Russian Federation"
+        }
+      ],
+      "specifications": {
+        "unitSize": "Brigade",
+        "personnel": "~3,000-4,000",
+        "classification": "Motor Rifle Brigade",
+        "subordination": "Combined Arms Army",
+        "guardsStatus": "Guards Unit",
+        "primaryRole": "Combined arms operations",
+        "deploymentRegion": "Odesa Oblast",
+        "equipment": [
+          "T-72B3/T-80BV main battle tanks",
+          "BMP-2/BMP-3 infantry fighting vehicles",
+          "BTR-80/BTR-82A armored personnel carriers",
+          "2S1 Gvozdika self-propelled howitzers",
+          "BM-21 Grad multiple rocket launchers",
+          "9K35 Strela-10 air defense systems"
+        ]
+      },
+      "structure": {
+        "headquarters": "Brigade Headquarters",
+        "subordinateUnits": [
+          "3x Motor Rifle Battalions",
+          "1x Tank Battalion",
+          "1x Artillery Battalion",
+          "1x Air Defense Battery",
+          "1x Engineer Company",
+          "1x Signal Company",
+          "1x Medical Company",
+          "1x Supply Company"
+        ]
+      },
+      "honors": [
+        "Guards designation",
+        "Order of the Red Banner"
+      ]
+    }
+  ],
+  "unitTypes": [
+    {
+      "id": "motor-rifle-brigade",
+      "name": "Motor Rifle Brigade",
+      "category": "ground forces unit",
+      "subcategory": "combined arms brigade",
+      "description": "Combined arms formation designed for independent operations",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "combined_arms_operations",
+          "dataType": "string"
+        },
+        {
+          "name": "personnel_strength",
+          "value": "3500",
+          "dataType": "number"
+        },
+        {
+          "name": "unit_level",
+          "value": "brigade",
+          "dataType": "string"
+        },
+        {
+          "name": "branch",
+          "value": "ground_forces",
+          "dataType": "string"
+        },
+        {
+          "name": "guards_status",
+          "value": "true",
+          "dataType": "boolean"
+        }
+      ]
+    }
+  ]
 }

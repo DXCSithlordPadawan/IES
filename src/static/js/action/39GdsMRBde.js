@@ -201,6 +201,36 @@ async function refreshComprehensiveReport() {
     }
 }
 
+// Function to detect the correct data directory path
+function findDataDirectory() {
+    const possiblePaths = [
+        path.join('/home/runner/work/IES/IES', 'data'),
+        path.join(process.cwd(), '..', '..', '..', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'data'),
+        path.join(process.cwd(), 'data'),
+        path.join(process.cwd(), '..', 'data'),
+        path.join(process.cwd(), '..', '..', 'data'),
+        path.join(process.cwd(), 'ies4-military-database-analysis', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'src', 'data'),
+        path.join('C:', 'ies4-military-database-analysis', 'backend', 'data')
+    ];
+    
+    console.log('🔍 Searching for data directory...');
+    
+    for (const testPath of possiblePaths) {
+        console.log(`   Testing: ${testPath}`);
+        if (fs.existsSync(testPath)) {
+            console.log(`   ✅ Found data directory: ${testPath}`);
+            return testPath;
+        } else {
+            console.log(`   ❌ Not found: ${testPath}`);
+        }
+    }
+    
+    console.log('⚠️ No data directory found, using default path');
+    return path.join('C:', 'ies4-military-database-analysis', 'data');
+}
+
 // Function to clear any cached data that might contain 39th Guards Motor Rifle Brigade
 async function clearCachedData() {
     try {
@@ -221,9 +251,10 @@ async function clearCachedData() {
 
 // Function to backup the file before modification
 function backupFile() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-    const backupPath = path.join('C:', 'ies4-military-database-analysis', 'data', 
+    const backupPath = path.join(dataDir, 
         `${path.basename(OPERATION_CONFIG.dataFile, '.json')}_backup_${timestamp}.json`);
     
     try {
@@ -242,8 +273,12 @@ function backupFile() {
 
 // Function to add 39th Guards Motor Rifle Brigade to the JSON data
 function add39thGuardsBrigade() {
-    // Define the file path
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    // Define the file path using findDataDirectory
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
+    
+    console.log(`📂 Using data directory: ${dataDir}`);
+    console.log(`📁 Target file path: ${filePath}`);
     
     // Check if file exists
     if (!fs.existsSync(filePath)) {
@@ -252,6 +287,13 @@ function add39thGuardsBrigade() {
     
     // Read the existing JSON file
     const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    
+    console.log('📊 Current file structure:');
+    console.log(`   Areas: ${data.areas ? data.areas.length : 0}`);
+    console.log(`   Military Units: ${data.militaryUnits ? data.militaryUnits.length : 0}`);
+    console.log(`   Vehicles: ${data.vehicles ? data.vehicles.length : 0}`);
+    console.log(`   Aircraft: ${data.aircraft ? data.aircraft.length : 0}`);
+    console.log(`   Unit Types: ${data.unitTypes ? data.unitTypes.length : 0}`);
     
     // Generate unique ID based on database
     const brigadeId = `unit-39th-guards-mrb-${OPERATION_CONFIG.database.toLowerCase()}-001`;
@@ -423,11 +465,13 @@ function add39thGuardsBrigade() {
     // Add militaryUnits array if it doesn't exist
     if (!data.militaryUnits) {
         data.militaryUnits = [];
+        console.log('📋 Created militaryUnits array');
     }
     
     // Add unitTypes array if it doesn't exist
     if (!data.unitTypes) {
         data.unitTypes = [];
+        console.log('📋 Created unitTypes array');
     }
     
     // Check if 39th Guards Brigade already exists
@@ -446,6 +490,7 @@ function add39thGuardsBrigade() {
         data.militaryUnits[index] = { ...brigade39th, id: existingBrigade.id };
     } else {
         // Add the brigade to the militaryUnits array
+        console.log('➕ Adding new 39th Guards Motor Rifle Brigade...');
         data.militaryUnits.push(brigade39th);
     }
     
@@ -456,12 +501,23 @@ function add39thGuardsBrigade() {
     }
     
     // Write the updated data back to the file
+    console.log('💾 Writing updated data to file...');
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    console.log('✅ File written successfully');
     
     console.log(`✅ Successfully added 39th Guards Motor Rifle Brigade to ${OPERATION_CONFIG.displayName}`);
     console.log('📁 File location:', filePath);
     console.log('🆔 Added unit ID:', brigade39th.id);
     console.log('🏷️ Unit type added:', motorRifleBrigadeType.id);
+    
+    // Verify the write
+    console.log('🔍 Verifying write operation...');
+    const verifyContent = fs.readFileSync(filePath, 'utf8');
+    const verifyData = JSON.parse(verifyContent);
+    console.log(`📊 Verified file structure:`);
+    console.log(`   Areas: ${verifyData.areas ? verifyData.areas.length : 0}`);
+    console.log(`   Military Units: ${verifyData.militaryUnits ? verifyData.militaryUnits.length : 0}`);
+    console.log(`   Unit Types: ${verifyData.unitTypes ? verifyData.unitTypes.length : 0}`);
     
     return data;
 }
@@ -552,7 +608,8 @@ function remove39thGuardsBrigade() {
 
 // Function to verify file structure after operation
 function verifyFileStructure() {
-    const filePath = path.join('C:', 'ies4-military-database-analysis', 'data', OPERATION_CONFIG.dataFile);
+    const dataDir = findDataDirectory();
+    const filePath = path.join(dataDir, OPERATION_CONFIG.dataFile);
     
     try {
         const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -821,11 +878,43 @@ async function listAvailableDatabases() {
 // Main execution
 async function main() {
     const args = process.argv.slice(2);
-    const operation = args[0];
-    const database = args[1] || 'OP7'; // Default to OP7 (Odesa Oblast)
 
     console.log('🪖 39th Guards Motor Rifle Brigade Database Manager');
     console.log('==================================================\n');
+
+    if (args.length === 0) {
+        await listAvailableDatabases();
+        return;
+    }
+
+    // Parse new-style --add and --db flags
+    let operation = null;
+    let database = null;
+    
+    for (let i = 0; i < args.length; i++) {
+        if (args[i] === '--add') {
+            operation = 'add';
+        } else if (args[i] === '--remove') {
+            operation = 'remove';
+        } else if (args[i] === '--db' && i + 1 < args.length) {
+            database = args[i + 1].toUpperCase();
+            i++; // Skip the next argument since we consumed it
+        } else if (args[i] === 'list') {
+            operation = 'list';
+        } else if (!operation && ['add', 'remove'].includes(args[i].toLowerCase())) {
+            // Support old-style commands
+            operation = args[i].toLowerCase();
+            if (i + 1 < args.length && !args[i + 1].startsWith('--')) {
+                database = args[i + 1].toUpperCase();
+            }
+        }
+    }
+    
+    // Default to OP7 if no database specified
+    if (!database && operation !== 'list') {
+        database = 'OP7';
+        console.log('💡 No database specified, defaulting to OP7 (Odesa Oblast)');
+    }
 
     if (operation === 'list') {
         await listAvailableDatabases();
@@ -833,8 +922,21 @@ async function main() {
     }
 
     if (!operation || !['add', 'remove'].includes(operation)) {
-        console.log('❌ Invalid operation. Use: add, remove, or list');
+        console.log('❌ Invalid operation. Use: --add, --remove, or list');
+        console.log('\nUsage examples:');
+        console.log('  node 39GdsMRBde.js --add --db OP7');
+        console.log('  node 39GdsMRBde.js --add (defaults to OP7)');
+        console.log('  node 39GdsMRBde.js --remove --db OP5');
+        console.log('  node 39GdsMRBde.js add OP7 (old style)');
+        console.log('  node 39GdsMRBde.js list');
         await listAvailableDatabases();
+        return;
+    }
+
+    // Validate database
+    if (!DATABASE_CONFIGS[database]) {
+        console.error(`❌ Unknown database: ${database}`);
+        console.log('Available databases:', Object.keys(DATABASE_CONFIGS).join(', '));
         return;
     }
 
