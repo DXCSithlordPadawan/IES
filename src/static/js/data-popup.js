@@ -230,11 +230,75 @@ class DataPopupManager {
     }
 
     /**
+     * Detect the currently active database from UI and context
+     */
+    detectCurrentDatabase() {
+        // Priority 1: Check currently selected database in UI
+        const databaseSelect = document.getElementById('databaseSelect');
+        if (databaseSelect && databaseSelect.value) {
+            console.log('✅ Detected database from UI selection:', databaseSelect.value);
+            return databaseSelect.value;
+        }
+
+        // Priority 2: Check window.currentDatabase if set during analysis
+        if (window.currentDatabase) {
+            console.log('✅ Using window.currentDatabase:', window.currentDatabase);
+            return window.currentDatabase;
+        }
+
+        // Priority 3: Check URL parameters for dataset
+        const urlParams = new URLSearchParams(window.location.search);
+        const datasetParam = urlParams.get('dataset') || urlParams.get('database');
+        if (datasetParam) {
+            console.log('✅ Detected database from URL parameter:', datasetParam);
+            return datasetParam;
+        }
+
+        // Priority 4: Try to detect from page context or title
+        const pageTitle = document.title || '';
+        const pageHeading = document.querySelector('h1')?.textContent || '';
+        const breadcrumbs = document.querySelector('.breadcrumb')?.textContent || '';
+        
+        // Look for dataset indicators in page content
+        const pageContent = (pageTitle + ' ' + pageHeading + ' ' + breadcrumbs).toUpperCase();
+        const datasetPatterns = ['OP1', 'OP2', 'OP3', 'OP4', 'OP5', 'OP6', 'OP7'];
+        
+        for (const dataset of datasetPatterns) {
+            if (pageContent.includes(dataset)) {
+                console.log('✅ Detected database from page content:', dataset);
+                return dataset;
+            }
+        }
+
+        // Priority 5: Check if there's an active analysis with database info
+        if (window.currentVisualization && window.currentVisualization.metadata) {
+            const metadata = window.currentVisualization.metadata;
+            if (metadata.database || metadata.dataset) {
+                const detectedDb = metadata.database || metadata.dataset;
+                console.log('✅ Detected database from visualization metadata:', detectedDb);
+                return detectedDb;
+            }
+        }
+
+        // Fallback: Return null to indicate unknown database
+        console.log('⚠️ Could not detect current database, will need explicit selection');
+        return null;
+    }
+
+    /**
      * Ensure database is loaded for the current database
      */
     async ensureDatabaseLoaded() {
-        if (!this.currentDatabase) {
-            console.log('🔄 No current database set, defaulting to OP7');
+        // Detect current database dynamically
+        const detectedDatabase = this.detectCurrentDatabase();
+        
+        if (detectedDatabase) {
+            this.currentDatabase = detectedDatabase;
+            window.currentDatabase = detectedDatabase;
+            console.log('🔄 Using detected database:', detectedDatabase);
+        } else if (!this.currentDatabase) {
+            // Only default to OP7 if absolutely no database can be detected
+            console.log('🔄 No database detected, defaulting to OP7 as fallback');
             this.currentDatabase = 'OP7';
             window.currentDatabase = 'OP7';
         }
@@ -918,16 +982,26 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('🚀 Initializing data popup manager...');
         window.dataPopupManager = new DataPopupManager();
         
-        // Initialize database manager with OP7 data if not already done
+        // Initialize database manager dynamically based on detected database
         if (window.databaseManager && !window.databaseManager.isInitialized) {
-            window.databaseManager.initializeWithOP7();
+            // Detect current database before initialization
+            const currentDb = window.dataPopupManager ? window.dataPopupManager.detectCurrentDatabase() : null;
+            if (currentDb) {
+                console.log('🚀 Initializing database manager with detected database:', currentDb);
+                window.databaseManager.initializeWithDatabase(currentDb);
+            } else {
+                console.log('🚀 No database detected, initializing with OP7 as fallback');
+                window.databaseManager.initializeWithOP7();
+            }
         }
         
-        // Set default database if not set
-        if (!window.currentDatabase) {
-            window.currentDatabase = 'OP7';
-            if (window.dataPopupManager) {
-                window.dataPopupManager.setCurrentDatabase('OP7');
+        // Set current database based on detection
+        if (window.dataPopupManager) {
+            const detectedDb = window.dataPopupManager.detectCurrentDatabase();
+            if (detectedDb) {
+                window.currentDatabase = detectedDb;
+                window.dataPopupManager.setCurrentDatabase(detectedDb);
+                console.log('✅ Set popup manager to use database:', detectedDb);
             }
         }
         
@@ -937,9 +1011,18 @@ document.addEventListener('DOMContentLoaded', function() {
             window.displayVisualization = function(data) {
                 originalDisplayVisualization(data);
                 
-                // Set current database for popup manager
-                if (window.dataPopupManager && window.currentDatabase) {
-                    window.dataPopupManager.setCurrentDatabase(window.currentDatabase);
+                // Detect and set current database for popup manager
+                if (window.dataPopupManager) {
+                    const detectedDb = window.dataPopupManager.detectCurrentDatabase();
+                    if (detectedDb) {
+                        window.currentDatabase = detectedDb;
+                        window.dataPopupManager.setCurrentDatabase(detectedDb);
+                        console.log('📊 Visualization displayed, using database:', detectedDb);
+                    } else if (window.currentDatabase) {
+                        // Fallback to existing currentDatabase if detection fails
+                        window.dataPopupManager.setCurrentDatabase(window.currentDatabase);
+                        console.log('📊 Visualization displayed, using existing database:', window.currentDatabase);
+                    }
                 }
                 
                 // Add click handler after a short delay to ensure Plotly is ready

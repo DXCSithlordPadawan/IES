@@ -274,38 +274,91 @@ class DatabaseManager {
     }
 
     /**
-     * Initialize database manager with OP7 data
+     * Initialize database manager with specified database data
      */
-    async initializeWithOP7() {
+    async initializeWithDatabase(databaseName) {
         try {
-            console.log('🚀 Initializing database manager with OP7 data...');
+            console.log(`🚀 Initializing database manager with ${databaseName} data...`);
             
-            // Load OP7 data
-            await this.loadDatabaseData('OP7');
+            // Load specified database data
+            await this.loadDatabaseData(databaseName);
             
             // Set global references
-            window.currentDatabase = 'OP7';
+            window.currentDatabase = databaseName;
             
             // Update data popup manager if available
             if (window.dataPopupManager) {
-                window.dataPopupManager.setCurrentDatabase('OP7');
+                window.dataPopupManager.setCurrentDatabase(databaseName);
             }
             
             this.isInitialized = true;
-            console.log('✅ Database manager initialized with OP7 data');
+            console.log(`✅ Database manager initialized with ${databaseName} data`);
             
         } catch (error) {
-            console.error('❌ Failed to initialize database manager:', error);
+            console.error(`❌ Failed to initialize database manager with ${databaseName}:`, error);
             // Still mark as initialized to prevent repeated attempts
             this.isInitialized = true;
         }
     }
 
     /**
+     * Automatically detect and switch to current database
+     */
+    async autoDetectAndSwitchDatabase() {
+        // Use the popup manager's detection logic if available
+        let detectedDatabase = null;
+        
+        if (window.dataPopupManager && window.dataPopupManager.detectCurrentDatabase) {
+            detectedDatabase = window.dataPopupManager.detectCurrentDatabase();
+        }
+        
+        if (!detectedDatabase) {
+            // Fallback detection
+            const databaseSelect = document.getElementById('databaseSelect');
+            if (databaseSelect && databaseSelect.value) {
+                detectedDatabase = databaseSelect.value;
+            } else if (window.currentDatabase) {
+                detectedDatabase = window.currentDatabase;
+            }
+        }
+        
+        if (detectedDatabase && detectedDatabase !== window.currentDatabase) {
+            console.log(`🔄 Switching database from ${window.currentDatabase} to ${detectedDatabase}`);
+            await this.initializeWithDatabase(detectedDatabase);
+            return detectedDatabase;
+        }
+        
+        return window.currentDatabase;
+    }
+
+    /**
+     * Initialize database manager with OP7 data (legacy support)
+     */
+    async initializeWithOP7() {
+        return this.initializeWithDatabase('OP7');
+    }
+
+    /**
      * Get entity by ID from loaded data
      */
-    getEntity(entityId, databaseName = 'OP7') {
+    getEntity(entityId, databaseName = null) {
         try {
+            // Auto-detect database if not provided
+            if (!databaseName) {
+                databaseName = window.currentDatabase;
+                if (!databaseName) {
+                    // Try to detect from UI
+                    const databaseSelect = document.getElementById('databaseSelect');
+                    if (databaseSelect && databaseSelect.value) {
+                        databaseName = databaseSelect.value;
+                    } else {
+                        // Only use OP7 as absolute fallback
+                        databaseName = 'OP7';
+                        console.log('⚠️ No database specified or detected, using OP7 as fallback');
+                    }
+                }
+            }
+            
             const database = this.databases[databaseName];
             if (!database) {
                 console.warn(`⚠️ Database ${databaseName} not loaded`);
@@ -319,7 +372,7 @@ class DatabaseManager {
                 if (database[entityType] && Array.isArray(database[entityType])) {
                     const entity = database[entityType].find(e => e.id === entityId);
                     if (entity) {
-                        console.log(`✅ Found entity ${entityId} in ${entityType}`);
+                        console.log(`✅ Found entity ${entityId} in ${entityType} (database: ${databaseName})`);
                         return { ...entity, entityType };
                     }
                 }

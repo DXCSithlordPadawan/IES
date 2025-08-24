@@ -412,6 +412,13 @@
             }
 
             currentDatabase = database;
+            window.currentDatabase = database; // Ensure window global is also set
+            
+            // Update data popup manager if available
+            if (window.dataPopupManager) {
+                window.dataPopupManager.setCurrentDatabase(database);
+                console.log('✅ Updated popup manager to use database:', database);
+            }
 
             // Show loading state
             const vizArea = document.getElementById('visualization-area');
