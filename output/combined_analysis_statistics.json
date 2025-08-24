@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-08-24T12:47:59.993771",
+    "generated_at": "2025-08-24T12:48:19.992980",
     "node_count": 1012,
     "edge_count": 1167,
     "database_info": {
@@ -419,43 +419,43 @@
     "top_betweenness_centrality": [
       [
         "country-china",
-        0.16707776055423915
+        0.14972240516384963
       ],
       [
         "vt-transport-helicopter",
-        0.0821612492886708
+        0.07423090826133671
       ],
       [
         "uk-001",
-        0.06113080589158241
+        0.0604145558239527
+      ],
+      [
+        "country-poland",
+        0.04135658398176852
       ],
       [
         "country-germany",
-        0.05244149600620689
+        0.04005388453734445
       ],
       [
-        "country-finland",
-        0.03589092161433043
-      ],
-      [
-        "country-sweden",
-        0.024658143891033074
-      ],
-      [
-        "country-north-korea",
-        0.02391733574383091
-      ],
-      [
-        "vt-attack-aircraft",
-        0.023136059571421543
+        "country-russia-001",
+        0.03495747278452034
       ],
       [
         "vt-attack-helicopter",
-        0.022510349180375505
+        0.024765663746776592
       ],
       [
-        "usa-001",
-        0.022127333790498787
+        "country-finland",
+        0.023826701580465952
+      ],
+      [
+        "country-sweden",
+        0.020100335310693652
+      ],
+      [
+        "country-north-korea",
+        0.017723519906856194
       ]
     ],
     "top_eigenvector_centrality": [
