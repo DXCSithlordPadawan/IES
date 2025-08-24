@@ -195,11 +195,15 @@ class VisualizationEngine:
         for node_type, nodes in node_groups.items():
             x_coords, y_coords = [], []
             text_labels, hover_texts = [], []
+            node_ids, custom_data = [], []
             
             for node_id, node_data in nodes:
                 x, y = pos[node_id]
                 x_coords.append(x)
                 y_coords.append(y)
+                
+                # Store the actual entity ID for click handling
+                node_ids.append(node_id)
                 
                 # Text label
                 label = node_data.get('label', node_id)
@@ -208,6 +212,15 @@ class VisualizationEngine:
                 # Hover information
                 hover_text = self._create_hover_text(node_id, node_data, graph)
                 hover_texts.append(hover_text)
+                
+                # Custom data for click handling - include entity metadata
+                entity_data = node_data.get('data', {})
+                custom_data.append({
+                    'id': node_id,
+                    'type': node_type,
+                    'label': label,
+                    'data': entity_data
+                })
             
             # Create trace
             color = self.entity_colors.get(node_type, '#808080')
@@ -218,6 +231,8 @@ class VisualizationEngine:
                 textposition='middle center',
                 hovertext=hover_texts,
                 hoverinfo='text',
+                ids=node_ids,  # Add entity IDs for click handling
+                customdata=custom_data,  # Add custom data for detailed entity info
                 marker=dict(
                     size=self._get_node_size(node_type),
                     color=color,

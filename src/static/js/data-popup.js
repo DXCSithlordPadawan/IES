@@ -209,25 +209,36 @@ class DataPopupManager {
      */
     async fetchEntityDetails(entityId) {
         try {
+            console.log('🔍 Fetching entity details for ID:', entityId);
+            
             // First try to get from current analysis data if available
             if (window.currentVisualization && window.currentVisualization.data) {
                 const plotlyData = window.currentVisualization.data;
+                console.log('📊 Searching in current visualization data...');
                 
                 // Look for the entity in Plotly data
                 for (const trace of plotlyData) {
+                    // Check customdata first (enhanced data from our fix)
                     if (trace.customdata) {
                         for (let i = 0; i < trace.customdata.length; i++) {
                             const data = trace.customdata[i];
-                            if (data && (data.id === entityId || data.text === entityId)) {
-                                return data;
+                            if (data && data.id === entityId) {
+                                console.log('✅ Found entity in customdata:', data);
+                                return {
+                                    ...data.data, // Include the actual entity data
+                                    id: data.id,
+                                    type: data.type,
+                                    label: data.label
+                                };
                             }
                         }
                     }
                     
-                    // Also check text and ids arrays
+                    // Also check text and ids arrays (legacy support)
                     if (trace.text && trace.ids) {
                         const index = trace.ids.indexOf(entityId);
                         if (index !== -1) {
+                            console.log('✅ Found entity in trace ids at index:', index);
                             return {
                                 id: entityId,
                                 name: trace.text[index],
@@ -238,21 +249,35 @@ class DataPopupManager {
                         }
                     }
                 }
+                console.log('⚠️ Entity not found in current visualization data');
             }
 
             // If not found in current data, try to fetch from server
             if (this.currentDatabase) {
+                console.log('🌐 Trying to fetch from server...');
                 const response = await fetch(`/api/entity/${entityId}?database=${this.currentDatabase}`);
                 if (response.ok) {
-                    return await response.json();
+                    const serverData = await response.json();
+                    console.log('✅ Found entity data from server:', serverData);
+                    return serverData;
+                } else {
+                    console.log('❌ Server response not ok:', response.status);
                 }
             }
 
             // If still not found, try to extract from database directly
-            return await this.searchInLoadedDatabase(entityId);
+            console.log('🔍 Searching in loaded database...');
+            const dbResult = await this.searchInLoadedDatabase(entityId);
+            if (dbResult) {
+                console.log('✅ Found entity in loaded database:', dbResult);
+                return dbResult;
+            }
+            
+            console.log('❌ Entity not found in any data source');
+            return null;
             
         } catch (error) {
-            console.error('Error fetching entity details:', error);
+            console.error('❌ Error fetching entity details:', error);
             throw error;
         }
     }
@@ -601,43 +626,79 @@ function addPlotlyClickHandler() {
         if (data.points && data.points.length > 0) {
             const point = data.points[0];
             
+            console.log('🖱️ Click event data:', point);
+            
             // Extract entity information from the clicked point
             let entityId = null;
             let entityType = null;
+            let entityData = null;
             
-            // Try different ways to get entity ID
+            // Priority 1: Try customdata first (enhanced with our fix)
             if (point.customdata && point.customdata.id) {
                 entityId = point.customdata.id;
                 entityType = point.customdata.type;
-            } else if (point.text) {
-                entityId = point.text;
-            } else if (point.id) {
-                entityId = point.id;
-            } else if (point.pointNumber !== undefined && point.data.ids) {
+                entityData = point.customdata.data;
+                console.log('✅ Found entity ID in customdata:', entityId);
+            }
+            // Priority 2: Try trace ids array with point number
+            else if (point.pointNumber !== undefined && point.data.ids && point.data.ids[point.pointNumber]) {
                 entityId = point.data.ids[point.pointNumber];
+                console.log('✅ Found entity ID in trace ids:', entityId);
+            }
+            // Priority 3: Try point.id directly
+            else if (point.id) {
+                entityId = point.id;
+                console.log('✅ Found entity ID in point.id:', entityId);
+            }
+            // Priority 4: Fallback to text (least reliable)
+            else if (point.text && point.text.trim() !== '') {
+                entityId = point.text.trim();
+                console.log('⚠️ Using text as entity ID fallback:', entityId);
             }
             
-            // Try to get entity type from trace name
+            // Try to get entity type from trace name if not already found
             if (!entityType && point.data.name) {
-                entityType = point.data.name.toLowerCase();
+                // Extract the actual entity type from trace name (remove count suffix)
+                const traceName = point.data.name.toLowerCase();
+                if (traceName.includes('vehicle')) {
+                    entityType = 'vehicle';
+                } else if (traceName.includes('country')) {
+                    entityType = 'country';
+                } else if (traceName.includes('organization')) {
+                    entityType = 'militaryOrganization';
+                } else if (traceName.includes('area')) {
+                    entityType = 'area';
+                } else if (traceName.includes('person')) {
+                    entityType = 'person';
+                } else {
+                    entityType = traceName.split(' ')[0]; // Use first word as type
+                }
+                console.log('🔍 Extracted entity type from trace name:', entityType);
             }
             
             if (entityId) {
-                console.log('🖱️ Clicked on entity:', entityId, 'Type:', entityType);
+                console.log('🎯 Final entity info:', { id: entityId, type: entityType, hasData: !!entityData });
                 
                 // Show popup with entity details
                 if (window.dataPopupManager) {
                     window.dataPopupManager.showEntityDetails(entityId, entityType);
                 } else {
-                    console.warn('Data popup manager not initialized');
+                    console.warn('❌ Data popup manager not initialized');
                 }
             } else {
-                console.warn('Could not extract entity ID from clicked point:', point);
+                console.warn('❌ Could not extract entity ID from clicked point. Available data:', {
+                    pointNumber: point.pointNumber,
+                    hasIds: !!(point.data && point.data.ids),
+                    hasCustomdata: !!point.customdata,
+                    text: point.text,
+                    id: point.id,
+                    dataName: point.data?.name
+                });
             }
         }
     });
     
-    console.log('✅ Plotly click handler added');
+    console.log('✅ Enhanced Plotly click handler added with better entity ID extraction');
 }
 
 /**
