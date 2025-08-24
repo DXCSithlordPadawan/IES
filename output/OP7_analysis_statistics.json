@@ -1,25 +1,26 @@
 {
   "metadata": {
-    "generated_at": "2025-08-24T21:51:24.570688",
-    "node_count": 7,
-    "edge_count": 2,
+    "generated_at": "2025-08-24T22:22:00.433713",
+    "node_count": 10,
+    "edge_count": 25,
     "database_info": {
       "filename": "unknown",
       "loaded_at": "",
       "entity_counts": {
         "vehicles": 2,
         "areas": 1,
-        "organizations": 0,
-        "persons": 0,
-        "weapons": 0,
-        "events": 0,
-        "aircraft": 0,
+        "people": 1,
         "militaryUnits": 2,
+        "aircraft": 1,
+        "weapons": 1,
+        "events": 0,
+        "organizations": 0,
         "vehicleTypes": 1,
         "areaTypes": 0,
-        "organizationTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 1,
         "weaponTypes": 0,
-        "unitTypes": 1
+        "organizationTypes": 0
       },
       "title": "",
       "description": ""
@@ -27,106 +28,135 @@
     "entity_counts": {
       "vehicles": 2,
       "vehicleTypes": 1,
+      "people": 1,
       "areas": 1,
       "militaryUnits": 2,
-      "unitTypes": 1
+      "unitTypes": 1,
+      "aircraft": 1,
+      "weapons": 1
     }
   },
   "node_statistics": {
-    "total_nodes": 7,
+    "total_nodes": 10,
     "node_types": {
       "vehicles": 2,
       "vehicleTypes": 1,
+      "people": 1,
       "areas": 1,
       "militaryUnits": 2,
-      "unitTypes": 1
+      "unitTypes": 1,
+      "aircraft": 1,
+      "weapons": 1
     },
     "degree_distribution": {
-      "1": 2,
-      "2": 1,
-      "0": 4
+      "7": 4,
+      "2": 2,
+      "6": 3,
+      "0": 1
     },
     "isolated_nodes": [
-      "area-odesa-oblast-001",
-      "unit-39th-guards-mrb-op7-001",
-      "unit-35-gds-mrb-op7-001",
-      "motor-rifle-brigade"
+      "area-odesa-oblast-001"
     ],
     "degree_stats": {
-      "mean": 0.5714285714285714,
-      "median": 0.0,
-      "std": 0.7284313590846835,
+      "mean": 5.0,
+      "median": 6.0,
+      "std": 2.4899799195977463,
       "min": 0,
-      "max": 2
+      "max": 7
     }
   },
   "edge_statistics": {
-    "total_edges": 2,
+    "total_edges": 25,
     "relationship_types": {
-      "vehicleType": 2
+      "vehicleType": 2,
+      "co_located": 11,
+      "operates_equipment": 8,
+      "assigned_to_unit": 2,
+      "unitType": 2
     },
     "edge_weight_distribution": {
-      "1.0": 2
+      "1.0": 25
     }
   },
   "connectivity": {
     "is_connected": false,
-    "number_of_components": 5,
-    "density": 0.09523809523809523,
+    "number_of_components": 2,
+    "density": 0.5555555555555556,
     "component_sizes": [
-      3,
-      1,
-      1,
-      1,
+      9,
       1
     ],
-    "largest_component_size": 3,
-    "average_clustering": 0.0,
+    "largest_component_size": 9,
+    "average_clustering": 0.8047619047619048,
     "largest_component_avg_path": 1.3333333333333333,
-    "largest_component_diameter": 2
+    "largest_component_diameter": 3
   },
   "centrality": {
     "top_degree_centrality": [
       [
-        "main-battle-tank",
-        0.3333333333333333
-      ],
-      [
         "vehicle-t80-tank-op7-001",
-        0.16666666666666666
+        0.7777777777777777
       ],
       [
         "vehicle-t90-tank-op7-001",
-        0.16666666666666666
-      ],
-      [
-        "area-odesa-oblast-001",
-        0.0
+        0.7777777777777777
       ],
       [
         "unit-39th-guards-mrb-op7-001",
-        0.0
+        0.7777777777777777
       ],
       [
         "unit-35-gds-mrb-op7-001",
-        0.0
+        0.7777777777777777
+      ],
+      [
+        "person-test-001",
+        0.6666666666666666
+      ],
+      [
+        "aircraft-test-001",
+        0.6666666666666666
+      ],
+      [
+        "weapon-test-001",
+        0.6666666666666666
+      ],
+      [
+        "main-battle-tank",
+        0.2222222222222222
       ],
       [
         "motor-rifle-brigade",
+        0.2222222222222222
+      ],
+      [
+        "area-odesa-oblast-001",
         0.0
       ]
     ],
     "top_betweenness_centrality": [
       [
-        "main-battle-tank",
-        0.06666666666666667
-      ],
-      [
         "vehicle-t80-tank-op7-001",
-        0.0
+        0.08333333333333333
       ],
       [
         "vehicle-t90-tank-op7-001",
+        0.08333333333333333
+      ],
+      [
+        "unit-39th-guards-mrb-op7-001",
+        0.08333333333333333
+      ],
+      [
+        "unit-35-gds-mrb-op7-001",
+        0.08333333333333333
+      ],
+      [
+        "main-battle-tank",
+        0.0
+      ],
+      [
+        "person-test-001",
         0.0
       ],
       [
@@ -134,46 +164,58 @@
         0.0
       ],
       [
-        "unit-39th-guards-mrb-op7-001",
-        0.0
-      ],
-      [
-        "unit-35-gds-mrb-op7-001",
-        0.0
-      ],
-      [
         "motor-rifle-brigade",
+        0.0
+      ],
+      [
+        "aircraft-test-001",
+        0.0
+      ],
+      [
+        "weapon-test-001",
         0.0
       ]
     ],
     "top_eigenvector_centrality": [
       [
-        "main-battle-tank",
-        0.7071067811853513
-      ],
-      [
         "vehicle-t80-tank-op7-001",
-        0.4999999999985903
+        0.37945261015861964
       ],
       [
         "vehicle-t90-tank-op7-001",
-        0.4999999999985903
-      ],
-      [
-        "area-odesa-oblast-001",
-        1.061949909943654e-06
+        0.37945261015861964
       ],
       [
         "unit-39th-guards-mrb-op7-001",
-        1.061949909943654e-06
+        0.37945261015861964
       ],
       [
         "unit-35-gds-mrb-op7-001",
-        1.061949909943654e-06
+        0.37945261015861964
+      ],
+      [
+        "person-test-001",
+        0.36239199358349244
+      ],
+      [
+        "aircraft-test-001",
+        0.36239199358349244
+      ],
+      [
+        "weapon-test-001",
+        0.36239199358349244
+      ],
+      [
+        "main-battle-tank",
+        0.12263563008968066
       ],
       [
         "motor-rifle-brigade",
-        1.061949909943654e-06
+        0.12263563008968066
+      ],
+      [
+        "area-odesa-oblast-001",
+        4.9215541207517545e-08
       ]
     ]
   },
