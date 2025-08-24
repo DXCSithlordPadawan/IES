@@ -1,0 +1,906 @@
+{
+  "executive_summary": {
+    "total_entities": 972,
+    "total_relationships": 1210,
+    "databases_analyzed": 20,
+    "key_findings": [
+      "Largest entity category: vehicles (492 entities)"
+    ],
+    "data_quality_score": 0.6792695473251029
+  },
+  "database_overview": {
+    "databases_used": [
+      "combined",
+      "usa",
+      "uk",
+      "sweden",
+      "russia",
+      "poland",
+      "germany",
+      "finland",
+      "iran",
+      "china",
+      "france",
+      "north_korea",
+      "OP1",
+      "OP2",
+      "OP3",
+      "OP4",
+      "OP5",
+      "OP6",
+      "OP7",
+      "OP8"
+    ],
+    "coverage_by_type": {},
+    "data_completeness": {},
+    "database_sizes": {
+      "combined": {
+        "vehicles": 488,
+        "areas": 153,
+        "people": 15,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 205,
+        "areaTypes": 0,
+        "peopleTypes": 77,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "usa": {
+        "vehicles": 27,
+        "areas": 5,
+        "people": 1,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 20,
+        "areaTypes": 0,
+        "peopleTypes": 4,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "uk": {
+        "vehicles": 68,
+        "areas": 51,
+        "people": 7,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 54,
+        "areaTypes": 0,
+        "peopleTypes": 44,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "sweden": {
+        "vehicles": 23,
+        "areas": 6,
+        "people": 1,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 20,
+        "areaTypes": 0,
+        "peopleTypes": 4,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "russia": {
+        "vehicles": 27,
+        "areas": 7,
+        "people": 1,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 20,
+        "areaTypes": 0,
+        "peopleTypes": 4,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "poland": {
+        "vehicles": 25,
+        "areas": 8,
+        "people": 1,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 20,
+        "areaTypes": 0,
+        "peopleTypes": 4,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "germany": {
+        "vehicles": 45,
+        "areas": 10,
+        "people": 2,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 20,
+        "areaTypes": 0,
+        "peopleTypes": 6,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "finland": {
+        "vehicles": 24,
+        "areas": 8,
+        "people": 1,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 20,
+        "areaTypes": 0,
+        "peopleTypes": 3,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "iran": {
+        "vehicles": 36,
+        "areas": 9,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 22,
+        "areaTypes": 0,
+        "peopleTypes": 5,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "china": {
+        "vehicles": 118,
+        "areas": 20,
+        "people": 1,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 69,
+        "areaTypes": 0,
+        "peopleTypes": 5,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "france": {
+        "vehicles": 58,
+        "areas": 15,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 31,
+        "areaTypes": 0,
+        "peopleTypes": 2,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "north_korea": {
+        "vehicles": 42,
+        "areas": 14,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 35,
+        "areaTypes": 0,
+        "peopleTypes": 4,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP1": {
+        "vehicles": 0,
+        "areas": 1,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 1,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP2": {
+        "vehicles": 0,
+        "areas": 1,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP3": {
+        "vehicles": 0,
+        "areas": 1,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP4": {
+        "vehicles": 0,
+        "areas": 1,
+        "people": 0,
+        "militaryUnits": 1,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 1,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP5": {
+        "vehicles": 0,
+        "areas": 1,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP6": {
+        "vehicles": 0,
+        "areas": 1,
+        "people": 0,
+        "militaryUnits": 0,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 0,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP7": {
+        "vehicles": 4,
+        "areas": 1,
+        "people": 1,
+        "militaryUnits": 2,
+        "aircraft": 2,
+        "weapons": 1,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 3,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 1,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      },
+      "OP8": {
+        "vehicles": 0,
+        "areas": 1,
+        "people": 0,
+        "militaryUnits": 1,
+        "aircraft": 0,
+        "weapons": 0,
+        "events": 0,
+        "organizations": 0,
+        "vehicleTypes": 0,
+        "areaTypes": 0,
+        "peopleTypes": 0,
+        "unitTypes": 1,
+        "weaponTypes": 0,
+        "organizationTypes": 0
+      }
+    }
+  },
+  "entity_statistics": {
+    "countries": {},
+    "vehicles": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_manufacturer": {},
+      "by_decade": {},
+      "age_distribution": {}
+    },
+    "organizations": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "personnel_stats": {}
+    },
+    "people": {
+      "total_count": 0,
+      "by_type": {},
+      "by_nationality": {},
+      "birth_decades": {}
+    },
+    "areas": {
+      "total_count": 0,
+      "by_type": {},
+      "by_country": {},
+      "by_admin_level": {}
+    }
+  },
+  "relationship_analysis": {
+    "relationship_matrix": {
+      "vehicles": {
+        "countries": 488,
+        "vehicleTypes": 491,
+        "vehicles": 6,
+        "people": 4,
+        "militaryUnits": 8,
+        "aircraft": 8,
+        "weapons": 4
+      },
+      "people": {
+        "countries": 15,
+        "peopleTypes": 14,
+        "militaryUnits": 2,
+        "aircraft": 2,
+        "weapons": 1
+      },
+      "areas": {
+        "countries": 153
+      },
+      "militaryUnits": {
+        "unitTypes": 4,
+        "militaryUnits": 1,
+        "aircraft": 4,
+        "weapons": 2
+      },
+      "aircraft": {
+        "aircraft": 1,
+        "weapons": 2
+      }
+    },
+    "common_patterns": [],
+    "relationship_strength": {}
+  },
+  "country_comparison": {
+    "countries": {
+      "UK": {
+        "total_assets": 134,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "2009": 8,
+          "1997": 1,
+          "1989": 2,
+          "2018": 5,
+          "1985": 1,
+          "1957": 1,
+          "1999": 1,
+          "1995": 1,
+          "2013": 4,
+          "1960": 1,
+          "1993": 1,
+          "1976": 1,
+          "1965": 1,
+          "2007": 6,
+          "2020": 2,
+          "2014": 3,
+          "1998": 3,
+          "2000": 2,
+          "2027": 1,
+          "2016": 2,
+          "2005": 1,
+          "1996": 1,
+          "1990": 1,
+          "1987": 2,
+          "2010": 2,
+          "2003": 1,
+          "2004": 1,
+          "2025": 1,
+          "2015": 1,
+          "1971": 1,
+          "2002": 1,
+          "1961": 1,
+          "2008": 1,
+          "2006": 1,
+          "2001": 1,
+          "2011": 1,
+          "2019": 1,
+          "2012": 1,
+          "2017": 1
+        }
+      },
+      "USA": {
+        "total_assets": 32,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "1983": 1,
+          "1956": 1,
+          "1994": 1,
+          "1997": 1,
+          "1984": 4,
+          "2010": 1,
+          "1979": 1,
+          "1962": 1,
+          "1976": 1,
+          "2015": 1,
+          "1995": 1,
+          "1981": 2,
+          "1996": 1,
+          "2008": 2,
+          "2005": 1,
+          "1980": 1,
+          "2002": 1,
+          "2007": 2,
+          "1971": 1,
+          "2006": 1
+        }
+      },
+      "Russia": {
+        "total_assets": 44,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "1991": 1,
+          "2018": 1,
+          "1963": 2,
+          "2011": 1,
+          "2016": 1,
+          "1967": 1,
+          "1981": 1,
+          "2014": 3,
+          "2006": 1,
+          "2012": 2,
+          "2009": 1,
+          "2007": 1,
+          "1989": 1,
+          "2017": 1,
+          "1962": 1,
+          "1987": 1,
+          "1980": 1,
+          "2019": 1,
+          "2013": 2,
+          "2010": 1,
+          "1974": 1,
+          "1976": 1,
+          "1992": 1,
+          "1982": 1,
+          "1973": 1
+        }
+      },
+      "China": {
+        "total_assets": 139,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "2007": 5,
+          "2016": 9,
+          "2011": 1,
+          "2017": 10,
+          "1988": 2,
+          "2013": 2,
+          "2019": 9,
+          "1987": 1,
+          "2014": 9,
+          "2008": 3,
+          "2015": 8,
+          "2012": 7,
+          "1997": 2,
+          "1970": 3,
+          "2010": 6,
+          "1989": 3,
+          "1992": 2,
+          "2018": 8,
+          "2022": 2,
+          "2020": 3,
+          "1949": 1,
+          "1995": 2,
+          "1999": 3,
+          "2009": 2,
+          "2004": 2,
+          "1983": 1,
+          "2002": 1,
+          "2005": 1,
+          "1994": 1,
+          "1950": 1,
+          "1953": 1,
+          "1980": 1,
+          "1984": 1,
+          "1981": 1,
+          "1985": 1,
+          "1982": 1,
+          "1975": 1,
+          "1965": 1
+        }
+      },
+      "Iran": {
+        "total_assets": 44,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "1974": 2,
+          "1967": 1,
+          "2018": 1,
+          "1971": 1,
+          "2012": 1,
+          "2021": 1,
+          "2013": 1,
+          "2017": 2,
+          "2006": 2,
+          "2016": 2,
+          "1997": 1,
+          "2000": 2,
+          "1969": 2,
+          "2010": 4,
+          "1962": 1,
+          "1956": 1,
+          "2009": 2,
+          "1998": 1,
+          "2002": 1,
+          "2015": 1,
+          "2011": 1,
+          "2019": 1,
+          "1995": 1,
+          "2003": 1,
+          "2005": 1
+        }
+      },
+      "Poland": {
+        "total_assets": 34,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "1996": 1,
+          "2016": 1,
+          "2018": 1,
+          "1979": 1,
+          "1992": 1,
+          "2015": 1,
+          "1976": 1,
+          "2013": 1,
+          "1956": 1,
+          "1997": 2,
+          "2003": 1,
+          "2010": 2,
+          "2009": 1,
+          "1998": 1,
+          "1985": 1,
+          "1995": 1,
+          "2014": 1,
+          "1966": 1,
+          "2017": 2,
+          "2004": 2,
+          "2012": 1
+        }
+      },
+      "Sweden": {
+        "total_assets": 30,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "1986": 1,
+          "1958": 1,
+          "1996": 2,
+          "2019": 1,
+          "1965": 1,
+          "1994": 1,
+          "2009": 2,
+          "2011": 1,
+          "2005": 2,
+          "1985": 1,
+          "1977": 2,
+          "2013": 1,
+          "1997": 1,
+          "1993": 1,
+          "2004": 1,
+          "2018": 1,
+          "2010": 1,
+          "2015": 1,
+          "1980": 1
+        }
+      },
+      "Finland": {
+        "total_assets": 31,
+        "vehicles": 0,
+        "organizations": 0,
+        "areas": 0,
+        "people": 0,
+        "vehicle_types": {},
+        "organization_types": {},
+        "manufacturers": {},
+        "timeline": {
+          "1962": 2,
+          "1995": 2,
+          "1985": 1,
+          "2008": 2,
+          "1980": 1,
+          "2025": 1,
+          "2012": 1,
+          "2006": 1,
+          "2010": 1,
+          "2017": 1,
+          "1954": 1,
+          "2004": 1,
+          "1983": 1,
+          "1981": 1,
+          "1998": 1,
+          "2020": 1,
+          "2015": 1,
+          "2018": 1,
+          "2005": 1
+        }
+      }
+    },
+    "comparison_metrics": {
+      "total_assets_ranking": [
+        [
+          "China",
+          139
+        ],
+        [
+          "UK",
+          134
+        ],
+        [
+          "Russia",
+          44
+        ],
+        [
+          "Iran",
+          44
+        ],
+        [
+          "Poland",
+          34
+        ],
+        [
+          "USA",
+          32
+        ],
+        [
+          "Finland",
+          31
+        ],
+        [
+          "Sweden",
+          30
+        ]
+      ],
+      "vehicle_counts": {
+        "UK": 0,
+        "USA": 0,
+        "Russia": 0,
+        "China": 0,
+        "Iran": 0,
+        "Poland": 0,
+        "Sweden": 0,
+        "Finland": 0
+      },
+      "organization_counts": {
+        "UK": 0,
+        "USA": 0,
+        "Russia": 0,
+        "China": 0,
+        "Iran": 0,
+        "Poland": 0,
+        "Sweden": 0,
+        "Finland": 0
+      },
+      "technology_diversity": {
+        "UK": 0,
+        "USA": 0,
+        "Russia": 0,
+        "China": 0,
+        "Iran": 0,
+        "Poland": 0,
+        "Sweden": 0,
+        "Finland": 0
+      }
+    },
+    "relative_strengths": {
+      "UK": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "2000s"
+      },
+      "USA": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "1980s"
+      },
+      "Russia": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "2010s"
+      },
+      "China": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "2010s"
+      },
+      "Iran": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "2010s"
+      },
+      "Poland": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "2010s"
+      },
+      "Sweden": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "2010s"
+      },
+      "Finland": {
+        "dominant_vehicle_types": [],
+        "major_manufacturers": [],
+        "organization_focus": [],
+        "technology_era": "2000s"
+      }
+    },
+    "technology_timeline": {
+      "UK": {},
+      "USA": {},
+      "Russia": {},
+      "China": {},
+      "Iran": {},
+      "Poland": {},
+      "Sweden": {},
+      "Finland": {}
+    },
+    "asset_types": {
+      "UK": {
+        "vehicles": 68,
+        "areas": 59
+      },
+      "USA": {
+        "vehicles": 26,
+        "areas": 5
+      },
+      "Russia": {
+        "vehicles": 30,
+        "areas": 7,
+        "militaryUnits": 2,
+        "aircraft": 2
+      },
+      "China": {
+        "vehicles": 118,
+        "areas": 20
+      },
+      "Iran": {
+        "vehicles": 35,
+        "areas": 9
+      },
+      "Poland": {
+        "vehicles": 25,
+        "areas": 8
+      },
+      "Sweden": {
+        "vehicles": 23,
+        "areas": 6
+      },
+      "Finland": {
+        "vehicles": 22,
+        "areas": 8
+      }
+    },
+    "organization_types": {}
+  },
+  "technology_analysis": {
+    "top_manufacturers": {},
+    "technology_generations": {},
+    "capability_gaps": {},
+    "innovation_leaders": {}
+  },
+  "timeline_analysis": {
+    "technology_timeline": {},
+    "service_periods": [],
+    "modernization_trends": {}
+  },
+  "recommendations": [
+    "Improve data quality by filling missing fields and standardizing formats"
+  ]
+}

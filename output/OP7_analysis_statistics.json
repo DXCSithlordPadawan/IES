@@ -1,21 +1,21 @@
 {
   "metadata": {
-    "generated_at": "2025-08-24T22:22:25.433519",
-    "node_count": 10,
-    "edge_count": 25,
+    "generated_at": "2025-08-24T23:13:33.735765",
+    "node_count": 15,
+    "edge_count": 51,
     "database_info": {
       "filename": "unknown",
       "loaded_at": "",
       "entity_counts": {
-        "vehicles": 2,
+        "vehicles": 4,
         "areas": 1,
         "people": 1,
         "militaryUnits": 2,
-        "aircraft": 1,
+        "aircraft": 2,
         "weapons": 1,
         "events": 0,
         "organizations": 0,
-        "vehicleTypes": 1,
+        "vehicleTypes": 3,
         "areaTypes": 0,
         "peopleTypes": 0,
         "unitTypes": 1,
@@ -26,196 +26,197 @@
       "description": ""
     },
     "entity_counts": {
-      "vehicles": 2,
-      "vehicleTypes": 1,
+      "vehicles": 4,
+      "vehicleTypes": 3,
       "people": 1,
       "areas": 1,
       "militaryUnits": 2,
       "unitTypes": 1,
-      "aircraft": 1,
+      "aircraft": 2,
       "weapons": 1
     }
   },
   "node_statistics": {
-    "total_nodes": 10,
+    "total_nodes": 15,
     "node_types": {
-      "vehicles": 2,
-      "vehicleTypes": 1,
+      "vehicles": 4,
+      "vehicleTypes": 3,
       "people": 1,
       "areas": 1,
       "militaryUnits": 2,
       "unitTypes": 1,
-      "aircraft": 1,
+      "aircraft": 2,
       "weapons": 1
     },
     "degree_distribution": {
-      "7": 4,
+      "10": 6,
       "2": 2,
-      "6": 3,
+      "1": 2,
+      "9": 4,
       "0": 1
     },
     "isolated_nodes": [
       "area-odesa-oblast-001"
     ],
     "degree_stats": {
-      "mean": 5.0,
-      "median": 6.0,
-      "std": 2.4899799195977463,
+      "mean": 6.8,
+      "median": 9.0,
+      "std": 4.003331945600648,
       "min": 0,
-      "max": 7
+      "max": 10
     }
   },
   "edge_statistics": {
-    "total_edges": 25,
+    "total_edges": 51,
     "relationship_types": {
-      "vehicleType": 2,
-      "co_located": 11,
-      "operates_equipment": 8,
+      "vehicleType": 4,
+      "co_located": 29,
+      "operates_equipment": 14,
       "assigned_to_unit": 2,
       "unitType": 2
     },
     "edge_weight_distribution": {
-      "1.0": 25
+      "1.0": 51
     }
   },
   "connectivity": {
     "is_connected": false,
     "number_of_components": 2,
-    "density": 0.5555555555555556,
+    "density": 0.4857142857142857,
     "component_sizes": [
-      9,
+      14,
       1
     ],
-    "largest_component_size": 9,
-    "average_clustering": 0.8047619047619048,
-    "largest_component_avg_path": 1.3333333333333333,
+    "largest_component_size": 14,
+    "average_clustering": 0.725925925925926,
+    "largest_component_avg_path": 1.5054945054945055,
     "largest_component_diameter": 3
   },
   "centrality": {
     "top_degree_centrality": [
       [
         "vehicle-t80-tank-op7-001",
-        0.7777777777777777
+        0.7142857142857142
       ],
       [
         "vehicle-t90-tank-op7-001",
-        0.7777777777777777
+        0.7142857142857142
+      ],
+      [
+        "vehicle-mi28-helicopter-op7-001",
+        0.7142857142857142
+      ],
+      [
+        "vehicle-ka27-helicopter-op7-001",
+        0.7142857142857142
       ],
       [
         "unit-39th-guards-mrb-op7-001",
-        0.7777777777777777
+        0.7142857142857142
       ],
       [
         "unit-35-gds-mrb-op7-001",
-        0.7777777777777777
+        0.7142857142857142
       ],
       [
         "person-test-001",
-        0.6666666666666666
+        0.6428571428571428
       ],
       [
         "aircraft-test-001",
-        0.6666666666666666
+        0.6428571428571428
+      ],
+      [
+        "aircraft-a50-awacs-op7-001",
+        0.6428571428571428
       ],
       [
         "weapon-test-001",
-        0.6666666666666666
-      ],
-      [
-        "main-battle-tank",
-        0.2222222222222222
-      ],
-      [
-        "motor-rifle-brigade",
-        0.2222222222222222
-      ],
-      [
-        "area-odesa-oblast-001",
-        0.0
+        0.6428571428571428
       ]
     ],
     "top_betweenness_centrality": [
       [
+        "vehicle-mi28-helicopter-op7-001",
+        0.13186813186813187
+      ],
+      [
+        "vehicle-ka27-helicopter-op7-001",
+        0.13186813186813187
+      ],
+      [
         "vehicle-t80-tank-op7-001",
-        0.08333333333333333
+        0.06043956043956045
       ],
       [
         "vehicle-t90-tank-op7-001",
-        0.08333333333333333
+        0.06043956043956045
       ],
       [
         "unit-39th-guards-mrb-op7-001",
-        0.08333333333333333
+        0.06043956043956045
       ],
       [
         "unit-35-gds-mrb-op7-001",
-        0.08333333333333333
+        0.06043956043956045
       ],
       [
         "main-battle-tank",
         0.0
       ],
       [
+        "attack-helicopter",
+        0.0
+      ],
+      [
+        "anti-submarine-helicopter",
+        0.0
+      ],
+      [
         "person-test-001",
-        0.0
-      ],
-      [
-        "area-odesa-oblast-001",
-        0.0
-      ],
-      [
-        "motor-rifle-brigade",
-        0.0
-      ],
-      [
-        "aircraft-test-001",
-        0.0
-      ],
-      [
-        "weapon-test-001",
         0.0
       ]
     ],
     "top_eigenvector_centrality": [
       [
         "vehicle-t80-tank-op7-001",
-        0.37945261015861964
+        0.31774900681285073
       ],
       [
         "vehicle-t90-tank-op7-001",
-        0.37945261015861964
+        0.31774900681285073
       ],
       [
         "unit-39th-guards-mrb-op7-001",
-        0.37945261015861964
+        0.3177490068128507
       ],
       [
         "unit-35-gds-mrb-op7-001",
-        0.37945261015861964
+        0.3177490068128507
+      ],
+      [
+        "vehicle-mi28-helicopter-op7-001",
+        0.314261675477185
+      ],
+      [
+        "vehicle-ka27-helicopter-op7-001",
+        0.314261675477185
       ],
       [
         "person-test-001",
-        0.36239199358349244
+        0.3108500079606604
       ],
       [
         "aircraft-test-001",
-        0.36239199358349244
+        0.3108500079606604
+      ],
+      [
+        "aircraft-a50-awacs-op7-001",
+        0.3108500079606604
       ],
       [
         "weapon-test-001",
-        0.36239199358349244
-      ],
-      [
-        "main-battle-tank",
-        0.12263563008968066
-      ],
-      [
-        "motor-rifle-brigade",
-        0.12263563008968066
-      ],
-      [
-        "area-odesa-oblast-001",
-        4.9215541207517545e-08
+        0.3108500079606604
       ]
     ]
   },
