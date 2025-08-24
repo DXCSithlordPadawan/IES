@@ -135,7 +135,7 @@ class DatabaseLoader:
         counts = {}
         
         # Count main entity types
-        for entity_type in ['vehicles', 'areas', 'organizations', 'persons', 'weapons', 'events']:
+        for entity_type in ['vehicles', 'areas', 'organizations', 'persons', 'weapons', 'events', 'aircraft']:
             if entity_type in data and isinstance(data[entity_type], list):
                 counts[entity_type] = len(data[entity_type])
             else:
