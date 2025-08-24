@@ -40,11 +40,26 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [29.5, 51.5],
-            [32.0, 51.5],
-            [32.0, 49.5],
-            [29.5, 49.5],
-            [29.5, 51.5]
+            [
+              29.5,
+              51.5
+            ],
+            [
+              32,
+              51.5
+            ],
+            [
+              32,
+              49.5
+            ],
+            [
+              29.5,
+              49.5
+            ],
+            [
+              29.5,
+              51.5
+            ]
           ]
         ],
         "crs": "EPSG:4326"
@@ -63,6 +78,167 @@
           "stateType": "established",
           "startTime": "1932-02-27T00:00:00Z",
           "location": "Ukraine"
+        }
+      ]
+    }
+  ],
+  "militaryUnits": [
+    {
+      "id": "unit-35-gds-mrb-op4-001",
+      "uri": "https://en.wikipedia.org/wiki/37th_Separate_Guards_Motor_Rifle_Brigade",
+      "type": "MilitaryUnit",
+      "names": [
+        {
+          "value": "35th Guards Motor Rifle Brigade",
+          "language": "en",
+          "nameType": "official"
+        },
+        {
+          "value": "35-я гвардейская мотострелковая бригада",
+          "language": "ru",
+          "nameType": "official"
+        },
+        {
+          "value": "35 ГвМСБр",
+          "language": "ru",
+          "nameType": "abbreviation"
+        }
+      ],
+      "identifiers": [
+        {
+          "value": "35th Guards Motor Rifle Brigade",
+          "identifierType": "UNIT_DESIGNATION",
+          "issuingAuthority": "Russian Armed Forces"
+        },
+        {
+          "value": "в/ч 52946",
+          "identifierType": "MILITARY_UNIT_NUMBER",
+          "issuingAuthority": "Russian Ministry of Defense"
+        }
+      ],
+      "unitType": "motor-rifle-brigade",
+      "branch": "Ground Forces",
+      "formation": "Russian Armed Forces",
+      "country": "Russian Federation",
+      "status": "active",
+      "location": "Kyiv Oblast",
+      "representations": [
+        {
+          "id": "37th-brigade-wiki",
+          "type": "webpage",
+          "title": "37th Separate Guards Motor Rifle Brigade - Wikipedia",
+          "description": "Wikipedia article about similar Guards Motor Rifle Brigade structure",
+          "url": "https://en.wikipedia.org/wiki/37th_Separate_Guards_Motor_Rifle_Brigade"
+        }
+      ],
+      "temporalParts": [
+        {
+          "id": "35gds-formation",
+          "stateType": "unit_formation",
+          "startTime": "1995-01-01T00:00:00Z",
+          "location": "Russian Federation"
+        },
+        {
+          "id": "35gds-guards-status",
+          "stateType": "guards_designation_awarded",
+          "startTime": "1995-01-01T00:00:00Z",
+          "location": "Russian Federation"
+        },
+        {
+          "id": "35gds-deployed-op4",
+          "stateType": "regional_deployment",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Kyiv Oblast"
+        },
+        {
+          "id": "35gds-current-operations",
+          "stateType": "active_operations",
+          "startTime": "2022-02-24T00:00:00Z",
+          "location": "Ukraine"
+        }
+      ],
+      "states": [
+        {
+          "id": "35gds-operational-op4",
+          "stateType": "active_service",
+          "startTime": "2020-01-01T00:00:00Z",
+          "location": "Kyiv Oblast"
+        },
+        {
+          "id": "35gds-combat-ready",
+          "stateType": "combat_ready",
+          "startTime": "1995-01-01T00:00:00Z",
+          "location": "Russian Federation"
+        }
+      ],
+      "specifications": {
+        "unitSize": "Brigade",
+        "personnel": "~3,000-4,000",
+        "classification": "Motor Rifle Brigade",
+        "subordination": "Combined Arms Army",
+        "guardsStatus": "Guards Unit",
+        "primaryRole": "Combined arms operations",
+        "deploymentRegion": "Kyiv Oblast",
+        "equipment": [
+          "T-72B3/T-80BV main battle tanks",
+          "BMP-2/BMP-3 infantry fighting vehicles",
+          "BTR-80/BTR-82A armored personnel carriers",
+          "2S1 Gvozdika self-propelled howitzers",
+          "BM-21 Grad multiple rocket launchers",
+          "9K35 Strela-10 air defense systems"
+        ]
+      },
+      "structure": {
+        "headquarters": "Brigade Headquarters",
+        "subordinateUnits": [
+          "3x Motor Rifle Battalions",
+          "1x Tank Battalion",
+          "1x Artillery Battalion",
+          "1x Air Defense Battery",
+          "1x Engineer Company",
+          "1x Signal Company",
+          "1x Medical Company",
+          "1x Supply Company"
+        ]
+      },
+      "honors": [
+        "Guards designation",
+        "Order of the Red Banner"
+      ]
+    }
+  ],
+  "unitTypes": [
+    {
+      "id": "motor-rifle-brigade",
+      "name": "Motor Rifle Brigade",
+      "category": "ground forces unit",
+      "subcategory": "combined arms brigade",
+      "description": "Combined arms formation designed for independent operations",
+      "characteristics": [
+        {
+          "name": "primary_role",
+          "value": "combined_arms_operations",
+          "dataType": "string"
+        },
+        {
+          "name": "personnel_strength",
+          "value": "3500",
+          "dataType": "number"
+        },
+        {
+          "name": "unit_level",
+          "value": "brigade",
+          "dataType": "string"
+        },
+        {
+          "name": "branch",
+          "value": "ground_forces",
+          "dataType": "string"
+        },
+        {
+          "name": "guards_status",
+          "value": "true",
+          "dataType": "boolean"
         }
       ]
     }
