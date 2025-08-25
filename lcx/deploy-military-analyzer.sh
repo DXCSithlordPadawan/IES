@@ -1,4 +1,146 @@
-#!/bin/bash
+echo ""
+echo "================================================================="
+echo -e "${GREEN}🎉 DEPLOYMENT COMPLETED SUCCESSFULLY! 🎉${NC}"
+echo "================================================================="
+echo ""
+echo -e "${YELLOW}Container Details:${NC}"
+echo "  ID: $CT_ID"
+echo "  Name: $CT_NAME"
+echo "  IP Address: ${CONTAINER_IP:-"Not available"}"
+echo "  Gateway: ${CONTAINER_GATEWAY:-"Not available"}"
+echo "  Domain: $DOMAIN"
+echo "  Bridge: $CT_BRIDGE"
+echo ""
+echo -e "${YELLOW}Network Configuration:${NC}"
+if [[ "$USE_DHCP" == "true" ]]; then
+    echo "  Mode: DHCP"
+else
+    echo "  Mode: Static IP ($STATIC_IP)"
+    [[ -n "$GATEWAY" ]] && echo "  Configured Gateway: $GATEWAY"
+fi
+[[ -n "$DNS_SERVERS" ]] && echo "  DNS Servers: $DNS_SERVERS"
+echo ""
+echo -e "${YELLOW}Access URLs:${NC}"
+if [[ -n "$CONTAINER_IP" ]]; then
+    echo "  HTTPS Web Interface: https://$CONTAINER_IP/"
+    echo "  RabbitMQ Management: https://$CONTAINER_IP/rabbitmq/"
+    echo "  SSH Access: ssh root@$CONTAINER_IP"
+else
+    echo "  Access via container console: pct enter $CT_ID"
+fi
+echo ""
+echo -e "${YELLOW}Management Commands:${NC}"
+echo "  Enter container: pct enter $CT_ID"
+echo "  Stop container: pct stop $CT_ID"
+echo "  Start container: pct start $CT_ID"
+echo "  View container config: pct config $CT_ID"
+echo "  View container resources: pct status $CT_ID"
+echo ""
+echo -e "${YELLOW}Application Commands:${NC}"
+echo "  Monitor services: pct exec $CT_ID -- /opt/military-db-analyzer/monitor.sh"
+echo "  View app logs: pct exec $CT_ID -- journalctl -u military-db-analyzer -f"
+echo "  Test deployment: pct exec $CT_ID -- /opt/military-db-analyzer/test-deployment.sh"
+echo "  Run Node.js script: pct exec $CT_ID -- /opt/military-db-analyzer/run_node_script.sh S500.js --add --db OP7"
+echo ""
+echo -e "${YELLOW}Next Steps:${NC}"
+echo "1. Deploy your application code:"
+echo "   pct exec $CT_ID -- git clone <your-repo-url> /tmp/app-source"
+echo "   pct exec $CT_ID -- cp -r /tmp/app-source/* /opt/military-db-analyzer/"
+echo ""
+echo "2. Install Python requirements (if they exist):"
+echo "   pct exec $CT_ID -- pip3 install -r /opt/military-db-analyzer/requirements.txt"
+echo ""
+echo "3. Start the application service:"
+echo "   pct exec $CT_ID -- systemctl start military-db-analyzer"
+echo ""
+echo "4. For production with real domain, set up Let's Encrypt SSL:"
+echo "   pct exec $CT_ID -- certbot --nginx -d $DOMAIN"
+echo ""
+echo "5. Configure firewall on Proxmox host (if needed):"
+echo "   # Allow HTTP/HTTPS to container"
+if [[ -n "$CONTAINER_IP" ]]; then
+echo "   iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination $CONTAINER_IP:80"
+echo "   iptables -t nat -A PREROUTING -p tcp --dport 443 -j DNAT --to-destination $CONTAINER_IP:443"
+fi
+echo ""
+echo -e "${YELLOW}Troubleshooting:${NC}"
+echo "  Check container status: pct status $CT_ID"
+echo "  Check container logs: pct exec $CT_ID -- journalctl -f"
+echo "  Network issues: pct exec $CT_ID -- ip addr show"
+echo "  DNS issues: pct exec $CT_ID -- cat /etc/resolv.conf"
+echo "  Service issues: pct exec $CT_ID -- systemctl status nginx military-db-analyzer rabbitmq-server"
+echo ""
+echo -e "${YELLOW}Configuration Files:${NC}"
+echo "  Nginx config: /etc/nginx/sites-available/military-db-analyzer"
+echo "  Application service: /etc/systemd/system/military-db-analyzer.service"
+echo "  Application directory: /opt/military-db-analyzer/"
+echo "  RabbitMQ directory: /opt/rabbitmq/"
+echo ""
+echo -e "${YELLOW}Network Validation:${NC}"
+if [[ "$USE_DHCP" == "false" ]]; then
+    echo "  Static IP configured: $STATIC_IP"
+    if [[ -n "$GATEWAY" ]]; then
+        echo "  Gateway configured: $GATEWAY"
+        echo "  To verify routing: pct exec $CT_ID -- ip route show"
+    fi
+fi
+if [[ -n "$DNS_SERVERS" ]]; then
+    echo "  Custom DNS configured: $DNS_SERVERS"
+    echo "  To test DNS: pct exec $CT_ID -- nslookup google.com"
+fi
+echo ""
+echo -e "${GREEN}Container is ready for your Military Database Analyzer deployment!${NC}"
+echo -e "${GREEN}The RabbitMQ consumer can execute Node.js scripts like: node S500.js --add --db OP7${NC}"
+echo "================================================================="
+
+# Save deployment summary to a file on Proxmox host
+SUMMARY_FILE="/tmp/military-db-analyzer-$CT_ID-deployment.txt"
+{
+    echo "Military Database Analyzer Deployment Summary"
+    echo "=============================================="
+    echo "Deployment Date: $(date)"
+    echo "Container ID: $CT_ID"
+    echo "Container Name: $CT_NAME"
+    echo "IP Address: ${CONTAINER_IP:-"Not available"}"
+    echo "Domain: $DOMAIN"
+    echo "Email: $EMAIL"
+    echo ""
+    echo "Network Configuration:"
+    if [[ "$USE_DHCP" == "true" ]]; then
+        echo "  Mode: DHCP"
+    else
+        echo "  Mode: Static IP ($STATIC_IP)"
+        [[ -n "$GATEWAY" ]] && echo "  Gateway: $GATEWAY"
+    fi
+    [[ -n "$DNS_SERVERS" ]] && echo "  DNS Servers: $DNS_SERVERS"
+    echo "  Bridge: $CT_BRIDGE"
+    echo ""
+    echo "Container Resources:"
+    echo "  Memory: ${CT_MEMORY}MB"
+    echo "  Cores: $CT_CORES"
+    echo "  Disk: ${CT_DISK_SIZE}GB"
+    echo "  Storage: $CT_STORAGE"
+    echo ""
+    echo "Key Commands:"
+    echo "  Enter container: pct enter $CT_ID"
+    echo "  Monitor services: pct exec $CT_ID -- /opt/military-db-analyzer/monitor.sh"
+    echo "  Test deployment: pct exec $CT_ID -- /opt/military-db-analyzer/test-deployment.sh"
+    if [[ -n "$CONTAINER_IP" ]]; then
+        echo "  Web Interface: https://$CONTAINER_IP/"
+    fi
+} > "$SUMMARY_FILE"
+
+info "Deployment summary saved to: $SUMMARY_FILE"
+
+# Final deployment validation
+if [[ -n "$CONTAINER_IP" ]]; then
+    log "Running final deployment validation..."
+    exec_in_ct "/opt/military-db-analyzer/test-deployment.sh" || warn "Some deployment tests failed - check logs"
+else
+    warn "Could not obtain container IP - some tests may not be available"
+fi
+
+log "Deployment completed! Container $CT_ID is ready."#!/bin/bash
 
 #####################################################################
 # Proxmox LXC Auto-Deploy Script for Military Database Analyzer
@@ -10,13 +152,41 @@
 # - Node.js script accessibility
 # - Complete monitoring and security setup
 #
-# Usage: ./deploy-military-analyzer.sh [domain] [email]
-# Example: ./deploy-military-analyzer.sh military-db.example.com admin@example.com
+# Usage: ./deploy-military-analyzer.sh [options]
+# 
+# Network Configuration Options:
+#   --dhcp                           Use DHCP (default)
+#   --ip <ip/cidr>                   Static IP with CIDR (e.g., 192.168.1.100/24)
+#   --gateway <gateway_ip>           Gateway IP address
+#   --dns <dns_servers>              DNS servers (comma-separated)
+#   --bridge <bridge_name>           Network bridge (default: vmbr0)
+#
+# Container Options:
+#   --ct-id <id>                     Container ID (default: 140)
+#   --hostname <name>                Container hostname
+#   --memory <mb>                    Memory in MB (default: 2048)
+#   --cores <num>                    CPU cores (default: 2)
+#   --disk <gb>                      Disk size in GB (default: 20)
+#   --storage <storage>              Storage location (default: local-lvm)
+#
+# Application Options:
+#   --domain <domain>                Domain name (default: military-analyzer.local)
+#   --email <email>                  Email for SSL certificates
+#
+# Examples:
+#   # DHCP configuration
+#   ./deploy-military-analyzer.sh --dhcp --domain example.com --email admin@example.com
+#   
+#   # Static IP configuration
+#   ./deploy-military-analyzer.sh --ip 192.168.1.100/24 --gateway 192.168.1.1 --dns 8.8.8.8,8.8.4.4
+#   
+#   # Custom container settings
+#   ./deploy-military-analyzer.sh --ct-id 150 --memory 4096 --cores 4 --disk 40
 #####################################################################
 
 set -e  # Exit on any error
 
-# Configuration variables
+# Default configuration variables
 CT_ID=140
 CT_NAME="military-db-analyzer"
 CT_TEMPLATE="ubuntu-22.04-standard_22.04-1_amd64.tar.zst"
@@ -25,20 +195,28 @@ CT_MEMORY=2048
 CT_SWAP=512
 CT_CORES=2
 CT_DISK_SIZE=20
-CT_NETWORK="name=eth0,bridge=vmbr0,ip=dhcp"
+CT_BRIDGE="vmbr0"
 
-# Get domain and email from command line arguments
-DOMAIN=${1:-"military-analyzer.local"}
-EMAIL=${2:-"admin@localhost"}
+# Network configuration defaults
+USE_DHCP=true
+STATIC_IP=""
+GATEWAY=""
+DNS_SERVERS=""
+
+# Application defaults
+DOMAIN="military-analyzer.local"
+EMAIL="admin@localhost"
 
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-# Logging function
+# Logging functions
 log() {
     echo -e "${GREEN}[$(date +'%Y-%m-%d %H:%M:%S')]${NC} $1"
 }
@@ -52,14 +230,351 @@ error() {
     exit 1
 }
 
+info() {
+    echo -e "${BLUE}[$(date +'%Y-%m-%d %H:%M:%S')] INFO:${NC} $1"
+}
+
+# Help function
+show_help() {
+    echo -e "${CYAN}Military Database Analyzer LXC Deployment Script${NC}"
+    echo ""
+    echo "Usage: $0 [options]"
+    echo ""
+    echo -e "${YELLOW}Network Configuration Options:${NC}"
+    echo "  --dhcp                           Use DHCP (default)"
+    echo "  --ip <ip/cidr>                   Static IP with CIDR (e.g., 192.168.1.100/24)"
+    echo "  --gateway <gateway_ip>           Gateway IP address"
+    echo "  --dns <dns_servers>              DNS servers (comma-separated, e.g., 8.8.8.8,8.8.4.4)"
+    echo "  --bridge <bridge_name>           Network bridge (default: vmbr0)"
+    echo ""
+    echo -e "${YELLOW}Container Options:${NC}"
+    echo "  --ct-id <id>                     Container ID (default: 140)"
+    echo "  --hostname <name>                Container hostname (default: military-db-analyzer)"
+    echo "  --memory <mb>                    Memory in MB (default: 2048)"
+    echo "  --cores <num>                    CPU cores (default: 2)"
+    echo "  --disk <gb>                      Disk size in GB (default: 20)"
+    echo "  --storage <storage>              Storage location (default: local-lvm)"
+    echo ""
+    echo -e "${YELLOW}Application Options:${NC}"
+    echo "  --domain <domain>                Domain name (default: military-analyzer.local)"
+    echo "  --email <email>                  Email for SSL certificates (default: admin@localhost)"
+    echo ""
+    echo -e "${YELLOW}Other Options:${NC}"
+    echo "  --help, -h                       Show this help message"
+    echo ""
+    echo -e "${YELLOW}Examples:${NC}"
+    echo "  # DHCP configuration with custom domain"
+    echo "  $0 --dhcp --domain example.com --email admin@example.com"
+    echo ""
+    echo "  # Static IP configuration"
+    echo "  $0 --ip 192.168.1.100/24 --gateway 192.168.1.1 --dns 8.8.8.8,8.8.4.4"
+    echo ""
+    echo "  # Custom container with static IP"
+    echo "  $0 --ct-id 150 --memory 4096 --cores 4 --ip 10.0.1.50/24 --gateway 10.0.1.1"
+    echo ""
+    echo "  # High-performance setup"
+    echo "  $0 --memory 8192 --cores 8 --disk 100 --storage local-ssd"
+    echo ""
+}
+
+# Validation functions
+validate_ip() {
+    local ip=$1
+    if [[ $ip =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$ ]]; then
+        # Extract IP and CIDR
+        local ip_part=${ip%/*}
+        local cidr_part=${ip#*/}
+        
+        # Validate IP octets
+        IFS='.' read -ra ADDR <<< "$ip_part"
+        for octet in "${ADDR[@]}"; do
+            if (( octet < 0 || octet > 255 )); then
+                return 1
+            fi
+        done
+        
+        # Validate CIDR
+        if (( cidr_part < 1 || cidr_part > 32 )); then
+            return 1
+        fi
+        
+        return 0
+    fi
+    return 1
+}
+
+validate_gateway() {
+    local gateway=$1
+    if [[ $gateway =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}$ ]]; then
+        IFS='.' read -ra ADDR <<< "$gateway"
+        for octet in "${ADDR[@]}"; do
+            if (( octet < 0 || octet > 255 )); then
+                return 1
+            fi
+        done
+        return 0
+    fi
+    return 1
+}
+
+validate_dns() {
+    local dns_list=$1
+    IFS=',' read -ra DNS_ARRAY <<< "$dns_list"
+    for dns in "${DNS_ARRAY[@]}"; do
+        dns=$(echo "$dns" | xargs)  # Trim whitespace
+        if [[ ! $dns =~ ^([0-9]{1,3}\.){3}[0-9]{1,3}$ ]]; then
+            return 1
+        fi
+        IFS='.' read -ra ADDR <<< "$dns"
+        for octet in "${ADDR[@]}"; do
+            if (( octet < 0 || octet > 255 )); then
+                return 1
+            fi
+        done
+    done
+    return 0
+}
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --dhcp)
+            USE_DHCP=true
+            shift
+            ;;
+        --ip)
+            if [[ -z "$2" ]]; then
+                error "IP address is required with --ip option"
+            fi
+            if ! validate_ip "$2"; then
+                error "Invalid IP address format: $2. Use format: IP/CIDR (e.g., 192.168.1.100/24)"
+            fi
+            USE_DHCP=false
+            STATIC_IP="$2"
+            shift 2
+            ;;
+        --gateway)
+            if [[ -z "$2" ]]; then
+                error "Gateway IP is required with --gateway option"
+            fi
+            if ! validate_gateway "$2"; then
+                error "Invalid gateway IP format: $2"
+            fi
+            GATEWAY="$2"
+            shift 2
+            ;;
+        --dns)
+            if [[ -z "$2" ]]; then
+                error "DNS servers are required with --dns option"
+            fi
+            if ! validate_dns "$2"; then
+                error "Invalid DNS server format: $2. Use comma-separated IPs (e.g., 8.8.8.8,8.8.4.4)"
+            fi
+            DNS_SERVERS="$2"
+            shift 2
+            ;;
+        --bridge)
+            if [[ -z "$2" ]]; then
+                error "Bridge name is required with --bridge option"
+            fi
+            CT_BRIDGE="$2"
+            shift 2
+            ;;
+        --ct-id)
+            if [[ -z "$2" ]] || ! [[ "$2" =~ ^[0-9]+$ ]]; then
+                error "Valid container ID is required with --ct-id option"
+            fi
+            CT_ID="$2"
+            shift 2
+            ;;
+        --hostname)
+            if [[ -z "$2" ]]; then
+                error "Hostname is required with --hostname option"
+            fi
+            CT_NAME="$2"
+            shift 2
+            ;;
+        --memory)
+            if [[ -z "$2" ]] || ! [[ "$2" =~ ^[0-9]+$ ]]; then
+                error "Valid memory size in MB is required with --memory option"
+            fi
+            CT_MEMORY="$2"
+            shift 2
+            ;;
+        --cores)
+            if [[ -z "$2" ]] || ! [[ "$2" =~ ^[0-9]+$ ]]; then
+                error "Valid number of cores is required with --cores option"
+            fi
+            CT_CORES="$2"
+            shift 2
+            ;;
+        --disk)
+            if [[ -z "$2" ]] || ! [[ "$2" =~ ^[0-9]+$ ]]; then
+                error "Valid disk size in GB is required with --disk option"
+            fi
+            CT_DISK_SIZE="$2"
+            shift 2
+            ;;
+        --storage)
+            if [[ -z "$2" ]]; then
+                error "Storage location is required with --storage option"
+            fi
+            CT_STORAGE="$2"
+            shift 2
+            ;;
+        --domain)
+            if [[ -z "$2" ]]; then
+                error "Domain name is required with --domain option"
+            fi
+            DOMAIN="$2"
+            shift 2
+            ;;
+        --email)
+            if [[ -z "$2" ]]; then
+                error "Email address is required with --email option"
+            fi
+            EMAIL="$2"
+            shift 2
+            ;;
+        --help|-h)
+            show_help
+            exit 0
+            ;;
+        *)
+            error "Unknown option: $1. Use --help for usage information."
+            ;;
+    esac
+done
+
+# Build network configuration
+build_network_config() {
+    local net_config="name=eth0,bridge=$CT_BRIDGE"
+    
+    if [[ "$USE_DHCP" == "true" ]]; then
+        net_config="$net_config,ip=dhcp"
+        info "Using DHCP for network configuration"
+    else
+        if [[ -z "$STATIC_IP" ]]; then
+            error "Static IP must be specified when not using DHCP"
+        fi
+        net_config="$net_config,ip=$STATIC_IP"
+        
+        if [[ -n "$GATEWAY" ]]; then
+            net_config="$net_config,gw=$GATEWAY"
+        fi
+        
+        info "Using static IP configuration: $STATIC_IP"
+        [[ -n "$GATEWAY" ]] && info "Gateway: $GATEWAY"
+    fi
+    
+    echo "$net_config"
+}
+
+# Validation checks before deployment
+pre_deployment_checks() {
+    info "Running pre-deployment validation checks..."
+    
+    # Check if running on Proxmox host
+    if ! command -v pct &> /dev/null; then
+        error "This script must be run on a Proxmox host with 'pct' command available"
+    fi
+    
+    # Check if template exists
+    if ! pveam list local | grep -q "$CT_TEMPLATE"; then
+        warn "Template $CT_TEMPLATE not found in local storage"
+        info "Available templates:"
+        pveam list local | grep -E "\.tar\.(gz|xz|zst)$" || warn "No templates found"
+        error "Please download the required template first with: pveam download local $CT_TEMPLATE"
+    fi
+    
+    # Check if storage exists
+    if ! pvesm status | grep -q "$CT_STORAGE"; then
+        error "Storage '$CT_STORAGE' does not exist. Available storage:"
+        pvesm status
+    fi
+    
+    # Check if bridge exists
+    if ! ip link show | grep -q "$CT_BRIDGE"; then
+        error "Network bridge '$CT_BRIDGE' does not exist"
+    fi
+    
+    # Validate static IP network configuration
+    if [[ "$USE_DHCP" == "false" ]]; then
+        if [[ -z "$STATIC_IP" ]]; then
+            error "Static IP is required when not using DHCP"
+        fi
+        
+        # If gateway is specified, validate it's in the same network
+        if [[ -n "$GATEWAY" && -n "$STATIC_IP" ]]; then
+            local ip_part=${STATIC_IP%/*}
+            local cidr_part=${STATIC_IP#*/}
+            
+            # Basic network validation (simplified)
+            local ip_network=$(ipcalc -n "$STATIC_IP" 2>/dev/null | cut -d= -f2 2>/dev/null || echo "")
+            if [[ -n "$ip_network" ]]; then
+                local gw_network=$(ipcalc -n "$GATEWAY/$cidr_part" 2>/dev/null | cut -d= -f2 2>/dev/null || echo "")
+                if [[ -n "$gw_network" && "$ip_network" != "$gw_network" ]]; then
+                    warn "Gateway $GATEWAY may not be in the same network as IP $STATIC_IP"
+                fi
+            fi
+        fi
+    fi
+    
+    info "Pre-deployment checks completed successfully"
+}
+
 # Check if running on Proxmox host
 if ! command -v pct &> /dev/null; then
     error "This script must be run on a Proxmox host with 'pct' command available"
 fi
 
+# Run pre-deployment checks
+pre_deployment_checks
+
+# Display configuration summary
+echo ""
+echo -e "${CYAN}=================================================================${NC}"
+echo -e "${CYAN}            Military Database Analyzer Deployment${NC}"
+echo -e "${CYAN}=================================================================${NC}"
+echo ""
+echo -e "${YELLOW}Container Configuration:${NC}"
+echo "  ID: $CT_ID"
+echo "  Hostname: $CT_NAME" 
+echo "  Memory: ${CT_MEMORY}MB"
+echo "  Cores: $CT_CORES"
+echo "  Disk: ${CT_DISK_SIZE}GB"
+echo "  Storage: $CT_STORAGE"
+echo ""
+echo -e "${YELLOW}Network Configuration:${NC}"
+if [[ "$USE_DHCP" == "true" ]]; then
+    echo "  Mode: DHCP"
+    echo "  Bridge: $CT_BRIDGE"
+else
+    echo "  Mode: Static IP"
+    echo "  IP Address: $STATIC_IP"
+    echo "  Gateway: ${GATEWAY:-"Not specified"}"
+    echo "  Bridge: $CT_BRIDGE"
+fi
+[[ -n "$DNS_SERVERS" ]] && echo "  DNS Servers: $DNS_SERVERS"
+echo ""
+echo -e "${YELLOW}Application Configuration:${NC}"
+echo "  Domain: $DOMAIN"
+echo "  Email: $EMAIL"
+echo ""
+echo -e "${CYAN}=================================================================${NC}"
+
+# Confirmation prompt
+echo -n -e "${YELLOW}Proceed with deployment? (y/N): ${NC}"
+read -r CONFIRM
+if [[ ! "$CONFIRM" =~ ^[Yy]$ ]]; then
+    echo "Deployment cancelled."
+    exit 0
+fi
+
+# Build network configuration
+CT_NETWORK=$(build_network_config)
+
 log "Starting Military Database Analyzer deployment on CT $CT_ID"
-log "Domain: $DOMAIN"
-log "Email: $EMAIL"
 
 # Check if container already exists
 if pct list | grep -q "^$CT_ID "; then
@@ -91,6 +606,24 @@ pct start $CT_ID || error "Failed to start container"
 log "Waiting for container to be ready..."
 sleep 10
 
+# Configure DNS if specified
+if [[ -n "$DNS_SERVERS" ]]; then
+    log "Configuring custom DNS servers..."
+    IFS=',' read -ra DNS_ARRAY <<< "$DNS_SERVERS"
+    
+    # Clear existing DNS configuration and add custom servers
+    exec_in_ct "echo '# Custom DNS configuration' > /etc/resolv.conf"
+    for dns in "${DNS_ARRAY[@]}"; do
+        dns=$(echo "$dns" | xargs)  # Trim whitespace
+        exec_in_ct "echo 'nameserver $dns' >> /etc/resolv.conf"
+    done
+    
+    # Make resolv.conf immutable to prevent overwrite by network manager
+    exec_in_ct "chattr +i /etc/resolv.conf 2>/dev/null || true"
+    
+    info "DNS servers configured: $DNS_SERVERS"
+fi
+
 # Function to execute commands in container
 exec_in_ct() {
     pct exec $CT_ID -- bash -c "$1"
@@ -108,13 +641,16 @@ copy_to_ct() {
 
 log "Updating system and installing dependencies..."
 
+# Test network first
+test_network_connectivity
+
 exec_in_ct "apt update && apt upgrade -y"
 
 exec_in_ct "DEBIAN_FRONTEND=noninteractive apt install -y \
     curl wget git python3 python3-pip nodejs npm build-essential \
     nginx certbot python3-certbot-nginx openssl ufw \
     rabbitmq-server htop iotop net-tools apache2-utils \
-    redis-server logrotate cron"
+    redis-server logrotate cron ipcalc"
 
 log "Installing Node.js 18.x LTS..."
 exec_in_ct "curl -fsSL https://deb.nodesource.com/setup_18.x | bash -"
@@ -614,8 +1150,63 @@ exec_in_ct "systemctl start nginx"
 # Note: military-db-analyzer service will fail initially because the Python script doesn't exist yet
 # This is expected and will be resolved when the actual application code is deployed
 
-log "Getting container IP address..."
-CONTAINER_IP=$(pct exec $CT_ID -- hostname -I | awk '{print $1}')
+log "Getting container network information..."
+CONTAINER_IP=""
+CONTAINER_GATEWAY=""
+
+# Function to get container network info
+get_container_network_info() {
+    local max_attempts=30
+    local attempt=1
+    
+    while [[ $attempt -le $max_attempts ]]; do
+        # Try to get IP address
+        CONTAINER_IP=$(pct exec $CT_ID -- hostname -I 2>/dev/null | awk '{print $1}' | tr -d '\n' || echo "")
+        
+        if [[ -n "$CONTAINER_IP" && "$CONTAINER_IP" != "127.0.0.1" ]]; then
+            # Get gateway info
+            CONTAINER_GATEWAY=$(pct exec $CT_ID -- ip route show default 2>/dev/null | awk '{print $3}' | head -1 || echo "")
+            info "Container IP obtained: $CONTAINER_IP"
+            [[ -n "$CONTAINER_GATEWAY" ]] && info "Container gateway: $CONTAINER_GATEWAY"
+            return 0
+        fi
+        
+        info "Waiting for network configuration... (attempt $attempt/$max_attempts)"
+        sleep 2
+        ((attempt++))
+    done
+    
+    warn "Could not obtain container IP address after $max_attempts attempts"
+    return 1
+}
+
+# Get network information
+get_container_network_info
+
+# Test network connectivity
+test_network_connectivity() {
+    log "Testing network connectivity..."
+    
+    # Test basic connectivity
+    if exec_in_ct "ping -c 2 8.8.8.8 >/dev/null 2>&1"; then
+        info "✅ Internet connectivity test passed"
+    else
+        warn "❌ Internet connectivity test failed"
+        
+        # Try to diagnose the issue
+        info "Network diagnostics:"
+        exec_in_ct "ip addr show eth0" || true
+        exec_in_ct "ip route show" || true
+        exec_in_ct "cat /etc/resolv.conf" || true
+    fi
+    
+    # Test DNS resolution
+    if exec_in_ct "nslookup google.com >/dev/null 2>&1" || exec_in_ct "dig google.com >/dev/null 2>&1"; then
+        info "✅ DNS resolution test passed"
+    else
+        warn "❌ DNS resolution test failed"
+    fi
+}
 
 log "Running deployment test..."
 exec_in_ct "/opt/military-db-analyzer/test-deployment.sh"

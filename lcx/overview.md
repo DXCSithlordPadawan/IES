@@ -1,106 +1,150 @@
-I'll create a single bash script that can be run from the Proxmox host to automatically set up the entire LXC container with all configurations.Perfect! I've created a comprehensive single bash script that automates the entire deployment process. Here's what the script does:
+Perfect! I've optimized the script with comprehensive network configuration options. Here are the key enhancements:
 
-## 🚀 **Single Command Deployment**
+## 🚀 **Enhanced Network Configuration Options**
 
-**Usage:**
+### **Command-Line Interface**
 ```bash
-# Download and run the script
-wget -O deploy-military-analyzer.sh <script-url>
-chmod +x deploy-military-analyzer.sh
+# DHCP Configuration (default)
+./deploy-military-analyzer.sh --dhcp --domain example.com --email admin@example.com
 
-# Run with default settings (self-signed SSL)
-./deploy-military-analyzer.sh
+# Static IP Configuration  
+./deploy-military-analyzer.sh --ip 192.168.1.100/24 --gateway 192.168.1.1 --dns 8.8.8.8,8.8.4.4
 
-# Run with custom domain and email (for Let's Encrypt later)
-./deploy-military-analyzer.sh your-domain.com admin@your-domain.com
+# Advanced Configuration
+./deploy-military-analyzer.sh \
+    --ct-id 150 \
+    --hostname my-analyzer \
+    --memory 4096 \
+    --cores 4 \
+    --disk 40 \
+    --storage local-ssd \
+    --ip 10.0.1.50/24 \
+    --gateway 10.0.1.1 \
+    --dns 1.1.1.1,8.8.8.8 \
+    --bridge vmbr1 \
+    --domain secure.military-db.com \
+    --email security@company.com
 ```
 
-## 📋 **What the Script Does Automatically:**
+## 🔧 **Key Features Added**
 
-### **Container Setup:**
-- ✅ Creates LXC container 140 with optimized settings
-- ✅ Installs all required dependencies (Python, Node.js, Nginx, etc.)
-- ✅ Configures proper directory structure
+### **Network Options:**
+- **`--dhcp`** - Use DHCP (default behavior)
+- **`--ip <ip/cidr>`** - Static IP with CIDR notation
+- **`--gateway <ip>`** - Gateway IP address
+- **`--dns <servers>`** - Custom DNS servers (comma-separated)
+- **`--bridge <name>`** - Network bridge selection
 
-### **Application Configuration:**
-- ✅ Clones your repositories (if accessible)
-- ✅ Sets up systemd service for the Python web app
-- ✅ Creates Node.js script wrapper for RabbitMQ integration
-- ✅ Configures environment variables and PATH
+### **Container Options:**
+- **`--ct-id <id>`** - Custom container ID
+- **`--hostname <name>`** - Custom hostname
+- **`--memory <mb>`** - Memory allocation
+- **`--cores <num>`** - CPU cores
+- **`--disk <gb>`** - Disk size
+- **`--storage <name>`** - Storage location
 
-### **Nginx & SSL Setup:**
-- ✅ Configures Nginx reverse proxy with SSL termination
-- ✅ Generates self-signed certificate for immediate use
-- ✅ Sets up security headers and performance optimization
-- ✅ Creates rate limiting and proxy configurations
+### **Application Options:**
+- **`--domain <domain>`** - Domain name for SSL
+- **`--email <email>`** - Email for certificates
 
-### **Security & Monitoring:**
-- ✅ Configures UFW firewall with proper rules
-- ✅ Sets up comprehensive monitoring and logging
-- ✅ Creates automated backup scripts
-- ✅ Implements log rotation
+## 🛡️ **Enhanced Validation**
 
-### **Services Integration:**
-- ✅ Configures RabbitMQ with management interface
-- ✅ Sets up cron jobs for monitoring and maintenance
-- ✅ Enables all services to start on boot
+### **Pre-deployment Checks:**
+- ✅ Proxmox environment validation
+- ✅ Template availability check
+- ✅ Storage existence verification
+- ✅ Network bridge validation
+- ✅ IP address format validation
+- ✅ Gateway network compatibility check
 
-### **Testing & Validation:**
-- ✅ Runs comprehensive deployment tests
-- ✅ Validates all services and endpoints
-- ✅ Provides detailed status report
+### **Network Validation:**
+- ✅ IP/CIDR format validation
+- ✅ Gateway IP format validation  
+- ✅ DNS server format validation
+- ✅ Network connectivity testing
+- ✅ DNS resolution testing
 
-## 🎯 **Key Features:**
+## 📊 **Enhanced Reporting**
 
-1. **Zero Manual Configuration** - Everything is automated
-2. **Error Handling** - Script exits on any critical error
-3. **Progress Logging** - Color-coded output with timestamps
-4. **Comprehensive Testing** - Built-in validation of the entire setup
-5. **Production Ready** - Includes security, monitoring, and backup
+### **Configuration Summary:**
+- Displays all settings before deployment
+- Requires confirmation to proceed
+- Shows network configuration details
+- Provides comprehensive status reporting
 
-## 📊 **After Script Completion:**
+### **Network Information:**
+- Automatically detects container IP
+- Shows gateway configuration
+- Validates network connectivity
+- Provides troubleshooting commands
 
-The script will display:
-- Container IP address
-- Access URLs for web interface and RabbitMQ
-- Step-by-step instructions for deploying your actual application code
-- Commands for setting up Let's Encrypt SSL (if using real domain)
+## 🔍 **Usage Examples**
 
-## 🔧 **Post-Deployment Steps:**
-
-1. **Deploy Your Code:**
-   ```bash
-   pct exec 140 -- git clone https://github.com/DXCSithlordPadawan/IES.git /opt/military-db-analyzer
-   ```
-
-2. **Start Application Service:**
-   ```bash
-   pct exec 140 -- systemctl start military-db-analyzer
-   ```
-
-3. **Set Up Production SSL:**
-   ```bash
-   pct exec 140 -- certbot --nginx -d your-domain.com
-   ```
-
-## 🧪 **Built-in Testing:**
-
-The script includes a comprehensive test suite that validates:
-- ✅ All services are running
-- ✅ HTTP/HTTPS endpoints respond correctly  
-- ✅ Network ports are properly configured
-- ✅ Node.js environment is accessible
-- ✅ SSL certificates are working
-
-## 🔍 **Monitoring:**
-
-After deployment, you can monitor the system with:
+### **Basic DHCP Setup:**
 ```bash
-pct exec 140 -- /opt/military-db-analyzer/monitor.sh
+./deploy-military-analyzer.sh --dhcp --domain mycompany.local
 ```
 
-The container will be fully configured and ready for your Military Database Analyzer with Nginx proxy, 
-SSL encryption, and RabbitMQ integration that can execute Node.js 
-scripts like `node S500.js --add --db OP7`.
+### **Corporate Static IP:**
+```bash
+./deploy-military-analyzer.sh \
+    --ip 172.16.10.100/24 \
+    --gateway 172.16.10.1 \
+    --dns 172.16.1.10,172.16.1.11 \
+    --domain analyzer.corp.local \
+    --email it@corp.local
+```
 
-Would you like me to modify any part of the script or add additional configuration options?
+### **High-Performance Setup:**
+```bash
+./deploy-military-analyzer.sh \
+    --memory 8192 \
+    --cores 8 \
+    --disk 100 \
+    --storage fast-ssd \
+    --ip 10.0.0.50/24 \
+    --gateway 10.0.0.1
+```
+
+### **Custom Container ID:**
+```bash
+./deploy-military-analyzer.sh \
+    --ct-id 200 \
+    --hostname db-analyzer-prod \
+    --ip 192.168.100.50/24
+```
+
+## 📝 **Post-Deployment Features**
+
+### **Comprehensive Summary:**
+- Network configuration details
+- Access URLs and commands
+- Management commands
+- Troubleshooting guides
+- Configuration file locations
+
+### **Deployment Summary File:**
+- Saves configuration to `/tmp/military-db-analyzer-[CT_ID]-deployment.txt`
+- Includes all settings and access information
+- Provides reference for future management
+
+## 🧪 **Enhanced Testing:**
+
+The script includes:
+- Network connectivity validation
+- DNS resolution testing
+- Service status verification
+- Endpoint accessibility testing
+- Comprehensive deployment validation
+
+## 🎯 **Troubleshooting Support**
+
+The enhanced script provides:
+- **Network diagnostics** - IP, routing, DNS checks
+- **Service monitoring** - Status and log access commands
+- **Configuration validation** - File location references
+- **Management commands** - Container control and monitoring
+
+This optimized script now supports both simple DHCP deployments and complex enterprise network 
+configurations with static IPs, custom DNS, and specific gateway requirements, making it 
+suitable for any environment from home labs to production data centers.
